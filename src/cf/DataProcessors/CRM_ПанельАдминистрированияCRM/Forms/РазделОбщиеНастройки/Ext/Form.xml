@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Width>88</Width>
+	<Customizable>false</Customizable>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
+		<ExcludedCommand>WriteAndClose</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаЗаголовок" id="1762">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content> </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content> </v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗаголовокРасширеннаяПодсказка" id="1829"/>
+			<ChildItems>
+				<LabelDecoration name="ОписаниеРаздела" id="1763">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка организаций, графиков работы, валют и прочее.</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalAlign>Top</VerticalAlign>
+					<ContextMenu name="ОписаниеРазделаКонтекстноеМеню" id="1764"/>
+					<ExtendedTooltip name="ОписаниеРазделаРасширеннаяПодсказка" id="1830"/>
+				</LabelDecoration>
+				<CommandBar name="ГруппаСправка" id="1765">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаСправкаРасширеннаяПодсказка" id="1832"/>
+					<ChildItems>
+						<Button name="Справка" id="1766">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="1833"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОрганизации" id="2048">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организации</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОрганизацииРасширеннаяПодсказка" id="2049"/>
+			<ChildItems>
+				<CheckBoxField name="ФункциональнаяОпцияУчетПоНесколькимОрганизациям" id="2050">
+					<DataPath>НаборКонстант.ФункциональнаяОпцияУчетПоНесколькимОрганизациям</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вести учет в информационной базе по нескольким организациям (двум и более)</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФункциональнаяОпцияУчетПоНесколькимОрганизациямКонтекстноеМеню" id="2051"/>
+					<ExtendedTooltip name="ФункциональнаяОпцияУчетПоНесколькимОрганизациямРасширеннаяПодсказка" id="2052">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Возможность ведения нескольких организаций в одной базе.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">ФункциональнаяОпцияУчетПоНесколькимОрганизациямПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<Button name="СправочникОрганизации" id="2053">
+					<Type>Hyperlink</Type>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.СправочникОрганизации</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Справочник "Организации"</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СправочникОрганизацииРасширеннаяПодсказка" id="2054"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсновнойПроизводственныйКалендарь" id="2055">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>График работы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОсновнойПроизводственныйКалендарьРасширеннаяПодсказка" id="2056"/>
+			<ChildItems>
+				<UsualGroup name="CRM_ГруппаКалендари" id="2095">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="CRM_ГруппаКалендариРасширеннаяПодсказка" id="2096"/>
+					<ChildItems>
+						<InputField name="CRM_ОсновнойПроизводственныйКалендарь" id="2057">
+							<DataPath>НаборКонстант.ОсновнойКалендарьПредприятия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основной календарь предприятия</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<Width>31</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="CRM_ОсновнойПроизводственныйКалендарьКонтекстноеМеню" id="2058"/>
+							<ExtendedTooltip name="CRM_ОсновнойПроизводственныйКалендарьExtendedTooltip" id="2059">
+								<Width>47</Width>
+								<Height>2</Height>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">CRM_ОсновнойПроизводственныйКалендарьПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="Декорация1" id="2099">
+							<Width>47</Width>
+							<Height>2</Height>
+							<TextColor>style:ПоясняющийТекст</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Определяет количество рабочих дней по умолчанию для предприятия. Используется при расчете сроков и длительности в различных механизмах.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="2100"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="2101"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаРасписание" id="2060">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРасписаниеРасширеннаяПодсказка" id="2061"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаРабочийДень" id="2062">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРабочийДеньРасширеннаяПодсказка" id="2063"/>
+									<ChildItems>
+										<InputField name="CRM_НачалоРабочегоДня" id="2064">
+											<DataPath>НаборКонстант.CRM_НачалоРабочегоДня</DataPath>
+											<Width>4</Width>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="CRM_НачалоРабочегоДняКонтекстноеМеню" id="2065"/>
+											<ExtendedTooltip name="CRM_НачалоРабочегоДняExtendedTooltip" id="2066"/>
+											<Events>
+												<Event name="OnChange">CRM_НачалоРабочегоДняПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="CRM_КонецРабочегоДня" id="2067">
+											<DataPath>НаборКонстант.CRM_КонецРабочегоДня</DataPath>
+											<Width>4</Width>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="CRM_КонецРабочегоДняКонтекстноеМеню" id="2068"/>
+											<ExtendedTooltip name="CRM_КонецРабочегоДняExtendedTooltip" id="2069"/>
+											<Events>
+												<Event name="OnChange">CRM_КонецРабочегоДняПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаОбеденныйПерерыв" id="2070">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОбеденныйПерерывРасширеннаяПодсказка" id="2071"/>
+									<ChildItems>
+										<InputField name="CRM_НачалоОбеда" id="2072">
+											<DataPath>НаборКонстант.CRM_НачалоОбеда</DataPath>
+											<Width>4</Width>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="CRM_НачалоОбедаКонтекстноеМеню" id="2073"/>
+											<ExtendedTooltip name="CRM_НачалоОбедаExtendedTooltip" id="2074"/>
+											<Events>
+												<Event name="OnChange">CRM_НачалоОбедаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="CRM_КонецОбеда" id="2075">
+											<DataPath>НаборКонстант.CRM_КонецОбеда</DataPath>
+											<Width>4</Width>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="CRM_КонецОбедаКонтекстноеМеню" id="2076"/>
+											<ExtendedTooltip name="CRM_КонецОбедаExtendedTooltip" id="2077"/>
+											<Events>
+												<Event name="OnChange">CRM_КонецОбедаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="CRM_ГруппаКалендари2" id="2102">
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="CRM_ГруппаКалендари2РасширеннаяПодсказка" id="2103"/>
+				</UsualGroup>
+				<Button name="ОткрытьПроизводственныеКалендари" id="2097">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ОткрытьПроизводственныеКалендари</CommandName>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<ExtendedTooltip name="ОткрытьПроизводственныеКалендариРасширеннаяПодсказка" id="2098">
+						<Width>36</Width>
+						<Height>3</Height>
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сведения о рабочих, выходных, праздничных днях, а также о переносах праздников в соответствии с постановлениями правительства РФ.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВалюты" id="2078">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюты</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаВалютыРасширеннаяПодсказка" id="2079"/>
+			<ChildItems>
+				<CheckBoxField name="ФункциональнаяУчетВалютныхОпераций" id="2080">
+					<DataPath>НаборКонстант.ФункциональнаяУчетВалютныхОпераций</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вести учет операций в валюте</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФункциональнаяУчетВалютныхОперацийКонтекстноеМеню" id="2081"/>
+					<ExtendedTooltip name="ФункциональнаяУчетВалютныхОперацийРасширеннаяПодсказка" id="2082">
+						<Width>66</Width>
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<Height>3</Height>
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Если необходимо вести учет операций в нескольких валютах, то необходимо включить эту опцию. Параметр влияет на отображение валюты, курсов и кратности валюты в соответствующих объектах, например, в форме выбора цен и валюты, вызываемой из документов.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="УчетВалютныхОпераций" id="2083">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет валютных операций</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет валютных операций</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="УчетВалютныхОперацийРасширеннаяПодсказка" id="2084"/>
+					<ChildItems>
+						<InputField name="ВалютаРегламентированногоУчета" id="2085">
+							<DataPath>НаборКонстант.ВалютаРегламентированногоУчета</DataPath>
+							<Width>8</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ВалютаРегламентированногоУчетаКонтекстноеМеню" id="2086"/>
+							<ExtendedTooltip name="ВалютаРегламентированногоУчетаРасширеннаяПодсказка" id="2087"/>
+							<Events>
+								<Event name="OnChange">НациональнаяВалютаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ВалютаУправленческогоУчета" id="2088">
+							<DataPath>НаборКонстант.ВалютаУправленческогоУчета</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Валюта ведения учета</v8:content>
+								</v8:item>
+							</Title>
+							<Width>10</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Wrap>false</Wrap>
+							<ContextMenu name="ВалютаУправленческогоУчетаКонтекстноеМеню" id="2089"/>
+							<ExtendedTooltip name="ВалютаУправленческогоУчетаРасширеннаяПодсказка" id="2090"/>
+							<Events>
+								<Event name="OnChange">ВалютаУчетаПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ФункциональнаяУчетВалютныхОперацийСправочники" id="2091">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Функциональная учет валютных операций справочники</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Функциональная учет валютных операций справочники</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ФункциональнаяУчетВалютныхОперацийСправочникиРасширеннаяПодсказка" id="2092"/>
+					<ChildItems>
+						<Button name="СправочникВалюты" id="2093">
+							<Type>Hyperlink</Type>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.ОткрытьВалюты</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Валюты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="СправочникВалютыРасширеннаяПодсказка" id="2094">
+								<Width>68</Width>
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список предназначен для ведения валют, используемых в программе. Необходимые для работы валюты можно подобрать из Общероссийского классификатора валют - ОКВ (рекомендуется) или добавить вручную.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодсистемаУправленияПроектами" id="2041">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление проектами</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подсистема управления проектами</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПодсистемаУправленияПроектамиРасширеннаяПодсказка" id="2042"/>
+			<ChildItems>
+				<CheckBoxField name="CRM_ИспользоватьПодсистемуУправленияПроектами" id="2043">
+					<DataPath>НаборКонстант.CRM_ИспользоватьПодсистемуУправленияПроектами</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использование подсистемы "Управление проектами" возможно только для "КОРП" версии</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="CRM_ИспользоватьПодсистемуУправленияПроектамиКонтекстноеМеню" id="2044"/>
+					<ExtendedTooltip name="CRM_ИспользоватьПодсистемуУправленияПроектамиExtendedTooltip" id="2045">
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Использование подсистемы "Управление проектами" доступно только для "КОРП" версии конфигурации!</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаУчетРабочегоВремени" id="2112">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет рабочего времени</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подсистема управления проектами</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаУчетРабочегоВремениРасширеннаяПодсказка" id="2113"/>
+			<ChildItems>
+				<CheckBoxField name="CRM_ИспользоватьУчетРабочегоВремени" id="2114">
+					<DataPath>НаборКонстант.CRM_ИспользоватьУчетРабочегоВремени</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Включает возможность вести учет рабочего времени сотрудников.
+Использование модуля учета рабочего времени доступно только для "ПРОФ" и "КОРП" версий конфигурации!</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="CRM_ИспользоватьУчетРабочегоВремениКонтекстноеМеню" id="2115"/>
+					<ExtendedTooltip name="CRM_ИспользоватьУчетРабочегоВремениРасширеннаяПодсказка" id="2116">
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Включает возможность вести учет рабочего времени сотрудников.
+Использование модуля учета рабочего времени доступно только для "ПРОФ" и "КОРП" версий конфигурации!</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="вогГруппаРазделыКарточекОбъектов" id="2108">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карточки объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вог группа контроль заполненности реквизитов объектов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="вогГруппаРазделыКарточекОбъектовРасширеннаяПодсказка" id="2109"/>
+			<ChildItems>
+				<Button name="ОткрытьРазделыКарточекОбъектов" id="2110">
+					<Type>Hyperlink</Type>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.ОткрытьРазделыКарточекОбъектов</CommandName>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<ExtendedTooltip name="ОткрытьРазделыКарточекОбъектовРасширеннаяПодсказка" id="2111">
+						<AutoMaxWidth>false</AutoMaxWidth>
+					</ExtendedTooltip>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="вогГруппаКонтрольЗаполненностиРеквизитовОбъектов" id="2104">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль заполненности реквизитов объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вог группа контроль заполненности реквизитов объектов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="вогГруппаКонтрольЗаполненностиРеквизитовОбъектовРасширеннаяПодсказка" id="2105"/>
+			<ChildItems>
+				<Button name="ОткрытьНастройкиПараметровКонтроля" id="2106">
+					<Type>Hyperlink</Type>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.ОткрытьНастройкиПараметровКонтроля</CommandName>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<ExtendedTooltip name="ОткрытьНастройкиПараметровКонтроляРасширеннаяПодсказка" id="2107">
+						<AutoMaxWidth>false</AutoMaxWidth>
+					</ExtendedTooltip>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>НаборКонстант.ФиксироватьПервичныйИнтерес</Field>
+				<Field>НаборКонстант.ФункциональнаяОпцияИспользоватьСкидкиНаценки</Field>
+				<Field>НаборКонстант.ФункциональнаяОпцияУчетВРазличныхЕдиницахИзмерения</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ОсновнаяОрганизация" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СправочникОрганизации" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочник "Организации"</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочник организации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СправочникОрганизации</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьПроизводственныеКалендари" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Производственные календари</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть производственные календари</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьПроизводственныеКалендари</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьВалюты" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть производственные календари</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьВалюты</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.УчетВалютныхОпераций</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьНастройкиПараметровКонтроля" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка параметров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позволяет настроить состав реквизитов для контроля заполненности данных по объекту</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьНастройкиПараметровКонтроля</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьРазделыКарточекОбъектов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка разделов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позволяет настроить разделы для группировки классификаторов и доп. реквизитов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьРазделыКарточекОбъектов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

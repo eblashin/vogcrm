@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Обработать интерес</v8:content>
+		</v8:item>
+	</Title>
+	<Width>60</Width>
+	<Height>15</Height>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NewWriteProcessing">ОбработкаЗаписиНового</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="101">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа команды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа команды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#F0F0F0</BackColor>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="102"/>
+			<ChildItems>
+				<Button name="ФормаОтмена" id="55">
+					<Type>UsualButton</Type>
+					<Width>12</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.Отмена</CommandName>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="56"/>
+				</Button>
+				<Button name="ФормаОбработать" id="57">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<Width>12</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.Обработать</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Готово</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаОбработатьРасширеннаяПодсказка" id="58"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЗакладки" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа закладки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа закладки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗакладкиРасширеннаяПодсказка" id="60"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОтработатьВзаимодействие" id="61">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Достигнуто</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ThroughAlign>DontUse</ThroughAlign>
+					<ExtendedTooltip name="ГруппаОтработатьВзаимодействиеРасширеннаяПодсказка" id="62"/>
+					<ChildItems>
+						<InputField name="СостояниеИнтересаУстановить" id="63">
+							<DataPath>СостояниеИнтересаУстановить</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояние </v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<Width>22</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ClearButton>false</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<QuickChoice>true</QuickChoice>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="СостояниеИнтересаУстановитьКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="СостояниеИнтересаУстановитьРасширеннаяПодсказка" id="65"/>
+							<Events>
+								<Event name="OnChange">СостояниеИнтересаУстановитьПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаОписание" id="66">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описание</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описание</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОписаниеРасширеннаяПодсказка" id="67"/>
+							<ChildItems>
+								<InputField name="РезультатТекущегоВзаимодействия" id="68">
+									<DataPath>РезультатТекущегоВзаимодействия</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Результат</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
+									<Width>30</Width>
+									<Height>2</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<MultiLine>true</MultiLine>
+									<ExtendedEdit>false</ExtendedEdit>
+									<OpenButton>false</OpenButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описать результат</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="РезультатТекущегоВзаимодействияКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="РезультатТекущегоВзаимодействияРасширеннаяПодсказка" id="70"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ОжидаемаяВыручкаУстановить" id="71">
+							<DataPath>ОжидаемаяВыручкаУстановить</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выручка</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выручка</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<ContextMenu name="ОжидаемаяВыручкаУстановитьКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ОжидаемаяВыручкаУстановитьРасширеннаяПодсказка" id="73">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выручка</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<PictureDecoration name="ДекорацияРазделитель" id="74">
+					<Width>2</Width>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Декорация разделитель</v8:content>
+						</v8:item>
+					</Title>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ДекорацияРазделительРасширеннаяПодсказка" id="76"/>
+				</PictureDecoration>
+				<UsualGroup name="ГруппаПлан" id="96">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа план</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа план</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПланРасширеннаяПодсказка" id="97"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЗапланироватьВзаимодействие" id="77">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Следующее действие</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа запланировать взаимодействие</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаЗапланироватьВзаимодействиеРасширеннаяПодсказка" id="78"/>
+							<ChildItems>
+								<InputField name="ВидНовогоВзаимодействия" id="79">
+									<DataPath>ВидНовогоВзаимодействия</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид взаимодействия</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>false</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ListChoiceMode>true</ListChoiceMode>
+									<QuickChoice>true</QuickChoice>
+									<TextEdit>false</TextEdit>
+									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+									<ContextMenu name="ВидНовогоВзаимодействияКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ВидНовогоВзаимодействияРасширеннаяПодсказка" id="81"/>
+									<Events>
+										<Event name="StartChoice">ВидНовогоВзаимодействияНачалоВыбора</Event>
+										<Event name="Creating">ВидНовогоВзаимодействияСоздание</Event>
+									</Events>
+								</InputField>
+								<InputField name="СодержаниеНовогоВзаимодействия" id="82">
+									<DataPath>СодержаниеНовогоВзаимодействия</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Что сделать</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<Width>30</Width>
+									<Height>2</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<MultiLine>true</MultiLine>
+									<ChoiceListHeight>6</ChoiceListHeight>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Что сделать?</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="СодержаниеНовогоВзаимодействияКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="СодержаниеНовогоВзаимодействияРасширеннаяПодсказка" id="84"/>
+								</InputField>
+								<UsualGroup name="ГруппаДатаВремя" id="85">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа дата время</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа дата время</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДатаВремяРасширеннаяПодсказка" id="86"/>
+									<ChildItems>
+										<InputField name="ДатаНовогоВзаимодействия" id="87">
+											<DataPath>ДатаНовогоВзаимодействия</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Когда</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Когда</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+											<Width>9</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=dd.MM.yyyy</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ДатаНовогоВзаимодействияКонтекстноеМеню" id="88"/>
+											<ExtendedTooltip name="ДатаНовогоВзаимодействияРасширеннаяПодсказка" id="89"/>
+											<Events>
+												<Event name="StartChoice">ДатаНовогоВзаимодействияНачалоВыбора</Event>
+												<Event name="ChoiceProcessing">ДатаНовогоВзаимодействияОбработкаВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ВремяНовогоВзаимодействия" id="90">
+											<DataPath>ВремяНовогоВзаимодействия</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>с</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<Width>6</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ChoiceButton>true</ChoiceButton>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=ЧЧ:мм</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ChooseType>false</ChooseType>
+											<ContextMenu name="ВремяНовогоВзаимодействияКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="ВремяНовогоВзаимодействияРасширеннаяПодсказка" id="92"/>
+											<Events>
+												<Event name="StartChoice">ВремяНовогоВзаимодействияНачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ПричинаОтказа" id="98">
+							<DataPath>ПричинаОтказа</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<Width>30</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ПричинаОтказаКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="ПричинаОтказаРасширеннаяПодсказка" id="100"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CRM_АРМ_МоиДела</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="РезультатТекущегоВзаимодействия" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат текущего взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="СодержаниеНовогоВзаимодействия" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Содержание нового взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="СостояниеИнтересаУстановить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние интереса установить</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_СостоянияИнтересов</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ВидНовогоВзаимодействия" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид нового взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_ВидыВзаимодействий</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ОжидаемаяВыручкаУстановить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ожидаемая выручка установить</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаНовогоВзаимодействия" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата нового взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ВремяНовогоВзаимодействия" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время нового взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Time</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Интерес" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интерес</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.CRM_Интерес</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийПользователь" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Задача" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задача</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:TaskRef.ЗадачаИсполнителя</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Взаимодействие" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Взаимодействие</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.CRM_Взаимодействие</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПричинаОтказа" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Причина отказа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_ПричиныОтказаПоИнтересам</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Обработать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Обработать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

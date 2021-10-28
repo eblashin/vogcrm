@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОтметитьВсе" id="41">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВключитьВсе</CommandName>
+				<ExtendedTooltip name="ФормаОтметитьВсеРасширеннаяПодсказка" id="42"/>
+			</Button>
+			<Button name="ФормаСнятьВсе" id="43">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтключитьВсе</CommandName>
+				<ExtendedTooltip name="ФормаСнятьВсеРасширеннаяПодсказка" id="44"/>
+			</Button>
+			<Button name="ФормаПоУмолчанию" id="54">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоУмолчанию</CommandName>
+				<ExtendedTooltip name="ФормаПоУмолчаниюРасширеннаяПодсказка" id="55"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ДеревоЗначений" id="13">
+			<Representation>Tree</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<Header>false</Header>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоЗначений</DataPath>
+			<ContextMenu name="ДеревоЗначенийКонтекстноеМеню" id="14">
+				<Autofill>false</Autofill>
+			</ContextMenu>
+			<AutoCommandBar name="ДеревоЗначенийКоманднаяПанель" id="15">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоЗначенийРасширеннаяПодсказка" id="16"/>
+			<SearchStringAddition name="ДеревоЗначенийСтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>ДеревоЗначений</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоЗначенийСтрокаПоискаКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="ДеревоЗначенийСтрокаПоискаРасширеннаяПодсказка" id="21"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоЗначенийСостояниеПросмотра" id="22">
+				<AdditionSource>
+					<Item>ДеревоЗначений</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоЗначенийСостояниеПросмотраКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="ДеревоЗначенийСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоЗначенийУправлениеПоиском" id="27">
+				<AdditionSource>
+					<Item>ДеревоЗначений</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоЗначенийУправлениеПоискомКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="ДеревоЗначенийУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ЕстьДоступ" id="38">
+					<DataPath>ДеревоЗначений.ЕстьДоступ</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ThreeState>true</ThreeState>
+					<ContextMenu name="ЕстьДоступКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ЕстьДоступРасширеннаяПодсказка" id="40"/>
+					<Events>
+						<Event name="OnChange">ДеревоЗначенийЕстьДоступПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="Представление" id="45">
+					<DataPath>ДеревоЗначений.Представление</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПредставлениеКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="47"/>
+				</InputField>
+				<InputField name="Данные" id="32">
+					<DataPath>ДеревоЗначений.Данные</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ДанныеРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="Метаданные" id="35">
+					<DataPath>ДеревоЗначений.Метаданные</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="МетаданныеКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="МетаданныеРасширеннаяПодсказка" id="37"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<CommandBar name="ГруппаКП" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа КП</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа КП</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаКПРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<Button name="ФормаОК" id="48">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ОК</CommandName>
+					<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="49"/>
+				</Button>
+				<Button name="ФормаОтмена" id="50">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.Отмена</CommandName>
+					<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="51"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДеревоЗначений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево значений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Данные" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Метаданные" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Метаданные</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьДоступ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть доступ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВключитьВсе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВключитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтключитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтключитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОК" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоУмолчанию" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить только те объекты, которые необходимы для обмена с Qlik Sense</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоУмолчанию</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

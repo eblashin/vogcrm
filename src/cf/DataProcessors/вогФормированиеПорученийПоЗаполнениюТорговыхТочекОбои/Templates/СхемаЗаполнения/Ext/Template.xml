@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вид</dataPath>
+			<field>Вид</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.Недействителен</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ПометкаУдаления</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТорговаяТочка</dataPath>
+			<field>ТорговаяТочка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Торговая точка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеКлассификатора</dataPath>
+			<field>ЗначениеКлассификатора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение классификатора</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусТТ</dataPath>
+			<field>СтатусТТ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус ТТ</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеРеквизита</dataPath>
+			<field>ЗначениеРеквизита</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение реквизита</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	вогТорговыеТочки.Ссылка КАК Ссылка,
+	вогТорговыеТочки.Вид КАК Вид,
+	МенеджерыОбъектов.Менеджер КАК Менеджер,
+	МенеджерыОбъектов.Менеджер.Подразделение КАК Подразделение,
+	ЕСТЬNULL(СтатусТТ.ЗначениеКлассификатора, ЗНАЧЕНИЕ(Справочник.CRM_ЗначенияКлассификаторов.ПустаяСсылка)) КАК СтатусТТ,
+	CRM_ЗначенияКлассификаторов.Ссылка КАК ЗначениеКлассификатора
+ПОМЕСТИТЬ ВТ_ОбъектыКлассификаторов
+ИЗ
+	РегистрСведений.вогМенеджерыОбъектов КАК МенеджерыОбъектов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.вогТорговыеТочки КАК вогТорговыеТочки
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК СтатусТТ
+			ПО (вогТорговыеТочки.Ссылка = СтатусТТ.Объект)
+				И (ВЫРАЗИТЬ(СтатусТТ.ЗначениеКлассификатора КАК Справочник.CRM_ЗначенияКлассификаторов).Владелец = &amp;СтатусТТКлассификатор)
+		ПО (МенеджерыОбъектов.Владелец = вогТорговыеТочки.Ссылка)
+			И (вогТорговыеТочки.ПометкаУдаления = ЛОЖЬ)
+			И (вогТорговыеТочки.Розничный = ЛОЖЬ)
+			И (МенеджерыОбъектов.Роль = &amp;Роль)
+			И (МенеджерыОбъектов.НаправлениеДеятельности = &amp;НаправлениеДеятельности)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+		ПО (CRM_ЗначенияКлассификаторов.Владелец В (&amp;Классификаторы))
+			И (CRM_ЗначенияКлассификаторов.ПометкаУдаления = ЛОЖЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВТ_ОбъектыКлассификаторов.Ссылка КАК Ссылка,
+	ВТ_ОбъектыКлассификаторов.Вид КАК Вид,
+	ВТ_ОбъектыКлассификаторов.Менеджер КАК Менеджер,
+	ВТ_ОбъектыКлассификаторов.Подразделение КАК Подразделение,
+	ВТ_ОбъектыКлассификаторов.СтатусТТ КАК СтатусТТ,
+	ВТ_ОбъектыКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	ЕСТЬNULL(ВЫРАЗИТЬ(CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЧИСЛО(13, 2)), 0) КАК ЗначениеРеквизита
+ПОМЕСТИТЬ ВТ_Итоговая
+ИЗ
+	ВТ_ОбъектыКлассификаторов КАК ВТ_ОбъектыКлассификаторов
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов
+		ПО ВТ_ОбъектыКлассификаторов.Ссылка = CRM_ОбъектыЗначенийКлассификаторов.Объект
+			И ВТ_ОбъектыКлассификаторов.ЗначениеКлассификатора = CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора
+			И (CRM_ОбъектыЗначенийКлассификаторов.Аналитика = &amp;НаправлениеДеятельности)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итоговая.Ссылка КАК ТорговаяТочка,
+	ВТ_Итоговая.Вид КАК Вид,
+	ВТ_Итоговая.Менеджер КАК Менеджер,
+	ВТ_Итоговая.Подразделение КАК Подразделение,
+	ВТ_Итоговая.СтатусТТ КАК СтатусТТ,
+	ВТ_Итоговая.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	ВТ_Итоговая.ЗначениеРеквизита КАК ЗначениеРеквизита
+ИЗ
+	ВТ_Итоговая КАК ВТ_Итоговая
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ВТ_Итоговая.Ссылка КАК Ссылка
+		ИЗ
+			ВТ_Итоговая КАК ВТ_Итоговая
+		
+		СГРУППИРОВАТЬ ПО
+			ВТ_Итоговая.Ссылка
+		
+		ИМЕЮЩИЕ
+			МИНИМУМ(ВТ_Итоговая.ЗначениеРеквизита) = 0) КАК ВложенныйЗапрос
+		ПО ВТ_Итоговая.Ссылка = ВложенныйЗапрос.Ссылка
+
+
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+			CRM_ДополнительныеРеквизитыКлассификаторов.ТипЗначения КАК ТипЗначения,
+			CRM_ЗначенияКлассификаторов.Наименование КАК Наименование,
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_Классификаторы.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.ОдиночноеЗначение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " (" + CRM_ЗначенияКлассификаторов.Наименование + ")" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " [" + CRM_ЗначенияКлассификаторов.Наименование + "]" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ЛЕВОЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение)
+			И CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка ЕСТЬ NULL)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			ИСТИНА КАК Значение,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора }</query>
+	</dataSet>
+	<parameter>
+		<name>Роль</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Роль</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РолиКонтактныхЛицПартнеров</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>СтатусТТКлассификатор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус ТТКлассификатор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НаправлениеДеятельности</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Направление деятельности</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НаправленияДеятельности</v8:Type>
+			<v8:TypeSet xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:Characteristic.CRM_АналитикаКлассификаторов</v8:TypeSet>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Классификаторы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Классификаторы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТорговаяТочка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеКлассификатора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеРеквизита</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Проект" id="11">
+			<DataPath>Объект.Проект</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кейс</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.CRM_МодельКейса</xr:Name>
+					<xr:DataPath xsi:type="xs:string">МодельКейса</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ПроектКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="ПроектРасширеннаяПодсказка" id="13"/>
+			<Events>
+				<Event name="StartChoice">ПроектНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="БизнесРегион" id="14">
+			<DataPath>Объект.БизнесРегион</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<InputHint>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>не указан</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="БизнесРегионКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="БизнесРегионРасширеннаяПодсказка" id="16"/>
+			<Events>
+				<Event name="OnChange">БизнесРегионПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ОтветственныйИсполнитель" id="24">
+			<DataPath>Объект.ОтветственныйИсполнитель</DataPath>
+			<ContextMenu name="ОтветственныйИсполнительКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="ОтветственныйИсполнительРасширеннаяПодсказка" id="26"/>
+		</InputField>
+		<UsualGroup name="ГруппаНачалоОкончание" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа начало окончание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа начало окончание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНачалоОкончаниеРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="Дата" id="3">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>11</Width>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="5"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаЗакрытия" id="6">
+					<DataPath>Объект.ДатаЗакрытия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>11</Width>
+					<ContextMenu name="ДатаЗакрытияКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ДатаЗакрытияРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">ДатаЗакрытияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Тема" id="46">
+			<DataPath>Объект.Тема</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ТемаКонтекстноеМеню" id="47"/>
+			<ExtendedTooltip name="ТемаРасширеннаяПодсказка" id="48"/>
+		</InputField>
+		<Table name="ТаблицаКлиентов" id="27">
+			<Representation>List</Representation>
+			<HeightInTableRows>3</HeightInTableRows>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаКлиентов</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаКлиентовКонтекстноеМеню" id="28">
+				<Autofill>false</Autofill>
+			</ContextMenu>
+			<AutoCommandBar name="ТаблицаКлиентовКоманднаяПанель" id="29">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаКлиентовРасширеннаяПодсказка" id="30"/>
+			<SearchStringAddition name="ТаблицаКлиентовСтрокаПоиска" id="31">
+				<AdditionSource>
+					<Item>ТаблицаКлиентов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКлиентовСтрокаПоискаКонтекстноеМеню" id="32"/>
+				<ExtendedTooltip name="ТаблицаКлиентовСтрокаПоискаРасширеннаяПодсказка" id="33"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаКлиентовСостояниеПросмотра" id="34">
+				<AdditionSource>
+					<Item>ТаблицаКлиентов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКлиентовСостояниеПросмотраКонтекстноеМеню" id="35"/>
+				<ExtendedTooltip name="ТаблицаКлиентовСостояниеПросмотраРасширеннаяПодсказка" id="36"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаКлиентовУправлениеПоиском" id="37">
+				<AdditionSource>
+					<Item>ТаблицаКлиентов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКлиентовУправлениеПоискомКонтекстноеМеню" id="38"/>
+				<ExtendedTooltip name="ТаблицаКлиентовУправлениеПоискомРасширеннаяПодсказка" id="39"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ТаблицаКлиентовПартнер" id="43">
+					<DataPath>ТаблицаКлиентов.Партнер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаКлиентовПартнерКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ТаблицаКлиентовПартнерРасширеннаяПодсказка" id="45"/>
+				</InputField>
+				<InputField name="ТаблицаКлиентовТорговаяТочка" id="40">
+					<DataPath>ТаблицаКлиентов.ТорговаяТочка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Партнер</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Items.ТаблицаКлиентов.CurrentData.Партнер</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="ТаблицаКлиентовТорговаяТочкаКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ТаблицаКлиентовТорговаяТочкаРасширеннаяПодсказка" id="42"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПанельФормы" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа панель формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа панель формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПанельФормыРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<CheckBoxField name="ОткрытьЭтап" id="17">
+					<DataPath>ОткрытьЭтап</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОткрытьЭтапКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ОткрытьЭтапРасширеннаяПодсказка" id="19"/>
+				</CheckBoxField>
+				<CommandBar name="КоманднаяПанельФормы" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель формы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель формы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="КоманднаяПанельФормыРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
+						<Button name="ФормаЗаписатьИЗакрыть" id="9">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сформировать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="10"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.CRM_ЭтапКалендарногоПлана</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ОткрытьЭтап" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть этап</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаКлиентов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица клиентов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Партнер" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТорговаяТочка" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Торговая точка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогТорговыеТочки</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="МодельКейса" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Модель кейса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_МоделиКейсов</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>Document.CRM_Мероприятие.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

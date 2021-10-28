@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Width>50</Width>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаКомандаОчистить" id="39">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаОчистить</CommandName>
+				<ExtendedTooltip name="ФормаКомандаОчиститьExtendedTooltip" id="40"/>
+			</Button>
+			<Button name="ФормаКомандаЗаполнить" id="16">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаЗаполнить</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаКомандаЗаполнитьExtendedTooltip" id="41"/>
+			</Button>
+			<Button name="ФормаСправка" id="32">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="42"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Панель" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ПанельExtendedTooltip" id="43"/>
+			<ChildItems>
+				<Page name="СтраницаПартнеры" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиенты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница партнеры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПартнерыExtendedTooltip" id="44"/>
+					<ChildItems>
+						<Table name="ТаблицаПартнеры" id="4">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ТаблицаПартнеры</DataPath>
+							<CommandSet>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаПартнерыКонтекстноеМеню" id="5"/>
+							<AutoCommandBar name="ТаблицаПартнерыКоманднаяПанель" id="6">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ТаблицаПартнерыКнопкаДобавитьКлиента" id="33">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ТаблицаПартнеры.StandardCommand.Add</CommandName>
+										<ExtendedTooltip name="ТаблицаПартнерыКнопкаДобавитьКлиентаExtendedTooltip" id="45"/>
+									</Button>
+									<Button name="ТаблицаПартнерыКнопкаУдалить" id="34">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ТаблицаПартнеры.StandardCommand.Delete</CommandName>
+										<ExtendedTooltip name="ТаблицаПартнерыКнопкаУдалитьExtendedTooltip" id="46"/>
+									</Button>
+									<Popup name="ПодменюЗаполнитьПартнеров" id="18">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ПодменюЗаполнитьПартнеровExtendedTooltip" id="47"/>
+										<ChildItems>
+											<Button name="ТаблицаПартнерыЗаполнитьПоСегменту" id="23">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьПоСегменту</CommandName>
+												<ExtendedTooltip name="ТаблицаПартнерыЗаполнитьПоСегментуExtendedTooltip" id="48"/>
+											</Button>
+											<Button name="ТаблицаПартнерыЗаполнитьПоГруппе" id="24">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьПоГруппе</CommandName>
+												<ExtendedTooltip name="ТаблицаПартнерыЗаполнитьПоГруппеExtendedTooltip" id="49"/>
+											</Button>
+											<Button name="ТаблицаПартнерыЗаполнитьПоРезультатамОтчета" id="25">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьПоРезультатамОтчета</CommandName>
+												<ExtendedTooltip name="ТаблицаПартнерыЗаполнитьПоРезультатамОтчетаExtendedTooltip" id="50"/>
+											</Button>
+											<ButtonGroup name="ГруппаКнопокПартнерыОчистить" id="19">
+												<ExtendedTooltip name="ГруппаКнопокПартнерыОчиститьExtendedTooltip" id="51"/>
+												<ChildItems>
+													<Button name="ТаблицаПартнерыКомандаУдалитьПартнеровСЗаполненнымиУровнямиДоступа" id="20">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.КомандаУдалитьПартнеровСЗаполненнымиУровнямиДоступа</CommandName>
+														<ExtendedTooltip name="ТаблицаПартнерыКомандаУдалитьПартнеровСЗаполненнымиУровнямиДоступаExtendedTooltip" id="52"/>
+													</Button>
+													<Button name="ТаблицаПартнерыКомандаУдалитьПартнеровСНеЗаполненнымиУровнямиДоступа" id="21">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.КомандаУдалитьПартнеровСНеЗаполненнымиУровнямиДоступа</CommandName>
+														<ExtendedTooltip name="ТаблицаПартнерыКомандаУдалитьПартнеровСНеЗаполненнымиУровнямиДоступаExtendedTooltip" id="53"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ТаблицаПартнерыКомандаПартнерыОчистить" id="22">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПартнерыОчистить</CommandName>
+												<ExtendedTooltip name="ТаблицаПартнерыКомандаПартнерыОчиститьExtendedTooltip" id="54"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ТаблицаПартнерыКомандаПодборПартнеров" id="17">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КомандаПодборПартнеров</CommandName>
+										<ExtendedTooltip name="ТаблицаПартнерыКомандаПодборПартнеровExtendedTooltip" id="55"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаПартнерыExtendedTooltip" id="56"/>
+							<SearchStringAddition name="ТаблицаПартнерыСтрокаПоиска" id="71">
+								<AdditionSource>
+									<Item>ТаблицаПартнеры</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПартнерыСтрокаПоискаКонтекстноеМеню" id="72"/>
+								<ExtendedTooltip name="ТаблицаПартнерыСтрокаПоискаРасширеннаяПодсказка" id="73"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаПартнерыСостояниеПросмотра" id="74">
+								<AdditionSource>
+									<Item>ТаблицаПартнеры</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПартнерыСостояниеПросмотраКонтекстноеМеню" id="75"/>
+								<ExtendedTooltip name="ТаблицаПартнерыСостояниеПросмотраРасширеннаяПодсказка" id="76"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаПартнерыУправлениеПоиском" id="77">
+								<AdditionSource>
+									<Item>ТаблицаПартнеры</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПартнерыУправлениеПоискомКонтекстноеМеню" id="78"/>
+								<ExtendedTooltip name="ТаблицаПартнерыУправлениеПоискомРасширеннаяПодсказка" id="79"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="ChoiceProcessing">ТаблицаПартнерыОбработкаВыбора</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ТаблицаПартнерыПартнер" id="7">
+									<DataPath>ТаблицаПартнеры.Партнер</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Клиент</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаПартнерыПартнерКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="ТаблицаПартнерыПартнерExtendedTooltip" id="57"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПользователи" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница пользователи</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПользователиExtendedTooltip" id="58"/>
+					<ChildItems>
+						<Table name="ТаблицаПользователи" id="9">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ТаблицаПользователи</DataPath>
+							<CommandSet>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаПользователиКонтекстноеМеню" id="10"/>
+							<AutoCommandBar name="ТаблицаПользователиКоманднаяПанель" id="11">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ТаблицаПользователиКнопкаДобавитьПользователя" id="35">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ТаблицаПользователи.StandardCommand.Add</CommandName>
+										<ExtendedTooltip name="ТаблицаПользователиКнопкаДобавитьПользователяExtendedTooltip" id="59"/>
+									</Button>
+									<Button name="ТаблицаПользователиКнопкаУдалитьПользователя" id="36">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ТаблицаПользователи.StandardCommand.Delete</CommandName>
+										<ExtendedTooltip name="ТаблицаПользователиКнопкаУдалитьПользователяExtendedTooltip" id="60"/>
+									</Button>
+									<Popup name="ПодменюЗаполнитьПользователей" id="26">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Заполнить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ПодменюЗаполнитьПользователейExtendedTooltip" id="61"/>
+										<ChildItems>
+											<ButtonGroup name="ГруппаКнопокПользователиЗаполнитьПоГруппе" id="27">
+												<ExtendedTooltip name="ГруппаКнопокПользователиЗаполнитьПоГруппеExtendedTooltip" id="62"/>
+												<ChildItems>
+													<Button name="ТаблицаПользователиПользователиЗаполнитьПоГруппе" id="28">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ПользователиЗаполнитьПоГруппе</CommandName>
+														<ExtendedTooltip name="ТаблицаПользователиПользователиЗаполнитьПоГруппеExtendedTooltip" id="63"/>
+													</Button>
+													<Button name="ТаблицаПользователиПользователиЗаполнитьСНезаполненнымиУровнямиДоступа" id="29">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ПользователиЗаполнитьСНезаполненнымиУровнямиДоступа</CommandName>
+														<ExtendedTooltip name="ТаблицаПользователиПользователиЗаполнитьСНезаполненнымиУровнямиДоступаExtendedTooltip" id="64"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ТаблицаПользователиПользователиОчистить" id="30">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПользователиОчистить</CommandName>
+												<ExtendedTooltip name="ТаблицаПользователиПользователиОчиститьExtendedTooltip" id="65"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ТаблицаПользователиПользователиПодбор" id="31">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПользователиПодбор</CommandName>
+										<ExtendedTooltip name="ТаблицаПользователиПользователиПодборExtendedTooltip" id="66"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаПользователиExtendedTooltip" id="67"/>
+							<SearchStringAddition name="ТаблицаПользователиСтрокаПоиска" id="80">
+								<AdditionSource>
+									<Item>ТаблицаПользователи</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПользователиСтрокаПоискаКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="ТаблицаПользователиСтрокаПоискаРасширеннаяПодсказка" id="82"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаПользователиСостояниеПросмотра" id="83">
+								<AdditionSource>
+									<Item>ТаблицаПользователи</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПользователиСостояниеПросмотраКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="ТаблицаПользователиСостояниеПросмотраРасширеннаяПодсказка" id="85"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаПользователиУправлениеПоиском" id="86">
+								<AdditionSource>
+									<Item>ТаблицаПользователи</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПользователиУправлениеПоискомКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="ТаблицаПользователиУправлениеПоискомРасширеннаяПодсказка" id="88"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="ChoiceProcessing">ТаблицаПользователиОбработкаВыбора</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ТаблицаПользователиПользователь" id="12">
+									<DataPath>ТаблицаПользователи.Пользователь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаПользователиПользовательКонтекстноеМеню" id="13"/>
+									<ExtendedTooltip name="ТаблицаПользователиПользовательExtendedTooltip" id="68"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="УровеньДоступа" id="14">
+			<DataPath>УровеньДоступа</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Устанавливаемый уровень доступа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="УровеньДоступаКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="УровеньДоступаExtendedTooltip" id="69"/>
+		</InputField>
+		<CheckBoxField name="ОчищатьПередЗаполнением" id="37">
+			<DataPath>ОчищатьПередЗаполнением</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОчищатьПередЗаполнениемКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="ОчищатьПередЗаполнениемExtendedTooltip" id="70"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CRM_ЗаполнениеУровнейДоступа</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаПартнеры" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиенты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Партнер" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Партнер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаПользователи" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пользователь" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="УровеньДоступа" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень доступа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_УровниДоступа</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьГруппыПользователей" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать группы пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОчищатьПередЗаполнением" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очищать перед заполнением</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаЗаполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаполнить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПодборПартнеров" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПодборПартнеров</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьПоСегменту" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по сегменту</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по сегменту</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоСегменту</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.CRM_ИспользоватьСегментацию</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьПоГруппе" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе клиентов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоГруппе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУдалитьПартнеровСЗаполненнымиУровнямиДоступа" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить с заполненными уровнями доступа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить с заполненными уровнями доступа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаУдалитьПартнеровСЗаполненнымиУровнямиДоступа</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУдалитьПартнеровСНеЗаполненнымиУровнямиДоступа" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить с не заполненными уровнями доступа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить с не заполненными уровнями доступа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаУдалитьПартнеровСНеЗаполненнымиУровнямиДоступа</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПартнерыОчистить" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПартнерыОчистить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьПоРезультатамОтчета" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по результатам отчета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по результатам отчета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоРезультатамОтчета</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПользователиЗаполнитьПоГруппе" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПользователиЗаполнитьПоГруппе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПользователиПодбор" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПользователиПодбор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПользователиОчистить" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПользователиОчистить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПользователиЗаполнитьСНезаполненнымиУровнямиДоступа" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С незаполненным уровнем доступа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С незаполненным уровнем доступа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПользователиЗаполнитьСНезаполненнымиУровнямиДоступа</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОчистить" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОчистить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

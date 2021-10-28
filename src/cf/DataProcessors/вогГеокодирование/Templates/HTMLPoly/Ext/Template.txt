@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>polygons</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="returnValue"></div>
+    <div id="eval" onclick="eval_code()" function_name=""></div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6-WjxW-MOBe5vXyDoTIkamOtW6G2q-0Y&callback=initMap&libraries=drawing"> </script>
+<script>
+var map;
+var arrayPolygons=[];
+/**
+ * @constructor
+ */
+function CenterControl1(controlDiv, map) {
+
+  // Set CSS for the control border.
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#fff';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.borderRadius = '3px';
+  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.marginBottom = '22px';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Отправить данные в 1С';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '10px';
+  controlText.style.lineHeight = '24px';
+  controlText.style.paddingLeft = '2px';
+  controlText.style.paddingRight = '2px';
+  controlText.innerHTML = 'в 1С';
+  controlUI.appendChild(controlText);
+
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener('click', function() {
+	if (!arrayPolygons.length){
+		return;
+	};
+	var returnValue = "";
+	for (let itemPolygon of arrayPolygons){
+		if (!returnValue==""){returnValue = returnValue+":"};
+		polygonPaths = itemPolygon.getPaths();
+		polygonPaths.forEach(function(path,indexArr){
+			path.forEach(function(pointPath,indexPoint){
+				returnValue = returnValue+pointPath.toUrlValue()+" ";
+			});
+			returnValue = returnValue + ";";
+		});
+	};
+    document.getElementById("returnValue").innerHTML = returnValue;
+  });
+
+}
+
+
+function drawPolygonsFrom1C(stringParam){
+ 
+    let arrayPoly = stringParam.split(":");
+    let lastPoint;
+    let arrayPaths;
+    let arrayPathLatLng;
+    for(let i=0;i<arrayPoly.length;i++){
+        let arrayPathsCurrentPolygon = arrayPoly[0].split(";");
+        arrayPaths = [];
+        for(let j=0;j<arrayPathsCurrentPolygon.length;j++){
+            let arrayCurrentPathPoints = arrayPathsCurrentPolygon[j].split(" ");
+            arrayPathLatLng = [];
+            for(k=0;k<arrayCurrentPathPoints.length;k++){
+                let currentPoint = arrayCurrentPathPoints[k].split(",");
+                arrayPathLatLng.push({lat: +currentPoint[0],lng: +currentPoint[1]});
+            	lastPoint = {lat: +currentPoint[0],lng: +currentPoint[1]}; 
+            };
+        	arrayPaths.push(arrayPathLatLng);
+        }
+        let newPolygon = new google.maps.Polygon({
+				paths: arrayPaths,
+				strokeOpacity: 0.5,
+				fillOpacity: 0.35,
+				editable: true,
+				draggable: true,
+				clickable: true,
+				geodesic: true
+			});
+			newPolygon.setMap(map);
+			google.maps.event.addListener(newPolygon,'rightclick',function(e){ rightClickOnPolygon(e);});
+			arrayPolygons.push(newPolygon);
+			map.setCenter(lastPoint);
+			map.setZoom(14);
+    }
+}
+
+function rightClickOnPolygon(event,polygon){
+	let isDelete = confirm("Удалить?");
+	if (isDelete){
+		arrayPolygons.pop(polygon);
+		polygon.setMap(null);
+		polygon = null;
+	};
+};
+
+// Выполнение функций из 1С
+function eval_code() {
+         
+      var eval_div = document.getElementById("eval");
+      var param_code = eval_div.innerHTML;
+      var function_name = eval_div.getAttribute("function_name");
+  window[function_name](param_code);
+};
+
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat:55.75315,lng:37.620523}
+  });
+
+  // Create the DIV to hold the control and call the CenterControl()
+  // constructor passing in this DIV.
+  var centerControlDiv = document.createElement('div');
+  var centerControl = new CenterControl1(centerControlDiv, map);
+  centerControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+  var drawingManager = new google.maps.drawing.DrawingManager({
+          drawingMode: google.maps.drawing.OverlayType.POLYGON,
+          drawingControl: true,
+          drawingControlOptions: {
+            position: google.maps.ControlPosition.TOP_CENTER,
+            drawingModes: [ 'polygon']
+			},
+			polygonOptions: {
+            clickable: true,
+            editable: true,
+			draggable:true,
+			geodesic:true
+           }
+		});
+   drawingManager.setMap(map);
+   //обработчик клика пр.кнопки мыши по карте
+   google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+	//Проверим, возможно нарисовали дырку в существующем полигоне
+	//для этого проверим все вершины, они должны быть внутри одного полигона
+	for (var itemPolygon of arrayPolygons){
+		path = polygon.getPath();
+		var thisHole = true;
+		path.forEach(function(pointPath,indexPoint){
+			if(!google.maps.geometry.poly.containsLocation(pointPath, itemPolygon)){
+				thisHole = false;
+				};
+		});
+		if(thisHole){
+			itemPolygon.setMap(null);
+			polygon.setMap(null);
+			var newPolygon = new google.maps.Polygon({
+				paths: [itemPolygon.getPath(), polygon.getPath()],
+				strokeOpacity: 0.5,
+				fillOpacity: 0.35,
+				editable: true,
+				draggable: true,
+				clickable: true,
+				geodesic: true
+			});
+			newPolygon.setMap(map);
+			google.maps.event.addListener(newPolygon,'rightclick',function(e){ rightClickOnPolygon(e);});
+			arr.pop(itemPolygon);
+			arrayPolygons.push(newPolygon);
+			itemPolygon = null;
+			polygon = null;
+			return;
+		};
+	};
+	arrayPolygons.push(polygon);
+	google.maps.event.addListener(polygon,'rightclick',function(e){ rightClickOnPolygon(e,polygon);});
+   });   
+} //конец initMap
+	 </script>
+  </body>
+</html>

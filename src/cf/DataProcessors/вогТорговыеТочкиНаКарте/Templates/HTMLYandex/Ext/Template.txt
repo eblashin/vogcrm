@@ -1,0 +1,709 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Работа с картами</title>
+      <!-- Стартовый набор (   -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+      <!-- Bспользуем IE 9 -->
+      <script src="https://api-maps.yandex.ru/2.1?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript"></script>
+      <!-- Стартовый набор ) -->
+      <style>
+      	.legend{
+      		z-index: 2;
+      		width: 135px;
+      		height: 175px;
+			margin: 150px 20px;
+			position: absolute;
+			border: 4px double black; 
+			bottom:0; 
+			right:0;
+      		background-color: white;
+      	 }
+         html, body, #map {
+         width: 100%;
+         height: 100%;
+         padding: 0;
+         margin: 0;
+         }
+         #eval {
+         visibility: hidden;
+         position: fixed;
+         }
+      </style>
+      <script type="text/javascript">
+         ymaps.ready(init);
+         
+         var myPlacemark; // Отметка на карте
+         var myMap;  // Переменная карты
+         var searchControl; // Элемент управления поиска
+         var SearchMode = true; // режим обратного геокодирования
+         var SearchModeButton; // кнопка выключающая режим геокодирования
+         var mBounds; // отслеживаем границы карты
+         
+         var myClusters = []; // Мои кластеры отображения
+         
+         var AddDelPolygonButton; // кнопка Добавления / Удаления полигона
+         var myPoligons = []; // Полигоны отображения
+         var CurrentPolygon = false; // Текущий полигон
+                  
+         var MAP_MODE = "biz"; // РЕЖИМ РАБОТЫ КАРТЫ ['biz', 'polygon']
+         
+         // Создание метки при клике в режиме поиска
+         function createPlacemark(coords) {
+             return new ymaps.Placemark(coords, {
+                 iconCaption: 'поиск...'
+             }, {
+                 preset: 'islands#violetDotIconWithCaption',
+                 draggable: false
+             });
+         }
+         
+         // ФУНКЦИЯ ВЫПОЛНЯЕТ ДЕЙСТВИЯ ПО КЛИКУ В РЕЖИМЕ ПОИСКА ОРГАНИЗАЦИЙ
+         function click_for_search_mode(e) {
+         	
+             if (!SearchMode) return;
+             var coords_click = e.get('coords');
+             // Если метка уже создана – просто передвигаем ее.
+             if (myPlacemark) {
+                 myPlacemark.properties.set('iconCaption', 'поиск...');
+                 myPlacemark.geometry.setCoordinates(coords_click);
+             }
+             // Если нет – создаем.
+             else {
+                 myPlacemark = createPlacemark(coords_click);
+                 myMap.geoObjects.add(myPlacemark);
+             }
+         
+             // +++ Кулаков П.Л. CRM-1110
+             document.getElementById("markerposition").innerHTML = coords_click;
+             myMap.setCenter(coords_click);
+         	 // --- Кулаков П.Л.
+             
+             mBounds = myMap.getBounds();
+         
+         getAddress(coords_click);
+         
+             var myReverseGeocoder = ymaps.geocode(coords_click, {
+                 results: 50,
+                 json: true,
+                 boundedBy: mBounds,
+                 //strictBounds: true
+             }).then(
+                 function (res) {
+                     var json_result = {
+                         coords: coords_click,
+                         data: [],
+                         myBounds: mBounds,
+                         cont_polygons: get_polygons_contain(coords_click)
+                     };
+         
+                     var FindedObjects = res.GeoObjectCollection.featureMember;
+         
+                     for (var i = 0; i < FindedObjects.length - 1; i++) {
+                         var current_result = {};
+         
+                         var obj = FindedObjects[i].GeoObject;
+         
+                         current_result.name = obj.name;
+                         current_result.kind = obj.metaDataProperty.GeocoderMetaData.kind;
+                         current_result.text = obj.metaDataProperty.GeocoderMetaData.text;
+                         current_result.precision = obj.metaDataProperty.GeocoderMetaData.precision;
+                         current_result.postal_code = obj.metaDataProperty.GeocoderMetaData.Address.postal_code;
+         
+                         json_result.data.push(current_result);
+                     }
+                     
+                 });
+         }
+         
+         // Определяем адрес по координатам (обратное геокодирование).
+         function getAddress(coords) {
+         myPlacemark.properties.set('iconCaption', 'поиск...');
+         ymaps.geocode(coords).then(function (res) {
+             var firstGeoObject = res.geoObjects.get(0);
+         
+             myPlacemark.properties
+                 .set({
+                     // Формируем строку с данными об объекте.
+                     iconCaption: [
+                         // Название населенного пункта или вышестоящее административно-территориальное образование.
+                         firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
+                         // Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
+                         firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
+                     ].filter(Boolean).join(', '),
+                     // В качестве контента балуна задаем строку с адресом объекта.
+                     balloonContent: firstGeoObject.getAddressLine()
+                 });
+         });
+         }
+         
+         // ИНИЦИАЛИЗАЦИЯ
+         function init() {
+             // Создание экземпляра карты и его привязка к контейнеру с
+             // заданным id ("map").
+             // Создание элемента управления «Поиск по карте».
+             searchControl = new ymaps.control.SearchControl({
+                 options: {
+                     //fitMaxWidth: true,
+                     //size: 'large',
+                     // Будет производиться поиск и по топонимам и по организациям.
+                     provider: 'yandex#search'
+                 }
+             });
+         
+             myMap = new ymaps.Map('map', {
+                 // При инициализации карты обязательно нужно указать
+                 // её центр и коэффициент масштабирования.
+                 // center: [55.738702, 37.963685], // Палитра
+                 center: [55.76, 37.64],
+                 zoom: 15,
+                 controls: ['typeSelector', 'zoomControl', 'rulerControl'],
+         
+             }, {
+                 searchControlProvider: 'yandex#search'
+             });
+         
+             myMap.controls.add(searchControl);
+         
+             SearchModeButton = new ymaps.control.Button({
+                 data: {
+                     content: "Режим поиска",
+                     title: 'Включает геокодирование по щелчку'
+                 },
+                 options: {
+                     maxWidth: 300
+                 }
+             });
+         
+             SearchModeButton.events
+                 .add(
+                     'select',
+                     function () {
+                         SearchMode = true;
+                     }
+                 )
+                 .add(
+                     'deselect',
+                     function () {
+                         SearchMode = false;
+                     }
+                 );
+         
+         }
+         
+         /// ПРЦЕДУРА ВОЗВРАТА ЗНАЧЕНИЯ
+         function return_to_1c(name, data) {
+         
+             if (!('querySelector' in document)  //скорее всего ie 9+
+                 || !('localStorage' in window)  //ie 8+
+                 || !('addEventListener' in window)  //ie 8 + (возможно)
+                 || !('matchMedia' in window)) {//ie 10+
+         
+                 // вызов обработчика
+                 var evt = document.createEventObject();
+                 evt.propertyName = name;
+                 evt.data = data;
+                 evt.cancelBubble = true;
+                 evt.returnValue = false;
+         
+                 document.fireEvent('onclick', evt);
+         
+             } else {
+                 console.log(data);
+             }
+         }
+         
+         // ВЫПОЛНЕНИЕ ПРОИЗВОЛЬНОГО КОДА ИЗ 1С ПРЕДПРИЯТИЯ
+         function eval_code() {
+         
+         	
+             var eval_div = document.getElementById("eval");
+             var param_code = eval_div.innerHTML;
+         
+             var function_name = eval_div.getAttribute("function_name");
+             window[function_name](param_code);
+         }
+         
+         // ВЫПОЛНЕНИЕ ПРОИЗВОЛЬНОГО КОДА ИЗ 1С ПРЕДПРИЯТИЯ АСИНХРОННО
+         function eval_code_async() {
+         
+             var eval_div = document.getElementById("eval_async");
+             var param_code = eval_div.innerHTML;
+         
+             var function_name = eval_div.getAttribute("function_name");
+         
+             window[function_name](param_code);
+             //if (!function_name || !param_code || !ymaps) return;
+         
+             //var promise = new ymaps.vow.Promise((resolve, reject) => {
+         
+             //if (!function_name || !param_code) return;
+             //window[function_name](param_code);
+             //resolve("ok");
+         
+             //});
+         
+             // promise
+             //    .then(
+             //        result => {
+             //            // первая функция-обработчик - запустится при вызове resolve
+             //           console.log("Fulfilled: " + result); // result - аргумент resolve
+             //        },
+             //        error => {
+             //            // вторая функция - запустится при вызове reject
+             //            console.log("Fulfilled: " + result); // result - аргумент resolve
+             //        }
+             //    );
+         
+         }
+         
+         /////////////////////////////////////////////////////////
+         // ИНТЕРФЕЙСНЫЕ ПРОЦЕДУРЫ ДЛЯ 1С ПРЕДПРИЯТИЯ
+         
+         // ВЫПОЛНИТЬ ПОИСК ПО СТРОКЕ
+         function find_by_string(address) {
+             searchControl.search(address);
+         }
+         
+         // ЦЕНТРИРОВАТЬ КАРТУ
+         function set_map_center(coordinates_text) {
+         
+             var coordinates = JSON.parse(coordinates_text);
+         
+             myMap.setCenter(coordinates);
+         // Тищенко В.В.
+         myMap.setZoom(19);
+         }
+         
+         // МАСШТАБ КАРТЫ
+         function set_map_zoom(income_text) {
+         
+             var data_struct = JSON.parse(income_text);
+         
+             myMap.setZoom(data_struct.zoom);
+         }
+         
+         // ОЧИСТИТЬ ОБЪЕКТЫ С КАРТЫ
+         function clear_clusters(def) {
+             myClusters.forEach(function (mCluster, i, arr) {
+                 myMap.geoObjects.remove(mCluster);
+             });
+         
+             myClusters = [];
+         }
+         
+         // УСТАНОВИТЬ ЗАГОЛОВОК ОТМЕТКИ
+         function set_placemark_caption(data_test) {
+             var data_placemark = JSON.parse(data_test);
+         
+             if (myPlacemark) {
+                 myPlacemark.properties.set('iconCaption', data_placemark.caption);
+                 myPlacemark.properties.set('hintContent', data_placemark.caption);
+             }
+         }
+         
+         // УСТАНОВИТЬ РЕЖИМ ПОИСКА
+         function set_search_mode(val) {
+             SearchMode = JSON.parse(val);
+             if (SearchMode.select) {
+                 SearchMode = true;
+                 SearchModeButton.select();
+             } else {
+                 SearchMode = false;
+                 SearchModeButton.deselect();
+             }
+         
+         }
+         
+         // УСТАНОВИТЬ РЕЖИМ РАБОТЫ КАРТЫ
+         function set_map_mode(val) {
+             income_data = JSON.parse(val);
+             MAP_MODE = income_data.mode;
+             var map_val = income_data.val;
+             switch (MAP_MODE) {
+                 case 'biz':
+                     myMap.controls.add(SearchModeButton);
+                     // привяжем событие щелчка по карте
+                     myMap.events.add('click', click_for_search_mode);
+                     break;
+                 case 'polygon':
+                     myMap.events.add('click', click_map_for_polygons);
+                     set_polygon_map_mode(income_data.data);
+                     break;
+             }
+         }
+         
+         // ДОБАВЛЯЕТ ПОЛИГОНЫ НА КАРТУ
+         function add_polygons_to_map(poly_data) {
+         
+             poly_objects = JSON.parse(poly_data);
+         
+             if (poly_objects) {
+                 poly_objects.forEach(function (obj, i, arr) {
+                     obj.polygons.forEach(function (mPolygon, i, arr) {
+                         add_polygon(mPolygon, obj.name, mPolygon.id);
+                     })
+                 });
+             }
+         }
+         
+         // ДОБАВИТЬ КЛАСТЕР ОБЪЕКТОВ
+         function add_cluster_objects(data_text) {
+         
+             data = JSON.parse(data_text);
+         
+             var myGeoObjects = [];
+         
+             for (var i = 0; i < data.length; i++) {
+                 var item = data[i];
+         
+                 myGeoObjects[i] = new ymaps.GeoObject({
+                     geometry: {
+                         type: "Point",
+                         coordinates: item.coords
+                     },
+                     properties: {
+                         clusterCaption: item.name,
+                         balloonContentBody: item.text
+                     }
+                 });
+             }
+         
+             if (myGeoObjects.length) {
+         
+                 var myClusterer = new ymaps.Clusterer();
+                 myClusterer.add(myGeoObjects);
+         
+                 myMap.geoObjects.add(myClusterer);
+                 myClusters.push(myClusterer);
+             }
+         
+         }
+         
+         /////////////////////////////////////////////////////////
+         // СЛУЖЕБНЫЕ ФУНКЦИИ
+         
+         // КЛИН ПО КАРТЕ В РЕЖИМЕ ПОЛИГОНОВ
+         function click_map_for_polygons(e) {
+         
+             myPoligons.forEach(function (mPolygon, i, arr) {
+         
+                 CurrentPolygon = false;
+                 AddDelPolygonButton.deselect();
+                 mPolygon.polygon.editor.stopDrawing();
+                 mPolygon.polygon.editor.stopEditing();
+         
+             })
+         
+         }
+         
+         //УСТАНАВЛИВАЕТ РЕЖИТ РАБОТЫ С ПОЛИГОНАМИ
+         function set_polygon_map_mode(poly_objects) {
+         
+             AddDelPolygonButton = new ymaps.control.Button({
+                 data: {
+                     content: "Добавить полигон",
+                     title: 'Добавляет / удаляе полигон для работы с областью карты',
+                     image: 'https://png.icons8.com/office/16/000000/waypoint-map.png'
+                 },
+                 options: {
+                     maxWidth: 300,
+                 }
+             });
+         
+             AddDelPolygonButton.events
+                 .add(
+                     'select',
+                     function () {
+                         AddDelPolygonButton.data.set('content', 'Удалить полигон')
+                     }
+                 )
+                 .add(
+                     'deselect',
+                     function () {
+                         AddDelPolygonButton.data.set('content', 'Добавить полигон')
+                     }
+                 )
+                 .add(
+                     'click',
+                     function () {
+                         if (AddDelPolygonButton.isSelected()) {
+                             delete_polygon();
+                         } else {
+                             add_polygon(undefined, 'Новый полигон', 'new_' + (myPoligons.length + 1));
+                         }
+                     }
+                 );
+             myMap.controls.add(AddDelPolygonButton);
+         
+         }
+         
+         // ПОДГОТАВЛИВАЕТ ДАННЫЕ ПО ПОЛИГОНАМ ДЛЯ ВОЗВРАТА В 1С
+         function get_data_polygons_for_1c() {
+         
+             json_result = [];
+             myPoligons.forEach(function (item, i, arr) {
+                     json_result.push({
+                         coords: item.polygon.geometry.getCoordinates(),
+                         hint: item.polygon.properties.get('hintContent'),
+                         balloon: item.polygon.properties.get('balloonContentHeader')
+                     });
+                 }
+             );
+             return JSON.stringify(json_result);
+         }
+         
+         // ДОБАВЛЯЕТ ПОЛИГОН НА КАРТУ
+         function add_polygon(poly_data, polygon_name, polygon_id) {
+         
+             if (poly_data === undefined) {
+                 coords_arr = []
+             }
+             else {
+                 coords_arr = poly_data;
+             }
+         
+         
+             // Создаем многоугольник без вершин.
+             var myPolygon = new ymaps.Polygon(coords_arr, {}, {
+                 // Курсор в режиме добавления новых вершин.
+                 editorDrawingCursor: "crosshair",
+                 // Максимально допустимое количество вершин.
+                 editorMaxPoints: 300,
+                 // Цвет заливки.
+                 //fillColor: '#00FFDA',
+                 // Цвет обводки.
+                 strokeColor: '#0000ff',
+                 // Ширина обводки.
+                 strokeWidth: 3
+             });
+         
+             // Балун полигона
+             if (polygon_name) {
+                 myPolygon.properties.set('balloonContentHeader', polygon_name);
+             }
+         
+             // Добавляем многоугольник на карту.
+             myMap.geoObjects.add(myPolygon);
+         
+             myPoligons.push({polygon: myPolygon, name: polygon_name, id: polygon_id});
+         
+             if (MAP_MODE === 'polygon') {
+                 // В режиме добавления новых вершин меняем цвет обводки многоугольника.
+                 var stateMonitor = new ymaps.Monitor(myPolygon.editor.state);
+                 stateMonitor.add("drawing", function (newValue) {
+                     if (newValue) {
+                         myPolygon.options.set("strokeColor", '#FF0000');
+                         CurrentPolygon = myPolygon;
+                         //AddDelPolygonButton.select();
+         
+                     }
+                     else {
+                         myPolygon.options.set("strokeColor", '#0000FF');
+                         CurrentPolygon = false;
+                         return_to_1c('ИзмененыПараметрыПолигона', get_data_polygons_for_1c());
+         
+                     }
+                 });
+         
+                 myPolygon.events.add("click", function (clickEvent) {
+         
+                     if (CurrentPolygon) return;
+         
+                     var mPolygonClick = clickEvent.get('target');
+         
+                     myPoligons.forEach(function (mPolygon, i, arr) {
+         
+                         if (mPolygon.polygon !== mPolygonClick) {
+                             mPolygon.polygon.editor.stopDrawing();
+                             mPolygon.polygon.editor.stopEditing();
+                         } else {
+                             CurrentPolygon = mPolygon.polygon;
+                             AddDelPolygonButton.select();
+                             mPolygon.polygon.editor.startEditing();
+                         }
+         
+                     })
+                 });
+         
+         
+                 if (poly_data === undefined) {
+                     // Включаем режим редактирования с возможностью добавления новых вершин.
+                     myPolygon.editor.startDrawing();
+                 }
+         
+                 myPolygon.events.add('geometrychange', function (e) {
+                     return_to_1c('ИзмененыПараметрыПолигона', get_data_polygons_for_1c());
+                 });
+         
+             }
+         }
+         
+         // УДАЛЯЕТ ПОЛИГОН
+         function delete_polygon() {
+         
+             if (!myPoligons.length) return;
+         
+             if (myPoligons.length === 1) {
+         
+                 var cur_poly = myPoligons.pop();
+                 myMap.geoObjects.remove(cur_poly.polygon);
+         
+             } else if (CurrentPolygon) {
+         
+                 myPoligons.forEach(function (mPolygon, i, arr) {
+                     if (mPolygon.polygon === CurrentPolygon) {
+                         myPoligons.splice(myPoligons.indexOf(mPolygon), 1);
+                         myMap.geoObjects.remove(CurrentPolygon);
+                         CurrentPolygon = false;
+                         return false;
+                     }
+                 });
+         
+             }
+             else {
+                 return
+             }
+         
+             return_to_1c('ИзмененыПараметрыПолигона', get_data_polygons_for_1c());
+         }
+         
+         // ВОЗВРАЩАЕТ ПОЛИГОНЫ, В КОТОРЫЕ ВХОДИТ ТОЧКА
+         function get_polygons_contain(coords) {
+             var polygons_contain = [];
+         
+             myPoligons.forEach(function (mPolygon, i, arr) {
+                 if (mPolygon.polygon.geometry.contains(coords)) {
+                     polygons_contain.push(mPolygon.id);
+                 }
+             });
+         
+             return polygons_contain;
+         }
+         
+         // +++ Кулаков П.Л. DEV-40
+         function CreateMarker(params){
+         		var arrayMarker = [];
+         		var arrayPoints = [];
+         		var myClusterer = new ymaps.Clusterer({
+         			clusterIconLayout: 'default#pieChart',
+         			hideIconOnBalloonOpen: false
+         		});
+         		myMap.geoObjects.removeAll();
+       			var MarkerData = JSON.parse(params);
+    			 for(var i in MarkerData){
+        			var Param = MarkerData[i];
+        			var placemark = new ymaps.Placemark([Param.lat, Param.lng], {
+        					balloonContent: Param.content,
+        					balloonContentHeader: Param.title,
+							iconContent: Param.title
+        					}, {
+    						preset: Param.color,
+    						openEmptyBalloon: true,
+    						hideIconOnBalloonOpen: false
+							});
+					arrayMarker.push(placemark);
+        		}
+        		myClusterer.add(arrayMarker);
+				myMap.geoObjects.add(myClusterer);
+				myMap.setBounds(myMap.geoObjects.getBounds(), {checkZoomRange: true});
+    	 }
+    	 
+    	 function CreateLegend(legend_visible) {
+    	 	if (legend_visible==true){
+    	 		document.getElementById("legend").style.display = 'block';
+    	 	}
+    	 	else{
+    	 		document.getElementById("legend").style.display = 'none';
+    	 	}
+    	 }
+         // --- Кулаков П.Л.
+         
+         // Тищенко В.В.
+         // ОТОБРАЖЕНИЕ МЕТКИ НА КАРТЕ
+         function clickSetPlacemark(data)
+         {
+          if (!SearchMode) return;
+             var dataPlace = JSON.parse(data);
+             // Если метка уже создана – просто передвигаем ее.
+             if (myPlacemark) {
+                 myPlacemark.properties.set('iconCaption', 'поиск...');
+                 myPlacemark.geometry.setCoordinates([dataPlace.x,dataPlace.y]);
+             }
+             // Если нет – создаем.
+             else {
+                 myPlacemark = createPlacemark([dataPlace.x,dataPlace.y]);
+                 myMap.geoObjects.add(myPlacemark);
+             }
+             
+             mBounds = myMap.getBounds();
+         
+             // +++ Кулаков П.Л. CRM-1110
+             myMap.setCenter([dataPlace.x,dataPlace.y]);
+             // --- Кулаков П.Л.
+             
+         getAddress([dataPlace.x,dataPlace.y]);
+         
+             var myReverseGeocoder = ymaps.geocode([dataPlace.x,dataPlace.y], {
+                 results: 50,
+                 json: true,
+                 boundedBy: mBounds,
+                 //strictBounds: true
+             }).then(
+                 function (res) {
+                     var json_result = {
+                         coords: [dataPlace.x,dataPlace.y],
+                         data: [],
+                         myBounds: mBounds,
+                         cont_polygons: get_polygons_contain([dataPlace.x,dataPlace.y])
+                     };
+         
+                     var FindedObjects = res.GeoObjectCollection.featureMember;
+         
+                     for (var i = 0; i < FindedObjects.length - 1; i++) {
+                         var current_result = {};
+         
+                         var obj = FindedObjects[i].GeoObject;
+         
+                         current_result.name = obj.name;
+                         current_result.kind = obj.metaDataProperty.GeocoderMetaData.kind;
+                         current_result.text = obj.metaDataProperty.GeocoderMetaData.text;
+                         current_result.precision = obj.metaDataProperty.GeocoderMetaData.precision;
+                         current_result.postal_code = obj.metaDataProperty.GeocoderMetaData.Address.postal_code;
+         
+                         json_result.data.push(current_result);
+                     }
+                 
+                 });            
+          }
+      </script>
+   </head>
+   <body>
+      <div id="map"></div>
+      <div id="eval" onclick="eval_code()" function_name=""></div>
+      <div id="eval_async" onclick="eval_code_async()" function_name=""></div>
+      <div id = "markerposition"></div>
+      <div class="legend" id="legend">
+      	<table style="font-size: 12px">
+		<tr>
+			<td><img src="https://yastatic.net/s3/locdoc/freeze/maps/freeze/IxosgnNNo94f08dCpai1R3tLzsk.png"></td>
+			<td>Обои</td>
+		</tr>
+		<tr>
+			<td><img src="https://yastatic.net/s3/locdoc/freeze/maps/freeze/cpQKHyoSctHYsulbu0Mkm6_ETWE.png"></td>
+			<td>Плитка</td>
+		</tr>
+		<tr>
+			<td><img src="https://yastatic.net/s3/locdoc/freeze/maps/freeze/gbi4filncJsBtGgQf5CP6IuXa7o.png"></td>
+			<td>Обои + Плитка</td>
+		</tr>
+		<tr>
+			<td><img src="https://yastatic.net/s3/locdoc/freeze/maps/freeze/apFXFqoXQNXLJsg-vnINmrPbYXo.png"></td>
+			<td>Не указано</td>
+		</tr>
+		<table>
+      </div>
+   </body>
+</html>

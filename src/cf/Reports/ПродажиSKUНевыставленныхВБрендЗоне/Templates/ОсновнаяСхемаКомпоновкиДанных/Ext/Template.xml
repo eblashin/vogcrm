@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БрендЗона</dataPath>
+			<field>БрендЗона</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТорговаяТочка</dataPath>
+			<field>ТорговаяТочка</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.вогТорговыеТочки</v8:Type>
+			</valueType>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ПометкаУдаления</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Компания</dataPath>
+			<field>Компания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компания</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:string">ТК ВОГ</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ТК ВОГ</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Сибирь</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сибирь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Самара</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Самара</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Урал</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Урал</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Юг</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Юг</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Кубань+Декор</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кубань+Декор</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ОбособленноеПодразделение</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item>
+					<dcscor:parameter>БыстрыйВыбор</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидБрендЗоны</dataPath>
+			<field>ВидБрендЗоны</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусПродажПоХолдингу</dataPath>
+			<field>СтатусПродажПоХолдингу</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Коллекция</dataPath>
+			<field>Коллекция</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коллекция</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтадияЖизненногоЦикла</dataPath>
+			<field>СтадияЖизненногоЦикла</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Город</dataPath>
+			<field>Город</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Город</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Стиль</dataPath>
+			<field>Стиль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стиль</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоМестНаСтендах</dataPath>
+			<field>КоличествоМестНаСтендах</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество мест на стендах</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоСНачалаПродаж</dataPath>
+			<field>КоличествоСНачалаПродаж</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отгрузки</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регион</dataPath>
+			<field>Регион</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПоследняяДатаПродажи</dataPath>
+			<field>ПоследняяДатаПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Последняя дата продажи</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Артикул</dataPath>
+			<field>Артикул</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БрендЗонаОтбор</dataPath>
+			<field>БрендЗонаОтбор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бренд зона</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	БрендЗоны.Ссылка КАК Ссылка,
+	БрендЗоны.Подразделение КАК Подразделение,
+	БрендЗоны.ТорговаяТочка КАК ТорговаяТочка,
+	БрендЗоны.КоличествоСтендов КАК КоличествоСтендов,
+	БрендЗоны.ВидБрендЗоны КАК ВидБрендЗоны,
+	БрендЗоны.ВидМагазина КАК ВидМагазина,
+	БрендЗоны.ДатаПервойУстановки КАК ДатаПервойУстановки,
+	БрендЗоны.Статус КАК Статус,
+	вогМенеджерыОбъектов.Менеджер КАК Менеджер,
+	БрендЗоны.ЕстьБрендМенеджер КАК ЕстьБрендМенеджер,
+	БрендЗоны.БрендМенеджер КАК БрендМенеджер
+ПОМЕСТИТЬ втБрендЗоны
+ИЗ
+	(ВЫБРАТЬ
+		БрендЗона.Ссылка КАК Ссылка,
+		ПодразделенияТорговыхТочек.Подразделение КАК Подразделение,
+		БрендЗона.ТорговаяТочка КАК ТорговаяТочка,
+		БрендЗона.КоличествоСтендов КАК КоличествоСтендов,
+		БрендЗона.ВидБрендЗоны КАК ВидБрендЗоны,
+		БрендЗона.ВидМагазина КАК ВидМагазина,
+		БрендЗона.ДатаПервойУстановки КАК ДатаПервойУстановки,
+		БрендЗона.Статус КАК Статус,
+		ПодразделенияТорговыхТочек.ЕстьБрендМенеджер КАК ЕстьБрендМенеджер,
+		ПодразделенияТорговыхТочек.БрендМенеджер КАК БрендМенеджер
+	ИЗ
+		Справочник.БрендЗона КАК БрендЗона
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПодразделенияТорговыхТочек КАК ПодразделенияТорговыхТочек
+			ПО БрендЗона.ТорговаяТочка = ПодразделенияТорговыхТочек.ТорговаяТочка
+				И (ПодразделенияТорговыхТочек.Направление = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Обои))
+				И (ПодразделенияТорговыхТочек.ЕстьБрендМенеджер
+						И НЕ ПодразделенияТорговыхТочек.БрендМенеджер
+					ИЛИ НЕ ПодразделенияТорговыхТочек.ЕстьБрендМенеджер
+						И НЕ ПодразделенияТорговыхТочек.БрендМенеджер)
+	ГДЕ
+		НЕ БрендЗона.ПометкаУдаления) КАК БрендЗоны
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогМенеджерыОбъектов КАК вогМенеджерыОбъектов
+		ПО БрендЗоны.ТорговаяТочка = вогМенеджерыОбъектов.Владелец
+			И БрендЗоны.Подразделение = вогМенеджерыОбъектов.Подразделение
+			И (вогМенеджерыОбъектов.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Обои))
+			И (вогМенеджерыОбъектов.Роль = ЗНАЧЕНИЕ(Справочник.РолиКонтактныхЛицПартнеров.Менеджер))
+ГДЕ
+	(БрендЗоны.ЕстьБрендМенеджер
+				И НЕ БрендЗоны.БрендМенеджер
+			ИЛИ НЕ БрендЗоны.ЕстьБрендМенеджер
+				И НЕ БрендЗоны.БрендМенеджер)
+{ГДЕ
+	БрендЗоны.Ссылка.* КАК БрендЗона,
+	БрендЗоны.ТорговаяТочка.*,
+	БрендЗоны.ВидБрендЗоны.*,
+	БрендЗоны.Статус.*,
+	БрендЗоны.ТорговаяТочка.Партнер.* КАК Клиент,
+	БрендЗоны.Подразделение.*,
+	БрендЗоны.Подразделение.Организация.НазваниеДляОтчетаГенеральномуДиректору КАК Компания}
+
+ИНДЕКСИРОВАТЬ ПО
+	Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтендыВБрендЗонахСрезПоследних.БрендЗона КАК БрендЗона,
+	вогАртикулыНаСтендахСрезПоследних.Артикул КАК Артикул,
+	вогАртикулыНаСтендахСрезПоследних.Период КАК ДатаРегистрацииАртикулаНаСтенде
+ПОМЕСТИТЬ втАртикулыНаСтендах
+ИЗ
+	РегистрСведений.СтендыВБрендЗонах.СрезПоследних(
+			КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ),
+			БрендЗона В
+					(ВЫБРАТЬ
+						втБрендЗоны.Ссылка КАК Ссылка
+					ИЗ
+						втБрендЗоны КАК втБрендЗоны)
+				И АктивныйСтенд) КАК СтендыВБрендЗонахСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогАртикулыНаСтендах.СрезПоследних(КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ), Артикул &lt;&gt; ЗНАЧЕНИЕ(Справочник.Номенклатура.)) КАК вогАртикулыНаСтендахСрезПоследних
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+				вогАртикулыНаСтендахСрезПоследних.Стенд КАК Стенд,
+				МАКСИМУМ(вогАртикулыНаСтендахСрезПоследних.Период) КАК Период
+			ИЗ
+				РегистрСведений.вогАртикулыНаСтендах.СрезПоследних(КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ), ) КАК вогАртикулыНаСтендахСрезПоследних
+			
+			СГРУППИРОВАТЬ ПО
+				вогАртикулыНаСтендахСрезПоследних.Стенд) КАК Артикулы
+			ПО вогАртикулыНаСтендахСрезПоследних.Стенд = Артикулы.Стенд
+				И вогАртикулыНаСтендахСрезПоследних.Период = Артикулы.Период
+		ПО (вогАртикулыНаСтендахСрезПоследних.Стенд = СтендыВБрендЗонахСрезПоследних.Стенд)
+			И (вогАртикулыНаСтендахСрезПоследних.Артикул &lt;&gt; ЗНАЧЕНИЕ(Справочник.Номенклатура.))
+{ГДЕ
+	СтендыВБрендЗонахСрезПоследних.БрендЗона.*,
+	вогАртикулыНаСтендахСрезПоследних.Артикул.*}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ТаблицаРотация.БрендЗона,
+	ТаблицаРотация.Номенклатура,
+	ТаблицаРотация.Период
+ИЗ
+	РегистрСведений.РотацияАссортиментаНаВыкупленныхПолках.СрезПоследних(
+			КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ),
+			БрендЗона В
+				(ВЫБРАТЬ
+					втБрендЗоны.Ссылка
+				ИЗ
+					втБрендЗоны)) КАК ТаблицаРотация
+{ГДЕ
+	ТаблицаРотация.БрендЗона.*,
+	ТаблицаРотация.Номенклатура.*}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СтендыВБрендЗонахСрезПоследних.БрендЗона КАК БрендЗона,
+	СУММА(СтендыВБрендЗонахСрезПоследних.Стенд.КоличествоМестНаСтенде) КАК КоличествоМестНаСтендах
+ПОМЕСТИТЬ втКоличествоРекламныхПоверхностей
+ИЗ
+	РегистрСведений.СтендыВБрендЗонах.СрезПоследних(
+			КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ),
+			БрендЗона В
+				(ВЫБРАТЬ
+					втБрендЗоны.Ссылка КАК Ссылка
+				ИЗ
+					втБрендЗоны КАК втБрендЗоны)) КАК СтендыВБрендЗонахСрезПоследних
+{ГДЕ
+	СтендыВБрендЗонахСрезПоследних.БрендЗона.*,
+	СтендыВБрендЗонахСрезПоследних.БрендЗона.Статус.* КАК Статус,
+	СтендыВБрендЗонахСрезПоследних.БрендЗона.ВидБрендЗоны.* КАК ВидБрендЗоны}
+
+СГРУППИРОВАТЬ ПО
+	СтендыВБрендЗонахСрезПоследних.БрендЗона
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МИНИМУМ(ДатыПервогоВыставленияКоллекцииВТорговойТочке.ДатаВыставления) КАК ДатаВыставления,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.Коллекция КАК Коллекция,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка КАК ТорговаяТочка
+ПОМЕСТИТЬ втДатыПервогоВыставленияКоллекцийНоменклатуры
+ИЗ
+	РегистрСведений.ДатыПервогоВыставленияКоллекцииВТорговойТочке КАК ДатыПервогоВыставленияКоллекцииВТорговойТочке
+{ГДЕ
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка.*,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка.Партнер.* КАК Клиент}
+
+СГРУППИРОВАТЬ ПО
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.Коллекция,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка
+
+ИНДЕКСИРОВАТЬ ПО
+	Коллекция
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.Номенклатура КАК Номенклатура,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка КАК ТорговаяТочка,
+	МИНИМУМ(ДатыПервогоВыставленияКоллекцииВТорговойТочке.ДатаВыставления) КАК ДатаВыставления
+ПОМЕСТИТЬ втДатыПервогоВыставленияНоменклатуры
+ИЗ
+	РегистрСведений.ДатыПервогоВыставленияКоллекцииВТорговойТочке КАК ДатыПервогоВыставленияКоллекцииВТорговойТочке
+{ГДЕ
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка.*,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка.Партнер.* КАК Клиент}
+
+СГРУППИРОВАТЬ ПО
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.Номенклатура,
+	ДатыПервогоВыставленияКоллекцииВТорговойТочке.ТорговаяТочка
+
+ИНДЕКСИРОВАТЬ ПО
+	Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Номенклатура.Ссылка КАК Номенклатура,
+	ЕСТЬNULL(НоменклатураКоллекции.КоллекцияПроизводителя, ЗНАЧЕНИЕ(Справочник.КоллекцииНоменклатурыПроизводителей.)) КАК Коллекция,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.СтильРисункаПроизводителя КАК Стиль,
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтадияЖизненногоЦикла КАК СтадияЖизненногоЦикла,
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтатусПродажПоХолдингу КАК СтатусПродажПоХолдингу,
+	втКоличествоРекламныхПоверхностей.КоличествоМестНаСтендах КАК КоличествоМестНаСтендах
+ПОМЕСТИТЬ втНоменклатураСоСтилем
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Номенклатура.Коллекции КАК НоменклатураКоллекции
+		ПО (НоменклатураКоллекции.Ссылка = Номенклатура.Ссылка)
+			И (НоменклатураКоллекции.КоллекцияПроизводителя &lt;&gt; ЗНАЧЕНИЕ(Справочник.КоллекцииНоменклатурыПроизводителей.))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыНоменклатурныхПозицийОбоев.СрезПоследних(КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ), ) КАК СтатусыНоменклатурныхПозицийОбоевСрезПоследних
+		ПО Номенклатура.НоменклатурнаяПозиция = СтатусыНоменклатурныхПозицийОбоевСрезПоследних.НоменклатурнаяПозиция,
+	втКоличествоРекламныхПоверхностей КАК втКоличествоРекламныхПоверхностей
+ГДЕ
+	НЕ Номенклатура.ПометкаУдаления
+	И Номенклатура.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Обои)
+
+СГРУППИРОВАТЬ ПО
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.СтильРисункаПроизводителя,
+	ЕСТЬNULL(НоменклатураКоллекции.КоллекцияПроизводителя, ЗНАЧЕНИЕ(Справочник.КоллекцииНоменклатурыПроизводителей.)),
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтадияЖизненногоЦикла,
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтатусПродажПоХолдингу,
+	втКоличествоРекламныхПоверхностей.КоличествоМестНаСтендах,
+	Номенклатура.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(втАртикулыНаСтендах.ДатаРегистрацииАртикулаНаСтенде) КАК ДатаРегистрацииАртикулаНаСтенде,
+	втАртикулыНаСтендах.БрендЗона.ТорговаяТочка КАК БрендЗонаТорговаяТочка
+ПОМЕСТИТЬ втПоследняяДатаРотации
+ИЗ
+	втАртикулыНаСтендах КАК втАртикулыНаСтендах
+
+СГРУППИРОВАТЬ ПО
+	втАртикулыНаСтендах.БрендЗона.ТорговаяТочка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вогПродажиОбороты.Подразделение КАК Подразделение,
+	вогПродажиОбороты.Номенклатура КАК Номенклатура,
+	вогПродажиОбороты.ТорговаяТочка КАК ТорговаяТочка,
+	СУММА(вогПродажиОбороты.КоличествоОборот) КАК КоличествоОборот
+ПОМЕСТИТЬ втПродажиСНачалаПродаж
+ИЗ
+	РегистрНакопления.вогПродажи.Обороты(
+			&amp;ДатаНачалоПродаж,
+			КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ),
+			День,
+			НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Обои)
+				И ТорговаяТочка В
+					(ВЫБРАТЬ
+						втБрендЗоны.ТорговаяТочка КАК ТорговаяТочка
+					ИЗ
+						втБрендЗоны КАК втБрендЗоны)) КАК вогПродажиОбороты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ втПоследняяДатаРотации КАК втПоследняяДатаРотации
+		ПО вогПродажиОбороты.Период &gt;= втПоследняяДатаРотации.ДатаРегистрацииАртикулаНаСтенде
+			И вогПродажиОбороты.ТорговаяТочка = втПоследняяДатаРотации.БрендЗонаТорговаяТочка
+{ГДЕ
+	вогПродажиОбороты.Подразделение.*,
+	вогПродажиОбороты.Подразделение.Организация.НазваниеДляОтчетаГенеральномуДиректору КАК Компания,
+	втПоследняяДатаРотации.БрендЗонаТорговаяТочка.* КАК ТорговаяТочка,
+	втПоследняяДатаРотации.БрендЗонаТорговаяТочка.Партнер.* КАК Клиент}
+
+СГРУППИРОВАТЬ ПО
+	вогПродажиОбороты.Номенклатура,
+	вогПродажиОбороты.Подразделение,
+	вогПродажиОбороты.ТорговаяТочка
+
+ИНДЕКСИРОВАТЬ ПО
+	ТорговаяТочка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	втПродажиСНачалаПродаж.Подразделение КАК Подразделение,
+	втПродажиСНачалаПродаж.Номенклатура КАК Номенклатура,
+	втПродажиСНачалаПродаж.ТорговаяТочка КАК ТорговаяТочка,
+	втПродажиСНачалаПродаж.КоличествоОборот КАК КоличествоОборот
+ПОМЕСТИТЬ втПродажиСНачалаПродажНеВыставленныеSKU
+ИЗ
+	втПродажиСНачалаПродаж КАК втПродажиСНачалаПродаж
+		ЛЕВОЕ СОЕДИНЕНИЕ втАртикулыНаСтендах КАК втАртикулыНаСтендах
+		ПО втПродажиСНачалаПродаж.ТорговаяТочка = втАртикулыНаСтендах.БрендЗона.ТорговаяТочка
+			И втПродажиСНачалаПродаж.Номенклатура = втАртикулыНаСтендах.Артикул
+ГДЕ
+	втАртикулыНаСтендах.Артикул ЕСТЬ NULL
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вогПродажиОбороты.Подразделение КАК Подразделение,
+	вогПродажиОбороты.Номенклатура КАК Номенклатура,
+	вогПродажиОбороты.ТорговаяТочка КАК ТорговаяТочка,
+	МАКСИМУМ(вогПродажиОбороты.Период) КАК ПериодПродажи
+ПОМЕСТИТЬ втПоследняяДатаПродажи
+ИЗ
+	РегистрНакопления.вогПродажи.Обороты(
+			&amp;ДатаНачалоПродаж,
+			КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ),
+			День,
+			НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Обои)
+				И ТорговаяТочка В
+					(ВЫБРАТЬ
+						втБрендЗоны.ТорговаяТочка КАК ТорговаяТочка
+					ИЗ
+						втБрендЗоны КАК втБрендЗоны)) КАК вогПродажиОбороты
+{ГДЕ
+	вогПродажиОбороты.Подразделение.*,
+	вогПродажиОбороты.Подразделение.Организация.НазваниеДляОтчетаГенеральномуДиректору КАК Компания,
+	вогПродажиОбороты.ТорговаяТочка.*,
+	вогПродажиОбороты.Партнер.* КАК Клиент}
+
+СГРУППИРОВАТЬ ПО
+	вогПродажиОбороты.Подразделение,
+	вогПродажиОбороты.Номенклатура,
+	вогПродажиОбороты.ТорговаяТочка
+
+ИНДЕКСИРОВАТЬ ПО
+	ТорговаяТочка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	втНоменклатураСоСтилем.Номенклатура КАК Номенклатура,
+	втНоменклатураСоСтилем.Коллекция КАК Коллекция,
+	втНоменклатураСоСтилем.Стиль КАК Стиль,
+	втДатыПервогоВыставленияНоменклатуры.ДатаВыставления КАК ДатаВыставленияНоменклатуры,
+	втДатыПервогоВыставленияКоллекцийНоменклатуры.ДатаВыставления КАК ДатаВыставленияКоллекции,
+	втНоменклатураСоСтилем.СтадияЖизненногоЦикла КАК СтадияЖизненногоЦикла,
+	втНоменклатураСоСтилем.СтатусПродажПоХолдингу КАК СтатусПродажПоХолдингу,
+	втНоменклатураСоСтилем.КоличествоМестНаСтендах КАК КоличествоМестНаСтендах
+ПОМЕСТИТЬ втПредварительнаяТаблица
+ИЗ
+	втНоменклатураСоСтилем КАК втНоменклатураСоСтилем
+		ЛЕВОЕ СОЕДИНЕНИЕ втДатыПервогоВыставленияКоллекцийНоменклатуры КАК втДатыПервогоВыставленияКоллекцийНоменклатуры
+		ПО втНоменклатураСоСтилем.Коллекция = втДатыПервогоВыставленияКоллекцийНоменклатуры.Коллекция
+		ЛЕВОЕ СОЕДИНЕНИЕ втДатыПервогоВыставленияНоменклатуры КАК втДатыПервогоВыставленияНоменклатуры
+		ПО втНоменклатураСоСтилем.Номенклатура = втДатыПервогоВыставленияНоменклатуры.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	втПредварительнаяТаблица.Номенклатура КАК Номенклатура,
+	втПредварительнаяТаблица.Коллекция КАК Коллекция,
+	втПредварительнаяТаблица.Стиль КАК Стиль,
+	втПредварительнаяТаблица.ДатаВыставленияНоменклатуры КАК ДатаВыставленияНоменклатуры,
+	втПредварительнаяТаблица.ДатаВыставленияКоллекции КАК ДатаВыставленияКоллекции,
+	втПродажиСНачалаПродажНеВыставленныеSKU.КоличествоОборот КАК КоличествоСНачалаПродаж,
+	втПредварительнаяТаблица.СтадияЖизненногоЦикла КАК СтадияЖизненногоЦикла,
+	втПредварительнаяТаблица.СтатусПродажПоХолдингу КАК СтатусПродажПоХолдингу,
+	втПредварительнаяТаблица.КоличествоМестНаСтендах КАК КоличествоМестНаСтендах,
+	втПродажиСНачалаПродажНеВыставленныеSKU.ТорговаяТочка КАК ТорговаяТочка,
+	втПродажиСНачалаПродажНеВыставленныеSKU.Подразделение КАК Подразделение
+ПОМЕСТИТЬ втНоменклатураСПродажами
+ИЗ
+	втПредварительнаяТаблица КАК втПредварительнаяТаблица
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ втПродажиСНачалаПродажНеВыставленныеSKU КАК втПродажиСНачалаПродажНеВыставленныеSKU
+		ПО втПредварительнаяТаблица.Номенклатура = втПродажиСНачалаПродажНеВыставленныеSKU.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЕСТЬNULL(втНоменклатураСПродажами.Номенклатура, ЗНАЧЕНИЕ(Справочник.Номенклатура.)) КАК Номенклатура,
+	ЕСТЬNULL(втНоменклатураСПродажами.Коллекция, ЗНАЧЕНИЕ(Справочник.КоллекцииНоменклатурыПроизводителей.)) КАК Коллекция,
+	ЕСТЬNULL(втНоменклатураСПродажами.Стиль, ЗНАЧЕНИЕ(Справочник.вогСтильРисункаПроизводителя.)) КАК Стиль,
+	втНоменклатураСПродажами.ДатаВыставленияНоменклатуры КАК ДатаВыставленияНоменклатуры,
+	втНоменклатураСПродажами.ДатаВыставленияКоллекции КАК ДатаВыставленияКоллекции,
+	СУММА(ЕСТЬNULL(втНоменклатураСПродажами.КоличествоСНачалаПродаж, 0)) КАК КоличествоСНачалаПродаж,
+	втБрендЗоны.ТорговаяТочка КАК ТорговаяТочка,
+	втБрендЗоны.Статус КАК Статус,
+	втБрендЗоны.Менеджер КАК Менеджер,
+	втБрендЗоны.ДатаПервойУстановки КАК ДатаПервойУстановки,
+	втБрендЗоны.ВидБрендЗоны КАК ВидБрендЗоны,
+	втБрендЗоны.Подразделение КАК Подразделение,
+	втБрендЗоны.Ссылка КАК БрендЗона,
+	втНоменклатураСПродажами.СтадияЖизненногоЦикла КАК СтадияЖизненногоЦикла,
+	втНоменклатураСПродажами.СтатусПродажПоХолдингу КАК СтатусПродажПоХолдингу,
+	ЕСТЬNULL(втНоменклатураСПродажами.КоличествоМестНаСтендах, 0) КАК КоличествоМестНаСтендах,
+	втПоследняяДатаПродажи.ПериодПродажи КАК ПоследняяДатапродажи
+ПОМЕСТИТЬ ИтоговаяТаблица
+ИЗ
+	втБрендЗоны КАК втБрендЗоны
+		ЛЕВОЕ СОЕДИНЕНИЕ втНоменклатураСПродажами КАК втНоменклатураСПродажами
+			ЛЕВОЕ СОЕДИНЕНИЕ втПоследняяДатаПродажи КАК втПоследняяДатаПродажи
+			ПО втНоменклатураСПродажами.Номенклатура = втПоследняяДатаПродажи.Номенклатура
+				И втНоменклатураСПродажами.ТорговаяТочка = втПоследняяДатаПродажи.ТорговаяТочка
+				И втНоменклатураСПродажами.Подразделение = втПоследняяДатаПродажи.Подразделение
+		ПО втБрендЗоны.ТорговаяТочка = втНоменклатураСПродажами.ТорговаяТочка
+			И втБрендЗоны.Подразделение = втНоменклатураСПродажами.Подразделение
+
+СГРУППИРОВАТЬ ПО
+	втБрендЗоны.Менеджер,
+	втБрендЗоны.ДатаПервойУстановки,
+	втБрендЗоны.Статус,
+	втБрендЗоны.Подразделение,
+	втБрендЗоны.ТорговаяТочка,
+	втБрендЗоны.Ссылка,
+	втБрендЗоны.ВидБрендЗоны,
+	ЕСТЬNULL(втНоменклатураСПродажами.Коллекция, ЗНАЧЕНИЕ(Справочник.КоллекцииНоменклатурыПроизводителей.)),
+	ЕСТЬNULL(втНоменклатураСПродажами.Номенклатура, ЗНАЧЕНИЕ(Справочник.Номенклатура.)),
+	ЕСТЬNULL(втНоменклатураСПродажами.Стиль, ЗНАЧЕНИЕ(Справочник.вогСтильРисункаПроизводителя.)),
+	втНоменклатураСПродажами.ДатаВыставленияНоменклатуры,
+	втНоменклатураСПродажами.ДатаВыставленияКоллекции,
+	втНоменклатураСПродажами.СтадияЖизненногоЦикла,
+	втНоменклатураСПродажами.СтатусПродажПоХолдингу,
+	ЕСТЬNULL(втНоменклатураСПродажами.КоличествоМестНаСтендах, 0),
+	втПоследняяДатаПродажи.ПериодПродажи
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИтоговаяТаблица.Номенклатура КАК Номенклатура,
+	ИтоговаяТаблица.Коллекция КАК Коллекция,
+	ИтоговаяТаблица.Стиль КАК Стиль,
+	ИтоговаяТаблица.ДатаВыставленияНоменклатуры КАК ДатаВыставленияНоменклатуры,
+	ИтоговаяТаблица.ДатаВыставленияКоллекции КАК ДатаВыставленияКоллекции,
+	ИтоговаяТаблица.КоличествоСНачалаПродаж КАК КоличествоСНачалаПродаж,
+	ИтоговаяТаблица.ТорговаяТочка КАК ТорговаяТочка,
+	ИтоговаяТаблица.Статус КАК Статус,
+	ИтоговаяТаблица.Менеджер КАК Менеджер,
+	ИтоговаяТаблица.ДатаПервойУстановки КАК ДатаПервойУстановки,
+	ИтоговаяТаблица.ВидБрендЗоны КАК ВидБрендЗоны,
+	ИтоговаяТаблица.Подразделение КАК Подразделение,
+	ИтоговаяТаблица.БрендЗона КАК БрендЗона,
+	ИтоговаяТаблица.Подразделение.Организация.НазваниеДляОтчетаГенеральномуДиректору КАК Компания,
+	ИтоговаяТаблица.ТорговаяТочка.Партнер КАК Клиент,
+	ИтоговаяТаблица.ТорговаяТочка.НаселенныйПункт КАК Город,
+	ИтоговаяТаблица.ТорговаяТочка.НаселенныйПункт.Родитель.Родитель КАК Регион,
+	ИтоговаяТаблица.СтадияЖизненногоЦикла КАК СтадияЖизненногоЦикла,
+	ИтоговаяТаблица.СтатусПродажПоХолдингу КАК СтатусПродажПоХолдингу,
+	ИтоговаяТаблица.КоличествоМестНаСтендах КАК КоличествоМестНаСтендах,
+	ИтоговаяТаблица.ПоследняяДатапродажи КАК ПоследняяДатаПродажи
+{ВЫБРАТЬ
+	Номенклатура.*,
+	Коллекция.*,
+	КоличествоСНачалаПродаж,
+	ТорговаяТочка.*,
+	Статус.*,
+	Менеджер.*,
+	ВидБрендЗоны.*,
+	Подразделение.*,
+	БрендЗона.*,
+	Компания,
+	Клиент.*,
+	Город.*,
+	Регион.*,
+	СтадияЖизненногоЦикла.*,
+	СтатусПродажПоХолдингу.*,
+	КоличествоМестНаСтендах,
+	ПоследняяДатаПродажи}
+ИЗ
+	ИтоговаяТаблица КАК ИтоговаяТаблица
+		ЛЕВОЕ СОЕДИНЕНИЕ втПродажиСНачалаПродаж КАК втПродажиСНачалаПродаж
+		ПО ИтоговаяТаблица.Подразделение = втПродажиСНачалаПродаж.Подразделение
+			И ИтоговаяТаблица.Номенклатура = втПродажиСНачалаПродаж.Номенклатура
+			И ИтоговаяТаблица.ТорговаяТочка = втПродажиСНачалаПродаж.ТорговаяТочка
+{ГДЕ
+	ИтоговаяТаблица.Номенклатура.*,
+	ИтоговаяТаблица.Коллекция.*,
+	ИтоговаяТаблица.Стиль.*,
+	ИтоговаяТаблица.ТорговаяТочка.*,
+	ИтоговаяТаблица.Статус.*,
+	ИтоговаяТаблица.Менеджер.*,
+	ИтоговаяТаблица.ВидБрендЗоны.*,
+	ИтоговаяТаблица.Подразделение.*,
+	ИтоговаяТаблица.БрендЗона.* КАК БрендЗонаОтбор,
+	ИтоговаяТаблица.Подразделение.Организация.НазваниеДляОтчетаГенеральномуДиректору КАК Компания,
+	ИтоговаяТаблица.ТорговаяТочка.Партнер.* КАК Клиент}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоСНачалаПродаж</dataPath>
+		<expression>Сумма(ВычислитьВыражениеСГруппировкойМассив("КоличествоСНачалаПродаж","ТорговаяТочка,Номенклатура"))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПоследняяДатаПродажи</dataPath>
+		<expression>ПоследняяДатаПродажи</expression>
+		<group>Номенклатура</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПоследняяДатаПродажи</dataPath>
+		<expression>""</expression>
+		<group>БрендЗона</group>
+		<group>Коллекция</group>
+	</totalField>
+	<parameter>
+		<name>ДатаНачалоПродаж</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начало продаж</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Продажи sku не выставленных в бренд-зоне</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ПоследняяДатаПродажи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоСНачалаПродаж</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Компания</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>edd7ab15-ebdc-4a75-9c92-8ff2780af120</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>50cc2ef6-876a-4e7c-ab4c-1182d8c88486</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Менеджер</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>78042a54-177a-48b6-8918-6fdb1714a594</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Клиент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>6287562a-ab3a-4cda-a9cd-f6e85126a12f</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">БрендЗонаОтбор</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>1045dbc5-4485-4790-9192-2b032c15c570</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидБрендЗоны</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>acf71049-3cc8-4bfa-ac5e-806b16041b87</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>201070b2-ac98-4859-bb42-e64632bf3f11</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТорговаяТочка</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>d8a2309c-d9b0-4926-b6d7-c38544402a69</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>8c3167df-0221-4b17-bc07-6931b1ff9b6d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>БрендЗона</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Коллекция</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Номенклатура</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

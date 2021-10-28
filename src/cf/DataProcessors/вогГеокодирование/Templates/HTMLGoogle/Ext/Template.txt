@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Click Events</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="eval" onclick="eval_code()" function_name=""></div>
+    <div id = "markerposition"></div>
+    <script>
+    var map;
+    var marker;
+    var pos;
+
+    function setNewMarker(params){
+        let position = document.getElementById("eval").innerHTML;
+        let arrayPos = position.split(",");
+        if(marker){ 
+                marker.setMap(null);
+                marker = null;}
+        marker = new google.maps.Marker({
+            position: {lat: +arrayPos[0],lng: +arrayPos[1]},
+            map: map
+        });
+        map.setCenter(marker.getPosition());
+        marker.addListener("rightclick",function(){
+                document.getElementById("markerposition").innerHTML = marker.getPosition().toUrlValue();
+        });
+    }
+
+    // Выполнение функций из 1С
+    function eval_code() {
+         var eval_div = document.getElementById("eval");
+         var param_code = eval_div.innerHTML;
+         var function_name = eval_div.getAttribute("function_name");
+         window[function_name](param_code);
+   };
+   
+
+    function initMap() {
+       var infoWindow = new google.maps.InfoWindow;
+       pos={lat:55.75315,lng:37.620523};
+       
+      map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: pos
+        });
+        
+    map.addListener('click', function(e) {
+            if(marker){ 
+                marker.setMap(null);
+                marker = null;}
+            marker = new google.maps.Marker({
+            position: e.latLng,
+            map: map
+            });
+            document.getElementById("markerposition").innerHTML = e.latLng.toUrlValue();
+            map.setCenter(marker.getPosition());
+        });
+    }//конец InitMap
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6-WjxW-MOBe5vXyDoTIkamOtW6G2q-0Y&callback=initMap">
+    </script>
+  </body>
+</html>

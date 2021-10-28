@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Укажите, на сколько следует отложить следующую задачу</v8:content>
+		</v8:item>
+	</Title>
+	<Width>50</Width>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКнопки" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#F0F0F0</BackColor>
+			<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Button name="Отмена" id="22">
+					<Type>UsualButton</Type>
+					<Width>12</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.Отмена</CommandName>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отменить</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="23"/>
+				</Button>
+				<Button name="ОК" id="20">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<Width>12</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОК</CommandName>
+					<BackColor>#FFE100</BackColor>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Готово</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="21"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтложить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отложить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отложить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтложитьРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="ОтложитьНачалоЭтапаДней" id="3">
+					<DataPath>ОтложитьНачалоЭтапаДней</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>дн.</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<Width>8</Width>
+					<DropListButton>true</DropListButton>
+					<SpinButton>true</SpinButton>
+					<MinValue xsi:type="xs:decimal">0</MinValue>
+					<MaxValue xsi:type="xs:decimal">999</MaxValue>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>1 день</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>3 дня</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">3</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>5 дней</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">5</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Неделя</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">7</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>10 дней</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">10</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Месяц</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">30</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Произвольная дата</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ОтложитьНачалоЭтапаДнейКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ОтложитьНачалоЭтапаДнейРасширеннаяПодсказка" id="5"/>
+					<Events>
+						<Event name="OnChange">ОтложитьНачалоЭтапаПриИзменении</Event>
+						<Event name="ChoiceProcessing">ОтложитьНачалоЭтапаДнейОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОтложитьНачалоЭтапаЧасов" id="6">
+					<DataPath>ОтложитьНачалоЭтапаЧасов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>час.</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<Width>6</Width>
+					<SpinButton>true</SpinButton>
+					<MinValue xsi:type="xs:decimal">0</MinValue>
+					<MaxValue xsi:type="xs:decimal">23</MaxValue>
+					<ContextMenu name="ОтложитьНачалоЭтапаЧасовКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ОтложитьНачалоЭтапаЧасовРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">ОтложитьНачалоЭтапаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОтложитьНачалоЭтапаМинут" id="9">
+					<DataPath>ОтложитьНачалоЭтапаМинут</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>мин.</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<Width>6</Width>
+					<SpinButton>true</SpinButton>
+					<MinValue xsi:type="xs:decimal">0</MinValue>
+					<MaxValue xsi:type="xs:decimal">59</MaxValue>
+					<ContextMenu name="ОтложитьНачалоЭтапаМинутКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ОтложитьНачалоЭтапаМинутРасширеннаяПодсказка" id="11"/>
+					<Events>
+						<Event name="OnChange">ОтложитьНачалоЭтапаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="ОтложитьНаДату" id="12">
+					<DataPath>ОтложитьНаДату</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ОтложитьНаДатуКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ОтложитьНаДатуРасширеннаяПодсказка" id="14"/>
+					<Events>
+						<Event name="Click">ОтложитьНаДатуНажатие</Event>
+					</Events>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ОтложитьНачалоЭтапаДней" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Точка маршрута длительность дней</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОтложитьНачалоЭтапаМинут" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Точка маршрута длительность часов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОтложитьНачалоЭтапаЧасов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность часов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОтложитьНаДату" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отложить на дату</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

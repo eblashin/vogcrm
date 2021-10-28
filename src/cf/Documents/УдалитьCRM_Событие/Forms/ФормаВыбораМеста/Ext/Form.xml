@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Выбор места проведения встречи</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="18">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="19"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Группа1" id="1">
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<Page name="Адреса" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адреса</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адреса</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="АдресаРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
+						<Table name="СписокАдресов" id="11">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChoiceMode>true</ChoiceMode>
+							<SelectionMode>SingleRow</SelectionMode>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СписокАдресов</DataPath>
+							<RowPictureDataPath>СписокАдресов.Picture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="СписокАдресовКонтекстноеМеню" id="12">
+								<Autofill>false</Autofill>
+							</ContextMenu>
+							<AutoCommandBar name="СписокАдресовКоманднаяПанель" id="13">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокАдресовВыбрать" id="17">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокАдресов.StandardCommand.Choose</CommandName>
+										<ExtendedTooltip name="СписокАдресовВыбратьРасширеннаяПодсказка" id="22"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокАдресовРасширеннаяПодсказка" id="23"/>
+							<SearchStringAddition name="СписокАдресовСтрокаПоиска" id="24">
+								<AdditionSource>
+									<Item>СписокАдресов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокАдресовСтрокаПоискаКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="СписокАдресовСтрокаПоискаРасширеннаяПодсказка" id="26"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокАдресовСостояниеПросмотра" id="27">
+								<AdditionSource>
+									<Item>СписокАдресов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокАдресовСостояниеПросмотраКонтекстноеМеню" id="28"/>
+								<ExtendedTooltip name="СписокАдресовСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокАдресовУправлениеПоиском" id="30">
+								<AdditionSource>
+									<Item>СписокАдресов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокАдресовУправлениеПоискомКонтекстноеМеню" id="31"/>
+								<ExtendedTooltip name="СписокАдресовУправлениеПоискомРасширеннаяПодсказка" id="32"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="ValueChoice">СписокАдресовВыборЗначения</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СписокАдресовЗначение" id="14">
+									<DataPath>СписокАдресов.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокАдресовЗначениеКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="СписокАдресовЗначениеРасширеннаяПодсказка" id="33"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Помещения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Помещения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Помещения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПомещенияРасширеннаяПодсказка" id="34"/>
+					<ChildItems>
+						<Table name="СписокПомещений" id="4">
+							<Representation>Tree</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChoiceMode>true</ChoiceMode>
+							<SelectionMode>SingleRow</SelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Список</DataPath>
+							<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="СписокПомещенийКонтекстноеМеню" id="5">
+								<Autofill>false</Autofill>
+							</ContextMenu>
+							<AutoCommandBar name="СписокПомещенийКоманднаяПанель" id="6">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокПомещенийВыбрать" id="16">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокПомещений.StandardCommand.Choose</CommandName>
+										<ExtendedTooltip name="СписокПомещенийВыбратьРасширеннаяПодсказка" id="35"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокПомещенийРасширеннаяПодсказка" id="36"/>
+							<SearchStringAddition name="СписокПомещенийСтрокаПоиска" id="37">
+								<AdditionSource>
+									<Item>СписокПомещений</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПомещенийСтрокаПоискаКонтекстноеМеню" id="38"/>
+								<ExtendedTooltip name="СписокПомещенийСтрокаПоискаРасширеннаяПодсказка" id="39"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокПомещенийСостояниеПросмотра" id="40">
+								<AdditionSource>
+									<Item>СписокПомещений</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПомещенийСостояниеПросмотраКонтекстноеМеню" id="41"/>
+								<ExtendedTooltip name="СписокПомещенийСостояниеПросмотраРасширеннаяПодсказка" id="42"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокПомещенийУправлениеПоиском" id="43">
+								<AdditionSource>
+									<Item>СписокПомещений</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПомещенийУправлениеПоискомКонтекстноеМеню" id="44"/>
+								<ExtendedTooltip name="СписокПомещенийУправлениеПоискомРасширеннаяПодсказка" id="45"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СписокПомещенийНаименование" id="7">
+									<DataPath>Список.Description</DataPath>
+									<ContextMenu name="СписокПомещенийНаименованиеКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="СписокПомещенийНаименованиеРасширеннаяПодсказка" id="46"/>
+								</LabelField>
+								<CheckBoxField name="СписокПомещенийОбщее" id="9">
+									<DataPath>Список.Общее</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СписокПомещенийОбщееКонтекстноеМеню" id="10"/>
+									<ExtendedTooltip name="СписокПомещенийОбщееРасширеннаяПодсказка" id="47"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Партнер" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КонтактноеЛицо" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контактное лицо</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.КонтактныеЛицаПартнеров</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокАдресов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список адресов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Список" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.CRM_Помещения</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

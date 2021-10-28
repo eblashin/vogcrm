@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Состав этапа</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="16"/>
+		</InputField>
+		<InputField name="Родитель" id="3">
+			<DataPath>Объект.Parent</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Воронка</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="РодительКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="17"/>
+			<Events>
+				<Event name="StartChoice">РодительНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="ВидВоронки" id="47">
+			<DataPath>Объект.ВидЭтапа</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ВидВоронкиКонтекстноеМеню" id="48"/>
+			<ExtendedTooltip name="ВидВоронкиРасширеннаяПодсказка" id="49"/>
+			<Events>
+				<Event name="Clearing">ВидЭтапаОчистка</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаОценки" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа оценки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа оценки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОценкиРасширеннаяПодсказка" id="54"/>
+			<ChildItems>
+				<InputField name="Оценка" id="42">
+					<DataPath>Объект.Оценка</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Экспертная оценка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вероятность успешного прохождения этапа (%)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>7</Width>
+					<DropListButton>true</DropListButton>
+					<MaxValue xsi:type="xs:decimal">100</MaxValue>
+					<ContextMenu name="ОценкаКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="ОценкаРасширеннаяПодсказка" id="44"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияПроценты" id="50">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>%</v8:content>
+						</v8:item>
+					</Title>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<GroupVerticalAlign>Top</GroupVerticalAlign>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<ContextMenu name="ДекорацияПроцентыКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ДекорацияПроцентыРасширеннаяПодсказка" id="52"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Состав" id="5">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Состав</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоставКонтекстноеМеню" id="6"/>
+			<AutoCommandBar name="СоставКоманднаяПанель" id="7">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="СоставДобавитьВСостав" id="45">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДобавитьВСостав</CommandName>
+						<ExtendedTooltip name="СоставДобавитьВСоставРасширеннаяПодсказка" id="46"/>
+					</Button>
+					<Popup name="СоставГруппаДобавить" id="32">
+						<Visible>false</Visible>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Добавить</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Состав группа добавить</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="СоставГруппаДобавитьРасширеннаяПодсказка" id="33"/>
+						<ChildItems>
+							<Button name="СоставДобавитьКарту" id="36">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьКарту</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Точка машрута</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СоставДобавитьКартуРасширеннаяПодсказка" id="37"/>
+							</Button>
+							<Button name="СоставДобавитьСостояниеИнтереса" id="38">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьСостояниеИнтереса</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Состояние интереса</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СоставДобавитьСостояниеИнтересаРасширеннаяПодсказка" id="39"/>
+							</Button>
+							<Button name="СоставДобавитьДокумент" id="34">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьДокумент</CommandName>
+								<ExtendedTooltip name="СоставДобавитьДокументРасширеннаяПодсказка" id="35"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="СоставУдалить" id="40">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Удалить</CommandName>
+						<ExtendedTooltip name="СоставУдалитьРасширеннаяПодсказка" id="41"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="18"/>
+			<SearchStringAddition name="СоставСтрокаПоиска" id="19">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСтрокаПоискаКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СоставСтрокаПоискаРасширеннаяПодсказка" id="21"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСостояниеПросмотра" id="22">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСостояниеПросмотраКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="СоставСостояниеПросмотраРасширеннаяПодсказка" id="24"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставУправлениеПоиском" id="25">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставУправлениеПоискомКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="СоставУправлениеПоискомРасширеннаяПодсказка" id="27"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СоставПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СоставНомерСтроки" id="8">
+					<DataPath>Объект.Состав.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНомерСтрокиКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="СоставНомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="СоставКартаМаршрута" id="10">
+					<DataPath>Объект.Состав.КартаМаршрута</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Карта маршрута / Тип</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="СоставКартаМаршрутаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="СоставКартаМаршрутаРасширеннаяПодсказка" id="29"/>
+					<Events>
+						<Event name="OnChange">СоставКартаМаршрутаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СоставТочкаМаршрута" id="12">
+					<DataPath>Объект.Состав.ТочкаМаршрута</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceListButton>false</ChoiceListButton>
+					<ContextMenu name="СоставТочкаМаршрутаКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="СоставТочкаМаршрутаРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="СоставПредставлениеТочкиМаршрута" id="14">
+					<DataPath>Объект.Состав.ПредставлениеТочкиМаршрута</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Точка маршрута / Объект</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>true</OpenButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<TextEdit>false</TextEdit>
+					<ChoiceListButton>false</ChoiceListButton>
+					<ContextMenu name="СоставПредставлениеТочкиМаршрутаКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СоставПредставлениеТочкиМаршрутаРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="StartChoice">СоставПредставлениеТочкиМаршрутаНачалоВыбора</Event>
+						<Event name="Opening">СоставПредставлениеТочкиМаршрутаОткрытие</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CRM_ВоронкиПродаж</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.Состав">
+					<Column name="ПредставлениеТочкиМаршрута" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Точка маршрута</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ТочкаМаршрутаНеАктуальна" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Точка маршрута не актуальна</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СоставПредставлениеТочкиМаршрута</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Состав.ТочкаМаршрутаНеАктуальна</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#808080</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" italic="true" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьКарту" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить карту</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить карту</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьКарту</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьСостояниеИнтереса" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить состояние интереса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить состояние интереса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьСостояниеИнтереса</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДокумент" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьДокумент</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Удалить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Удалить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьВСостав" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в состав</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьВСостав</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

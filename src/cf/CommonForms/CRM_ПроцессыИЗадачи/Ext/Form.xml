@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Процессы и задачи</v8:content>
+		</v8:item>
+	</Title>
+	<Width>90</Width>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаЗадачиВРаботе" id="255">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задачи в работе</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа задачи в работе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаЗадачиВРаботеРасширеннаяПодсказка" id="256"/>
+			<ChildItems>
+				<Table name="СписокАктивныхЗадач" id="127">
+					<Representation>List</Representation>
+					<CommandBarLocation>None</CommandBarLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<Height>8</Height>
+					<HeightInTableRows>3</HeightInTableRows>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>СписокАктивныхЗадач</DataPath>
+					<CommandSet>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+					</CommandSet>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<ContextMenu name="СписокАктивныхЗадачКонтекстноеМеню" id="128">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<AutoCommandBar name="СписокАктивныхЗадачКоманднаяПанель" id="129">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокАктивныхЗадачРасширеннаяПодсказка" id="130"/>
+					<SearchStringAddition name="СписокАктивныхЗадачСтрокаПоиска" id="233">
+						<AdditionSource>
+							<Item>СписокАктивныхЗадач</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокАктивныхЗадачСтрокаПоискаКонтекстноеМеню" id="234"/>
+						<ExtendedTooltip name="СписокАктивныхЗадачСтрокаПоискаРасширеннаяПодсказка" id="235"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокАктивныхЗадачСостояниеПросмотра" id="236">
+						<AdditionSource>
+							<Item>СписокАктивныхЗадач</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокАктивныхЗадачСостояниеПросмотраКонтекстноеМеню" id="237"/>
+						<ExtendedTooltip name="СписокАктивныхЗадачСостояниеПросмотраРасширеннаяПодсказка" id="238"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокАктивныхЗадачУправлениеПоиском" id="239">
+						<AdditionSource>
+							<Item>СписокАктивныхЗадач</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокАктивныхЗадачУправлениеПоискомКонтекстноеМеню" id="240"/>
+						<ExtendedTooltip name="СписокАктивныхЗадачУправлениеПоискомРасширеннаяПодсказка" id="241"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="СписокАктивныхЗадачНаименование" id="262">
+							<DataPath>СписокАктивныхЗадач.Description</DataPath>
+							<ContextMenu name="СписокАктивныхЗадачНаименованиеКонтекстноеМеню" id="263"/>
+							<ExtendedTooltip name="СписокАктивныхЗадачНаименованиеРасширеннаяПодсказка" id="264"/>
+						</LabelField>
+						<LabelField name="СписокАктивныхЗадачИсполнитель" id="265">
+							<DataPath>СписокАктивныхЗадач.Исполнитель</DataPath>
+							<ContextMenu name="СписокАктивныхЗадачИсполнительКонтекстноеМеню" id="266"/>
+							<ExtendedTooltip name="СписокАктивныхЗадачИсполнительРасширеннаяПодсказка" id="267"/>
+						</LabelField>
+						<LabelField name="СписокАктивныхЗадачСрокИсполнения" id="268">
+							<DataPath>СписокАктивныхЗадач.СрокИсполнения</DataPath>
+							<Width>13</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СписокАктивныхЗадачСрокИсполненияКонтекстноеМеню" id="269"/>
+							<ExtendedTooltip name="СписокАктивныхЗадачСрокИсполненияРасширеннаяПодсказка" id="270"/>
+						</LabelField>
+						<LabelField name="СписокАктивныхЗадачАвтор" id="271">
+							<DataPath>СписокАктивныхЗадач.Автор</DataPath>
+							<ContextMenu name="СписокАктивныхЗадачАвторКонтекстноеМеню" id="272"/>
+							<ExtendedTooltip name="СписокАктивныхЗадачАвторРасширеннаяПодсказка" id="273"/>
+						</LabelField>
+						<LabelField name="СписокАктивныхЗадачСсылка" id="274">
+							<DataPath>~СписокАктивныхЗадач.Ref~СписокАктивныхЗадач.Ссылка</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<ContextMenu name="СписокАктивныхЗадачСсылкаКонтекстноеМеню" id="275"/>
+							<ExtendedTooltip name="СписокАктивныхЗадачСсылкаРасширеннаяПодсказка" id="276"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВсеПроцессы" id="257">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все процессы и задачи</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа все процессы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаВсеПроцессыРасширеннаяПодсказка" id="258"/>
+			<ChildItems>
+				<Table name="ДеревоВсеПроцессы" id="308">
+					<Representation>Tree</Representation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<RowSelectionMode>Row</RowSelectionMode>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<InitialListView>Beginning</InitialListView>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ДеревоВсеПроцессы</DataPath>
+					<ContextMenu name="ДеревоВсеПроцессыКонтекстноеМеню" id="309"/>
+					<AutoCommandBar name="ДеревоВсеПроцессыКоманднаяПанель" id="310">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ДеревоВсеПроцессыРасширеннаяПодсказка" id="311"/>
+					<SearchStringAddition name="ДеревоВсеПроцессыСтрокаПоиска" id="312">
+						<AdditionSource>
+							<Item>ДеревоВсеПроцессы</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоВсеПроцессыСтрокаПоискаКонтекстноеМеню" id="313"/>
+						<ExtendedTooltip name="ДеревоВсеПроцессыСтрокаПоискаРасширеннаяПодсказка" id="314"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ДеревоВсеПроцессыСостояниеПросмотра" id="315">
+						<AdditionSource>
+							<Item>ДеревоВсеПроцессы</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоВсеПроцессыСостояниеПросмотраКонтекстноеМеню" id="316"/>
+						<ExtendedTooltip name="ДеревоВсеПроцессыСостояниеПросмотраРасширеннаяПодсказка" id="317"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ДеревоВсеПроцессыУправлениеПоиском" id="318">
+						<AdditionSource>
+							<Item>ДеревоВсеПроцессы</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоВсеПроцессыУправлениеПоискомКонтекстноеМеню" id="319"/>
+						<ExtendedTooltip name="ДеревоВсеПроцессыУправлениеПоискомРасширеннаяПодсказка" id="320"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ДеревоВсеПроцессыВыбор</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ДеревоВсеПроцессыНаименование" id="324">
+							<DataPath>ДеревоВсеПроцессы.Наименование</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Процесс/Задача</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоВсеПроцессыНаименованиеКонтекстноеМеню" id="325"/>
+							<ExtendedTooltip name="ДеревоВсеПроцессыНаименованиеРасширеннаяПодсказка" id="326"/>
+						</InputField>
+						<InputField name="ДеревоВсеПроцессыИсполнитель" id="327">
+							<DataPath>ДеревоВсеПроцессы.Исполнитель</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоВсеПроцессыИсполнительКонтекстноеМеню" id="328"/>
+							<ExtendedTooltip name="ДеревоВсеПроцессыИсполнительРасширеннаяПодсказка" id="329"/>
+						</InputField>
+						<InputField name="ДеревоВсеПроцессыСрокИсполнения" id="339">
+							<DataPath>ДеревоВсеПроцессы.СрокИсполнения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>13</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ДеревоВсеПроцессыСрокИсполненияКонтекстноеМеню" id="340"/>
+							<ExtendedTooltip name="ДеревоВсеПроцессыСрокИсполненияРасширеннаяПодсказка" id="341"/>
+						</InputField>
+						<InputField name="ДеревоВсеПроцессыДатаИсполнения" id="330">
+							<DataPath>ДеревоВсеПроцессы.ДатаИсполнения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выполнена</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>13</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ДеревоВсеПроцессыДатаИсполненияКонтекстноеМеню" id="331"/>
+							<ExtendedTooltip name="ДеревоВсеПроцессыДатаИсполненияРасширеннаяПодсказка" id="332"/>
+						</InputField>
+						<InputField name="ДеревоВсеПроцессыСсылка" id="321">
+							<DataPath>ДеревоВсеПроцессы.Ссылка</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоВсеПроцессыСсылкаКонтекстноеМеню" id="322"/>
+							<ExtendedTooltip name="ДеревоВсеПроцессыСсылкаРасширеннаяПодсказка" id="323"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокАктивныхЗадач" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список активных задач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~СписокАктивныхЗадач.Ref~СписокАктивныхЗадач.Ссылка</Field>
+				<Field>СписокАктивныхЗадач.ПринятаКИсполнению</Field>
+				<Field>СписокАктивныхЗадач.Просрочена</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЗадачаЗадачаИсполнителя.Наименование,
+	ЗадачаЗадачаИсполнителя.Исполнитель,
+	ЗадачаЗадачаИсполнителя.СрокИсполнения,
+	ЗадачаЗадачаИсполнителя.Автор,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.СрокИсполнения &lt; &amp;Сегодня
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Просрочена,
+	ЗадачаЗадачаИсполнителя.Ссылка,
+	ЗадачаЗадачаИсполнителя.ПринятаКИсполнению
+ИЗ
+	Задача.ЗадачаИсполнителя КАК ЗадачаЗадачаИсполнителя
+ГДЕ
+	ЗадачаЗадачаИсполнителя.БизнесПроцесс.Предмет = &amp;Предмет
+	И ВЫБОР
+			КОГДА НЕ ЗадачаЗадачаИсполнителя.CRM_СостояниеИнтереса = ЗНАЧЕНИЕ(Справочник.CRM_СостоянияИнтересов.ПустаяСсылка)
+					И ЗадачаЗадачаИсполнителя.Исполнитель = &amp;Ответственный
+				ТОГДА НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс.Интерес = &amp;Предмет
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+	И НЕ ЗадачаЗадачаИсполнителя.Выполнена
+	И НЕ ЗадачаЗадачаИсполнителя.ПометкаУдаления</QueryText>
+				<MainTable>Task.ЗадачаИсполнителя</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>СрокИсполнения</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДеревоВсеПроцессы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все процессы и задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:TaskRef.ЗадачаИсполнителя</v8:Type>
+						<v8:Type>cfg:BusinessProcessRef.CRM_БизнесПроцесс</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Исполнитель" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнитель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВнешниеПользователи</v8:Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаИсполнения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата исполнения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПринятаКИсполнению" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принята к исполнению</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Просрочена" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Просрочена</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СрокИсполнения" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Выполнена" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполнена</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокАктивныхЗадач</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СписокАктивныхЗадач.Просрочена</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ПросроченныеДанныеЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СписокАктивныхЗадач</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">СписокАктивныхЗадач.ПринятаКИсполнению</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ПросроченныеДанныеЦвет</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоВсеПроцессы</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДеревоВсеПроцессы.ПринятаКИсполнению</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДеревоВсеПроцессы.Выполнена</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ПросроченныеДанныеЦвет</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоВсеПроцессы</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоВсеПроцессы.Просрочена</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ПросроченныеДанныеЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоВсеПроцессы</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоВсеПроцессы.Выполнена</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЗавершенныйБизнесПроцесс</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Parameters>
+		<Parameter name="Предмет">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

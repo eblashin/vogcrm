@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ФормированиеСегмента</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнегоВзаимодействия</dataPath>
+			<field>ДатаПоследнегоВзаимодействия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КлассABC</dataPath>
+			<field>КлассABC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КлассXYZ</dataPath>
+			<field>КлассXYZ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВзаимодейстий</dataPath>
+			<field>КоличествоВзаимодейстий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СвязанноеЮридическоеЛицо</dataPath>
+			<field>СвязанноеЮридическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Холдинг</dataPath>
+			<field>Холдинг</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидКонтакта</dataPath>
+			<field>ВидКонтакта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаУниверсальногоЖурнала</dataPath>
+			<field>ГруппаУниверсальногоЖурнала</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА
+			ИспользоватьABCXYZКлассификациюПартнеровПоКоличествуПродаж.Значение И НЕ ИспользоватьABCXYZКлассификациюПартнеровПоВыручке.Значение
+		ТОГДА
+			ЗНАЧЕНИЕ(Перечисление.ТипыПараметровКлассификации.Количество)
+		ИНАЧЕ
+			ЗНАЧЕНИЕ(Перечисление.ТипыПараметровКлассификации.Выручка)
+	КОНЕЦ КАК ТипПараметраКлассификации
+ПОМЕСТИТЬ
+	ТипыПараметровКлассификации
+ИЗ
+	Константа.ИспользоватьABCXYZКлассификациюПартнеровПоВыручке КАК ИспользоватьABCXYZКлассификациюПартнеровПоВыручке,
+	Константа.ИспользоватьABCXYZКлассификациюПартнеровПоКоличествуПродаж КАК ИспользоватьABCXYZКлассификациюПартнеровПоКоличествуПродаж
+	
+;
+
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВложенныйЗапрос.Партнер КАК Партнер
+	
+{ВЫБРАТЬ
+	Партнер.* КАК Партнер
+}
+	
+ИЗ
+	
+(ВЫБРАТЬ
+	Партнеры.Ссылка КАК Партнер,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ CRM_ЖурналДокументов.Объект) КАК КоличествоВзаимодейстий,
+	МАКСИМУМ(CRM_ЖурналДокументов.Дата) КАК ДатаПоследнегоВзаимодействия
+ИЗ
+	Справочник.Партнеры КАК Партнеры
+	{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ЖурналДокументов КАК CRM_ЖурналДокументов
+	ПО (CRM_ЖурналДокументов.Клиент = Партнеры.Ссылка)}
+	{ЛЕВОЕ СОЕДИНЕНИЕ Справочник.CRM_ГруппыУниверсальногоЖурнала.Состав КАК CRM_ГруппыУниверсальногоЖурналаСостав
+	ПО CRM_ЖурналДокументов.ТипОбъекта = CRM_ГруппыУниверсальногоЖурналаСостав.Объект
+	}
+	{ГДЕ CRM_ЖурналДокументов.Дата &gt;= &amp;ДатаНачала}
+	{ГДЕ CRM_ЖурналДокументов.Дата &lt;= &amp;ДатаОкончания}
+	{ГДЕ CRM_ЖурналДокументов.ТипОбъекта КАК ВидКонтакта}
+	{ГДЕ CRM_ГруппыУниверсальногоЖурналаСостав.Ссылка КАК ГруппаУниверсальногоЖурнала}
+СГРУППИРОВАТЬ ПО
+	Партнеры.Ссылка
+) КАК ВложенныйЗапрос
+	
+{ЛЕВОЕ СОЕДИНЕНИЕ ТипыПараметровКлассификации КАК ТипыПараметровКлассификации
+ПО ИСТИНА}
+{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ABCXYZКлассификацияКлиентов.СрезПоследних({&amp;КонецПериода}, {(Партнер).* КАК Партнер}) КАК CRM_ABCКлассификацияКлиентовСрезПоследних
+ПО (CRM_ABCКлассификацияКлиентовСрезПоследних.Партнер = ВложенныйЗапрос.Партнер)
+	И (CRM_ABCКлассификацияКлиентовСрезПоследних.ТипПараметраКлассификации = ТипыПараметровКлассификации.ТипПараметраКлассификации)
+	И (CRM_ABCКлассификацияКлиентовСрезПоследних.ТипКлассификации = ЗНАЧЕНИЕ(Перечисление.ТипыКлассификации.ABC))}
+{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ABCXYZКлассификацияКлиентов.СрезПоследних({&amp;КонецПериода}, {(Партнер).* КАК Партнер}) КАК CRM_XYZКлассификацияКлиентовСрезПоследних
+ПО (CRM_XYZКлассификацияКлиентовСрезПоследних.Партнер = ВложенныйЗапрос.Партнер)
+	И (CRM_XYZКлассификацияКлиентовСрезПоследних.ТипПараметраКлассификации = ТипыПараметровКлассификации.ТипПараметраКлассификации)
+	И (CRM_XYZКлассификацияКлиентовСрезПоследних.ТипКлассификации = ЗНАЧЕНИЕ(Перечисление.ТипыКлассификации.XYZ))}
+{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ХолдингиПартнеров КАК CRM_ХолдингиПартнеров
+	ПО ВложенныйЗапрос.Партнер = CRM_ХолдингиПартнеров.Партнер}
+{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СвязиМеждуПартнерами КАК СвязиМеждуПартнерами
+	ПО (ВложенныйЗапрос.Партнер = СвязиМеждуПартнерами.ПервыйПартнер)
+	И СвязиМеждуПартнерами.ВидСвязи = ЗНАЧЕНИЕ(Справочник.ВидыСвязейМеждуПартнерами.CRM_СвязанноеЮрЛицо)}
+		
+{ГДЕ
+	ВложенныйЗапрос.Партнер.* КАК Партнер,
+	ВложенныйЗапрос.КоличествоВзаимодейстий КАК КоличествоВзаимодейстий,
+	ВложенныйЗапрос.ДатаПоследнегоВзаимодействия КАК ДатаПоследнегоВзаимодействия,
+	CRM_ABCКлассификацияКлиентовСрезПоследних.Класс КАК КлассABC,
+	CRM_XYZКлассификацияКлиентовСрезПоследних.Класс КАК КлассXYZ,
+	CRM_ХолдингиПартнеров.Холдинг,
+	СвязиМеждуПартнерами.ВторойПартнер КАК СвязанноеЮридическоеЛицо
+}
+</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ВыводСегмента</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сегмент</dataPath>
+			<field>Сегмент</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПартнерСегмента</dataPath>
+			<field>ПартнерСегмента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидКонтакта</dataPath>
+			<field>ВидКонтакта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнегоВзаимодействия</dataPath>
+			<field>ДатаПоследнегоВзаимодействия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументВзаимодействия</dataPath>
+			<field>ДокументВзаимодействия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВзаимодейстий</dataPath>
+			<field>КоличествоВзаимодейстий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СвязанноеЮридическоеЛицо</dataPath>
+			<field>СвязанноеЮридическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Тема</dataPath>
+			<field>Тема</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Холдинг</dataPath>
+			<field>Холдинг</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаУниверсальногоЖурнала</dataPath>
+			<field>ГруппаУниверсальногоЖурнала</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПартнерыСегмента.Партнер
+ПОМЕСТИТЬ СоставСегмента
+ИЗ
+	РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+{ГДЕ
+	ПартнерыСегмента.Сегмент}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВложенныйЗапрос.Партнер КАК ПартнерСегмента,
+	ВложенныйЗапрос.КоличествоВзаимодейстий КАК КоличествоВзаимодейстий,
+	ВложенныйЗапрос.ДатаПоследнегоВзаимодействия КАК ДатаПоследнегоВзаимодействия,
+	ВложенныйЗапрос.ВидКонтакта КАК ВидКонтакта,
+	ВложенныйЗапрос.ДокументВзаимодействия КАК ДокументВзаимодействия,
+	ВложенныйЗапрос.Тема КАК Тема,
+	ВложенныйЗапрос.Ответственный КАК Ответственный,
+	CRM_ХолдингиПартнеров.Холдинг КАК Холдинг,
+	СвязиМеждуПартнерами.ВторойПартнер КАК СвязанноеЮридическоеЛицо
+	
+{ВЫБРАТЬ
+	ПартнерСегмента.* КАК ПартнерСегмента,
+	КоличествоВзаимодейстий КАК КоличествоВзаимодейстий,
+	ДатаПоследнегоВзаимодействия КАК ДатаПоследнегоВзаимодействия,
+	ВидКонтакта КАК ВидКонтакта,
+	ДокументВзаимодействия.* КАК ДокументВзаимодействия,
+	Тема КАК Тема,
+	Ответственный КАК Ответственный,
+	Холдинг КАК Холдинг,
+	СвязанноеЮридическоеЛицо КАК СвязанноеЮридическоеЛицо
+}
+	
+ИЗ
+	
+(ВЫБРАТЬ
+	Партнеры.Ссылка КАК Партнер,
+	CRM_ЖурналДокументов.ТипОбъекта КАК ВидКонтакта,
+	CRM_ЖурналДокументов.Объект КАК ДокументВзаимодействия,
+	CRM_ЖурналДокументов.Описание КАК Тема,
+	CRM_ЖурналДокументов.Ответственный КАК Ответственный,
+	1 КАК КоличествоВзаимодейстий,
+	CRM_ЖурналДокументов.Дата КАК ДатаПоследнегоВзаимодействия
+ИЗ
+	Справочник.Партнеры КАК Партнеры
+	ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ЖурналДокументов КАК CRM_ЖурналДокументов
+	ПО (CRM_ЖурналДокументов.Клиент = Партнеры.Ссылка)
+	{ЛЕВОЕ СОЕДИНЕНИЕ Справочник.CRM_ГруппыУниверсальногоЖурнала.Состав КАК CRM_ГруппыУниверсальногоЖурналаСостав
+	ПО CRM_ЖурналДокументов.ТипОбъекта = CRM_ГруппыУниверсальногоЖурналаСостав.Объект
+	}
+	ГДЕ (Партнеры.Ссылка В (ВЫБРАТЬ СоставСегмента.Партнер ИЗ СоставСегмента КАК СоставСегмента))
+	{ГДЕ CRM_ЖурналДокументов.Дата &gt;= &amp;ДатаНачала}
+	{ГДЕ CRM_ЖурналДокументов.Дата &lt;= &amp;ДатаОкончания}
+	{ГДЕ CRM_ЖурналДокументов.ТипОбъекта КАК ВидКонтакта}
+	{ГДЕ CRM_ГруппыУниверсальногоЖурналаСостав.Ссылка КАК ГруппаУниверсальногоЖурнала}
+) КАК ВложенныйЗапрос
+	
+{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ХолдингиПартнеров КАК CRM_ХолдингиПартнеров
+	ПО ВложенныйЗапрос.Партнер = CRM_ХолдингиПартнеров.Партнер}
+{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СвязиМеждуПартнерами КАК СвязиМеждуПартнерами
+	ПО (ВложенныйЗапрос.Партнер = СвязиМеждуПартнерами.ПервыйПартнер)
+	И СвязиМеждуПартнерами.ВидСвязи = ЗНАЧЕНИЕ(Справочник.ВидыСвязейМеждуПартнерами.CRM_СвязанноеЮрЛицо)}
+</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоВзаимодейстий</dataPath>
+		<expression>Сумма(КоличествоВзаимодейстий)</expression>
+		<group>ПартнерСегмента</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаПоследнегоВзаимодействия</dataPath>
+		<expression>Максимум(ДатаПоследнегоВзаимодействия)</expression>
+		<group>ПартнерСегмента</group>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ФормированиеСегмента</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Формирование сегмента</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Партнер</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Партнер</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Партнер.ПометкаУдаления</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ВыводСегмента</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вывод сегмента</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПартнерСегмента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВзаимодейстий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнегоВзаимодействия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументВзаимодействия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Тема</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПартнерСегмента</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДокументВзаимодействия</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Тема</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Ответственный</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОК" id="14">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ФормаОКExtendedTooltip" id="16"/>
+			</Button>
+			<Button name="ФормаОтмена" id="15">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<ExtendedTooltip name="ФормаОтменаExtendedTooltip" id="17"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="1">
+			<DataPath>Наименование</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ChoiceListButton>true</ChoiceListButton>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="18"/>
+			<Events>
+				<Event name="OnChange">НаименованиеПриИзменении</Event>
+				<Event name="StartChoice">НаименованиеНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<Table name="СписокСсылок" id="3">
+			<Representation>List</Representation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокСсылок</DataPath>
+			<RowPictureDataPath>СписокСсылок.Picture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<ContextMenu name="СписокСсылокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокСсылокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокСсылокExtendedTooltip" id="19"/>
+			<SearchStringAddition name="СписокСсылокСтрокаПоиска" id="24">
+				<AdditionSource>
+					<Item>СписокСсылок</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСсылокСтрокаПоискаКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="СписокСсылокСтрокаПоискаРасширеннаяПодсказка" id="26"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСсылокСостояниеПросмотра" id="27">
+				<AdditionSource>
+					<Item>СписокСсылок</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСсылокСостояниеПросмотраКонтекстноеМеню" id="28"/>
+				<ExtendedTooltip name="СписокСсылокСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокСсылокУправлениеПоиском" id="30">
+				<AdditionSource>
+					<Item>СписокСсылок</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСсылокУправлениеПоискомКонтекстноеМеню" id="31"/>
+				<ExtendedTooltip name="СписокСсылокУправлениеПоискомРасширеннаяПодсказка" id="32"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="СписокСсылокПометка" id="8">
+					<DataPath>СписокСсылок.Check</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокСсылокПометкаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="СписокСсылокПометкаExtendedTooltip" id="20"/>
+				</CheckBoxField>
+				<InputField name="СписокСсылокЗначение" id="6">
+					<DataPath>СписокСсылок.Value</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокСсылокЗначениеКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="СписокСсылокЗначениеExtendedTooltip" id="21"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="ВидКонтактнойИнформации" id="10">
+			<DataPath>ВидКонтактнойИнформации</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceParameters>
+				<app:item name="Отбор.Родитель">
+					<app:value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="v8:FixedArray">
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыКонтактнойИнформации.СправочникПартнеры</Value>
+							</v8:Value>
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыКонтактнойИнформации.CRM_СправочникПартнерыЧастноеЛицо</Value>
+							</v8:Value>
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыКонтактнойИнформации.CRM_СправочникПартнерыКомпания</Value>
+							</v8:Value>
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыКонтактнойИнформации.СправочникКонтактныеЛицаПартнеров</Value>
+							</v8:Value>
+						</Value>
+					</app:value>
+				</app:item>
+				<app:item name="Отбор.Тип">
+					<app:value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="v8:FixedArray">
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ТипыКонтактнойИнформации.EnumValue.АдресЭлектроннойПочты</Value>
+							</v8:Value>
+						</Value>
+					</app:value>
+				</app:item>
+			</ChoiceParameters>
+			<ContextMenu name="ВидКонтактнойИнформацииКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ВидКонтактнойИнформацииExtendedTooltip" id="22"/>
+		</InputField>
+		<CheckBoxField name="НеЗаполнятьСПустымиТелефонами" id="12">
+			<DataPath>НеЗаполнятьСПустымиАдресами</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="НеЗаполнятьСПустымиТелефонамиКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="НеЗаполнятьСПустымиТелефонамиExtendedTooltip" id="23"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Наименование" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокСсылок" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список ссылок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+				<v8:Type>cfg:CatalogRef.КонтактныеЛицаПартнеров</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="НеЗаполнятьСПустымиАдресами" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не заполнять с пустыми адресами</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидКонтактнойИнформации" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид контактной информации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВидыКонтактнойИнформации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьЗаписи" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть записи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ЕстьЗаписи">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

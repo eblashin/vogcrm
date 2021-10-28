@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Владелец" id="4">
+			<DataPath>Объект.Owner</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="ДанныеПоиска" id="29">
+			<DataPath>Объект.ДанныеПоиска</DataPath>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ContextMenu name="ДанныеПоискаКонтекстноеМеню" id="30"/>
+			<ExtendedTooltip name="ДанныеПоискаРасширеннаяПодсказка" id="31"/>
+		</InputField>
+		<InputField name="СвязанноеЗначение" id="26">
+			<DataPath>Объект.СвязанноеЗначение</DataPath>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ContextMenu name="СвязанноеЗначениеКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="СвязанноеЗначениеРасширеннаяПодсказка" id="28"/>
+		</InputField>
+		<InputField name="GUID" id="32">
+			<DataPath>GUID</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="GUIDКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="GUIDРасширеннаяПодсказка" id="34"/>
+		</InputField>
+		<InputField name="ТипЗначенияОтвета" id="38">
+			<DataPath>Объект.ТипЗначенияОтвета</DataPath>
+			<ContextMenu name="ТипЗначенияОтветаКонтекстноеМеню" id="39"/>
+			<ExtendedTooltip name="ТипЗначенияОтветаРасширеннаяПодсказка" id="40"/>
+		</InputField>
+		<CheckBoxField name="ВыводитьЗаголовок" id="35">
+			<DataPath>Объект.ВыводитьЗаголовок</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Если установлен, то выводится наименование ответа в анкете, иначе просто знак вопроса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ВыводитьЗаголовокКонтекстноеМеню" id="36"/>
+			<ExtendedTooltip name="ВыводитьЗаголовокРасширеннаяПодсказка" id="37"/>
+		</CheckBoxField>
+		<Table name="НаборДополнительнойИнформации" id="7">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.НаборДополнительнойИнформации</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="НаборДополнительнойИнформацииКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="НаборДополнительнойИнформацииКоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="НаборДополнительнойИнформацииРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="НаборДополнительнойИнформацииСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>НаборДополнительнойИнформации</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НаборДополнительнойИнформацииСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="НаборДополнительнойИнформацииСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НаборДополнительнойИнформацииСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>НаборДополнительнойИнформации</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НаборДополнительнойИнформацииСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="НаборДополнительнойИнформацииСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НаборДополнительнойИнформацииУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>НаборДополнительнойИнформации</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НаборДополнительнойИнформацииУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="НаборДополнительнойИнформацииУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="НаборДополнительнойИнформацииНомерСтроки" id="20">
+					<DataPath>Объект.НаборДополнительнойИнформации.LineNumber</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаборДополнительнойИнформацииНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="НаборДополнительнойИнформацииНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="НаборДополнительнойИнформацииСвойство" id="23">
+					<DataPath>Объект.НаборДополнительнойИнформации.Свойство</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительная информация</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаборДополнительнойИнформацииСвойствоКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="НаборДополнительнойИнформацииСвойствоРасширеннаяПодсказка" id="25"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогВариантыОтветов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="GUID" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>GUID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

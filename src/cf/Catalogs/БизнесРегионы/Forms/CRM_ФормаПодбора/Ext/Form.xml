@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаВыбрать" id="16">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Item.ДеревоРегионов.StandardCommand.Choose</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="17"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ДеревоРегионов" id="1">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ReadOnly>true</ReadOnly>
+			<ChoiceMode>true</ChoiceMode>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоРегионов</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<ContextMenu name="ДеревоРегионовКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДеревоРегионовКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="ДеревоРегионовРасширеннаяПодсказка" id="18"/>
+			<SearchStringAddition name="ДеревоРегионовСтрокаПоиска" id="19">
+				<AdditionSource>
+					<Item>ДеревоРегионов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоРегионовСтрокаПоискаКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="ДеревоРегионовСтрокаПоискаРасширеннаяПодсказка" id="21"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоРегионовСостояниеПросмотра" id="22">
+				<AdditionSource>
+					<Item>ДеревоРегионов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоРегионовСостояниеПросмотраКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="ДеревоРегионовСостояниеПросмотраРасширеннаяПодсказка" id="24"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоРегионовУправлениеПоиском" id="25">
+				<AdditionSource>
+					<Item>ДеревоРегионов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоРегионовУправлениеПоискомКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="ДеревоРегионовУправлениеПоискомРасширеннаяПодсказка" id="27"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="ValueChoice">ДеревоРегионовВыборЗначения</Event>
+				<Event name="Selection">ДеревоРегионовВыбор</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ДеревоРегионовНаименование" id="4">
+					<DataPath>ДеревоРегионов.Наименование</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоРегионовНаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДеревоРегионовНаименованиеРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ДеревоРегионовCRM_КодСтраны" id="8">
+					<DataPath>ДеревоРегионов.CRM_КодСтраны</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоРегионовCRM_КодСтраныКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ДеревоРегионовCRM_КодСтраныРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<InputField name="ДеревоРегионовCRM_КодГорода" id="6">
+					<DataPath>ДеревоРегионов.CRM_КодГорода</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоРегионовCRM_КодГородаКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ДеревоРегионовCRM_КодГородаРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ДеревоРегионовCRM_Платежеспособность" id="10">
+					<DataPath>ДеревоРегионов.CRM_Платежеспособность</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоРегионовCRM_ПлатежеспособностьКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДеревоРегионовCRM_ПлатежеспособностьРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ДеревоРегионовCRM_ЧисленностьНаселения" id="12">
+					<DataPath>ДеревоРегионов.CRM_ЧисленностьНаселения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоРегионовCRM_ЧисленностьНаселенияКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ДеревоРегионовCRM_ЧисленностьНаселенияРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<InputField name="ДеревоРегионовCRM_ВремяПоГринвичу_GMT" id="33">
+					<DataPath>ДеревоРегионов.CRM_ВремяПоГринвичу_GMT</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоРегионовCRM_ВремяПоГринвичу_GMTКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ДеревоРегионовCRM_ВремяПоГринвичу_GMTРасширеннаяПодсказка" id="35"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДеревоРегионов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево регионов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Наименование" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="CRM_КодГорода" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код города</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="CRM_КодСтраны" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код страны</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="CRM_Платежеспособность" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Платежеспособность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.CRM_Платежеспособность</v8:Type>
+					</Type>
+				</Column>
+				<Column name="CRM_ЧисленностьНаселения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Численность населения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="CRM_КодПоКлассификатору" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код по классификатору</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>4</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="CRM_ВремяПоГринвичу_GMT" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время по Гринвичу (GMT) </v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>5</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+</Form>

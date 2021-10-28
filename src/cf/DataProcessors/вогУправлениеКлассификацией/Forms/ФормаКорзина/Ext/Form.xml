@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Корзина</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Корзина" id="1">
+			<Header>false</Header>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Корзина</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КорзинаКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="КорзинаКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="КорзинаУдалить" id="22">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Корзина.StandardCommand.Delete</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="КорзинаУдалитьРасширеннаяПодсказка" id="23"/>
+					</Button>
+					<Button name="КорзинаОчистить" id="35">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Очистить</CommandName>
+						<ExtendedTooltip name="КорзинаОчиститьРасширеннаяПодсказка" id="36"/>
+					</Button>
+					<ButtonGroup name="КорзинаСтандартныеКоманды" id="24">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Корзина стандартные команды</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Корзина стандартные команды</v8:content>
+							</v8:item>
+						</ToolTip>
+						<CommandSource>Item.Корзина</CommandSource>
+						<ExtendedTooltip name="КорзинаСтандартныеКомандыРасширеннаяПодсказка" id="25"/>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КорзинаРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="КорзинаСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>Корзина</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КорзинаСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="КорзинаСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КорзинаСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>Корзина</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КорзинаСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="КорзинаСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КорзинаУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>Корзина</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КорзинаУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="КорзинаУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">КорзинаПередНачаломДобавления</Event>
+				<Event name="AfterDeleteRow">КорзинаПослеУдаления</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="КорзинаСсылка" id="17">
+					<DataPath>Объект.Корзина.Ссылка</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КорзинаСсылкаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="КорзинаСсылкаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПанельФормы" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа панель формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа панель формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПанельФормыРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="КорзинаКоличествоСтрок" id="32">
+					<DataPath>Объект.Корзина.RowsCount</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всего строк</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Width>6</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=0</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="КорзинаКоличествоСтрокКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="КорзинаКоличествоСтрокРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<CommandBar name="КоманднаяПанельФормы" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель формы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель формы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="КоманднаяПанельФормыРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<Button name="ФормаПрименитьЗакрыть" id="30">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.ПрименитьЗакрыть</CommandName>
+							<ExtendedTooltip name="ФормаПрименитьЗакрытьРасширеннаяПодсказка" id="31"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогУправлениеКлассификацией</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ЗакрытьБезусловно" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть безусловно</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПрименитьЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПрименитьЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Очистить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Очистить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

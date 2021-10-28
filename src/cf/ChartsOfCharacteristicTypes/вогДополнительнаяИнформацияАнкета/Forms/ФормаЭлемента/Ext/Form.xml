@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="3">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="12"/>
+			<Events>
+				<Event name="OnChange">НаименованиеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТипЗначения" id="5">
+			<DataPath>Объект.ValueType</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ТипЗначенияКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ТипЗначенияExtendedTooltip" id="13"/>
+			<Events>
+				<Event name="OnChange">ТипЗначенияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="УУИД" id="76">
+			<DataPath>УУИД</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="УУИДКонтекстноеМеню" id="77"/>
+			<ExtendedTooltip name="УУИДРасширеннаяПодсказка" id="78"/>
+		</InputField>
+		<UsualGroup name="ДополнительныеЗначения" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные значения:</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные значения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ДополнительныеЗначенияРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<Table name="Значения" id="17">
+					<Height>9</Height>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Значения</DataPath>
+					<RowPictureDataPath>Значения.DefaultPicture</RowPictureDataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<ContextMenu name="ЗначенияКонтекстноеМеню" id="18">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<ButtonGroup name="ЗначенияКонтекстноеМенюРедактирования" id="44">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Значения контекстное меню редактирования</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ЗначенияКонтекстноеМенюРедактированияExtendedTooltip" id="45"/>
+								<ChildItems>
+									<Button name="ЗначенияСоздать1" id="46">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.Create</CommandName>
+										<ExtendedTooltip name="ЗначенияСоздать1ExtendedTooltip" id="47"/>
+									</Button>
+									<Button name="ЗначенияСоздатьГруппу1" id="48">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.CreateFolder</CommandName>
+										<ExtendedTooltip name="ЗначенияСоздатьГруппу1ExtendedTooltip" id="49"/>
+									</Button>
+									<Button name="ЗначенияИзменить1" id="50">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.Change</CommandName>
+										<ExtendedTooltip name="ЗначенияИзменить1ExtendedTooltip" id="51"/>
+									</Button>
+									<Button name="ЗначенияУстановитьПометкуУдаления1" id="52">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.SetDeletionMark</CommandName>
+										<ExtendedTooltip name="ЗначенияУстановитьПометкуУдаления1ExtendedTooltip" id="53"/>
+									</Button>
+									<ButtonGroup name="ЗначенияКонтекстноеМенюСтандартныеКоманды" id="54">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Значения контекстное меню стандартные команды</v8:content>
+											</v8:item>
+										</Title>
+										<CommandSource>Item.Значения</CommandSource>
+										<ExtendedTooltip name="ЗначенияКонтекстноеМенюСтандартныеКомандыExtendedTooltip" id="55"/>
+									</ButtonGroup>
+								</ChildItems>
+							</ButtonGroup>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="ЗначенияКоманднаяПанель" id="19">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<ButtonGroup name="ЗначенияКоманднаяПанельРедактирования" id="30">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Значения командная панель редактирования</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Значения командная панель редактирования</v8:content>
+									</v8:item>
+								</ToolTip>
+								<ExtendedTooltip name="ЗначенияКоманднаяПанельРедактированияExtendedTooltip" id="31"/>
+								<ChildItems>
+									<Button name="ЗначенияСоздать" id="32">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.Create</CommandName>
+										<ExtendedTooltip name="ЗначенияСоздатьExtendedTooltip" id="33"/>
+									</Button>
+									<Button name="ЗначенияСоздатьГруппу" id="34">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.CreateFolder</CommandName>
+										<ExtendedTooltip name="ЗначенияСоздатьГруппуExtendedTooltip" id="35"/>
+									</Button>
+									<Button name="ЗначенияИзменить" id="36">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.Change</CommandName>
+										<ExtendedTooltip name="ЗначенияИзменитьExtendedTooltip" id="37"/>
+									</Button>
+									<Button name="ЗначенияУстановитьПометкуУдаления" id="38">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Значения.StandardCommand.SetDeletionMark</CommandName>
+										<ExtendedTooltip name="ЗначенияУстановитьПометкуУдаленияExtendedTooltip" id="39"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Button name="ЗначенияНайти" id="40">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Значения.StandardCommand.Find</CommandName>
+								<ExtendedTooltip name="ЗначенияНайтиExtendedTooltip" id="41"/>
+							</Button>
+							<Button name="ЗначенияОтменитьПоиск" id="42">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Значения.StandardCommand.CancelSearch</CommandName>
+								<ExtendedTooltip name="ЗначенияОтменитьПоискExtendedTooltip" id="43"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ЗначенияРасширеннаяПодсказка" id="20"/>
+					<SearchStringAddition name="ЗначенияСтрокаПоиска" id="58">
+						<AdditionSource>
+							<Item>Значения</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЗначенияСтрокаПоискаКонтекстноеМеню" id="59"/>
+						<ExtendedTooltip name="ЗначенияСтрокаПоискаРасширеннаяПодсказка" id="60"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ЗначенияСостояниеПросмотра" id="61">
+						<AdditionSource>
+							<Item>Значения</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЗначенияСостояниеПросмотраКонтекстноеМеню" id="62"/>
+						<ExtendedTooltip name="ЗначенияСостояниеПросмотраРасширеннаяПодсказка" id="63"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ЗначенияУправлениеПоиском" id="64">
+						<AdditionSource>
+							<Item>Значения</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ЗначенияУправлениеПоискомКонтекстноеМеню" id="65"/>
+						<ExtendedTooltip name="ЗначенияУправлениеПоискомРасширеннаяПодсказка" id="66"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeAddRow">ЗначенияПередНачаломДобавления</Event>
+						<Event name="BeforeRowChange">ЗначенияПередНачаломИзменения</Event>
+						<Event name="OnChange">ЗначенияПриИзменении</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="ЗначенияНаименование" id="21">
+							<DataPath>Значения.Description</DataPath>
+							<ContextMenu name="ЗначенияНаименованиеКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="ЗначенияНаименованиеРасширеннаяПодсказка" id="23"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+				<CheckBoxField name="ДополнительныеЗначенияСВесом" id="73">
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДополнительныеЗначенияСВесомКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ДополнительныеЗначенияСВесомРасширеннаяПодсказка" id="75"/>
+					<Events>
+						<Event name="OnChange">ДополнительныеЗначенияСВесомПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ChartOfCharacteristicTypesObject.вогДополнительнаяИнформацияАнкета</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Значения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Значения.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.ЗначенияСвойствОбъектов</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="РежимДобавленияРеквизита" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим добавления реквизита</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="УУИД" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>УУИД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

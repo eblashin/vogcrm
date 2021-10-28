@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаБыстрыОтборы" id="114">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстры отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстры отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаБыстрыОтборыРасширеннаяПодсказка" id="115"/>
+			<ChildItems>
+				<InputField name="ПериодВыборки" id="116">
+					<DataPath>ПериодВыборки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>20</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПериодВыборкиКонтекстноеМеню" id="117"/>
+					<ExtendedTooltip name="ПериодВыборкиExtendedTooltip" id="118"/>
+					<Events>
+						<Event name="OnChange">ПериодВыборкиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Пользователь" id="119">
+					<DataPath>ТекущийПользователь</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>20</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ChoiceParameters>
+						<app:item name="ТолькоДоступные">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">true</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудник</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПользовательКонтекстноеМеню" id="120"/>
+					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="121"/>
+					<Events>
+						<Event name="OnChange">ПользовательПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СписокСогласования" id="1">
+			<SkipOnInput>false</SkipOnInput>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<HeightInTableRows>1</HeightInTableRows>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокПоручений</DataPath>
+			<RowPictureDataPath>СписокПоручений.DefaultPicture</RowPictureDataPath>
+			<BorderColor>style:BorderColor</BorderColor>
+			<SearchStringLocation>Top</SearchStringLocation>
+			<AutoRefresh>true</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>false</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокСогласованияКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокСогласованияКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="СписокСогласованияРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокСогласованияСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СписокСогласования</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<MaxWidth>38</MaxWidth>
+				<ContextMenu name="СписокСогласованияСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СписокСогласованияСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСогласованияСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СписокСогласования</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСогласованияСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СписокСогласованияСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокСогласованияУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СписокСогласования</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСогласованияУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СписокСогласованияУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВыбор</Event>
+				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">СписокСогласованияПриПолученииДанныхНаСервере</Event>
+				<Event name="BeforeRowChange">СписокПередНачаломИзменения</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="ВажностьКартинка" id="66">
+					<DataPath>СписокПоручений.ВажностьКартинка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.CRM_Важно</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>2</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.КоллекцияВариантыВажности</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ВажностьКартинкаКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="ВажностьКартинкаРасширеннаяПодсказка" id="68"/>
+				</PictureField>
+				<PictureField name="Состояние" id="69">
+					<DataPath>СписокПоручений.Состояние</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние задачи (не принята, принята, выполнена)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>2</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.CRM_СостоянияЗадач</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="СостояниеКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="71"/>
+				</PictureField>
+				<PictureField name="ОсновнаяКатегорияИндекс" id="72">
+					<DataPath>СписокПоручений.ОсновнаяКатегорияИндекс</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.CRM_ЦветоваяКатегорияЗадачи</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>2</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.CRM_ЦветаКатегорий</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ОсновнаяКатегорияИндексКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="ОсновнаяКатегорияИндексРасширеннаяПодсказка" id="74"/>
+				</PictureField>
+				<LabelField name="БизнесПроцесс" id="75">
+					<DataPath>СписокПоручений.БизнесПроцесс</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Width>10</Width>
+					<ContextMenu name="БизнесПроцессКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="БизнесПроцессРасширеннаяПодсказка" id="77"/>
+				</LabelField>
+				<LabelField name="Наименование" id="78">
+					<DataPath>СписокПоручений.Наименование</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="79"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="80"/>
+				</LabelField>
+				<ColumnGroup name="ГруппаДаты" id="29">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа даты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа даты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаДатыРасширеннаяПодсказка" id="30"/>
+					<ChildItems>
+						<LabelField name="ДатаНачала" id="81">
+							<DataPath>СписокПоручений.ДатаНачала</DataPath>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+							</Format>
+							<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="83"/>
+						</LabelField>
+						<LabelField name="СрокИсполнения" id="84">
+							<DataPath>СписокПоручений.СрокИсполнения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок</v8:content>
+								</v8:item>
+							</Title>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+								</v8:item>
+							</Format>
+							<ContextMenu name="СрокИсполненияКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="СрокИсполненияРасширеннаяПодсказка" id="86"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаПросроченоОсталось" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа просрочено осталось</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа просрочено осталось</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ГруппаПросроченоОсталосьРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<PictureField name="Просрочена" id="87">
+							<DataPath>СписокПоручений.Просрочена</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<HeaderPicture>
+								<xr:Ref>CommonPicture.CRM_КоллекцияПросрочено</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</HeaderPicture>
+							<Width>2</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.CRM_КоллекцияПросрочено</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</ValuesPicture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ПросроченаКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="ПросроченаРасширеннаяПодсказка" id="89"/>
+						</PictureField>
+						<LabelField name="ОсталосьДней" id="90">
+							<DataPath>СписокПоручений.ОсталосьДней</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дней</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Осталось дней/Просрочено на</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<Width>4</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ОсталосьДнейКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="ОсталосьДнейРасширеннаяПодсказка" id="92"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="СписокСогласованияКартаМаршрута" id="93">
+					<DataPath>СписокПоручений.КартаМаршрута</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид задачи</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокСогласованияКартаМаршрутаКонтекстноеМеню" id="94"/>
+					<ExtendedTooltip name="СписокСогласованияКартаМаршрутаРасширеннаяПодсказка" id="95"/>
+				</LabelField>
+				<ColumnGroup name="ГруппаЛюди" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа люди</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа люди</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаЛюдиРасширеннаяПодсказка" id="52"/>
+					<ChildItems>
+						<LabelField name="Автор" id="99">
+							<DataPath>СписокПоручений.Автор</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Width>15</Width>
+							<ContextMenu name="АвторКонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="101"/>
+						</LabelField>
+						<ColumnGroup name="СписокСогласованияГруппаАдресация" id="56">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Исполнение</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Испо</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>InCell</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="СписокСогласованияГруппаАдресацияРасширеннаяПодсказка" id="57"/>
+							<ChildItems>
+								<InputField name="ИсполнительОсновнаяАдресация" id="102">
+									<DataPath>СписокПоручений.ОсновнойОбъектАдресации</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адресация</v8:content>
+										</v8:item>
+									</Title>
+									<ShowInHeader>false</ShowInHeader>
+									<ContextMenu name="ИсполнительОсновнаяАдресацияКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="ИсполнительОсновнаяАдресацияРасширеннаяПодсказка" id="104"/>
+								</InputField>
+								<LabelField name="ИсполнительРоль" id="105">
+									<DataPath>СписокПоручений.ИсполнительРоль</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исполнитель</v8:content>
+										</v8:item>
+									</Title>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>15</Width>
+									<ContextMenu name="ИсполнительРольКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="ИсполнительРольРасширеннаяПодсказка" id="107"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаПроектПредмет" id="64">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа проект предмет</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа проект предмет</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаПроектПредметРасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<LabelField name="ПредметСтрокой" id="108">
+							<DataPath>СписокПоручений.ПредметСтрокой</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Предмет</v8:content>
+								</v8:item>
+							</Title>
+							<Width>15</Width>
+							<ContextMenu name="ПредметСтрокойКонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="ПредметСтрокойРасширеннаяПодсказка" id="110"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="Статус" id="111">
+					<DataPath>СписокПоручений.Статус</DataPath>
+					<ContextMenu name="СтатусКонтекстноеМеню" id="112"/>
+					<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="113"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогНачальнаяСтраницаПользователя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокПоручений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список поручений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ЗадачаЗадачаИсполнителя.Ссылка КАК Ссылка,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.Важность = ЗНАЧЕНИЕ(Перечисление.ВариантыВажностиЗадачи.Низкая)
+			ТОГДА 0
+		КОГДА ЗадачаЗадачаИсполнителя.Важность = ЗНАЧЕНИЕ(Перечисление.ВариантыВажностиЗадачи.Высокая)
+			ТОГДА 2
+		ИНАЧЕ 1
+	КОНЕЦ КАК ВажностьКартинка,
+	ЗадачаЗадачаИсполнителя.Важность КАК Важность,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.Выполнена
+			ТОГДА 2
+		КОГДА НЕ ЗадачаЗадачаИсполнителя.ПринятаКИсполнению
+			ТОГДА 0
+		КОГДА ЗадачаЗадачаИсполнителя.ПринятаКИсполнению
+			ТОГДА 1
+	КОНЕЦ КАК Состояние,
+	ЗадачаЗадачаИсполнителя.ПринятаКИсполнению КАК ПринятаКИсполнению,
+	ЗадачаЗадачаИсполнителя.Выполнена КАК Выполнена,
+	ЗадачаЗадачаИсполнителя.ДатаНачала КАК ДатаНачала,
+	ЗадачаЗадачаИсполнителя.СрокИсполнения КАК СрокИсполнения,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.Выполнена
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ВЫБОР
+				КОГДА ЗадачаЗадачаИсполнителя.СрокИсполнения = &amp;ПарамПустаяДата
+					ТОГДА ЛОЖЬ
+				ИНАЧЕ ВЫБОР
+						КОГДА ЗадачаЗадачаИсполнителя.СрокИсполнения &lt; &amp;ПарамТекущаяДата
+							ТОГДА ИСТИНА
+						ИНАЧЕ ЛОЖЬ
+					КОНЕЦ
+			КОНЕЦ
+	КОНЕЦ КАК Просрочена,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.Выполнена
+			ТОГДА 0
+		КОГДА ЗадачаЗадачаИсполнителя.СрокИсполнения = &amp;ПарамПустаяДата
+			ТОГДА 0
+		ИНАЧЕ ВЫБОР
+				КОГДА ЗадачаЗадачаИсполнителя.СрокИсполнения &lt; &amp;ПарамТекущаяДата
+					ТОГДА РАЗНОСТЬДАТ(&amp;ПарамТекущаяДата, ЗадачаЗадачаИсполнителя.СрокИсполнения, ДЕНЬ) * -1
+				ИНАЧЕ РАЗНОСТЬДАТ(&amp;ПарамТекущаяДата, ЗадачаЗадачаИсполнителя.СрокИсполнения, ДЕНЬ)
+			КОНЕЦ
+	КОНЕЦ КАК ОсталосьДней,
+	ЗадачаЗадачаИсполнителя.Автор КАК Автор,
+	ЗадачаЗадачаИсполнителя.РольИсполнителя КАК РольИсполнителя,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.CRM_Личная
+			ТОГДА ЗадачаЗадачаИсполнителя.CRM_Проект
+		ИНАЧЕ ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).Проект
+	КОНЕЦ КАК Проект,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.CRM_Личная
+			ТОГДА ЗадачаЗадачаИсполнителя.CRM_Партнер
+		ИНАЧЕ ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).Партнер
+	КОНЕЦ КАК Клиент,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.CRM_Личная
+			ТОГДА ЗадачаЗадачаИсполнителя.CRM_КонтактноеЛицо
+		ИНАЧЕ ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).КонтактноеЛицо
+	КОНЕЦ КАК КонтактноеЛицо,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.CRM_Личная
+			ТОГДА ЗНАЧЕНИЕ(БизнесПроцесс.CRM_БизнесПроцесс.ПустаяСсылка)
+		ИНАЧЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс
+	КОНЕЦ КАК БизнесПроцесс,
+	ЗадачаЗадачаИсполнителя.ПредметСтрокой КАК ПредметСтрокой,
+	ЗадачаЗадачаИсполнителя.Дата КАК Дата,
+	ЗадачаЗадачаИсполнителя.ДатаИсполнения КАК ДатаИсполнения,
+	ЗадачаЗадачаИсполнителя.ДатаПринятияКИсполнению КАК ДатаПринятияКИсполнению,
+	ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.РезультатВыполнения КАК СТРОКА(500)) КАК Результат,
+	ЗадачаЗадачаИсполнителя.CRM_ТочкаМаршрута КАК ТочкаМаршрута,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.CRM_Личная
+			ТОГДА ЗНАЧЕНИЕ(Справочник.CRM_КартыМаршрутов.ПустаяСсылка)
+		КОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс &lt;&gt; НЕОПРЕДЕЛЕНО
+			ТОГДА ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).КартаМаршрута
+		КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+			ТОГДА ВЫРАЗИТЬ("Согласование анкеты" КАК СТРОКА(100))
+		ИНАЧЕ ВЫРАЗИТЬ("" КАК СТРОКА(100))
+	КОНЕЦ КАК КартаМаршрута,
+	ЗадачаЗадачаИсполнителя.CRM_Переадресована КАК Переадресована,
+	ЗадачаЗадачаИсполнителя.CRM_Личная КАК Личная,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.РольИсполнителя = ЗНАЧЕНИЕ(Справочник.РолиИсполнителей.ПустаяСсылка)
+			ТОГДА ЗадачаЗадачаИсполнителя.Исполнитель
+		КОГДА НЕ ЗадачаЗадачаИсполнителя.Исполнитель = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ЗадачаЗадачаИсполнителя.Исполнитель
+		ИНАЧЕ ЗадачаЗадачаИсполнителя.РольИсполнителя
+	КОНЕЦ КАК ИсполнительРоль,
+	ЗадачаЗадачаИсполнителя.Наименование КАК Наименование,
+	ЗадачаЗадачаИсполнителя.ПометкаУдаления КАК ПометкаУдаления,
+	ЕСТЬNULL(ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.CRM_ОсновнаяКатегория КАК Справочник.CRM_КатегорииПользователей).ЦветИндекс, 26) КАК ОсновнаяКатегорияИндекс,
+	ЗадачаЗадачаИсполнителя.CRM_ОсновнаяКатегория КАК ОсновнаяКатегория,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.Исполнитель В (&amp;ТекущийПользователь)
+				ИЛИ ЗадачаЗадачаИсполнителя.Исполнитель = ДелегатыПоИсполнителю.РольПользователь
+				ИЛИ ЗадачаЗадачаИсполнителя.РольИсполнителя В (&amp;вогРолиИсполнителя)
+				ИЛИ ВЫБОР
+					КОГДА ЗадачаЗадачаИсполнителя.РольИсполнителя = ЗНАЧЕНИЕ(Справочник.РолиИсполнителей.вогЗадачиДолжностнойПозиции)
+							И ЗадачаЗадачаИсполнителя.ОсновнойОбъектАдресации В (&amp;вогДолжностныеПозиции)
+						ТОГДА ИСТИНА
+					ИНАЧЕ ЛОЖЬ
+				КОНЕЦ
+			ТОГДА "ВходящиеСогласования"
+		КОГДА ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).Автор В (&amp;ТекущийПользователь)
+				ИЛИ ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).Автор = ДелегатыПоАвтору.РольПользователь
+			ТОГДА "ИсходящиеСогласования"
+		КОГДА ЗадачаЗадачаИсполнителя.Автор В (&amp;ТекущийПользователь)
+				ИЛИ ЗадачаЗадачаИсполнителя.Автор = ДелегатыПоАвтору.РольПользователь
+			ТОГДА "ИсходящиеСогласования"
+	КОНЕЦ КАК Направление,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+				И ЗадачаЗадачаИсполнителя.CRM_Личная = ЛОЖЬ
+				И ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+			ТОГДА ИСТИНА
+		КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+				И ЗадачаЗадачаИсполнителя.БизнесПроцесс &lt;&gt; НЕОПРЕДЕЛЕНО
+			ТОГДА ЕСТЬNULL(ВЫРАЗИТЬ(ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).КартаМаршрута КАК Справочник.CRM_КартыМаршрутов).вогЯвляетсяСогласованием, ЛОЖЬ)
+		ИНАЧЕ ЕСТЬNULL(ВЫРАЗИТЬ(ВЫРАЗИТЬ(ЗадачаЗадачаИсполнителя.БизнесПроцесс КАК БизнесПроцесс.CRM_БизнесПроцесс).КартаМаршрута КАК Справочник.CRM_КартыМаршрутов).вогЯвляетсяСогласованием, ЛОЖЬ)
+	КОНЕЦ КАК ЯвляетсяСогласованием,
+	ЗадачаЗадачаИсполнителя.ОсновнойОбъектАдресации КАК ОсновнойОбъектАдресации,
+	ВЫБОР
+		КОГДА НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+			ТОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс.Автор
+		КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+				И ЗадачаЗадачаИсполнителя.CRM_Личная = ЛОЖЬ
+				И ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+			ТОГДА ЗадачаЗадачаИсполнителя.Автор
+	КОНЕЦ КАК БизнесПроцессАвтор,
+	ВЫБОР
+		КОГДА НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+			ТОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс.Ответственный
+		КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+				И ЗадачаЗадачаИсполнителя.CRM_Личная = ЛОЖЬ
+				И ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+			ТОГДА ЗадачаЗадачаИсполнителя.Автор
+	КОНЕЦ КАК БизнесПроцессОтветственный,
+	ВЫБОР
+		КОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс &lt;&gt; НЕОПРЕДЕЛЕНО
+				И ЗадачаЗадачаИсполнителя.БизнесПроцесс.Завершен
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Согласование)
+			ТОГДА ПРЕДСТАВЛЕНИЕССЫЛКИ(ЗадачаЗадачаИсполнителя.БизнесПроцесс.ВариантЗавершения)
+		КОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс &lt;&gt; НЕОПРЕДЕЛЕНО
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Согласование)
+				И НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс.Завершен
+			ТОГДА "Согласование"
+		КОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+				И ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Согласование)
+			ТОГДА ПРЕДСТАВЛЕНИЕ(ЗадачаЗадачаИсполнителя.Предмет.Статус)
+		КОГДА НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс.Завершен
+				И НЕ ЗадачаЗадачаИсполнителя.Выполнена
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Поручение)
+			ТОГДА "Выполнить поручения"
+		КОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс.Завершен
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Поручение)
+				И ЗадачаЗадачаИсполнителя.Выполнена
+			ТОГДА "Поручение выполнено"
+		КОГДА НЕ ЗадачаЗадачаИсполнителя.Выполнена
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Личная)
+			ТОГДА "В процессе"
+		КОГДА ЗадачаЗадачаИсполнителя.Выполнена
+				И ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = ЗНАЧЕНИЕ(Перечисление.вогТипЗадачиИсполнителя.Личная)
+			ТОГДА "Выполнено"
+	КОНЕЦ КАК Статус,
+	ВЫБОР
+		КОГДА CRM_ЗадачиПользователей.Пользователь ЕСТЬ NULL
+			ТОГДА ЗадачаЗадачаИсполнителя.Исполнитель
+		ИНАЧЕ CRM_ЗадачиПользователей.Пользователь
+	КОНЕЦ КАК ИсполнительЗадачи,
+	ЗадачаЗадачаИсполнителя.Исполнитель КАК Исполнитель
+ИЗ
+	Задача.ЗадачаИсполнителя КАК ЗадачаЗадачаИсполнителя
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогИсполнителиРолейИДелегаты КАК ДелегатыПоИсполнителю
+		ПО ЗадачаЗадачаИсполнителя.Исполнитель = ДелегатыПоИсполнителю.РольПользователь
+			И (ДелегатыПоИсполнителю.ИмяОбластиДелегирования В ("", "ПроцессыИЗадачи"))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогИсполнителиРолейИДелегаты КАК ДелегатыПоАвтору
+		ПО ЗадачаЗадачаИсполнителя.Автор = ДелегатыПоАвтору.РольПользователь
+			И (ДелегатыПоАвтору.ИмяОбластиДелегирования В ("", "ПроцессыИЗадачи"))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ЗадачиПользователей КАК CRM_ЗадачиПользователей
+		ПО (CRM_ЗадачиПользователей.Объект = ЗадачаЗадачаИсполнителя.Ссылка)
+ГДЕ
+	ЗадачаЗадачаИсполнителя.вогТипЗадачиИсполнителя = &amp;ТипЗадачи
+	И ЗадачаЗадачаИсполнителя.ПометкаУдаления = ЛОЖЬ
+	И (CRM_ЗадачиПользователей.Пользователь В (&amp;ТекущийПользователь)
+			ИЛИ ВЫБОР
+				КОГДА НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+					ТОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс.Автор
+				КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+						И ЗадачаЗадачаИсполнителя.CRM_Личная = ЛОЖЬ
+						И ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+					ТОГДА ЗадачаЗадачаИсполнителя.Автор
+			КОНЕЦ В (&amp;ТекущийПользователь)
+			ИЛИ ДелегатыПоИсполнителю.ИсполнительДелегат В (&amp;ТекущийПользователь)
+			ИЛИ ЗадачаЗадачаИсполнителя.РольИсполнителя В (&amp;вогРолиИсполнителя)
+				И ЗадачаЗадачаИсполнителя.ОсновнойОбъектАдресации В (&amp;вогОсновныеОбъектыАдресации))
+{ГДЕ
+	(ВЫБОР
+			КОГДА НЕ ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+				ТОГДА ЗадачаЗадачаИсполнителя.БизнесПроцесс.Автор
+			КОГДА ЗадачаЗадачаИсполнителя.Предмет ССЫЛКА Документ.вогАнкета
+					И ЗадачаЗадачаИсполнителя.CRM_Личная = ЛОЖЬ
+					И ЗадачаЗадачаИсполнителя.БизнесПроцесс = НЕОПРЕДЕЛЕНО
+				ТОГДА ЗадачаЗадачаИсполнителя.Автор
+		КОНЕЦ).* КАК БизнесПроцессАвтор}</QueryText>
+				<MainTable>Task.ЗадачаИсполнителя</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>СрокИсполнения</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОтборПринадлежность" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор принадлежность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийПользователь" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокПользователей" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="РуководительПользователя" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Руководитель пользователя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборДата" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПросроченные" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор просроченные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодВыборки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период выборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПериодВыборки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Отбор" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборВсе" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор все</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

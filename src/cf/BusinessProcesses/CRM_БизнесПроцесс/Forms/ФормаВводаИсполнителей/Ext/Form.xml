@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Выберите исполнителей этапа</v8:content>
+		</v8:item>
+	</Title>
+	<Width>50</Width>
+	<Height>20</Height>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа команды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа команды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#F0F0F0</BackColor>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<Button name="ФормаОтмена" id="7">
+					<Type>UsualButton</Type>
+					<Width>12</Width>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.Отмена</CommandName>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="20"/>
+				</Button>
+				<UsualGroup name="ГруппаДобавить" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа добавить</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа добавить</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>11</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<HorizontalAlign>Left</HorizontalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДобавитьРасширеннаяПодсказка" id="44"/>
+					<ChildItems>
+						<Button name="СписокИсполнителейДобавить" id="8">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<Width>3</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<CommandName>Form.Item.СписокИсполнителей.StandardCommand.Add</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.CRM_Добавить</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="СписокИсполнителейДобавитьРасширеннаяПодсказка" id="21"/>
+						</Button>
+						<Button name="СписокИсполнителейУдалить" id="10">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<Width>3</Width>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<CommandName>Form.Item.СписокИсполнителей.StandardCommand.Delete</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.CRM_Минус</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="СписокИсполнителейУдалитьРасширеннаяПодсказка" id="23"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаИзменить" id="47">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа изменить</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа изменить</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>7</Width>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаИзменитьРасширеннаяПодсказка" id="48"/>
+					<ChildItems>
+						<Button name="СписокИсполнителейИзменить" id="9">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<Width>3</Width>
+							<CommandName>Form.Item.СписокИсполнителей.StandardCommand.Change</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.bmp_ЗапуститьПроцесс</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="СписокИсполнителейИзменитьРасширеннаяПодсказка" id="22"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<CommandBar name="СписокИсполнителейГруппаПодбор" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подбор</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список исполнителей группа подбор</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СписокИсполнителейГруппаПодборРасширеннаяПодсказка" id="24"/>
+				</CommandBar>
+				<UsualGroup name="ГруппаПорядок" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа порядок</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа порядок</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>12</Width>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПорядокРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<Button name="СписокИсполнителейПереместитьВниз" id="15">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<Width>3</Width>
+							<CommandName>Form.Item.СписокИсполнителей.StandardCommand.MoveDown</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.CRM_ПолучитьПочту</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="СписокИсполнителейПереместитьВнизРасширеннаяПодсказка" id="26"/>
+						</Button>
+						<Button name="СписокИсполнителейПереместитьВверх" id="14">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<Width>3</Width>
+							<CommandName>Form.Item.СписокИсполнителей.StandardCommand.MoveUp</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.CRM_ОтправитьПочту</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="СписокИсполнителейПереместитьВверхРасширеннаяПодсказка" id="25"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Button name="СписокИсполнителейСортироватьСписокПоВозрастанию" id="12">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<CommandName>Form.Item.СписокИсполнителей.StandardCommand.SortListAsc</CommandName>
+					<ExtendedTooltip name="СписокИсполнителейСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="27"/>
+				</Button>
+				<Button name="СписокИсполнителейСортироватьСписокПоУбыванию" id="13">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<CommandName>Form.Item.СписокИсполнителей.StandardCommand.SortListDesc</CommandName>
+					<ExtendedTooltip name="СписокИсполнителейСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="28"/>
+				</Button>
+				<Button name="ФормаОК" id="6">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<Width>12</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОК</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Готово</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="19"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СписокИсполнителей" id="1">
+			<Representation>List</Representation>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокИсполнителей</DataPath>
+			<RowPictureDataPath>СписокИсполнителей.Picture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<ContextMenu name="СписокИсполнителейКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокИсполнителейКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокИсполнителейРасширеннаяПодсказка" id="29"/>
+			<SearchStringAddition name="СписокИсполнителейСтрокаПоиска" id="30">
+				<AdditionSource>
+					<Item>СписокИсполнителей</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокИсполнителейСтрокаПоискаКонтекстноеМеню" id="31"/>
+				<ExtendedTooltip name="СписокИсполнителейСтрокаПоискаРасширеннаяПодсказка" id="32"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокИсполнителейСостояниеПросмотра" id="33">
+				<AdditionSource>
+					<Item>СписокИсполнителей</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокИсполнителейСостояниеПросмотраКонтекстноеМеню" id="34"/>
+				<ExtendedTooltip name="СписокИсполнителейСостояниеПросмотраРасширеннаяПодсказка" id="35"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокИсполнителейУправлениеПоиском" id="36">
+				<AdditionSource>
+					<Item>СписокИсполнителей</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокИсполнителейУправлениеПоискомКонтекстноеМеню" id="37"/>
+				<ExtendedTooltip name="СписокИсполнителейУправлениеПоискомРасширеннаяПодсказка" id="38"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокИсполнителейПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="СписокИсполнителейЗначение" id="4">
+					<DataPath>СписокИсполнителей.Value</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнитель</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СписокИсполнителейЗначениеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="СписокИсполнителейЗначениеРасширеннаяПодсказка" id="39"/>
+					<Events>
+						<Event name="StartChoice">СписокИсполнителейЗначениеНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="СписокИсполнителейПометка" id="16">
+					<DataPath>СписокИсполнителей.Check</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Все</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СписокИсполнителейПометкаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="СписокИсполнителейПометкаРасширеннаяПодсказка" id="40"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокИсполнителей" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список исполнителей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.РолиИсполнителей</v8:Type>
+				<v8:Type>cfg:CatalogRef.CRM_ТочкиМаршрутов</v8:Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+				<v8:Type>cfg:EnumRef.CRM_ВидыИсполнителейЗадач</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="КартаМаршрута" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карта маршрута</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_КартыМаршрутов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерВерсииКартыМаршрута" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер версии карты маршрута</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="СписокИсполнителей">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

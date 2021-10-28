@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="51"/>
+			<ChildItems>
+				<Page name="СтраницаПланирование" id="52">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Планирование</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница планирование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПланированиеРасширеннаяПодсказка" id="53"/>
+					<ChildItems>
+						<Table name="ДанныеПланирования" id="22">
+							<Representation>List</Representation>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ДанныеПланирования</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеПланированияКонтекстноеМеню" id="23"/>
+							<AutoCommandBar name="ДанныеПланированияКоманднаяПанель" id="24"/>
+							<ExtendedTooltip name="ДанныеПланированияРасширеннаяПодсказка" id="25"/>
+							<SearchStringAddition name="ДанныеПланированияСтрокаПоиска" id="26">
+								<AdditionSource>
+									<Item>ДанныеПланирования</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеПланированияСтрокаПоискаКонтекстноеМеню" id="27"/>
+								<ExtendedTooltip name="ДанныеПланированияСтрокаПоискаРасширеннаяПодсказка" id="28"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеПланированияСостояниеПросмотра" id="29">
+								<AdditionSource>
+									<Item>ДанныеПланирования</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеПланированияСостояниеПросмотраКонтекстноеМеню" id="30"/>
+								<ExtendedTooltip name="ДанныеПланированияСостояниеПросмотраРасширеннаяПодсказка" id="31"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеПланированияУправлениеПоиском" id="32">
+								<AdditionSource>
+									<Item>ДанныеПланирования</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеПланированияУправлениеПоискомКонтекстноеМеню" id="33"/>
+								<ExtendedTooltip name="ДанныеПланированияУправлениеПоискомРасширеннаяПодсказка" id="34"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">ДанныеПланированияПриОкончанииРедактирования</Event>
+								<Event name="BeforeAddRow">ДанныеПланированияПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ДанныеПланированияНомерСтроки" id="35">
+									<DataPath>Объект.ДанныеПланирования.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияНомерСтрокиКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ДанныеПланированияНомерСтрокиРасширеннаяПодсказка" id="37"/>
+								</LabelField>
+								<InputField name="ДанныеПланированияВидТТ" id="58">
+									<DataPath>Объект.ДанныеПланирования.ВидТТ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Магазин Палитра ваших стен</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПотенциальнойТорговойТочки.EnumValue.Магазин_Палитра_ваших_стен</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Магазин Палитра плюс</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПотенциальнойТорговойТочки.EnumValue.Магазин_Палитра_Плюс</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Новый магазин клиента без бренд зоны</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПотенциальнойТорговойТочки.EnumValue.Новый_магазин_клиента_без_бренд_зоны</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Новый магазин клиента с бренд зоной</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПотенциальнойТорговойТочки.EnumValue.Новый_магазин_клиента_c_бренд_зоной</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Новая бренд зона в существующей ТРТ</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПотенциальнойТорговойТочки.EnumValue.НоваяБрендЗонаВСуществующейТТ</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ДанныеПланированияВидТТКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ДанныеПланированияВидТТРасширеннаяПодсказка" id="60"/>
+								</InputField>
+								<InputField name="ДанныеПланированияГород" id="38">
+									<DataPath>Объект.ДанныеПланирования.Город</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameters>
+										<app:item name="Отбор.ТипАдреса">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:string">НаселенныйПункт</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="ДанныеПланированияГородКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ДанныеПланированияГородРасширеннаяПодсказка" id="40"/>
+								</InputField>
+								<InputField name="ДанныеПланированияКлиент" id="67">
+									<DataPath>Объект.ДанныеПланирования.Клиент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияКлиентКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ДанныеПланированияКлиентРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="ДанныеПланированияТорговаяТочка" id="64">
+									<DataPath>Объект.ДанныеПланирования.ТорговаяТочка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияТорговаяТочкаКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДанныеПланированияТорговаяТочкаРасширеннаяПодсказка" id="66"/>
+								</InputField>
+								<InputField name="ДанныеПланированияКоличествоПолок" id="41">
+									<DataPath>Объект.ДанныеПланирования.КоличествоПолок</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>План кол-во полок</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияКоличествоПолокКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ДанныеПланированияКоличествоПолокРасширеннаяПодсказка" id="43"/>
+								</InputField>
+								<InputField name="ДанныеПланированияОборот" id="44">
+									<DataPath>Объект.ДанныеПланирования.Оборот</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оборот с полки</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияОборотКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ДанныеПланированияОборотРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="ДанныеПланированияМесяцДостиженияЦели" id="47">
+									<DataPath>Объект.ДанныеПланирования.МесяцДостиженияЦели</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Месяц достижения цели</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<DropListButton>true</DropListButton>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<MinValue xsi:type="xs:decimal">1</MinValue>
+									<MaxValue xsi:type="xs:decimal">12</MaxValue>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Январь</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Февраль</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Март</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">3</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Апрель</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">4</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Май</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">5</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Июнь</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">6</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Июль</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">7</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Август</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">8</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сентябрь</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">9</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Октябрь</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">10</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Ноябрь</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">11</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Декабрь</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">12</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ДанныеПланированияМесяцДостиженияЦелиКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ДанныеПланированияМесяцДостиженияЦелиРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="ДанныеПланированияКомментарий" id="61">
+									<DataPath>Объект.ДанныеПланирования.Комментарий</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияКомментарийКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ДанныеПланированияКомментарийРасширеннаяПодсказка" id="63"/>
+								</InputField>
+								<InputField name="ДанныеПланированияМенеджер" id="70">
+									<DataPath>Объект.ДанныеПланирования.Менеджер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПланированияМенеджерКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ДанныеПланированияМенеджерРасширеннаяПодсказка" id="72"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройки" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиРасширеннаяПодсказка" id="55"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="56">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="57"/>
+							<ChildItems>
+								<InputField name="Номер" id="1">
+									<DataPath>Объект.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<InputField name="Дата" id="4">
+									<DataPath>Объект.Date</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="СценарийПланирования" id="7">
+							<DataPath>Объект.СценарийПланирования</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СценарийПланированияКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="СценарийПланированияРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<InputField name="ВерсияСценария" id="10">
+							<DataPath>Объект.ВерсияСценария</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ВерсияСценарияКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ВерсияСценарияРасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="Автор" id="13">
+							<DataPath>Объект.Автор</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АвторКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="Комментарий" id="16">
+							<DataPath>Объект.Комментарий</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КомментарийКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="ПериодПланирования" id="19">
+							<DataPath>Объект.ПериодПланирования</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПериодПланированияКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ПериодПланированияРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="Подразделение" id="73">
+							<DataPath>Объект.Подразделение</DataPath>
+							<ContextMenu name="ПодразделениеКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="75"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПланированиеПродажПоПотенциальнымТорговымТочкамОбои</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияТорговаяТочка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ВидТТ</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.НоваяБрендЗонаВСуществующейТТ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияТорговаяТочка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ВидТТ</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.НоваяБрендЗонаВСуществующейТТ</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияКлиент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияГород</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ВидТТ</dcsset:left>
+						<dcsset:comparisonType>InList</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Магазин_Палитра_ваших_стен</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Магазин_Палитра_Плюс</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Новый_магазин_клиента_без_бренд_зоны</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Новый_магазин_клиента_c_бренд_зоной</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияКлиент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияГород</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ВидТТ</dcsset:left>
+						<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Магазин_Палитра_ваших_стен</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Магазин_Палитра_Плюс</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Новый_магазин_клиента_без_бренд_зоны</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыПотенциальнойТорговойТочки.Новый_магазин_клиента_c_бренд_зоной</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияТорговаяТочка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ТорговаяТочка</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияГород</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.Город</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияКлиент</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.Клиент</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияМенеджер</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ТорговаяТочка</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДанныеПланированияМенеджер</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ДанныеПланирования.ТорговаяТочка</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Parameters>
+		<Parameter name="СценарийПланирования">
+			<Type>
+				<v8:Type>cfg:CatalogRef.вогСценарииПланирования</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Проверка правописания</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<FormattedDocumentField name="РедактируемыйТекст" id="3">
+			<DataPath>РедактируемыйТекст</DataPath>
+			<Enabled>false</Enabled>
+			<TitleLocation>None</TitleLocation>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверяемый текст</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Height>8</Height>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<ContextMenu name="РедактируемыйТекстКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="РедактируемыйТекстExtendedTooltip" id="32"/>
+		</FormattedDocumentField>
+		<UsualGroup name="ГруппаРезультатыПроверки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа результаты проверки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа результаты проверки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРезультатыПроверкиExtendedTooltip" id="33"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПоляПроверки" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа поля проверки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа поля проверки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Height>10</Height>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПоляПроверкиExtendedTooltip" id="34"/>
+					<ChildItems>
+						<InputField name="ПроверяемоеСлово" id="15">
+							<DataPath>ПроверяемоеСлово</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Слово с ошибкой</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ContextMenu name="ПроверяемоеСловоКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="ПроверяемоеСловоExtendedTooltip" id="35"/>
+							<Events>
+								<Event name="OnChange">ПроверяемоеСловоПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="ВариантыЗамены" id="6">
+							<Representation>List</Representation>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ВариантыЗамены</DataPath>
+							<RowPictureDataPath>ВариантыЗамены.Picture</RowPictureDataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>CheckAll</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>Pickup</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>UncheckAll</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ВариантыЗаменыКонтекстноеМеню" id="7"/>
+							<AutoCommandBar name="ВариантыЗаменыКоманднаяПанель" id="8"/>
+							<ExtendedTooltip name="ВариантыЗаменыExtendedTooltip" id="36"/>
+							<SearchStringAddition name="ВариантыЗаменыСтрокаПоиска" id="52">
+								<AdditionSource>
+									<Item>ВариантыЗамены</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВариантыЗаменыСтрокаПоискаКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="ВариантыЗаменыСтрокаПоискаРасширеннаяПодсказка" id="54"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВариантыЗаменыСостояниеПросмотра" id="55">
+								<AdditionSource>
+									<Item>ВариантыЗамены</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВариантыЗаменыСостояниеПросмотраКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="ВариантыЗаменыСостояниеПросмотраРасширеннаяПодсказка" id="57"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВариантыЗаменыУправлениеПоиском" id="58">
+								<AdditionSource>
+									<Item>ВариантыЗамены</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВариантыЗаменыУправлениеПоискомКонтекстноеМеню" id="59"/>
+								<ExtendedTooltip name="ВариантыЗаменыУправлениеПоискомРасширеннаяПодсказка" id="60"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ВариантыЗаменыВыбор</Event>
+								<Event name="OnActivateCell">ВариантыЗаменыПриАктивизацииЯчейки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ВариантыЗаменыЗначение" id="9">
+									<DataPath>ВариантыЗамены.Value</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВариантыЗаменыЗначениеКонтекстноеМеню" id="10"/>
+									<ExtendedTooltip name="ВариантыЗаменыЗначениеExtendedTooltip" id="37"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаКнопкиДействий" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа кнопки действий</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа кнопки действий</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКнопкиДействийExtendedTooltip" id="38"/>
+					<ChildItems>
+						<Button name="Изменить" id="17">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.Изменить</CommandName>
+							<ExtendedTooltip name="ИзменитьExtendedTooltip" id="39"/>
+						</Button>
+						<UsualGroup name="ГруппаПеремещение" id="28">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа перемещение</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа перемещение</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПеремещениеExtendedTooltip" id="40"/>
+							<ChildItems>
+								<Button name="ПредыдущееСлово" id="29">
+									<Type>UsualButton</Type>
+									<Width>6</Width>
+									<CommandName>Form.Command.ПредыдущееСлово</CommandName>
+									<ExtendedTooltip name="ПредыдущееСловоExtendedTooltip" id="41"/>
+								</Button>
+								<Button name="СледующееСлово" id="30">
+									<Type>UsualButton</Type>
+									<Width>6</Width>
+									<CommandName>Form.Command.СледующееСлово</CommandName>
+									<ExtendedTooltip name="СледующееСловоExtendedTooltip" id="42"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="Пропустить" id="19">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.Пропустить</CommandName>
+							<ExtendedTooltip name="ПропуститьExtendedTooltip" id="43"/>
+						</Button>
+						<Button name="ПропуститьВсе" id="20">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.ПропуститьВсе</CommandName>
+							<ExtendedTooltip name="ПропуститьВсеExtendedTooltip" id="44"/>
+						</Button>
+						<LabelDecoration name="ДекорацияРазделительКнопок" id="26">
+							<Width>13</Width>
+							<Height>1</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="ДекорацияРазделительКнопокКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ДекорацияРазделительКнопокExtendedTooltip" id="45"/>
+						</LabelDecoration>
+						<Button name="Заменить" id="12">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.Заменить</CommandName>
+							<ExtendedTooltip name="ЗаменитьExtendedTooltip" id="46"/>
+						</Button>
+						<Button name="ЗаменитьВсе" id="13">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.ЗаменитьВсе</CommandName>
+							<ExtendedTooltip name="ЗаменитьВсеExtendedTooltip" id="47"/>
+						</Button>
+						<PictureDecoration name="ДекорацияРазделитель" id="21">
+							<Width>13</Width>
+							<Height>1</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация разделитель</v8:content>
+								</v8:item>
+							</Title>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="ДекорацияРазделительExtendedTooltip" id="48"/>
+						</PictureDecoration>
+						<Button name="Записать" id="31">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.ЗаписатьИЗакрытьФорму</CommandName>
+							<ExtendedTooltip name="ЗаписатьExtendedTooltip" id="49"/>
+						</Button>
+						<Button name="ЗакрытьФорму" id="23">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<CommandName>Form.Command.ЗакрытьФорму</CommandName>
+							<ExtendedTooltip name="ЗакрытьФормуExtendedTooltip" id="50"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияYandexSpeller" id="1">
+			<HorizontalStretch>true</HorizontalStretch>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>«Проверка правописания: Яндекс.Спеллер»</v8:content>
+				</v8:item>
+			</Title>
+			<Hyperlink>true</Hyperlink>
+			<ContextMenu name="ДекорацияYandexSpellerКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДекорацияYandexSpellerExtendedTooltip" id="51"/>
+			<Events>
+				<Event name="Click">ДекорацияYandexSpellerНажатие</Event>
+			</Events>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ПроверяемыйТекст" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверяемый текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантыЗамены" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Варианты замены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверяемоеСлово" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверяемое слово</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокОшибок" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список ошибок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяРеквизита" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя реквизита</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерОшибки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РедактируемыйТекст" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактируемый текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:fd="http://v8.1c.ru/8.2/data/formatted-document">fd:FormattedDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Сдвиг" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сдвиг</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипТекста" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип текста</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыТекстовЭлектронныхПисем</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстИзменен" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст изменен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаПодключения" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка подключения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстОшибки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заменить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заменить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заменить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаменитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заменить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заменить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаменитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Изменить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Изменить</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Пропустить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Next</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Пропустить</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПропуститьВсе" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.LevelDown</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПропуститьВсе</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗакрытьФорму" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Close</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗакрытьФорму</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СледующееСлово" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующее слово</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующее слово</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveRight</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СледующееСлово</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПредыдущееСлово" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предыдущее слово</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предыдущее слово</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПредыдущееСлово</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрытьФорму" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаписатьИЗакрытьФорму</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

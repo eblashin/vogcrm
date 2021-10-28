@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Тема</dataPath>
+			<field>Тема</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тема</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Начало</dataPath>
+			<field>Начало</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Окончание</dataPath>
+			<field>Окончание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата окончания</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контакты</dataPath>
+			<field>Контакты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контакты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяНачала</dataPath>
+			<field>ВремяНачала</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время начала</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяОкончания</dataPath>
+			<field>ВремяОкончания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время окончания</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_Мероприятие.Партнер КАК ОбъектСвязи,
+	CRM_Мероприятие.Ссылка КАК ДокументВзаимодействия
+ПОМЕСТИТЬ ВТ_ОбъектыВзаимодействия
+ИЗ
+	Документ.CRM_Мероприятие.СторонниеЛица КАК CRM_Мероприятие
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	CRM_Мероприятие.КонтактноеЛицо,
+	CRM_Мероприятие.Ссылка
+ИЗ
+	Документ.CRM_Мероприятие.СторонниеЛица КАК CRM_Мероприятие
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	CRM_Мероприятие.вогТорговаяТочка,
+	CRM_Мероприятие.Ссылка
+ИЗ
+	Документ.CRM_Мероприятие.СторонниеЛица КАК CRM_Мероприятие
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА ВТ_ОбъектыВзаимодействия.ОбъектСвязи ССЫЛКА Справочник.Партнеры
+			ТОГДА ВТ_ОбъектыВзаимодействия.ОбъектСвязи
+		КОГДА ВТ_ОбъектыВзаимодействия.ОбъектСвязи ССЫЛКА Справочник.вогТорговыеТочки
+			ТОГДА ВТ_ОбъектыВзаимодействия.ОбъектСвязи
+		КОГДА ВТ_ОбъектыВзаимодействия.ОбъектСвязи ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+			ТОГДА СвязиКонтактныхЛиц.ОбъектСвязи
+	КОНЕЦ КАК ОбъектСвязи,
+	ВТ_ОбъектыВзаимодействия.ДокументВзаимодействия КАК ДокументВзаимодействия
+ПОМЕСТИТЬ ВТ_Общая
+ИЗ
+	ВТ_ОбъектыВзаимодействия КАК ВТ_ОбъектыВзаимодействия
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_СвязиФизЛицСКонтактнымиЛицамиПартнеров КАК СвязиФизЛицСКонтактнымиЛицамиПартнеров
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.вогСвязиКонтактныхЛиц КАК вогСвязиКонтактныхЛиц
+			ПО СвязиФизЛицСКонтактнымиЛицамиПартнеров.КонтактноеЛицо = вогСвязиКонтактныхЛиц.КонтактноеЛицо
+		ПО ВТ_ОбъектыВзаимодействия.ОбъектСвязи = СвязиФизЛицСКонтактнымиЛицамиПартнеров.ФизЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогСвязиКонтактныхЛиц КАК СвязиКонтактныхЛиц
+		ПО ВТ_ОбъектыВзаимодействия.ОбъектСвязи = СвязиКонтактныхЛиц.КонтактноеЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_Общая.ДокументВзаимодействия.Тема КАК Тема,
+	ВТ_Общая.ДокументВзаимодействия.Ссылка.Дата КАК Начало,
+	ВТ_Общая.ДокументВзаимодействия.ОкончаниеМероприятия КАК Окончание,
+	(ВЫРАЗИТЬ(ВТ_Общая.ДокументВзаимодействия.СписокКлиентов КАК СТРОКА(1000))) + " (" + (ВЫРАЗИТЬ(ВТ_Общая.ДокументВзаимодействия.СписокУчастников КАК СТРОКА(1000))) + ")" КАК Контакты,
+	ВТ_Общая.ДокументВзаимодействия.Ссылка КАК Документ,
+	ВТ_Общая.ДокументВзаимодействия.Ссылка.Дата КАК ВремяНачала,
+	ВТ_Общая.ДокументВзаимодействия.ОкончаниеМероприятия КАК ВремяОкончания
+ИЗ
+	ВТ_Общая КАК ВТ_Общая
+ГДЕ
+	ВТ_Общая.ОбъектСвязи = &amp;ОбъектСвязи
+	И ВЫБОР
+			КОГДА &amp;ОтбиратьВсе = ИСТИНА
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВТ_Общая.ДокументВзаимодействия.Ссылка = &amp;ДокументОтбора
+		КОНЕЦ
+
+УПОРЯДОЧИТЬ ПО
+	Начало УБЫВ
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры, Документ.CRM_Мероприятие, БизнесПроцесс.CRM_БизнесПроцесс)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+			CRM_ДополнительныеРеквизитыКлассификаторов.ТипЗначения КАК ТипЗначения,
+			CRM_ЗначенияКлассификаторов.Наименование КАК Наименование,
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры, Документ.CRM_Мероприятие, БизнесПроцесс.CRM_БизнесПроцесс)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_Классификаторы.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.ОдиночноеЗначение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры, Документ.CRM_Мероприятие, БизнесПроцесс.CRM_БизнесПроцесс)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " (" + CRM_ЗначенияКлассификаторов.Наименование + ")" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры, Документ.CRM_Мероприятие, БизнесПроцесс.CRM_БизнесПроцесс)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " [" + CRM_ЗначенияКлассификаторов.Наименование + "]" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ЛЕВОЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение)
+			И CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка ЕСТЬ NULL)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			ИСТИНА КАК Значение,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора }</query>
+	</dataSet>
+	<parameter>
+		<name>ДокументОтбора</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Документ отбора</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.CRM_Мероприятие</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОбъектСвязи</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Объект связи</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.вогТорговыеТочки</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КонтактныеЛицаПартнеров</v8:Type>
+			<v8:TypeId>3c816751-082d-4ea8-8e82-6c6583e08975</v8:TypeId>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОтбиратьВсе</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отбирать все</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Тема</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Документ</dcsat:field>
+				<dcsat:expression>Документ</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Тема</dcsat:name>
+			<dcsat:expression>Тема</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Начало</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Начало</dcsat:name>
+			<dcsat:expression>Начало</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Документ</dcsat:field>
+				<dcsat:expression>Документ</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет3</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Окончание</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Окончание</dcsat:name>
+			<dcsat:expression>Окончание</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Документ</dcsat:field>
+				<dcsat:expression>Документ</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет4</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Контакты</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Документ</dcsat:field>
+				<dcsat:expression>Документ</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Контакты</dcsat:name>
+			<dcsat:expression>Контакты</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет6</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВремяОкончания</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДЛФ=T</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВремяОкончания</dcsat:name>
+			<dcsat:expression>ВремяОкончания</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Документ</dcsat:field>
+				<dcsat:expression>Документ</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет7</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВремяНачала</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ДЛФ=T</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВремяНачала</dcsat:name>
+			<dcsat:expression>ВремяНачала</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Документ</dcsat:field>
+				<dcsat:expression>Документ</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>Тема</field>
+		<template>Макет1</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>Начало</field>
+		<template>Макет2</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>Окончание</field>
+		<template>Макет3</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>Контакты</field>
+		<template>Макет4</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ВремяНачала</field>
+		<template>Макет7</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ВремяОкончания</field>
+		<template>Макет6</template>
+	</fieldTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Тема</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Начало</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВремяНачала</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Окончание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВремяОкончания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контакты</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Документ</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Начало</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Окончание</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=dd.MM.yyyy</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВремяНачала</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ВремяОкончания</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=T</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

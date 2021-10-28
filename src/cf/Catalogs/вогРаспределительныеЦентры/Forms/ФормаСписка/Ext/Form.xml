@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновныеРеквизиты" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновныеРеквизитыРасширеннаяПодсказка" id="38"/>
+			<ChildItems>
+				<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа пользовательских настроек</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+				</UsualGroup>
+				<Table name="Список" id="3">
+					<Representation>List</Representation>
+					<DefaultItem>true</DefaultItem>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<InitialTreeView>ExpandTopLevel</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Список</DataPath>
+					<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+					<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+					<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ФормаСоздать" id="49">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Create</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ФормаСоздатьРасширеннаяПодсказка" id="50"/>
+							</Button>
+							<ButtonGroup name="СписокГруппаГлобальныеКоманды" id="51">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список группа глобальные команды</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список группа глобальные команды</v8:content>
+									</v8:item>
+								</ToolTip>
+								<CommandSource>Item.Список</CommandSource>
+								<ExtendedTooltip name="СписокГруппаГлобальныеКомандыРасширеннаяПодсказка" id="52"/>
+							</ButtonGroup>
+							<Button name="СписокСоздатьПоручение" id="44">
+								<Type>CommandBarButton</Type>
+								<Visible>false</Visible>
+								<CommandName>Form.Command.СоздатьПоручение</CommandName>
+								<ExtendedTooltip name="СписокСоздатьПоручениеРасширеннаяПодсказка" id="45"/>
+							</Button>
+							<Button name="ФормаИзменитьФорму" id="39">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+								<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="40"/>
+							</Button>
+							<SearchStringAddition name="ДополнениеСтрокаПоиска" id="56">
+								<AdditionSource>
+									<Item>Список</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дополнение строка поиска</v8:content>
+									</v8:item>
+								</Title>
+								<ContextMenu name="ДополнениеСтрокаПоискаКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="ДополнениеСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+							</SearchStringAddition>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+					<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+						<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+						<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+						<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<PictureField name="ЗаполненностьИнформации" id="62">
+							<DataPath>Список.ЗаполненностьИнформации</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.CRM_ПроцентВыполненияЗадачи</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ЗаполненностьИнформацииКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="ЗаполненностьИнформацииРасширеннаяПодсказка" id="64"/>
+						</PictureField>
+						<LabelField name="Код" id="22">
+							<DataPath>Список.Код</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="КодКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="24"/>
+						</LabelField>
+						<LabelField name="Наименование" id="19">
+							<DataPath>Список.Наименование</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="21"/>
+						</LabelField>
+						<LabelField name="НаименованиеПолное" id="28">
+							<DataPath>Список.НаименованиеПолное</DataPath>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="НаименованиеПолноеКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="НаименованиеПолноеРасширеннаяПодсказка" id="30"/>
+						</LabelField>
+						<LabelField name="Статус" id="68">
+							<DataPath>Список.Статус</DataPath>
+							<ContextMenu name="СтатусКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="70"/>
+						</LabelField>
+						<LabelField name="СтатусРЦ" id="74">
+							<DataPath>Список.СтатусРЦ</DataPath>
+							<ContextMenu name="СтатусРЦКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="СтатусРЦРасширеннаяПодсказка" id="76"/>
+						</LabelField>
+						<LabelField name="Месторасположение" id="71">
+							<DataPath>Список.Месторасположение</DataPath>
+							<ContextMenu name="МесторасположениеКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="МесторасположениеРасширеннаяПодсказка" id="73"/>
+						</LabelField>
+						<LabelField name="БизнесРегион" id="31">
+							<DataPath>Список.БизнесРегион</DataPath>
+							<Visible>false</Visible>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="БизнесРегионКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="БизнесРегионРасширеннаяПодсказка" id="33"/>
+						</LabelField>
+						<LabelField name="Комментарий" id="65">
+							<DataPath>Список.Комментарий</DataPath>
+							<Visible>false</Visible>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<ContextMenu name="КомментарийКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="67"/>
+						</LabelField>
+						<LabelField name="Ссылка" id="59">
+							<DataPath>Список.Ссылка</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="СсылкаКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="61"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочниквогРаспределительныеЦентры.Ссылка КАК Ссылка,
+	СправочниквогРаспределительныеЦентры.ПометкаУдаления КАК ПометкаУдаления,
+	СправочниквогРаспределительныеЦентры.Код КАК Код,
+	СправочниквогРаспределительныеЦентры.Наименование КАК Наименование,
+	СправочниквогРаспределительныеЦентры.НаименованиеПолное КАК НаименованиеПолное,
+	СправочниквогРаспределительныеЦентры.CRM_Фотография КАК CRM_Фотография,
+	СправочниквогРаспределительныеЦентры.БизнесРегион КАК БизнесРегион,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 25
+			ТОГДА 0
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 50
+			ТОГДА 1
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 75
+			ТОГДА 2
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 90
+			ТОГДА 3
+		ИНАЧЕ 4
+	КОНЕЦ КАК ЗаполненностьИнформации,
+	СправочниквогРаспределительныеЦентры.Комментарий КАК Комментарий,
+	вогСтатусыСогласованияОбъектовСрезПоследних.Статус КАК Статус,
+	вогРаспределительныеЦентрыКонтактнаяИнформация.Представление КАК Месторасположение,
+	СтатусыРЦ.ЗначениеКлассификатора КАК СтатусРЦ
+ИЗ
+	Справочник.вогРаспределительныеЦентры КАК СправочниквогРаспределительныеЦентры
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогЗаполненностьРеквизитовОбъектов КАК ЗаполненностьРеквизитовОбъектов
+		ПО (СправочниквогРаспределительныеЦентры.Ссылка = (ВЫРАЗИТЬ(ЗаполненностьРеквизитовОбъектов.Объект КАК Справочник.вогРаспределительныеЦентры)))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогСтатусыСогласованияОбъектов.СрезПоследних(, ) КАК вогСтатусыСогласованияОбъектовСрезПоследних
+		ПО СправочниквогРаспределительныеЦентры.Ссылка = вогСтатусыСогласованияОбъектовСрезПоследних.Объект
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.вогРаспределительныеЦентры.КонтактнаяИнформация КАК вогРаспределительныеЦентрыКонтактнаяИнформация
+		ПО (вогРаспределительныеЦентрыКонтактнаяИнформация.Ссылка = СправочниквогРаспределительныеЦентры.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК СтатусыРЦ
+		ПО СправочниквогРаспределительныеЦентры.Ссылка = СтатусыРЦ.Объект
+			И (&amp;КлассификаторСтатусРЦ = СтатусыРЦ.ЗначениеКлассификатора.Владелец)
+ГДЕ
+	вогРаспределительныеЦентрыКонтактнаяИнформация.Вид = &amp;Вид
+{ГДЕ
+	(СправочниквогРаспределительныеЦентры.Ссылка В
+			(ВЫБРАТЬ
+				СвязиЮридическихЛиц.ОбъектСвязи
+			ИЗ
+				РегистрСведений.вогСвязиЮридическихЛиц КАК СвязиЮридическихЛиц
+			ГДЕ
+				СвязиЮридическихЛиц.ЮридическоеЛицо = &amp;ЮрЛицоСвязи
+				И СвязиЮридическихЛиц.ОбъектСвязи ССЫЛКА Справочник.вогРаспределительныеЦентры))}
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+			CRM_ДополнительныеРеквизитыКлассификаторов.ТипЗначения КАК ТипЗначения,
+			CRM_ЗначенияКлассификаторов.Наименование КАК Наименование,
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_Классификаторы.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.ОдиночноеЗначение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " (" + CRM_ЗначенияКлассификаторов.Наименование + ")" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " [" + CRM_ЗначенияКлассификаторов.Наименование + "]" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ЛЕВОЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение)
+			И CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка ЕСТЬ NULL)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			ИСТИНА КАК Значение,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора }</QueryText>
+				<MainTable>Catalog.вогРаспределительныеЦентры</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ЮрЛицоСвязи" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юр лицо связи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.вогЮридическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПартнерСвязи" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Партнер связи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьПоручение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поручение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выдать поручение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_НазначитьЗадание</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьПоручение</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

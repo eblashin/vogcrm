@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнить" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Заполнить</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="54"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="60">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="61"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="НаправлениеДеятельности" id="55">
+			<DataPath>Объект.НаправлениеДеятельности</DataPath>
+			<ContextMenu name="НаправлениеДеятельностиКонтекстноеМеню" id="56"/>
+			<ExtendedTooltip name="НаправлениеДеятельностиРасширеннаяПодсказка" id="57"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="58">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="59"/>
+			<ChildItems>
+				<InputField name="Сценарий" id="7">
+					<DataPath>Объект.Сценарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СценарийКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="СценарийРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="Версия" id="10">
+					<DataPath>Объект.Версия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВерсияКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВерсияРасширеннаяПодсказка" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="План" id="16">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.План</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПланКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="ПланКоманднаяПанель" id="18"/>
+			<ExtendedTooltip name="ПланРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="ПланСтрокаПоиска" id="20">
+				<AdditionSource>
+					<Item>План</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПланСтрокаПоискаКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ПланСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПланСостояниеПросмотра" id="23">
+				<AdditionSource>
+					<Item>План</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПланСостояниеПросмотраКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ПланСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПланУправлениеПоиском" id="26">
+				<AdditionSource>
+					<Item>План</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПланУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ПланУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ПланНомерСтроки" id="29">
+					<DataPath>Объект.План.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланНомерСтрокиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПланНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="ПланПериод" id="32">
+					<DataPath>Объект.План.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланПериодКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПланПериодРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ПланМенеджер" id="74">
+					<DataPath>Объект.План.Менеджер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланМенеджерКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ПланМенеджерРасширеннаяПодсказка" id="76"/>
+				</InputField>
+				<InputField name="ПланКоординатор" id="119">
+					<DataPath>Объект.План.Координатор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоординаторКонтекстноеМеню" id="120"/>
+					<ExtendedTooltip name="ПланКоординаторРасширеннаяПодсказка" id="121"/>
+				</InputField>
+				<InputField name="ПланПодразделение" id="50">
+					<DataPath>Объект.План.Подразделение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланПодразделениеКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ПланПодразделениеРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="ПланПартнер" id="62">
+					<DataPath>Объект.План.Партнер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланПартнерКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ПланПартнерРасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="ПланТорговаяТочка" id="35">
+					<DataPath>Объект.План.ТорговаяТочка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланТорговаяТочкаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ПланТорговаяТочкаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ПланБренд" id="38">
+					<DataPath>Объект.План.Бренд</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланБрендКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ПланБрендРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ПланНоменклатурнаяГруппа" id="65">
+					<DataPath>Объект.План.НоменклатурнаяГруппа</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланНоменклатурнаяГруппаКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="ПланНоменклатурнаяГруппаРасширеннаяПодсказка" id="67"/>
+				</InputField>
+				<InputField name="ПланНаправлениеДеятельности" id="41">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланНаправлениеДеятельностиКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ПланНаправлениеДеятельностиРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ПланКатегорияПартнера" id="77">
+					<DataPath>Объект.План.КатегорияПартнера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКатегорияПартнераКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="ПланКатегорияПартнераРасширеннаяПодсказка" id="79"/>
+				</InputField>
+				<InputField name="ПланКоличествоSKUНаПолках053" id="80">
+					<DataPath>Объект.План.КоличествоSKUНаПолках053</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоSKUНаПолках053КонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ПланКоличествоSKUНаПолках053РасширеннаяПодсказка" id="82"/>
+				</InputField>
+				<InputField name="ПланКоличествоSKUНаПолках106" id="83">
+					<DataPath>Объект.План.КоличествоSKUНаПолках106</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоSKUНаПолках106КонтекстноеМеню" id="84"/>
+					<ExtendedTooltip name="ПланКоличествоSKUНаПолках106РасширеннаяПодсказка" id="85"/>
+				</InputField>
+				<InputField name="ПланНаличиеРулоновНаПолу" id="86">
+					<DataPath>Объект.План.НаличиеРулоновНаПолу</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланНаличиеРулоновНаПолуКонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="ПланНаличиеРулоновНаПолуРасширеннаяПодсказка" id="88"/>
+				</InputField>
+				<InputField name="ПланКоличествоНашихSKU053" id="89">
+					<DataPath>Объект.План.КоличествоНашихSKU053</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоНашихSKU053КонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="ПланКоличествоНашихSKU053РасширеннаяПодсказка" id="91"/>
+				</InputField>
+				<InputField name="ПланКоличествоНашихSKU106" id="92">
+					<DataPath>Объект.План.КоличествоНашихSKU106</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоНашихSKU106КонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="ПланКоличествоНашихSKU106РасширеннаяПодсказка" id="94"/>
+				</InputField>
+				<InputField name="ПланОборотСПолки053" id="122">
+					<DataPath>Объект.План.ОборотСПолки053</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланОборотСПолки053КонтекстноеМеню" id="123"/>
+					<ExtendedTooltip name="ПланОборотСПолки053РасширеннаяПодсказка" id="124"/>
+				</InputField>
+				<InputField name="ПланОборотСПолки106" id="125">
+					<DataPath>Объект.План.ОборотСПолки106</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланОборотСПолки106КонтекстноеМеню" id="126"/>
+					<ExtendedTooltip name="ПланОборотСПолки106РасширеннаяПодсказка" id="127"/>
+				</InputField>
+				<InputField name="ПланКорректировкаПлана" id="128">
+					<DataPath>Объект.План.КорректировкаПлана</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКорректировкаПланаКонтекстноеМеню" id="129"/>
+					<ExtendedTooltip name="ПланКорректировкаПланаРасширеннаяПодсказка" id="130"/>
+				</InputField>
+				<InputField name="ПланКоличествоПланшет" id="95">
+					<DataPath>Объект.План.КоличествоПланшет</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоПланшетКонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="ПланКоличествоПланшетРасширеннаяПодсказка" id="97"/>
+				</InputField>
+				<InputField name="ПланКоличествоШтучный" id="98">
+					<DataPath>Объект.План.КоличествоШтучный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоШтучныйКонтекстноеМеню" id="99"/>
+					<ExtendedTooltip name="ПланКоличествоШтучныйРасширеннаяПодсказка" id="100"/>
+				</InputField>
+				<InputField name="ПланДоля" id="101">
+					<DataPath>Объект.План.Доля</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланДоляКонтекстноеМеню" id="102"/>
+					<ExtendedTooltip name="ПланДоляРасширеннаяПодсказка" id="103"/>
+				</InputField>
+				<InputField name="ПланДоляВОГ053" id="104">
+					<DataPath>Объект.План.ДоляВОГ053</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланДоляВОГ053КонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="ПланДоляВОГ053РасширеннаяПодсказка" id="106"/>
+				</InputField>
+				<InputField name="ПланДоляВОГ106" id="107">
+					<DataPath>Объект.План.ДоляВОГ106</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланДоляВОГ106КонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="ПланДоляВОГ106РасширеннаяПодсказка" id="109"/>
+				</InputField>
+				<InputField name="ПланЦельПоЭкспозиции" id="110">
+					<DataPath>Объект.План.ЦельПоЭкспозиции</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланЦельПоЭкспозицииКонтекстноеМеню" id="111"/>
+					<ExtendedTooltip name="ПланЦельПоЭкспозицииРасширеннаяПодсказка" id="112"/>
+				</InputField>
+				<InputField name="ПланЦельПрироста" id="113">
+					<DataPath>Объект.План.ЦельПрироста</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланЦельПриростаКонтекстноеМеню" id="114"/>
+					<ExtendedTooltip name="ПланЦельПриростаРасширеннаяПодсказка" id="115"/>
+				</InputField>
+				<InputField name="ПланЦельСледГод" id="116">
+					<DataPath>Объект.План.ЦельСледГод</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланЦельСледГодКонтекстноеМеню" id="117"/>
+					<ExtendedTooltip name="ПланЦельСледГодРасширеннаяПодсказка" id="118"/>
+				</InputField>
+				<InputField name="ПланКоличество" id="44">
+					<DataPath>Объект.План.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланКоличествоКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ПланКоличествоРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ПланСумма" id="47">
+					<DataPath>Объект.План.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланСуммаКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ПланСуммаРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="ПланНДС" id="71">
+					<DataPath>Объект.План.НДС</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланНДСКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ПланНДСРасширеннаяПодсказка" id="73"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Ответственный" id="68">
+			<DataPath>Объект.Ответственный</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="69"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="70"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ВводПлановПродаж</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="__STYLE__"></link><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta></head><body style="background:#0C5095; overflow:hidden;">
+<nav id="menuVertical"><ul id="mainMenu"><div class="mainMenu">
+<li class="menuItem" onclick="Click_MenuItem(event)"><img class="mainImg" src="data:image/png;base64,КартинкаГлавное"></img><br>Главное</li>
+</div>
+        
+<div class="mainMenu">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="mainImg" src="data:image/png;base64,КартинкаКалендарь"></img><br>Календарь</li>
+</div>
+		
+<div class="main_client">
+<li class="menuItem" onclick="Click_Client(event)" id="main_client"><img class="mainImg" src="data:image/png;base64,КартинкаКлиенты"></img><br>Клиенты</li>
+</div>
+
+<div class="client" style="display: none;">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаПодменюКлиенты"></img><br>Клиенты</li>
+</div>	
+
+<div class="client" style="display: none;">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаТорговыеТочки"></img><br>Торговые точки</li>
+</div>	
+	
+<div class="client" style="display: none;">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаЮридическиеЛица"></img><br>Юридические лица</li>
+</div>
+		
+<div class="client" style="display: none;">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаРаспределительныеЦентры"></img><br>Раcпред. центры</li>
+</div>
+
+<div class="client" style="display: none;">             		
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаРынки"></img><br>Рынки</li>
+</div>
+
+<div class="client" style="display: none;">		
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаПоставщики"></img><br>Поставщики</li>
+</div>
+
+<div class="client" style="display: none;">		
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаКлиентДистрибьютора"></img><br>Клиент дистрибьют.</li>
+</div>
+
+<div style="display: none;" id="brand_zone">		
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкБрендЗоны"></img><br>Бренд-зоны</li>
+</div>
+		
+<div class="main_range">
+<li class="menuItem" onclick="Click_Range(event)" id="main_range"><img class="mainImg" src="data:image/png;base64,КартинкаАссортимент"></img><br>Ассортимент</li>
+</div>
+
+<div class="range" style="display: none;">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаПлитка"></img><br>Плитка</li>
+</div>
+   
+<div class="range" style="display: none;">             
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="secondImg" src="data:image/png;base64,КартинкаОбои"></img><br>Обои</li>
+</div>
+		
+<div class="mainMenu">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="mainImg" src="data:image/png;base64,КартинкаОтчеты"></img><br>Отчеты</li>
+</div>    
+    
+<div class="mainMenu">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="mainImg" src="data:image/png;base64,КартинкаПочта"></img><br>Почта</li>
+</div>
+
+<div class="mainMenu">
+<li onclick="Click_MenuItem(event)" class="menuItem"><img class="mainImg" src="data:image/png;base64,КартинкаПланирование"></img><br>Планы</li>
+</div>
+
+</ul></nav><script>
+	function Click_MenuItem(evt){
+    		if (evt.currentTarget.parentNode.className == "main_client"){
+    			if (evt.currentTarget.className == "menuItem visit"){
+    				visible = 'none';
+ 					evt.currentTarget.className = evt.currentTarget.className.replace(" visit", "");
+    			}	
+    			else{
+    				visible = 'block';
+    				evt.currentTarget.className += " visit";
+    			}
+    			menuClient = document.getElementsByClassName("client");
+				for (i = 0; i < menuClient.length; i++) {
+		        	menuClient[i].style.display = visible;
+		    		}
+		    }
+    		else if (evt.currentTarget.parentNode.className == "main_range") {
+    			if (evt.currentTarget.className == "menuItem visit"){
+    				visible = 'none';
+    				evt.currentTarget.className = evt.currentTarget.className.replace(" visit", "");
+    			}	
+    			else{
+    				visible = 'block';
+    				evt.currentTarget.className += " visit";
+    			}
+    			menuClient = document.getElementsByClassName("range");
+				for (i = 0; i < menuClient.length; i++) {
+		        	menuClient[i].style.display = visible;
+		    		}
+		    }
+		    else {
+		    	menuItem = document.getElementsByClassName("menuItem");	
+    			for (i = 0; i < menuItem.length; i++) {
+        			menuItem[i].className = menuItem[i].className.replace(" active", "");
+        			menuItem[i].className = menuItem[i].className.replace(" visit", "");
+    			}
+    			evt.currentTarget.className += " active";
+    		}
+    		var activemenuItem = evt.currentTarget.id;
+    		
+    		if (evt.currentTarget.parentNode.className == "mainMenu") {
+    			clear_menu("");
+    		}
+    	 
+	}
+	function Click_Client(event){
+		menuClient = document.getElementsByClassName("client");
+		for (i = 0; i < menuClient.length; i++) {
+        	menuClient[i].style.display = 'block';
+    		}
+    	mainRange = document.getElementById("main_range");
+    	mainRange.className = mainRange.className.replace(" visit", "");
+    	clear_menu("client");
+		Click_MenuItem(event);
+	}
+	function Click_Range(event){
+		menuRange = document.getElementsByClassName("range");
+		for (i = 0; i < menuRange.length; i++) {
+        	menuRange[i].style.display = 'block';
+    		}
+    	mainClient = document.getElementById("main_client");
+    	mainClient.className = mainClient.className.replace(" visit", "");
+    	clear_menu("range");
+		Click_MenuItem(event);
+	}
+	function clear_menu(itemMenu){
+		if (itemMenu != "range") {
+			menuRange = document.getElementsByClassName("range");
+			for (i = 0; i < menuRange.length; i++) {
+        		menuRange[i].style.display = 'none';
+    			}
+    	}
+    	if (itemMenu != "client") {
+    		menuClient = document.getElementsByClassName("client");
+			for (i = 0; i < menuClient.length; i++) {
+        		menuClient[i].style.display = 'none';
+    			}	
+    	}
+	}
+</script><style>
+	
+    .mainImg{
+	width: 48px;
+	height: 48px;
+	}
+    .secondImg{
+	width: 32px;
+	height: 32px;
+	}
+    #menuVertical{width:100%;height:auto;}
+    #mainMenu{
+        width:80px;
+        height:auto;
+        margin:0px;
+        padding:0px;
+        list-style:none;
+        position:relative;
+        font-family: cursive;
+    }
+    .range, .other, .client, .brand{
+    	display:none;
+    }
+       
+    #menuVertical ul li{width:80px; height:auto; position:relative;}
+       .menuItem, .menu{
+                position:relative;
+                width:100%;
+                height:auto;
+                box-sizing:border-box;
+                font-size:10px;
+                text-align:center;
+                text-transform:uppercase;
+                color:#FFFFFF;
+                line-height:1em;
+                padding:8px 0px;
+                background:#0C5095;
+                border-top:1px solid #0C5095;
+                text-decoration:none;
+            }
+            .menuItem:hover, .menu:hover{
+                background:#00A0E3;
+                cursor: pointer;
+            }
+	.menuItem.active{
+		background: #00A0E3;
+		display: block;
+	}
+	.menuItem.visit{
+		background: #00A0E3;
+	}
+
+	@media screen and (max-height: 700px){
+	.mainImg{
+		width: 24px;
+		height: 24px;
+	}
+        .secondImg{
+		width: 16px;
+		height: 16px;
+	}
+	#mainMenu{
+        	width:80px;
+	        height:auto;
+	        margin:0px;
+	        padding:0px;
+	        list-style:none;
+	        position:relative;
+	        font-family: cursive;
+    	}
+	#menuVertical ul li{
+		width:80px; 
+		height:auto; 
+		position:relative;}
+	.menuItem, .menu{
+                position:relative;
+                width:100%;
+                height:auto;
+                box-sizing:border-box;
+                font-size:7px;
+                text-align:center;
+                text-transform:uppercase;
+                color:#FFFFFF;
+                line-height:1em;
+                padding:4px 0px;
+                background:#0C5095;
+                border-top:1px solid #0C5095;
+                text-decoration:none;
+            }
+	  }
+            
+</style></body></html>

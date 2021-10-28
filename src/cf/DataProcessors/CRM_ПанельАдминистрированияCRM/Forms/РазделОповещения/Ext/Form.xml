@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Width>88</Width>
+	<Customizable>false</Customizable>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ЗаголовокОповещения" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок оповещения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок оповещения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ЗаголовокОповещенияРасширеннаяПодсказка" id="54"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияОповещенияКартинка" id="55">
+					<Width>6</Width>
+					<Height>2</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Декорация оповещения картинка</v8:content>
+						</v8:item>
+					</Title>
+					<PictureSize>Proportionally</PictureSize>
+					<Picture>
+						<xr:Ref>CommonPicture.CRM_ПодсистемаОповещения48</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияОповещенияКартинкаКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ДекорацияОповещенияКартинкаРасширеннаяПодсказка" id="57"/>
+				</PictureDecoration>
+				<LabelDecoration name="ДекорацияОповещенияНадпись" id="58">
+					<Height>2</Height>
+					<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещения</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<ContextMenu name="ДекорацияОповещенияНадписьКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ДекорацияОповещенияНадписьРасширеннаяПодсказка" id="60"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияОписание" id="11">
+			<Width>80</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>4</Height>
+			<TextColor>style:ПоясняющийТекст</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внимание!  Оповещения будут рассылаться клиентам и их контактным лицам, пользователям только по тем видам контактной информации, у которых установлен признак "Использовать для оповещений". Данный признак редактируется в списке Видов контактной информации.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияОписаниеКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="ДекорацияОписаниеExtendedTooltip" id="13"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаОповещения" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа оповещения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа оповещения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОповещенияExtendedTooltip" id="15"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНапоминания" id="64">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа напоминания</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа напоминания</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНапоминанияРасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаИспользоватьНапоминания" id="16">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Напоминания</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа использовать напоминания</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаИспользоватьНапоминанияExtendedTooltip" id="17"/>
+							<ChildItems>
+								<CheckBoxField name="CRM_ИспользоватьНапоминания" id="18">
+									<DataPath>НаборКонстант.CRM_ИспользоватьНапоминания</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Использовать напоминания</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="CRM_ИспользоватьНапоминанияКонтекстноеМеню" id="19"/>
+									<ExtendedTooltip name="CRM_ИспользоватьНапоминанияExtendedTooltip" id="20"/>
+									<Events>
+										<Event name="OnChange">CRM_ИспользоватьНапоминанияПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="CRM_ПериодПроверкиНовыхНапоминаний" id="21">
+									<DataPath>НаборКонстант.CRM_ПериодПроверкиНовыхНапоминаний</DataPath>
+									<ContextMenu name="CRM_ПериодПроверкиНовыхНапоминанийКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="CRM_ПериодПроверкиНовыхНапоминанийExtendedTooltip" id="23"/>
+									<Events>
+										<Event name="OnChange">CRM_ПериодПроверкиНовыхНапоминанийПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="Декорация43" id="24">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>сек.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация43КонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="Декорация43ExtendedTooltip" id="26"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="CRM_ПериодВыводаНезавершенныхОповещений" id="61">
+							<DataPath>НаборКонстант.CRM_ПериодВыводаНезавершенныхОповещений</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период, в течении которого  незавершенные оповещения будут выводиться на экран.
+Если период не указан, незавершенные оповещения будут выводиться неограниченное время.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Width>40</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="CRM_ПериодВыводаНезавершенныхОповещенийКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="CRM_ПериодВыводаНезавершенныхОповещенийРасширеннаяПодсказка" id="63">
+								<AutoMaxWidth>false</AutoMaxWidth>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">CRM_ПериодВыводаНезавершенныхОповещенийПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОповещенияОбщая" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещения по e-mail</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оповещения общая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ГруппаОповещенияОбщаяExtendedTooltip" id="28"/>
+					<ChildItems>
+						<CheckBoxField name="CRM_ИспользоватьОповещенияЭлектроннаяПочта" id="29">
+							<DataPath>НаборКонстант.CRM_ИспользоватьОповещенияЭлектроннаяПочта</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="CRM_ИспользоватьОповещенияЭлектроннаяПочтаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="CRM_ИспользоватьОповещенияЭлектроннаяПочтаExtendedTooltip" id="31"/>
+							<Events>
+								<Event name="OnChange">CRM_ИспользоватьОповещенияЭлектроннаяПочтаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="CRM_УчетнаяЗаписьОповещений" id="32">
+							<DataPath>НаборКонстант.CRM_УчетнаяЗаписьОповещений</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<ContextMenu name="CRM_УчетнаяЗаписьОповещенийКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="CRM_УчетнаяЗаписьОповещенийExtendedTooltip" id="34"/>
+							<Events>
+								<Event name="OnChange">CRM_УчетнаяЗаписьОповещенийПриИзменении</Event>
+								<Event name="ChoiceProcessing">CRM_УчетнаяЗаписьОповещенийОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="CRM_СпособОтправкиОповещенийПоЭлектроннойПочте" id="66">
+							<DataPath>НаборКонстант.CRM_СпособОтправкиОповещенийПоЭлектроннойПочте</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способ отправки</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вариант отправки: через типовой механизм электронной почты или при помощи подключенного сервиса рассылок UniSender (настройка в разделе Сторонние сервисы и обмен данными)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<Width>14</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="CRM_СпособОтправкиОповещенийПоЭлектроннойПочтеКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="CRM_СпособОтправкиОповещенийПоЭлектроннойПочтеРасширеннаяПодсказка" id="68"/>
+							<Events>
+								<Event name="OnChange">CRM_СпособОтправкиОповещенийПоЭлектроннойПочтеПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаSMSОповещения" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>SMS оповещения</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа SMSОповещения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ГруппаSMSОповещенияExtendedTooltip" id="36"/>
+					<ChildItems>
+						<CheckBoxField name="CRM_ИспользоватьОповещенияСМС" id="37">
+							<DataPath>НаборКонстант.CRM_ИспользоватьОповещенияСМС</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="CRM_ИспользоватьОповещенияСМСКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="CRM_ИспользоватьОповещенияСМСExtendedTooltip" id="39"/>
+							<Events>
+								<Event name="OnChange">CRM_ИспользоватьОповещенияСМСПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="CRM_НомерТелефонаОповещений" id="40">
+							<DataPath>НаборКонстант.CRM_НомерТелефонаОповещений</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер телефона для отправки оповещений</v8:content>
+								</v8:item>
+							</Title>
+							<TitleHeight>2</TitleHeight>
+							<Width>30</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<MultiLine>false</MultiLine>
+							<ExtendedEdit>false</ExtendedEdit>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChooseType>false</ChooseType>
+							<ChoiceListButton>true</ChoiceListButton>
+							<ContextMenu name="CRM_НомерТелефонаОповещенийКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="CRM_НомерТелефонаОповещенийExtendedTooltip" id="42"/>
+							<Events>
+								<Event name="OnChange">CRM_НомерТелефонаОповещенийПриИзменении</Event>
+								<Event name="StartChoice">CRM_НомерТелефонаОповещенийНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОповещениеПросроченных" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оповещения о просроченных задачах/событиях</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа оповещение просроченных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ГруппаОповещениеПросроченныхExtendedTooltip" id="44"/>
+					<ChildItems>
+						<UsualGroup name="Группа17" id="45">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа17ExtendedTooltip" id="46"/>
+							<ChildItems>
+								<InputField name="CRM_ПериодОповещенияОПросроченныхСобытиях" id="47">
+									<DataPath>НаборКонстант.CRM_ПериодОповещенияОПросроченныхСобытиях</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Глубина анализа</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="CRM_ПериодОповещенияОПросроченныхСобытияхКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="CRM_ПериодОповещенияОПросроченныхСобытияхExtendedTooltip" id="49"/>
+									<Events>
+										<Event name="OnChange">CRM_ПериодОповещенияОПросроченныхСобытияхПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="ПодсказкаОповещения" id="50">
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период сбора данных о просроченных событиях и задачах</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПодсказкаОповещенияКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="ПодсказкаОповещенияExtendedTooltip" id="52"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+</Form>

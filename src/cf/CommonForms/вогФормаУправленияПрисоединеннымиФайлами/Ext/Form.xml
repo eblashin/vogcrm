@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTitle>false</AutoTitle>
+	<ShowTitle>false</ShowTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="ВладелецФайла" id="1">
+			<DataPath>ВладелецФайла</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<TitleFont ref="style:LargeTextFont" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Hiperlink>true</Hiperlink>
+			<Font ref="style:LargeTextFont" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ContextMenu name="ВладелецФайлаКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВладелецФайлаРасширеннаяПодсказка" id="3"/>
+		</LabelField>
+		<CommandBar name="КоманднаяПанель" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<Button name="ОсвободитьИЗакрыть" id="127">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ОсвободитьИЗакрыть</CommandName>
+					<ExtendedTooltip name="ОсвободитьИЗакрытьРасширеннаяПодсказка" id="128"/>
+				</Button>
+				<Button name="ДобавитьПапку" id="131">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.ДобавитьПапку</CommandName>
+					<ExtendedTooltip name="ДобавитьПапкуРасширеннаяПодсказка" id="132"/>
+				</Button>
+				<Button name="ФормаДобавить" id="33">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Item.ДеревоПрисоединенныеФайлы.StandardCommand.Add</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавить файл</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаДобавитьРасширеннаяПодсказка" id="34"/>
+				</Button>
+				<Button name="ФормаИзменить" id="41">
+					<Type>CommandBarButton</Type>
+					<Visible>false</Visible>
+					<CommandName>Form.Item.ДеревоПрисоединенныеФайлы.StandardCommand.Change</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть карточку</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="42"/>
+				</Button>
+				<ButtonGroup name="ФормаГруппаКомандОсновные" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма группа команд основные</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаГруппаКомандОсновныеРасширеннаяПодсказка" id="44"/>
+					<ChildItems>
+						<Button name="ОткрытьФайлДляРедактирования" id="129">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ОткрытьФайлДляРедактирования</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Редактировать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОткрытьФайлДляРедактированияРасширеннаяПодсказка" id="130"/>
+						</Button>
+						<Button name="Печать" id="51">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<CommandName>Form.Command.Печать</CommandName>
+							<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="52"/>
+						</Button>
+						<Button name="Отправить" id="53">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<CommandName>Form.Command.Отправить</CommandName>
+							<ExtendedTooltip name="ОтправитьРасширеннаяПодсказка" id="54"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<Button name="ВариантПросмотраПлиткой" id="119">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.РежимРедактированияПлиткой</CommandName>
+					<ExtendedTooltip name="ВариантПросмотраПлиткойРасширеннаяПодсказка" id="120"/>
+				</Button>
+				<ButtonGroup name="ФормаГлобальныеКоманды" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма глобальные команды</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма глобальные команды</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="ФормаГлобальныеКомандыРасширеннаяПодсказка" id="56"/>
+				</ButtonGroup>
+				<ButtonGroup name="ФормаГруппаКомандДополнительные" id="73">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма группа команд дополнительные</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаГруппаКомандДополнительныеРасширеннаяПодсказка" id="74"/>
+					<ChildItems>
+						<Button name="ФормаОбновитьИзФайлаНаДиске" id="85">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ОбновитьИзФайлаНаДиске</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.ОбновитьФайлИзФайлаНаДиске</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ФормаОбновитьИзФайлаНаДискеExtendedTooltip" id="86"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<Button name="Предпросмотр" id="95">
+					<Type>CommandBarButton</Type>
+					<CommandName>21:409b9a53-7f7e-4178-86c1-33176c7c7a7a</CommandName>
+					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="ПредпросмотрРасширеннаяПодсказка" id="96"/>
+				</Button>
+				<Popup name="ФормаГруппаДополнительно" id="99">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<ExtendedTooltip name="ФормаГруппаДополнительноРасширеннаяПодсказка" id="100"/>
+					<ChildItems>
+						<Button name="ФормаВывестиСписок" id="113">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Item.ДеревоПрисоединенныеФайлы.StandardCommand.OutputList</CommandName>
+							<ExtendedTooltip name="ФормаВывестиСписокРасширеннаяПодсказка" id="114"/>
+						</Button>
+						<Button name="ФормаИзменитьФорму" id="115">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+							<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="116"/>
+						</Button>
+					</ChildItems>
+				</Popup>
+				<Button name="ФормаСправка" id="117">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="118"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<Pages name="Страницы" id="121">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="122"/>
+			<ChildItems>
+				<Page name="СтраницаДеревоПрисоединенныеФайлы" id="123">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево присоединенные файлы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница дерево присоединенные файлы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаДеревоПрисоединенныеФайлыРасширеннаяПодсказка" id="124"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаФайлы" id="20">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа файлы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа файлы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФайлыРасширеннаяПодсказка" id="21"/>
+							<ChildItems>
+								<Table name="ДеревоПрисоединенныеФайлы" id="4">
+									<Representation>Tree</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ДеревоПрисоединенныеФайлы</DataPath>
+									<RowPictureDataPath>ДеревоПрисоединенныеФайлы.ИндексКартинки</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</RowsPicture>
+									<CommandSet>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+									</CommandSet>
+									<ContextMenu name="ДеревоПрисоединенныеФайлыКонтекстноеМеню" id="5"/>
+									<AutoCommandBar name="ДеревоПрисоединенныеФайлыКоманднаяПанель" id="6">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ДеревоПрисоединенныеФайлыРасширеннаяПодсказка" id="7"/>
+									<SearchStringAddition name="ДеревоПрисоединенныеФайлыСтрокаПоиска" id="8">
+										<AdditionSource>
+											<Item>ДеревоПрисоединенныеФайлы</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоПрисоединенныеФайлыСтрокаПоискаКонтекстноеМеню" id="9"/>
+										<ExtendedTooltip name="ДеревоПрисоединенныеФайлыСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДеревоПрисоединенныеФайлыСостояниеПросмотра" id="11">
+										<AdditionSource>
+											<Item>ДеревоПрисоединенныеФайлы</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоПрисоединенныеФайлыСостояниеПросмотраКонтекстноеМеню" id="12"/>
+										<ExtendedTooltip name="ДеревоПрисоединенныеФайлыСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДеревоПрисоединенныеФайлыУправлениеПоиском" id="14">
+										<AdditionSource>
+											<Item>ДеревоПрисоединенныеФайлы</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоПрисоединенныеФайлыУправлениеПоискомКонтекстноеМеню" id="15"/>
+										<ExtendedTooltip name="ДеревоПрисоединенныеФайлыУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ДеревоПрисоединенныеФайлыВыбор</Event>
+										<Event name="BeforeAddRow">ДеревоПрисоединенныеФайлыПередНачаломДобавления</Event>
+										<Event name="BeforeDeleteRow">ДеревоПрисоединенныеФайлыПередУдалением</Event>
+										<Event name="OnActivateRow">ДеревоПрисоединенныеФайлыПриАктивизацииСтроки</Event>
+										<Event name="BeforeRowChange">ДеревоПрисоединенныеФайлыПередНачаломИзменения</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ДеревоПрисоединенныеФайлыГруппировка" id="22">
+											<DataPath>ДеревоПрисоединенныеФайлы.Группировка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоПрисоединенныеФайлыГруппировкаКонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="ДеревоПрисоединенныеФайлыГруппировкаРасширеннаяПодсказка" id="24"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПлитки" id="125">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плитки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница плитки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ScrollOnCompress>true</ScrollOnCompress>
+					<ExtendedTooltip name="СтраницаПлиткиРасширеннаяПодсказка" id="126"/>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВладелецФайла" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипСправочникаСФайлами" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип справочника с файлами</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ЕстьПравоДобавления" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть право добавления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗапрещенныеРасширения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрещенные расширения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДеревоПрисоединенныеФайлы" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево присоединенные файлы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВидФайла" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид файла</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогВидыПрисоединенныхФайлов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПрисоединенныйФайл" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Присоединенный файл</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ПрисоединенныйФайл</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Группировка" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид файла / Файл</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Зашифрован" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зашифрован</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Расширение" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расширение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ФайлРедактируется" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл редактируется</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ФайлРедактируетТекущийПользователь" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл редактирует текущий пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ФайлРедактируетДругойПользователь" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл редактирует другой пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПодписанЭП" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подписан ЭП</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТолькоПросмотр" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только просмотр</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТипФайла" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип файла</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.вогТипыПрисоединенныхФайлов</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПараметрыОтправки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры отправки</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Настройки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ТаблицаОписания" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица описания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяЭлемента" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя элемента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПутьКДанным" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к данным</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяКоманды" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя команды</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ссылка" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="Ключ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторСтрокиДерева" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор строки дерева</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТипыФайлов" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типы файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:EnumRef.вогТипыПрисоединенныхФайлов</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="ЕстьИзображения" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть изображения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ГруппаФайлов" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоПрисоединенныеФайлыГруппировка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоПрисоединенныеФайлы.ВидФайла</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоПрисоединенныеФайлы.ПрисоединенныйФайл</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Прочее</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьФайлДляПросмотра" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотреть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть файл для просмотра</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОткрытьВыбранныйФайл</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьФайлДляПросмотра</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отправить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Отправить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Печать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Печать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьИзФайлаНаДиске" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить из файла на диске...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить из файла на диске</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьИзФайлаНаДиске</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РежимРедактированияПлиткой" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плитка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плитка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.bpm_БизнесПроцесс</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РежимРедактированияПлиткой</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОсвободитьИЗакрыть" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Освободить и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Освободить и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОсвободитьИЗакрыть</Action>
+		</Command>
+		<Command name="ОткрытьФайлДляРедактирования" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть файл для редактирования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть файл для редактирования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьФайлДляРедактирования</Action>
+		</Command>
+		<Command name="ДобавитьПапку" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать папку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить папку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьПапку</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ЗаголовокФормы">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоПросмотр">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВладелецФайла">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПараметрыОтправки">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

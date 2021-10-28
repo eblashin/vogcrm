@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Торговые точки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновная" id="76">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="77"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаБыстрыОтборы" id="78">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа быстры отборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа быстры отборы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаБыстрыОтборыРасширеннаяПодсказка" id="79"/>
+					<ChildItems>
+						<InputField name="ОтборПодразделение" id="80">
+							<DataPath>ОтборПодразделение</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>20</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<QuickChoice>true</QuickChoice>
+							<ChoiceParameters>
+								<app:item name="Отбор.ОбособленноеПодразделение">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подразделение</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборПодразделениеКонтекстноеМеню" id="81"/>
+							<ExtendedTooltip name="ОтборПодразделениеРасширеннаяПодсказка" id="82"/>
+							<Events>
+								<Event name="OnChange">ОтборПодразделениеПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ОтборМенеджер" id="83">
+							<DataPath>ОтборМенеджер</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>20</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceParameters>
+								<app:item name="ТолькоДоступные">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Менеджер</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборМенеджерКонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="ОтборМенеджерРасширеннаяПодсказка" id="85"/>
+							<Events>
+								<Event name="OnChange">ОтборМенеджерПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ОтборВидТорговойТочки" id="86">
+							<DataPath>ОтборВидТорговойТочки</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<QuickChoice>true</QuickChoice>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборВидТорговойТочкиКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="ОтборВидТорговойТочкиРасширеннаяПодсказка" id="88"/>
+							<Events>
+								<Event name="OnChange">ОтборВидТорговойТочкиПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ОтборНаправление" id="89">
+							<DataPath>ОтборНаправление</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Направление</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборНаправлениеКонтекстноеМеню" id="90"/>
+							<ExtendedTooltip name="ОтборНаправлениеРасширеннаяПодсказка" id="91"/>
+							<Events>
+								<Event name="OnChange">ОтборНаправлениеПриИзменении</Event>
+								<Event name="AutoComplete">ОтборНаправлениеАвтоПодбор</Event>
+								<Event name="StartChoice">ОтборНаправлениеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="СписокТорговыеТочки" id="1">
+					<HeightInTableRows>7</HeightInTableRows>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>СписокТорговыхТочек</DataPath>
+					<RowPictureDataPath>СписокТорговыхТочек.DefaultPicture</RowPictureDataPath>
+					<CommandSet>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Create</ExcludedCommand>
+					</CommandSet>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<ContextMenu name="СписокТорговыеТочкиКонтекстноеМеню" id="2">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="СписокТорговыеТочкиКонтекстноеМенюНазначитьВыделенным" id="21">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьТорговуюТочку</CommandName>
+								<ExtendedTooltip name="СписокТорговыеТочкиКонтекстноеМенюНазначитьВыделеннымРасширеннаяПодсказка" id="22"/>
+							</Button>
+							<ButtonGroup name="СписокТорговыеТочкиГруппаСтандартныеКоманды" id="23">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список торговые точки группа стандартные команды</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список торговые точки группа стандартные команды</v8:content>
+									</v8:item>
+								</ToolTip>
+								<CommandSource>Item.СписокТорговыеТочки</CommandSource>
+								<ExtendedTooltip name="СписокТорговыеТочкиГруппаСтандартныеКомандыРасширеннаяПодсказка" id="24"/>
+							</ButtonGroup>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="СписокТорговыеТочкиКоманднаяПанель" id="3">
+						<ChildItems>
+							<Button name="СоздатьТорговуюТочку" id="25">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьТорговуюТочку</CommandName>
+								<ExtendedTooltip name="СоздатьТорговуюТочкуРасширеннаяПодсказка" id="26"/>
+							</Button>
+							<Button name="СписокТорговыеТочкиСоздатьКлиента" id="29">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьКлиента</CommandName>
+								<ExtendedTooltip name="СписокТорговыеТочкиСоздатьКлиентаРасширеннаяПодсказка" id="30"/>
+							</Button>
+							<Button name="СписокТорговыеТочкиСоздатьРЦ" id="31">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьРЦ</CommandName>
+								<ExtendedTooltip name="СписокТорговыеТочкиСоздатьРЦРасширеннаяПодсказка" id="32"/>
+							</Button>
+							<ButtonGroup name="СписокТорговыхТочекГруппаДействияСКонтактом" id="35">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список торговых точек группа действия с контактом</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список группа действия с контактом</v8:content>
+									</v8:item>
+								</ToolTip>
+								<Representation>Compact</Representation>
+								<ExtendedTooltip name="СписокТорговыхТочекГруппаДействияСКонтактомРасширеннаяПодсказка" id="36"/>
+								<ChildItems>
+									<Button name="СписокТорговыхТочекПозвонить" id="46">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>CommonCommand.сфпПозвонить</CommandName>
+										<DataPath>Items.СписокТорговыеТочки.CurrentData.Ссылка</DataPath>
+										<ExtendedTooltip name="СписокТорговыхТочекПозвонитьРасширеннаяПодсказка" id="47"/>
+									</Button>
+									<Button name="СписокТорговыхТочекОтправитьEMail" id="48">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>CommonCommand.вогОтправитьEMail</CommandName>
+										<DataPath>Items.СписокТорговыеТочки.CurrentData.Ссылка</DataPath>
+										<ExtendedTooltip name="СписокТорговыхТочекОтправитьEMailРасширеннаяПодсказка" id="49"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Button name="СписокТорговыеТочкиОбработкавогТорговыеТочкиНаКартеПоказатьТорговыеТочкиНаКарте" id="41">
+								<Type>CommandBarButton</Type>
+								<CommandName>DataProcessor.вогТорговыеТочкиНаКарте.Command.ПоказатьТорговыеТочкиНаКарте</CommandName>
+								<ExtendedTooltip name="СписокТорговыеТочкиОбработкавогТорговыеТочкиНаКартеПоказатьТорговыеТочкиНаКартеРасширеннаяПодсказка" id="42"/>
+							</Button>
+							<Button name="СписокТорговыеТочкиИзменитьФорму" id="74">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+								<ExtendedTooltip name="СписокТорговыеТочкиИзменитьФормуРасширеннаяПодсказка" id="75"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокТорговыеТочкиРасширеннаяПодсказка" id="4"/>
+					<SearchStringAddition name="СписокТорговыеТочкиСтрокаПоиска" id="5">
+						<AdditionSource>
+							<Item>СписокТорговыеТочки</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокТорговыеТочкиСтрокаПоискаКонтекстноеМеню" id="6"/>
+						<ExtendedTooltip name="СписокТорговыеТочкиСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокТорговыеТочкиСостояниеПросмотра" id="8">
+						<AdditionSource>
+							<Item>СписокТорговыеТочки</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокТорговыеТочкиСостояниеПросмотраКонтекстноеМеню" id="9"/>
+						<ExtendedTooltip name="СписокТорговыеТочкиСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокТорговыеТочкиУправлениеПоиском" id="11">
+						<AdditionSource>
+							<Item>СписокТорговыеТочки</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокТорговыеТочкиУправлениеПоискомКонтекстноеМеню" id="12"/>
+						<ExtendedTooltip name="СписокТорговыеТочкиУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">СписокВыбор</Event>
+						<Event name="BeforeAddRow">СписокТорговыеТочкиПередНачаломДобавления</Event>
+						<Event name="OnActivateRow">СписокТорговыеТочкиПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<PictureField name="СписокТорговыеТочкиЗаполненностьИнформации" id="101">
+							<DataPath>СписокТорговыхТочек.ЗаполненностьИнформации</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вог_ПроцентЗаполнения</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="СписокТорговыеТочкиЗаполненностьИнформацииКонтекстноеМеню" id="102"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиЗаполненностьИнформацииРасширеннаяПодсказка" id="103"/>
+						</PictureField>
+						<LabelField name="СписокТорговыеТочкиСсылка" id="43">
+							<DataPath>СписокТорговыхТочек.Ссылка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Торговая точка</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокТорговыеТочкиСсылкаКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиСсылкаРасширеннаяПодсказка" id="45"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиПартнер" id="50">
+							<DataPath>СписокТорговыхТочек.Партнер</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиПартнерКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиПартнерРасширеннаяПодсказка" id="52"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиВид" id="53">
+							<DataPath>СписокТорговыхТочек.Вид</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиВидКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиВидРасширеннаяПодсказка" id="55"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиРынок" id="56">
+							<DataPath>СписокТорговыхТочек.Рынок</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиРынокКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиРынокРасширеннаяПодсказка" id="58"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиМестоположениеНаРынке" id="59">
+							<DataPath>СписокТорговыхТочек.МестоположениеНаРынке</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиМестоположениеНаРынкеКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиМестоположениеНаРынкеРасширеннаяПодсказка" id="61"/>
+						</LabelField>
+						<CheckBoxField name="СписокТорговыеТочкиГрузополучатель" id="62">
+							<DataPath>СписокТорговыхТочек.Грузополучатель</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СписокТорговыеТочкиГрузополучательКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиГрузополучательРасширеннаяПодсказка" id="64"/>
+						</CheckBoxField>
+						<LabelField name="СписокТорговыеТочкиНаселенныйПункт" id="65">
+							<DataPath>СписокТорговыхТочек.НаселенныйПункт</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиНаселенныйПунктКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиНаселенныйПунктРасширеннаяПодсказка" id="67"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиРайон" id="68">
+							<DataPath>СписокТорговыхТочек.Район</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиРайонКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиРайонРасширеннаяПодсказка" id="70"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиРегион" id="71">
+							<DataPath>СписокТорговыхТочек.Регион</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиРегионКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиРегионРасширеннаяПодсказка" id="73"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиФорматТРТ" id="92">
+							<DataPath>СписокТорговыхТочек.ФорматТРТ</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиФорматТРТКонтекстноеМеню" id="93"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиФорматТРТРасширеннаяПодсказка" id="94"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиСтатустТТ" id="95">
+							<DataPath>СписокТорговыхТочек.СтатустТТ</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиСтатустТТКонтекстноеМеню" id="96"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиСтатустТТРасширеннаяПодсказка" id="97"/>
+						</LabelField>
+						<LabelField name="СписокТорговыеТочкиМесторасположение" id="98">
+							<DataPath>СписокТорговыхТочек.Месторасположение</DataPath>
+							<ContextMenu name="СписокТорговыеТочкиМесторасположениеКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="СписокТорговыеТочкиМесторасположениеРасширеннаяПодсказка" id="100"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогНачальнаяСтраницаПользователя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокТорговыхТочек" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список торговых точек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>СписокТорговыхТочек.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникТорговыеТочки.Ссылка КАК Ссылка,
+	СправочникТорговыеТочки.Код КАК Код,
+	СправочникТорговыеТочки.Наименование КАК Наименование,
+	СправочникТорговыеТочки.Партнер КАК Партнер,
+	СправочникТорговыеТочки.БизнесРегион КАК БизнесРегион,
+	СправочникТорговыеТочки.Вид КАК Вид,
+	СправочникТорговыеТочки.Рынок КАК Рынок,
+	СправочникТорговыеТочки.МестоположениеНаРынке КАК МестоположениеНаРынке,
+	СправочникТорговыеТочки.Грузополучатель КАК Грузополучатель,
+	ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий КАК ПроцентЗаполненностиОбщий,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 10
+			ТОГДА 0
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 20
+			ТОГДА 1
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 35
+			ТОГДА 2
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 50
+			ТОГДА 3
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 60
+			ТОГДА 4
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 75
+			ТОГДА 5
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 85
+			ТОГДА 6
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 98
+			ТОГДА 7
+		ИНАЧЕ 8
+	КОНЕЦ КАК ЗаполненностьИнформации,
+	СправочникТорговыеТочки.НаселенныйПункт КАК НаселенныйПункт,
+	СправочникТорговыеТочки.НаселенныйПунктРегион КАК Регион,
+	СправочникТорговыеТочки.НаселенныйПунктРайон КАК Район,
+	вогТорговыеТочкиКонтактнаяИнформация.Представление КАК Месторасположение,
+	ЗначениеФорматТРТ.ЗначениеКлассификатора КАК ФорматТРТ,
+	СтатусТТ.ЗначениеКлассификатора КАК СтатустТТ
+ИЗ
+	Справочник.вогТорговыеТочки КАК СправочникТорговыеТочки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогЗаполненностьРеквизитовОбъектов КАК ЗаполненностьРеквизитовОбъектов
+		ПО (СправочникТорговыеТочки.Ссылка = (ВЫРАЗИТЬ(ЗаполненностьРеквизитовОбъектов.Объект КАК Справочник.вогТорговыеТочки)))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК СтатусТТ
+		ПО СправочникТорговыеТочки.Ссылка = СтатусТТ.Объект
+			И (СтатусТТ.ЗначениеКлассификатора.Владелец = &amp;СтатусТТ)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК ЗначениеФорматТРТ
+		ПО СправочникТорговыеТочки.Ссылка = ЗначениеФорматТРТ.Объект
+			И (ЗначениеФорматТРТ.ЗначениеКлассификатора.Владелец = &amp;ФорматТРТ)
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.вогТорговыеТочки.КонтактнаяИнформация КАК вогТорговыеТочкиКонтактнаяИнформация
+		ПО СправочникТорговыеТочки.Ссылка = вогТорговыеТочкиКонтактнаяИнформация.Ссылка
+			И (вогТорговыеТочкиКонтактнаяИнформация.Тип = ЗНАЧЕНИЕ(Перечисление.ТипыКонтактнойИнформации.Адрес)
+				И вогТорговыеТочкиКонтактнаяИнформация.Вид = ЗНАЧЕНИЕ(Справочник.ВидыКонтактнойИнформации.Месторасположение))
+ГДЕ
+	НЕ СправочникТорговыеТочки.ПометкаУдаления
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+			CRM_ДополнительныеРеквизитыКлассификаторов.ТипЗначения КАК ТипЗначения,
+			CRM_ЗначенияКлассификаторов.Наименование КАК Наименование,
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_Классификаторы.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.ОдиночноеЗначение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " (" + CRM_ЗначенияКлассификаторов.Наименование + ")" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " [" + CRM_ЗначенияКлассификаторов.Наименование + "]" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ЛЕВОЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение)
+			И CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка ЕСТЬ NULL)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			ИСТИНА КАК Значение,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора }</QueryText>
+				<MainTable>Catalog.вогТорговыеТочки</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОтборПодразделение" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборМенеджер" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборНаправление" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Направление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.НаправленияДеятельности</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборВидТорговойТочки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.вогВидыТорговыхТочек</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьКлиента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать клиента</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать клиента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмоВсем</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьКлиента</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьТорговуюТочку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать торговую точку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать торговую точку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьТорговуюТочку</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СоздатьРЦ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать РЦ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать распределительный центр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.вогРаспределительныйЦентр</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьРЦ</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+</Form>

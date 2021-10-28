@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.10">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Document.вогКомандировка</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>вогКомандировка ИЗ Документ.вогКомандировка КАК вогКомандировка
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.вогКомандировка.КомандированныеСотрудники КАК вогКомандировкаКомандированныеСотрудники
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Пользователи.вогОрганизации КАК Пользователи
+		ПО (&amp;ТекущийПользователь = Пользователи.Ссылка)
+			И вогКомандировкаКомандированныеСотрудники.Сотрудник.Подразделение.Организация = Пользователи.Организация
+	ПО вогКомандировка.Ссылка = вогКомандировкаКомандированныеСотрудники.Ссылка</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>вогКомандировка ИЗ Документ.вогКомандировка КАК вогКомандировка
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.вогКомандировка.КомандированныеСотрудники КАК вогКомандировкаКомандированныеСотрудники
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Пользователи.вогОрганизации КАК Пользователи
+		ПО (&amp;ТекущийПользователь = Пользователи.Ссылка)
+			И вогКомандировкаКомандированныеСотрудники.Сотрудник.Подразделение.Организация = Пользователи.Организация
+	ПО вогКомандировка.Ссылка = вогКомандировкаКомандированныеСотрудники.Ссылка</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+</Rights>

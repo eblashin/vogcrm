@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Проверить" id="118">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Проверить</CommandName>
+				<Picture>
+					<xr:Abs>Picture.png</xr:Abs>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ПроверитьРасширеннаяПодсказка" id="150"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппаСправка" id="212">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа справка</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа справка</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаСправкаРасширеннаяПодсказка" id="213"/>
+				<ChildItems>
+					<Button name="ФормаКнопкаПолныйПереченьОшибок" id="210">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаВывестиПолныйПереченьОшибок</CommandName>
+						<ExtendedTooltip name="ФормаКнопкаПолныйПереченьОшибокРасширеннаяПодсказка" id="211"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="ФормаЗакрыть" id="135">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="151"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ПутьККарте" id="115">
+			<DataPath>ПутьККарте</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя файла карты</v8:content>
+				</v8:item>
+			</Title>
+			<ChoiceButton>true</ChoiceButton>
+			<ContextMenu name="ПутьККартеКонтекстноеМеню" id="116"/>
+			<ExtendedTooltip name="ПутьККартеРасширеннаяПодсказка" id="152"/>
+			<Events>
+				<Event name="OnChange">ПутьККартеПриИзменении</Event>
+				<Event name="StartChoice">ПутьККартеНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<Pages name="ГруппаОсновная" id="124">
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="153"/>
+			<ChildItems>
+				<Page name="ГруппаСхемаМаршрута" id="126">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Карта</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа схема маршрута</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаСхемаМаршрутаРасширеннаяПодсказка" id="154"/>
+					<ChildItems>
+						<GraphicalSchemaField name="СхемаМаршрута" id="80">
+							<DataPath>СхемаМаршрута</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="СхемаМаршрутаКонтекстноеМеню" id="81"/>
+							<ExtendedTooltip name="СхемаМаршрутаРасширеннаяПодсказка" id="156"/>
+							<Events>
+								<Event name="OnActivate">СхемаМаршрутаПриАктивизации</Event>
+							</Events>
+						</GraphicalSchemaField>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица" id="128">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа таблица</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаТаблицаРасширеннаяПодсказка" id="157"/>
+					<ChildItems>
+						<Table name="ДеревоТочек" id="9">
+							<Representation>Tree</Representation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ДеревоТочек</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ДеревоТочекКонтекстноеМеню" id="10">
+								<Autofill>false</Autofill>
+							</ContextMenu>
+							<AutoCommandBar name="ДеревоТочекКоманднаяПанель" id="11">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДеревоТочекРасширеннаяПодсказка" id="158"/>
+							<SearchStringAddition name="ДеревоТочекСтрокаПоиска" id="159">
+								<AdditionSource>
+									<Item>ДеревоТочек</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоТочекСтрокаПоискаКонтекстноеМеню" id="160"/>
+								<ExtendedTooltip name="ДеревоТочекСтрокаПоискаРасширеннаяПодсказка" id="161"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоТочекСостояниеПросмотра" id="162">
+								<AdditionSource>
+									<Item>ДеревоТочек</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоТочекСостояниеПросмотраКонтекстноеМеню" id="163"/>
+								<ExtendedTooltip name="ДеревоТочекСостояниеПросмотраРасширеннаяПодсказка" id="164"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоТочекУправлениеПоиском" id="165">
+								<AdditionSource>
+									<Item>ДеревоТочек</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоТочекУправлениеПоискомКонтекстноеМеню" id="166"/>
+								<ExtendedTooltip name="ДеревоТочекУправлениеПоискомРасширеннаяПодсказка" id="167"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ДеревоТочекПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ДеревоТочек_1НаименованиеЭлемента" id="34">
+									<DataPath>ДеревоТочек.НаименованиеЭлемента</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоТочек_1НаименованиеЭлементаКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="ДеревоТочек_1НаименованиеЭлементаРасширеннаяПодсказка" id="168"/>
+								</InputField>
+								<ColumnGroup name="ДеревоТочек_1Группа4" id="70">
+									<ExtendedTooltip name="ДеревоТочек_1Группа4РасширеннаяПодсказка" id="169"/>
+									<ChildItems>
+										<InputField name="ДеревоТочек_1ИмяЭлемента" id="31">
+											<DataPath>ДеревоТочек.ИмяЭлемента</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1ИмяЭлементаКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="ДеревоТочек_1ИмяЭлементаРасширеннаяПодсказка" id="170"/>
+										</InputField>
+										<InputField name="ДеревоТочек_1ВидЭлемента" id="28">
+											<DataPath>ДеревоТочек.ВидЭлемента</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1ВидЭлементаКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="ДеревоТочек_1ВидЭлементаРасширеннаяПодсказка" id="171"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<CheckBoxField name="ДеревоТочек_1Групповая" id="37">
+									<DataPath>ДеревоТочек.Групповая</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоТочек_1ГрупповаяКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="ДеревоТочек_1ГрупповаяРасширеннаяПодсказка" id="172"/>
+								</CheckBoxField>
+								<InputField name="ДеревоТочек_1Пояснение" id="40">
+									<DataPath>ДеревоТочек.Пояснение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоТочек_1ПояснениеКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="ДеревоТочек_1ПояснениеРасширеннаяПодсказка" id="173"/>
+								</InputField>
+								<ColumnGroup name="ДеревоТочек_1Группа1" id="64">
+									<ExtendedTooltip name="ДеревоТочек_1Группа1РасширеннаяПодсказка" id="174"/>
+									<ChildItems>
+										<InputField name="ДеревоТочек_1ВариантИмя" id="43">
+											<DataPath>ДеревоТочек.ВариантИмя</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1ВариантИмяКонтекстноеМеню" id="44"/>
+											<ExtendedTooltip name="ДеревоТочек_1ВариантИмяРасширеннаяПодсказка" id="175"/>
+										</InputField>
+										<InputField name="ДеревоТочек_1ВариантСиноним" id="46">
+											<DataPath>ДеревоТочек.ВариантСиноним</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1ВариантСинонимКонтекстноеМеню" id="47"/>
+											<ExtendedTooltip name="ДеревоТочек_1ВариантСинонимРасширеннаяПодсказка" id="176"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ДеревоТочек_1Группа2" id="66">
+									<ExtendedTooltip name="ДеревоТочек_1Группа2РасширеннаяПодсказка" id="177"/>
+									<ChildItems>
+										<InputField name="ДеревоТочек_1Разделение" id="49">
+											<DataPath>ДеревоТочек.Разделение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1РазделениеКонтекстноеМеню" id="50"/>
+											<ExtendedTooltip name="ДеревоТочек_1РазделениеРасширеннаяПодсказка" id="178"/>
+										</InputField>
+										<InputField name="ДеревоТочек_1Слияние" id="55">
+											<DataPath>ДеревоТочек.Слияние</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1СлияниеКонтекстноеМеню" id="56"/>
+											<ExtendedTooltip name="ДеревоТочек_1СлияниеРасширеннаяПодсказка" id="179"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ДеревоТочек_1ИндексВетки" id="52">
+									<DataPath>ДеревоТочек.ИндексВетки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоТочек_1ИндексВеткиКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ДеревоТочек_1ИндексВеткиРасширеннаяПодсказка" id="180"/>
+								</InputField>
+								<ColumnGroup name="ДеревоТочек_1Группа5" id="72">
+									<ExtendedTooltip name="ДеревоТочек_1Группа5РасширеннаяПодсказка" id="181"/>
+									<ChildItems>
+										<InputField name="ДеревоТочек_1СлияниеРазделения" id="74">
+											<DataPath>ДеревоТочек.СлияниеРазделения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1СлияниеРазделенияКонтекстноеМеню" id="75"/>
+											<ExtendedTooltip name="ДеревоТочек_1СлияниеРазделенияРасширеннаяПодсказка" id="182"/>
+										</InputField>
+										<InputField name="ДеревоТочек_1РазделениеСлияния" id="77">
+											<DataPath>ДеревоТочек.РазделениеСлияния</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1РазделениеСлиянияКонтекстноеМеню" id="78"/>
+											<ExtendedTooltip name="ДеревоТочек_1РазделениеСлиянияРасширеннаяПодсказка" id="183"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ДеревоТочек_1Группа3" id="68">
+									<ExtendedTooltip name="ДеревоТочек_1Группа3РасширеннаяПодсказка" id="184"/>
+									<ChildItems>
+										<InputField name="ДеревоТочекКодОшибки" id="85">
+											<DataPath>ДеревоТочек.КодОшибки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=0</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=0</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ДеревоТочекКодОшибкиКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="ДеревоТочекКодОшибкиРасширеннаяПодсказка" id="185"/>
+										</InputField>
+										<InputField name="ДеревоТочек_1ТекстОшибки" id="61">
+											<DataPath>ДеревоТочек.ТекстОшибки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоТочек_1ТекстОшибкиКонтекстноеМеню" id="62"/>
+											<ExtendedTooltip name="ДеревоТочек_1ТекстОшибкиРасширеннаяПодсказка" id="186"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<CheckBoxField name="ДеревоТочек_1Ошибка" id="58">
+									<DataPath>ДеревоТочек.Ошибка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоТочек_1ОшибкаКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ДеревоТочек_1ОшибкаРасширеннаяПодсказка" id="187"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<Pages name="ПанельОшибок" id="136">
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ПанельОшибокРасширеннаяПодсказка" id="188"/>
+			<ChildItems>
+				<Page name="СтраницаЕстьОшибки" id="137">
+					<ExtendedTooltip name="СтраницаЕстьОшибкиРасширеннаяПодсказка" id="189"/>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаСпискаОшибок" id="222">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСпискаОшибокРасширеннаяПодсказка" id="223"/>
+			<ChildItems>
+				<Table name="СтекОшибок" id="88">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<HeightInTableRows>4</HeightInTableRows>
+					<Header>false</Header>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>СтекОшибок</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СтекОшибокКонтекстноеМеню" id="89">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<AutoCommandBar name="СтекОшибокКоманднаяПанель" id="90">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СтекОшибокРасширеннаяПодсказка" id="190"/>
+					<SearchStringAddition name="СтекОшибокСтрокаПоиска" id="191">
+						<AdditionSource>
+							<Item>СтекОшибок</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СтекОшибокСтрокаПоискаКонтекстноеМеню" id="192"/>
+						<ExtendedTooltip name="СтекОшибокСтрокаПоискаРасширеннаяПодсказка" id="193"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СтекОшибокСостояниеПросмотра" id="194">
+						<AdditionSource>
+							<Item>СтекОшибок</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СтекОшибокСостояниеПросмотраКонтекстноеМеню" id="195"/>
+						<ExtendedTooltip name="СтекОшибокСостояниеПросмотраРасширеннаяПодсказка" id="196"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СтекОшибокУправлениеПоиском" id="197">
+						<AdditionSource>
+							<Item>СтекОшибок</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СтекОшибокУправлениеПоискомКонтекстноеМеню" id="198"/>
+						<ExtendedTooltip name="СтекОшибокУправлениеПоискомРасширеннаяПодсказка" id="199"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">СтекОшибокВыбор</Event>
+						<Event name="OnActivateRow">СтекОшибокПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="СтекОшибокОписаниеОшибки" id="110">
+							<DataPath>СтекОшибок.ОписаниеОшибки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СтекОшибокОписаниеОшибкиКонтекстноеМеню" id="111"/>
+							<ExtendedTooltip name="СтекОшибокОписаниеОшибкиРасширеннаяПодсказка" id="200"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<LabelDecoration name="ПояснительнаяНадпись" id="145">
+					<TextColor>style:FieldSelectionBackColor</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="9" kind="WindowsFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>При позиционировании на строку таблицы  часть карты с ошибкой будет выделена зеленым цветом . Ошибочные элементы выделяются красным.
+Для получения подробного описания ошибки выберите строку двойным нажатием кнопки мыши.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПояснительнаяНадписьКонтекстноеМеню" id="146"/>
+					<ExtendedTooltip name="ПояснительнаяНадписьРасширеннаяПодсказка" id="203"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНетОшибок" id="214">
+			<Visible>false</Visible>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНетОшибокРасширеннаяПодсказка" id="215"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияКартинкаОК" id="216">
+					<Width>3</Width>
+					<Height>2</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибок не выявлено</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Abs>Picture.png</xr:Abs>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияКартинкаОККонтекстноеМеню" id="217"/>
+					<ExtendedTooltip name="ДекорацияКартинкаОКРасширеннаяПодсказка" id="218"/>
+				</PictureDecoration>
+				<LabelDecoration name="ДекорацияНетОшибок" id="219">
+					<Height>2</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибок не выявлено</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияНетОшибокКонтекстноеМеню" id="220"/>
+					<ExtendedTooltip name="ДекорацияНетОшибокРасширеннаяПодсказка" id="221"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CRM_ПроверкаКарты</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоТочек" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево точек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВидЭлемента" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид элемента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяЭлемента" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя элемента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеЭлемента" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование элемента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Групповая" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Групповая</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Пояснение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пояснение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантИмя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВариантСиноним" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант синоним</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Разделение" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разделение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИндексВетки" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс ветки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Слияние" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Слияние</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ошибка" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТекстОшибки" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СлияниеРазделения" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Слияние разделения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РазделениеСлияния" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разделение слияния</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодОшибки" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТекстовыйДокумент" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текстовый документ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СхемаМаршрута" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Схема маршрута</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/graphscheme">d5p1:FlowchartContextType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИндексыЭлементов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Индексы элементов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Индекс" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресТаблицыЭлементов" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес таблицы элементов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтекОшибок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стек ошибок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяЭлемента" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя элемента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОписаниеОшибки" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодОшибки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяЭлементаОшибка" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя элемента ошибка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПутьККарте" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь к карте</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокЭлементов" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список элементов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КодОшибки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВызовИзСтека" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вызов из стека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДеревоЗаполнено" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево заполнено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Проверить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Проверить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаВывестиПолныйПереченьОшибок" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полный перечень ошибок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вывести полный перечень ошибок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FormHelp</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВывестиПолныйПереченьОшибок</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

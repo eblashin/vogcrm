@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<RadioButtonField name="ТипОбработчика" id="7">
+			<DataPath>Объект.ТипОбработчика</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xr:DesignTimeRef">Enum.вогТипыОбработчика.EnumValue.Статус</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xr:DesignTimeRef">Enum.вогТипыОбработчика.EnumValue.Обработка</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ТипОбработчикаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТипОбработчикаРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ТипОбработчикаПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаИнформация" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИнформацияРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияПроцедураНачало" id="15">
+					<Width>10</Width>
+					<Height>2</Height>
+					<TextColor>#FF0000</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процедура</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПроцедураНачалоКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ДекорацияПроцедураНачалоРасширеннаяПодсказка" id="17"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияПроцедураСервер" id="18">
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<TextColor>#0000FF</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;colorstyle 0:e07ac651-07b9-4664-95e8-f3f5a51ea6c8&gt;&amp;НаСервере&lt;/&gt;
+ОбработчикДействия()</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПроцедураСерверКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ДекорацияПроцедураСерверРасширеннаяПодсказка" id="20"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияИмяПроцедурыКлиент" id="24">
+					<Visible>false</Visible>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<TextColor>#0000FF</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;colorstyle 0:e07ac651-07b9-4664-95e8-f3f5a51ea6c8&gt;&amp;НаКлиенте&lt;/&gt;
+ПриИзменении(Элемент)</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияИмяПроцедурыКлиентКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ДекорацияИмяПроцедурыКлиентРасширеннаяПодсказка" id="26"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПроизволныйКод" id="10">
+			<DataPath>Объект.ПроизволныйКод</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>10</Height>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ПроизволныйКодКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПроизволныйКодРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<LabelDecoration name="ДекорацияКонецПроцедуры" id="21">
+			<Height>2</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>#FF0000</TextColor>
+			<Font ref="sys:DefaultGUIFont" height="11" kind="WindowsFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КонецПроцедуры</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияКонецПроцедурыКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="ДекорацияКонецПроцедурыРасширеннаяПодсказка" id="23"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогШаблоныПроизвольныйКодСтатусы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

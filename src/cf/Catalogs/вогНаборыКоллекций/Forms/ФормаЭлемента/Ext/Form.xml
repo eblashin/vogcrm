@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="27"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СоставНабора" id="7">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.СоставНабора</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоставНабораКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="СоставНабораКоманднаяПанель" id="9">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="СоставНабораДобавить" id="28">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.СоставНабора.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="СоставНабораДобавитьРасширеннаяПодсказка" id="29"/>
+					</Button>
+					<Button name="СоставНабораУдалить" id="30">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.СоставНабора.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="СоставНабораУдалитьРасширеннаяПодсказка" id="31"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СоставНабораРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="СоставНабораСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>СоставНабора</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставНабораСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СоставНабораСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставНабораСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>СоставНабора</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставНабораСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СоставНабораСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставНабораУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>СоставНабора</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставНабораУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СоставНабораУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СоставНабораНомерСтроки" id="20">
+					<DataPath>Объект.СоставНабора.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНабораНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СоставНабораНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="СоставНабораКоллекция" id="23">
+					<DataPath>Объект.СоставНабора.Коллекция</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНабораКоллекцияКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СоставНабораКоллекцияРасширеннаяПодсказка" id="25"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогНаборыКоллекций</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

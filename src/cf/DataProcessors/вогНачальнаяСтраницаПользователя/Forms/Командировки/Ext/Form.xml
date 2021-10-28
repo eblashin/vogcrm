@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Командировки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаБыстрыОтборы" id="124">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстры отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстры отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаБыстрыОтборыРасширеннаяПодсказка" id="125"/>
+			<ChildItems>
+				<InputField name="ПериодВыборки" id="129">
+					<DataPath>ПериодВыборки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>20</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПериодВыборкиКонтекстноеМеню" id="130"/>
+					<ExtendedTooltip name="ПериодВыборкиExtendedTooltip" id="131"/>
+					<Events>
+						<Event name="OnChange">ПериодВыборкиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Пользователь" id="126">
+					<DataPath>ОтборПользователь</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>20</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<OpenButton>false</OpenButton>
+					<ChoiceParameters>
+						<app:item name="ТолькоДоступные">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:boolean">true</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Участник/Сотрудник</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПользовательКонтекстноеМеню" id="127"/>
+					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="128"/>
+					<Events>
+						<Event name="OnChange">ПользовательПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Командировки" id="1">
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Командировки</DataPath>
+			<RowPictureDataPath>Командировки.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="КомандировкиКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="КомандировкиКоманднаяПанель" id="3">
+				<ChildItems>
+					<Button name="КомандировкиИзменитьФорму" id="120">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<ExtendedTooltip name="КомандировкиИзменитьФормуРасширеннаяПодсказка" id="121"/>
+					</Button>
+					<Button name="РегистрСведенийвогЗакрытиеПериодаПланированияКомандировкиЗакрытиеПериодаПланированияКомандировок" id="122">
+						<Type>CommandBarButton</Type>
+						<CommandName>InformationRegister.вогЗакрытиеПериодаПланированияКомандировки.Command.ЗакрытиеПериодаПланированияКомандировок</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="РегистрСведенийвогЗакрытиеПериодаПланированияКомандировкиЗакрытиеПериодаПланированияКомандировокРасширеннаяПодсказка" id="123"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КомандировкиРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="КомандировкиСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>Командировки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КомандировкиСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="КомандировкиСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КомандировкиСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>Командировки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КомандировкиСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="КомандировкиСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КомандировкиУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>Командировки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КомандировкиУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="КомандировкиУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnGetDataAtServer">КомандировкиПриПолученииДанныхНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="КомандировкиСотрудник" id="60">
+					<DataPath>Командировки.Сотрудник</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инициатор</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="КомандировкиСотрудникКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="КомандировкиСотрудникРасширеннаяПодсказка" id="62"/>
+				</LabelField>
+				<LabelField name="КомандировкиУчастники" id="63">
+					<DataPath>Командировки.Участники</DataPath>
+					<ContextMenu name="КомандировкиУчастникиКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="КомандировкиУчастникиРасширеннаяПодсказка" id="65"/>
+				</LabelField>
+				<LabelField name="КомандировкиВремяНачала" id="66">
+					<DataPath>Командировки.ВремяНачала</DataPath>
+					<ContextMenu name="КомандировкиВремяНачалаКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="КомандировкиВремяНачалаРасширеннаяПодсказка" id="68"/>
+				</LabelField>
+				<LabelField name="КомандировкиВремяОкончания" id="69">
+					<DataPath>Командировки.ВремяОкончания</DataPath>
+					<ContextMenu name="КомандировкиВремяОкончанияКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="КомандировкиВремяОкончанияРасширеннаяПодсказка" id="71"/>
+				</LabelField>
+				<LabelField name="КомандировкиКлиенты" id="72">
+					<DataPath>Командировки.Клиенты</DataPath>
+					<ContextMenu name="КомандировкиКлиентыКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="КомандировкиКлиентыРасширеннаяПодсказка" id="74"/>
+				</LabelField>
+				<LabelField name="КомандировкиТорговыеТочки" id="75">
+					<DataPath>Командировки.ТорговыеТочки</DataPath>
+					<ContextMenu name="КомандировкиТорговыеТочкиКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="КомандировкиТорговыеТочкиРасширеннаяПодсказка" id="77"/>
+				</LabelField>
+				<LabelField name="КомандировкиТребуетсяСогласование" id="78">
+					<DataPath>Командировки.ТребуетсяСогласование</DataPath>
+					<ContextMenu name="КомандировкиТребуетсяСогласованиеКонтекстноеМеню" id="79"/>
+					<ExtendedTooltip name="КомандировкиТребуетсяСогласованиеРасширеннаяПодсказка" id="80"/>
+				</LabelField>
+				<LabelField name="КомандировкиГород" id="81">
+					<DataPath>Командировки.Город</DataPath>
+					<ContextMenu name="КомандировкиГородКонтекстноеМеню" id="82"/>
+					<ExtendedTooltip name="КомандировкиГородРасширеннаяПодсказка" id="83"/>
+				</LabelField>
+				<LabelField name="КомандировкиРынки" id="84">
+					<DataPath>Командировки.Рынки</DataPath>
+					<ContextMenu name="КомандировкиРынкиКонтекстноеМеню" id="85"/>
+					<ExtendedTooltip name="КомандировкиРынкиРасширеннаяПодсказка" id="86"/>
+				</LabelField>
+				<LabelField name="КомандировкиСтатус" id="87">
+					<DataPath>Командировки.Статус</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="КомандировкиСтатусКонтекстноеМеню" id="88"/>
+					<ExtendedTooltip name="КомандировкиСтатусРасширеннаяПодсказка" id="89"/>
+				</LabelField>
+				<ColumnGroup name="КомандировкиГруппаСтатус" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="КомандировкиГруппаСтатусРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<PictureField name="КомандировкиСтатус1" id="96">
+							<DataPath>Командировки.Статус1</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияСтатусовКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:TransparentPixel x="2111" y="15"/>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиСтатус1КонтекстноеМеню" id="97"/>
+							<ExtendedTooltip name="КомандировкиСтатус1РасширеннаяПодсказка" id="98"/>
+						</PictureField>
+						<PictureField name="КомандировкиСтатус2" id="99">
+							<DataPath>Командировки.Статус2</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияСтатусовКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиСтатус2КонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="КомандировкиСтатус2РасширеннаяПодсказка" id="101"/>
+						</PictureField>
+						<PictureField name="КомандировкиСтатус3" id="102">
+							<DataPath>Командировки.Статус3</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияСтатусовКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиСтатус3КонтекстноеМеню" id="103"/>
+							<ExtendedTooltip name="КомандировкиСтатус3РасширеннаяПодсказка" id="104"/>
+						</PictureField>
+						<PictureField name="КомандировкиСтатус4" id="105">
+							<DataPath>Командировки.Статус4</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияСтатусовКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиСтатус4КонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="КомандировкиСтатус4РасширеннаяПодсказка" id="107"/>
+						</PictureField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="КомандировкиГруппаФинансирование" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Финансирование</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командировки группа финансирование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="КомандировкиГруппаФинансированиеРасширеннаяПодсказка" id="59"/>
+					<ChildItems>
+						<PictureField name="КомандировкиФинансирование1" id="108">
+							<DataPath>Командировки.Финансирование1</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияФинансированияКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиФинансирование1КонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="КомандировкиФинансирование1РасширеннаяПодсказка" id="110"/>
+						</PictureField>
+						<PictureField name="КомандировкиФинансирование2" id="111">
+							<DataPath>Командировки.Финансирование2</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияФинансированияКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиФинансирование2КонтекстноеМеню" id="112"/>
+							<ExtendedTooltip name="КомандировкиФинансирование2РасширеннаяПодсказка" id="113"/>
+						</PictureField>
+						<PictureField name="КомандировкиФинансирование3" id="114">
+							<DataPath>Командировки.Финансирование3</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияФинансированияКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиФинансирование3КонтекстноеМеню" id="115"/>
+							<ExtendedTooltip name="КомандировкиФинансирование3РасширеннаяПодсказка" id="116"/>
+						</PictureField>
+						<PictureField name="КомандировкиФинансирование4" id="117">
+							<DataPath>Командировки.Финансирование4</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<ShowInHeader>false</ShowInHeader>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вогКоллекцияФинансированияКомандировки</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="КомандировкиФинансирование4КонтекстноеМеню" id="118"/>
+							<ExtendedTooltip name="КомандировкиФинансирование4РасширеннаяПодсказка" id="119"/>
+						</PictureField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="КомандировкиФинансирование" id="90">
+					<DataPath>Командировки.Финансирование</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="КомандировкиФинансированиеКонтекстноеМеню" id="91"/>
+					<ExtendedTooltip name="КомандировкиФинансированиеРасширеннаяПодсказка" id="92"/>
+				</LabelField>
+				<LabelField name="КомандировкиКомментарий" id="93">
+					<DataPath>Командировки.Комментарий</DataPath>
+					<ContextMenu name="КомандировкиКомментарийКонтекстноеМеню" id="94"/>
+					<ExtendedTooltip name="КомандировкиКомментарийРасширеннаяПодсказка" id="95"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогНачальнаяСтраницаПользователя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Командировки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~Командировки.ИндексКартинки</Field>
+				<Field>~Командировки.ИндексКартинки1</Field>
+				<Field>~Командировки.ИндексКартинки2</Field>
+				<Field>~Командировки.ИндексКартинки3</Field>
+				<Field>~Командировки.ИндексКартинки4</Field>
+				<Field>Командировки.Статус1</Field>
+				<Field>Командировки.Статус2</Field>
+				<Field>Командировки.Статус3</Field>
+				<Field>Командировки.Статус4</Field>
+				<Field>Командировки.Финансирование1</Field>
+				<Field>Командировки.Финансирование2</Field>
+				<Field>Командировки.Финансирование3</Field>
+				<Field>Командировки.Финансирование4</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументвогКомандировка.Ссылка КАК Ссылка,
+	ДокументвогКомандировка.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументвогКомандировка.Номер КАК Номер,
+	ДокументвогКомандировка.Дата КАК Дата,
+	ДокументвогКомандировка.Проведен КАК Проведен,
+	ДокументвогКомандировка.Сотрудник КАК Сотрудник,
+	ДокументвогКомандировка.ВремяНачала КАК ВремяНачала,
+	ДокументвогКомандировка.ВремяОкончания КАК ВремяОкончания,
+	ДокументвогКомандировка.Продолжительность КАК Продолжительность,
+	ДокументвогКомандировка.Комментарий КАК Комментарий,
+	ДокументвогКомандировка.Статус КАК Статус,
+	ДокументвогКомандировка.Финансирование КАК Финансирование,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Статус1,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Статус2,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Статус3,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Статус4,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Финансирование1,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Финансирование2,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Финансирование3,
+	Выразить (NULL КАК ЧИСЛО(1,0)) КАК Финансирование4,
+	Выбор
+		Когда ДокументвогКомандировка.ИзмененСоставЗадач И ДокументвогКомандировка.ИзмененБюджет И ДокументвогКомандировка.ИзмененПериод Тогда
+			"Изменена полностью" 
+		Когда ДокументвогКомандировка.ИзмененСоставЗадач Тогда
+			"Изменены задачи"
+		Когда ДокументвогКомандировка.ИзмененБюджет Тогда
+			"Изменены расходы"
+		Когда ДокументвогКомандировка.ИзмененПериод Тогда
+			"Изменен период"
+		Иначе
+			""
+	Конец КАК ТребуетсяСогласование,
+	ДокументвогКомандировка.вогВидВзаимодействия КАК вогВидВзаимодействия,
+	ДокументвогКомандировка.Задачи.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Сотрудник КАК Сотрудник,
+		Задача КАК Задача,
+		ТорговаяТочка КАК ТорговаяТочка,
+		Клиент КАК Клиент,
+		Город КАК Город,
+		АдресОфиса КАК АдресОфиса,
+		Приоритет КАК Приоритет,
+		КлючеваяЦель КАК КлючеваяЦель,
+		ОжидаемыйРезультат КАК ОжидаемыйРезультат,
+		ВремяНачала КАК ВремяНачала,
+		ВремяОкончания КАК ВремяОкончания,
+		Продолжительность КАК Продолжительность,
+		Комментарий КАК Комментарий,
+		Запланировал КАК Запланировал,
+		Рынок КАК Рынок,
+		Расположение КАК Расположение
+	) КАК Задачи,
+	ДокументвогКомандировка.РасходыПроезд.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Сотрудник КАК Сотрудник,
+		ВидТранспорта КАК ВидТранспорта,
+		ГородОтправления КАК ГородОтправления,
+		ГородПрибытия КАК ГородПрибытия,
+		Стоимость КАК Стоимость,
+		ВремяНачала КАК ВремяНачала,
+		ВремяОкончания КАК ВремяОкончания,
+		Продолжительность КАК Продолжительность
+	) КАК РасходыПроезд,
+	ДокументвогКомандировка.РасходыПроживание.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Сотрудник КАК Сотрудник,
+		Город КАК Город,
+		Место КАК Место,
+		Стоимость КАК Стоимость,
+		ВремяНачала КАК ВремяНачала,
+		ВремяОкончания КАК ВремяОкончания,
+		Продолжительность КАК Продолжительность
+	) КАК РасходыПроживание,
+	ДокументвогКомандировка.КомандированныеСотрудники.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Сотрудник КАК Сотрудник,
+		ДобавленАвтоматически КАК ДобавленАвтоматически
+	) КАК КомандированныеСотрудники,
+	ДокументвогКомандировка.ДанныеПланировщика.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Сотрудник КАК Сотрудник,
+		Значение КАК Значение,
+		ДатаНачала КАК ДатаНачала,
+		ДатаОкончания КАК ДатаОкончания,
+		Описание КАК Описание,
+		ЭтоДекорация КАК ЭтоДекорация
+	) КАК ДанныеПланировщика,
+	ДокументвогКомандировка.МоментВремени КАК МоментВремени,
+	СписокКомандировок.Клиенты КАК Клиенты,
+	СписокКомандировок.ТорговыеТочки КАК ТорговыеТочки,
+	СписокКомандировок.Город КАК Город,
+	СписокКомандировок.Участники КАК Участники,
+	СписокКомандировок.Рынки КАК Рынки
+ИЗ
+	Документ.вогКомандировка КАК ДокументвогКомандировка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СписокКомандировок КАК СписокКомандировок
+		ПО (СписокКомандировок.Командировка = ДокументвогКомандировка.Ссылка)
+ГДЕ
+	ДокументвогКомандировка.ПометкаУдаления = ЛОЖЬ</QueryText>
+				<MainTable>Document.вогКомандировка</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОтборПользователь" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодВыборки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период выборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПериодВыборки</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+</Form>

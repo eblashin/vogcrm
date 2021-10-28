@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="__STYLE__"></link><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta></head><body>
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p><strong>Обработчики событий</strong></p>
+<p>Выполняется на клиенте, в форме документа (вогАнкета)</p>
+<p><strong>Выбор</strong></p>
+<p><strong>ПриАктивацииСтроки</strong></p>
+<p><strong>ПередНачаломДобавления<br data-fdnt="2">ПередУдалением<br data-fdnt="2">ПриИзменении<br data-fdnt="2">ВыборЗначения<br data-fdnt="2">ПередНачаломИзменения<br data-fdnt="2">ПередОкончаниемРедактирования<br data-fdnt="2">ПриОкончанииРедактирования<br data-fdnt="2">ПослеУдаления<br data-fdnt="2">ОбработкаЗаписиНового<br data-fdnt="2">ПриНачалеРедактирования</strong></p>
+<p><strong>ПередНачаломДобавления</strong></p>
+<p><strong>ПередУдалением</strong></p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><font color="#413003">Доступны следующие переменные:</font></p>
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>- ИдентификаторВопроса</strong> = МассивИмени[МассивИмени.ВГраница()];<br>- <strong>ИмяТаблицы</strong> = "Таблица_" + ИдентификаторВопроса;<br>- <strong>СхемаДанныхВопроса</strong> = СхемаДанныхВопросов[ИдентификаторВопроса]; </p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>- Объект - </strong>Текущий объект вогАнкета</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>- Элемент -</strong> текущий элемент формы</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>- ТекущиеДанные - </strong>Текущие данные строки</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>- </strong>А так же другие стандарные параметры</p></blockquote>
+<p dir="ltr"><strong></strong> </p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>Описание оповещения:</strong></p>
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr">Сигнатура процедуры:</p>&amp;НаКлиенте<br><strong><font color="#e01313">Процедура</font></strong> <font color="#6254fb">Подключаемый_ОписаниеОповещения</font><font color="#e01313">(</font><font color="#6254fb">Значение, ДополнительноеЗначение</font><font color="#e01313">)</font> <font color="#e01313">Экспорт</font> <br><p style="MARGIN-RIGHT: 0px" dir="ltr">Используемые поля структуры дополнительных значений:</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr">- <strong>КодВыполнения</strong> - выполняется данный код</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><strong>- Параметр1, Параметр2, Параметр3 - </strong>Данные параметры устанавливаются перед выполнением кода в Выполнить.</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr">Используется для вложенных обработчиков, тем самым создавая CallbackHell, но удобно ;)</p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr">Пример использования:</p>
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><font size="2">КодВыполнения = "<br>|Если НЕ Значение = Неопределено Тогда<br>|<br>| НоваяСтрока = ЭтаФорма.%1.Добавить();<br>| НоваяСтрока.ОбъектОпроса = Значение;<br>| <br>|КонецЕсли;<br>|";</font></p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><font size="2">КодВыполнения = СтрШаблон(КодВыполнения, ИдентификаторВопроса);</font></p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><font size="2">ДополнительныеПараметрыОповещения = Новый Структура;<br>ДополнительныеПараметрыОповещения.Вставить("КодВыполнения", КодВыполнения);</font></p>
+<p style="MARGIN-RIGHT: 0px" dir="ltr"><font size="2">ОписаниеОповещенияОписаниеОповещенияДобавленияПодключаемое = Новый ОписаниеОповещения("Подключаемый_ОписаниеОповещения", ЭтотОбъект, ДополнительныеПараметрыОповещения);<br> <br>СтруктураПараметровОткрытия = Новый Структура;<br>ОткрытьФорму("Справочник.вогТорговыеТочки.ФормаВыбора", СтруктураПараметровОткрытия, , Объект.Ссылка,,, ОписаниеОповещенияОписаниеОповещенияДобавленияПодключаемое</font>);</p></blockquote></blockquote></blockquote></body></html>

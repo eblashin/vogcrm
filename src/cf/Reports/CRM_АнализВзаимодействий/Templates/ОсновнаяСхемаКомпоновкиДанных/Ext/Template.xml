@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автор</dataPath>
+			<field>Автор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Важность</dataPath>
+			<field>Важность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидСобытия</dataPath>
+			<field>ВидСобытия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВходящееИсходящее</dataPath>
+			<field>ВходящееИсходящее</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Описание</dataPath>
+			<field>Описание</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПометкаУдаления</dataPath>
+			<field>ПометкаУдаления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проведен</dataPath>
+			<field>Проведен</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проект</dataPath>
+			<field>Проект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОбъекта</dataPath>
+			<field>ТипОбъекта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Год</dataPath>
+			<field>Год</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>День</dataPath>
+			<field>День</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месяц</dataPath>
+			<field>Месяц</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Квартал</dataPath>
+			<field>Квартал</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_ЖурналДокументов.Объект КАК Объект,
+	CRM_ЖурналДокументов.ТипОбъекта,
+	CRM_ЖурналДокументов.Номер,
+	CRM_ЖурналДокументов.Дата,
+	CRM_ЖурналДокументов.Организация,
+	CRM_ЖурналДокументов.Сумма,
+	CRM_ЖурналДокументов.Валюта,
+	CRM_ЖурналДокументов.Ответственный,
+	CRM_ЖурналДокументов.Автор,
+	CRM_ЖурналДокументов.Подразделение,
+	CRM_ЖурналДокументов.Описание,
+	CRM_ЖурналДокументов.Важность,
+	CRM_ЖурналДокументов.Проект,
+	CRM_ЖурналДокументов.ВходящееИсходящее,
+	CRM_ЖурналДокументов.ВидСобытия,
+	CRM_ЖурналДокументов.ПометкаУдаления,
+	CRM_ЖурналДокументов.Проведен,
+	1 КАК Количество,
+	КОНЕЦПЕРИОДА(CRM_ЖурналДокументов.Дата, ДЕНЬ) КАК День,
+	КОНЕЦПЕРИОДА(CRM_ЖурналДокументов.Дата, МЕСЯЦ) КАК Месяц,
+	КОНЕЦПЕРИОДА(CRM_ЖурналДокументов.Дата, КВАРТАЛ) КАК Квартал,
+	КОНЕЦПЕРИОДА(CRM_ЖурналДокументов.Дата, ГОД) КАК Год
+ИЗ
+	РегистрСведений.CRM_ЖурналДокументов КАК CRM_ЖурналДокументов
+ГДЕ
+	CRM_ЖурналДокументов.ГлавнаяЗапись = ИСТИНА
+	И CRM_ЖурналДокументов.ПометкаУдаления = ЛОЖЬ
+{ГДЕ
+	(CRM_ЖурналДокументов.Дата &gt;= &amp;НачалоПериода),
+	(CRM_ЖурналДокументов.Дата &lt;= &amp;КонецПериода)}</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СегментКлиентов</dataPath>
+			<field>СегментКлиентов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КлассABC</dataPath>
+			<field>КлассABC</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КлассXYZ</dataPath>
+			<field>КлассXYZ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Холдинг</dataPath>
+			<field>Холдинг</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СвязанноеЮридическоеЛицо</dataPath>
+			<field>СвязанноеЮридическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникПервичногоИнтереса</dataPath>
+			<field>ИсточникПервичногоИнтереса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КаналПервичногоИнтереса</dataPath>
+			<field>КаналПервичногоИнтереса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипКлассификации</dataPath>
+			<field>ТипКлассификации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипПараметраКлассификации</dataPath>
+			<field>ТипПараметраКлассификации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сделка</dataPath>
+			<field>Сделка</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА ИспользоватьABCXYZКлассификациюПартнеровПоВыручке = ИСТИНА ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыПараметровКлассификации.Выручка)
+		КОГДА ИспользоватьABCXYZКлассификациюПартнеровПоКоличествуПродаж = ИСТИНА ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыПараметровКлассификации.Количество)
+		ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.ТипыПараметровКлассификации.Выручка)
+	КОНЕЦ КАК ТипКлассификации
+ПОМЕСТИТЬ
+	ТипПараметраКлассификации
+ИЗ
+	Константы
+;
+//////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИсточникиПервичногоИнтересаСрезПоследних2.Партнер,
+	ИсточникиПервичногоИнтересаСрезПоследних2.КаналПервичногоИнтереса,
+	ИсточникиПервичногоИнтересаСрезПоследних2.ИсточникПервичногоИнтереса
+ПОМЕСТИТЬ
+	ИсточникиПервичногоИнтересаСрезПоследних
+ИЗ
+(ВЫБРАТЬ
+	ИсточникиПервичногоИнтересаСрезПоследних.Партнер,
+	МАКСИМУМ(ИсточникиПервичногоИнтересаСрезПоследних.Сделка.Дата) КАК Период
+ИЗ
+	РегистрСведений.ИсточникиПервичногоИнтереса.СрезПоследних({&amp;КонецПериода}, {(Партнер).* КАК Клиент}) КАК ИсточникиПервичногоИнтересаСрезПоследних
+СГРУППИРОВАТЬ ПО
+	ИсточникиПервичногоИнтересаСрезПоследних.Партнер
+) КАК ИсточникиПервичногоИнтересаСрезПоследних1
+ВНУТРЕННЕЕ СОЕДИНЕНИЕ
+(ВЫБРАТЬ
+	ИсточникиПервичногоИнтересаСрезПоследних.Партнер,
+	ИсточникиПервичногоИнтересаСрезПоследних.КаналПервичногоИнтереса,
+	ИсточникиПервичногоИнтересаСрезПоследних.ИсточникПервичногоИнтереса,
+	ИсточникиПервичногоИнтересаСрезПоследних.Сделка.Дата КАК Период
+ИЗ
+	РегистрСведений.ИсточникиПервичногоИнтереса.СрезПоследних({&amp;КонецПериода}, {(Партнер).* КАК Клиент}) КАК ИсточникиПервичногоИнтересаСрезПоследних
+) КАК ИсточникиПервичногоИнтересаСрезПоследних2
+ПО ИсточникиПервичногоИнтересаСрезПоследних1.Партнер = ИсточникиПервичногоИнтересаСрезПоследних2.Партнер
+И ИсточникиПервичногоИнтересаСрезПоследних1.Период = ИсточникиПервичногоИнтересаСрезПоследних2.Период
+;
+//////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_ЖурналДокументов.Клиент,
+	CRM_ЖурналДокументов.Объект,
+	ЕСТЬNULL(ПартнерыСегмента.Сегмент, ЗНАЧЕНИЕ(Справочник.СегментыПартнеров.ПустаяСсылка)) КАК СегментКлиентов,
+	ЕСТЬNULL(ABCXYZКлассификацияКлиентовСрезПоследнихABC.Класс, ЗНАЧЕНИЕ(Перечисление.ABCКлассификация.НеКлассифицирован)) КАК КлассABC,
+	ЕСТЬNULL(ABCXYZКлассификацияКлиентовСрезПоследнихXYZ.Класс, ЗНАЧЕНИЕ(Перечисление.XYZКлассификация.НеКлассифицирован)) КАК КлассXYZ,
+	CRM_ХолдингиПартнеров.Холдинг,
+	СвязиМеждуПартнерами.ВторойПартнер КАК СвязанноеЮридическоеЛицо,
+	ИсточникиПервичногоИнтересаСрезПоследних.КаналПервичногоИнтереса,
+	ИсточникиПервичногоИнтересаСрезПоследних.ИсточникПервичногоИнтереса
+ИЗ
+	РегистрСведений.CRM_ЖурналДокументов КАК CRM_ЖурналДокументов
+	ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+	ПО CRM_ЖурналДокументов.Клиент = ПартнерыСегмента.Партнер
+	{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ABCXYZКлассификацияКлиентов.СрезПоследних({&amp;КонецПериода}, {(Партнер).* КАК Клиент}) КАК ABCXYZКлассификацияКлиентовСрезПоследнихABC
+	ПО (ABCXYZКлассификацияКлиентовСрезПоследнихABC.Партнер = CRM_ЖурналДокументов.Клиент)
+		И (ABCXYZКлассификацияКлиентовСрезПоследнихABC.ТипКлассификации = ЗНАЧЕНИЕ(Перечисление.ТипыКлассификации.ABC))
+		И (ABCXYZКлассификацияКлиентовСрезПоследнихABC.ТипПараметраКлассификации В (ВЫБРАТЬ ТипКлассификацииABCXYZ.ТипКлассификации ИЗ ТипПараметраКлассификации КАК ТипКлассификацииABCXYZ))}
+	{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ABCXYZКлассификацияКлиентов.СрезПоследних({&amp;КонецПериода}, {(Партнер).* КАК Клиент}) КАК ABCXYZКлассификацияКлиентовСрезПоследнихXYZ
+	ПО (ABCXYZКлассификацияКлиентовСрезПоследнихXYZ.Партнер = CRM_ЖурналДокументов.Клиент)
+		И (ABCXYZКлассификацияКлиентовСрезПоследнихXYZ.ТипКлассификации = ЗНАЧЕНИЕ(Перечисление.ТипыКлассификации.XYZ))
+		И (ABCXYZКлассификацияКлиентовСрезПоследнихXYZ.ТипПараметраКлассификации В (ВЫБРАТЬ ТипКлассификацииABCXYZ.ТипКлассификации ИЗ ТипПараметраКлассификации КАК ТипКлассификацииABCXYZ))}
+	{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ХолдингиПартнеров КАК CRM_ХолдингиПартнеров
+		ПО CRM_ЖурналДокументов.Клиент = CRM_ХолдингиПартнеров.Партнер}
+	{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СвязиМеждуПартнерами КАК СвязиМеждуПартнерами
+		ПО (CRM_ЖурналДокументов.Клиент = СвязиМеждуПартнерами.ПервыйПартнер)
+		И СвязиМеждуПартнерами.ВидСвязи = ЗНАЧЕНИЕ(Справочник.ВидыСвязейМеждуПартнерами.CRM_СвязанноеЮрЛицо)}
+	{ЛЕВОЕ СОЕДИНЕНИЕ ИсточникиПервичногоИнтересаСрезПоследних КАК ИсточникиПервичногоИнтересаСрезПоследних
+	ПО (CRM_ЖурналДокументов.Клиент = ИсточникиПервичногоИнтересаСрезПоследних.Партнер)}
+ГДЕ
+	  НЕ CRM_ЖурналДокументов.ПометкаУдаления
+	И CRM_ЖурналДокументов.Клиент &lt;&gt; ЗНАЧЕНИЕ(Справочник.партнеры.ПустаяСсылка)
+	{ГДЕ	
+	(CRM_ЖурналДокументов.Дата &gt;= &amp;НачДата),
+	(CRM_ЖурналДокументов.Дата &lt;= &amp;КонДата)}
+	//(CRM_ЖурналДокументов.Дата &gt;= &amp;НачалоПериода),
+	//(CRM_ЖурналДокументов.Дата &lt;= &amp;КонецПериода)}
+
+</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных3</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаУниверсальногоЖурнала</dataPath>
+			<field>ГруппаУниверсальногоЖурнала</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_ГруппыУниверсальногоЖурналаСостав.Ссылка КАК ГруппаУниверсальногоЖурнала,
+	CRM_ГруппыУниверсальногоЖурналаСостав.Объект
+ИЗ
+	Справочник.CRM_ГруппыУниверсальногоЖурнала.Состав КАК CRM_ГруппыУниверсальногоЖурналаСостав</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных1</sourceDataSet>
+		<destinationDataSet>НаборДанных2</destinationDataSet>
+		<sourceExpression>Объект</sourceExpression>
+		<destinationExpression>Объект</destinationExpression>
+		<required>false</required>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных1</sourceDataSet>
+		<destinationDataSet>НаборДанных3</destinationDataSet>
+		<sourceExpression>ТипОбъекта</sourceExpression>
+		<destinationExpression>Объект</destinationExpression>
+	</dataSetLink>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;НачДата, "День")</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ВЫБОР КОГДА &amp;КонДата = Неопределено ИЛИ &amp;КонДата = NULL ИЛИ &amp;КонДата = ДатаВремя(1,1,1) ТОГДА ДатаВремя(3999,12,31)  ИНАЧЕ КонецПериода(&amp;КонДата, "День") КОНЕЦ</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>НачДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>ВЫБОР КОГДА &amp;Период.ДатаНачала ЕСТЬ NULL ИЛИ &amp;Период.ДатаНачала = Неопределено ТОГДА ДАТАВРЕМЯ(1,1,1) ИНАЧЕ &amp;Период.ДатаНачала КОНЕЦ</expression>
+	</parameter>
+	<parameter>
+		<name>КонДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>ВЫБОР КОГДА &amp;Период.ДатаОкончания = Неопределено ИЛИ &amp;Период.ДатаОкончания ЕСТЬ NULL ИЛИ &amp;Период.ДатаОкончания = ДатаВремя(1,1,1) ТОГДА ДатаВремя(3999,12,31)  ИНАЧЕ &amp;Период.ДатаОкончания КОНЕЦ</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ПоКлиентам</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ взаимодействий (по клиентам)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Объект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Описание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>f8b67672-bbae-4e31-a00a-3845e8737574</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ГруппаУниверсальногоЖурнала</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.CRM_ГруппыУниверсальногоЖурнала.Контакты</dcsset:right>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ea53a76b-d3cf-4bd2-92aa-828356584e74</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Клиент</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Партнеры.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>d912bf00-c591-48a9-89bb-58f039c664b2</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СегментКлиентов</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.СегментыПартнеров.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>1911d0f8-ccbf-4d14-80e4-a49dae640080</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТипОбъекта</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.CRM_ОбъектыЖурналаДокументов.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>468ffacf-008c-4da7-8a50-aac077749421</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>06dde5f2-561a-4746-b050-b180218c826a</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>c260662e-0162-41ca-a9b2-ec7f1f2802d9</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Клиент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>238975ed-7a2f-4c28-b833-3f152c09c39a</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Месяц</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ='ММММ гггг'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Год</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=гггг</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>День</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=dd.MM.yy</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Квартал</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ='MMММ yyyy'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>fdb33ca7-cd37-4aa0-a3d3-48a5d39ed430</dcsset:userSettingID>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СегментКлиентов</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Клиент</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:columnsViewMode>Normal</dcsset:columnsViewMode>
+				<dcsset:columnsUserSettingID>6450d27e-3bcd-4898-bbff-9f4f7d7b9a33</dcsset:columnsUserSettingID>
+				<dcsset:rowsViewMode>Normal</dcsset:rowsViewMode>
+				<dcsset:rowsUserSettingID>06a961e6-cee2-4f1a-a873-d1c2e3b18f83</dcsset:rowsUserSettingID>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоОтветственным</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ взаимодействий (по ответственным)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Объект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Описание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>f8b67672-bbae-4e31-a00a-3845e8737574</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ГруппаУниверсальногоЖурнала</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.CRM_ГруппыУниверсальногоЖурнала.Контакты</dcsset:right>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ea53a76b-d3cf-4bd2-92aa-828356584e74</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Клиент</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Партнеры.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>d912bf00-c591-48a9-89bb-58f039c664b2</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СегментКлиентов</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.СегментыПартнеров.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>08311a4b-0f92-4b95-a617-fe47e510c27b</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТипОбъекта</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.CRM_ОбъектыЖурналаДокументов.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>468ffacf-008c-4da7-8a50-aac077749421</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>06dde5f2-561a-4746-b050-b180218c826a</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>8ff956a3-e538-4f03-a5d2-3288c4699eaa</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Клиент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>238975ed-7a2f-4c28-b833-3f152c09c39a</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>fdb33ca7-cd37-4aa0-a3d3-48a5d39ed430</dcsset:userSettingID>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ответственный</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:columnsViewMode>Normal</dcsset:columnsViewMode>
+				<dcsset:columnsUserSettingID>6450d27e-3bcd-4898-bbff-9f4f7d7b9a33</dcsset:columnsUserSettingID>
+				<dcsset:rowsViewMode>Normal</dcsset:rowsViewMode>
+				<dcsset:rowsUserSettingID>06a961e6-cee2-4f1a-a873-d1c2e3b18f83</dcsset:rowsUserSettingID>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+    
+<head>
+        <title>Карта 2GIS</title>
+        <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+              height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+          </style>
+          </head>
+    <body>
+        <div id="map"></div>
+        <div id="eval" onclick="eval_code()" function_name=""></div>
+        <div id = "markerposition"></div>
+        <script>
+          var map;
+          var marker;  
+        function setNewMarker(params){
+        let position = document.getElementById("eval").innerHTML;
+        let arrayPos = position.split(",");
+        if(marker){
+                marker.removeFrom(map);
+              }
+        marker = DG.marker([+arrayPos[0], +arrayPos[1]]).addTo(map);
+        map.setView([+arrayPos[0], +arrayPos[1]]);
+    }
+
+    // Выполнение функций из 1С
+    function eval_code() {
+         var eval_div = document.getElementById("eval");
+         var param_code = eval_div.innerHTML;
+         var function_name = eval_div.getAttribute("function_name");
+         window[function_name](param_code);
+   };
+            
+
+            DG.then(function() {
+                map = DG.map('map', {
+                    center: [55.75315, 37.620523],
+                    zoom: 17
+                });
+
+              map.on("click", function(e){
+              if(marker){
+                marker.removeFrom(map);
+              }
+              marker = DG.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+              document.getElementById("markerposition").innerHTML = e.latlng.lat+","+e.latlng.lng;
+              });
+        });
+
+            
+        </script>
+    </body>
+</html>

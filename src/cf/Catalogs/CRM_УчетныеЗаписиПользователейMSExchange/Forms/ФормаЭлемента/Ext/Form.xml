@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="13"/>
+		</InputField>
+		<InputField name="СерверMSExchange" id="11">
+			<DataPath>Объект.СерверMSExchange</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="СерверMSExchangeКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="СерверMSExchangeExtendedTooltip" id="14"/>
+		</InputField>
+		<InputField name="Пользователь" id="3">
+			<DataPath>Объект.Пользователь</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ПользовательКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ПользовательExtendedTooltip" id="15"/>
+		</InputField>
+		<InputField name="Логин" id="5">
+			<DataPath>Объект.Логин</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ЛогинКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ЛогинExtendedTooltip" id="16"/>
+		</InputField>
+		<InputField name="Пароль" id="7">
+			<DataPath>Объект.Пароль</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ПарольКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПарольExtendedTooltip" id="17"/>
+		</InputField>
+		<InputField name="АдресEMail" id="9">
+			<DataPath>Объект.АдресEMail</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="АдресEMailКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="АдресEMailExtendedTooltip" id="18"/>
+			<Events>
+				<Event name="OnChange">АдресEMailПриИзменении</Event>
+			</Events>
+		</InputField>
+		<CheckBoxField name="скИспользоватьАутентификациюОС" id="19">
+			<DataPath>Объект.скИспользоватьАутентификациюОС</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="скИспользоватьАутентификациюОСКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="скИспользоватьАутентификациюОСРасширеннаяПодсказка" id="21"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CRM_УчетныеЗаписиПользователейMSExchange</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

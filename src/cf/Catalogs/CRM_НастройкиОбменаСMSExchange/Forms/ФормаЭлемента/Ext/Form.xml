@@ -1,0 +1,1525 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Мастер настройки обмена данными с MS Exchange</v8:content>
+		</v8:item>
+	</Title>
+	<Width>100</Width>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновная" id="1">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяExtendedTooltip" id="159"/>
+			<ChildItems>
+				<Pages name="ПанельОсновная" id="2">
+					<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+					<ExtendedTooltip name="ПанельОсновнаяExtendedTooltip" id="160"/>
+					<ChildItems>
+						<Page name="СтраницаПодключениеИУчетнаяЗапись" id="26">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подключение и учетная запись</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница подключение и учетная запись</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаПодключениеИУчетнаяЗаписьExtendedTooltip" id="161"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияПодключениеИУчетнаяЗапись" id="31">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройка подключения и учетной записи</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияПодключениеИУчетнаяЗаписьКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="ДекорацияПодключениеИУчетнаяЗаписьExtendedTooltip" id="162"/>
+								</LabelDecoration>
+								<InputField name="Наименование" id="29">
+									<DataPath>Объект.Description</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Наименование настройки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Наименование настройки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="НаименованиеКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="НаименованиеExtendedTooltip" id="163"/>
+								</InputField>
+								<InputField name="Подключение" id="27">
+									<DataPath>Объект.Подключение</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подключение к MS Exchange</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ПодключениеКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ПодключениеExtendedTooltip" id="164"/>
+								</InputField>
+								<InputField name="УчетнаяЗапись" id="24">
+									<DataPath>Объект.УчетнаяЗапись</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учетная запись пользователя MS Exchange</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="УчетнаяЗаписьExtendedTooltip" id="165"/>
+									<Events>
+										<Event name="OnChange">УчетнаяЗаписьПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СмещениеВремениВМинутах" id="36">
+									<DataPath>Объект.СмещениеВремениВМинутах</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Часовой пояс</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Часовой пояс</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="СмещениеВремениВМинутахКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="СмещениеВремениВМинутахExtendedTooltip" id="166"/>
+								</InputField>
+								<InputField name="Пользователь" id="326">
+									<DataPath>Объект.Пользователь</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ПользовательКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="328"/>
+								</InputField>
+								<UsualGroup name="ГруппаУчаствуетВРегламентномЗадании" id="62">
+									<Group>Horizontal</Group>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаУчаствуетВРегламентномЗаданииExtendedTooltip" id="167"/>
+									<ChildItems>
+										<CheckBoxField name="УчаствуетВРегламентномЗадании" id="60">
+											<DataPath>Объект.УчаствуетВРегламентномЗадании</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Если флаг установлен - регламентное задание будет использовать данную настройку обмена</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="УчаствуетВРегламентномЗаданииКонтекстноеМеню" id="61"/>
+											<ExtendedTooltip name="УчаствуетВРегламентномЗаданииExtendedTooltip" id="168"/>
+											<Events>
+												<Event name="OnChange">УчаствуетВРегламентномЗаданииПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<LabelDecoration name="ДекорацияНастройкаРегламентногоЗаданияОбменаСMSExchange" id="323">
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настроить параметры регламентного задания</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настроить параметры регламентного задания обмена данными с сервером MS Exchange</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="ДекорацияНастройкаРегламентногоЗаданияОбменаСMSExchangeКонтекстноеМеню" id="324"/>
+											<ExtendedTooltip name="ДекорацияНастройкаРегламентногоЗаданияОбменаСMSExchangeExtendedTooltip" id="325"/>
+											<Events>
+												<Event name="Click">ДекорацияНастройкаРегламентногоЗаданияОбменаСMSExchangeНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="ПроверитьПодключение" id="59">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПроверитьПодключение</CommandName>
+									<ExtendedTooltip name="ПроверитьПодключениеExtendedTooltip" id="169"/>
+								</Button>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаВыборНаправленияОбмена" id="3">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выбор направления обмена</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница выбор направления обмена</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаВыборНаправленияОбменаExtendedTooltip" id="170"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияНаправлениеОбменаЗаголовок" id="9">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Направление обмена данными</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияНаправлениеОбменаЗаголовокКонтекстноеМеню" id="10"/>
+									<ExtendedTooltip name="ДекорацияНаправлениеОбменаЗаголовокExtendedTooltip" id="171"/>
+								</LabelDecoration>
+								<RadioButtonField name="НаправлениеОбмена" id="4">
+									<DataPath>Объект.НаправлениеОбмена</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Направление обмена</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Направление обмена</v8:content>
+										</v8:item>
+									</ToolTip>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ColumnsCount>1</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>1C:CRM -&gt; MS Exchange</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.CRM_НаправленияОбменаСMSExchange.EnumValue.ПредприятиеMSExchange</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>MS Exchange -&gt; 1C:CRM</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.CRM_НаправленияОбменаСMSExchange.EnumValue.MSExchangeПредприятие</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>1C:CRM &lt;-&gt; MS Exchange</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.CRM_НаправленияОбменаСMSExchange.EnumValue.ВОбеСтороны</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="НаправлениеОбменаКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="НаправлениеОбменаExtendedTooltip" id="172"/>
+								</RadioButtonField>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаНастройкаСобытий" id="38">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка мероприятий</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница настройка меороприятий</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаНастройкаСобытийExtendedTooltip" id="173"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтборСобытийЗаголовок" id="39">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Мероприятия</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияОтборСобытийЗаголовокКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ДекорацияОтборСобытийЗаголовокExtendedTooltip" id="174"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаСинхронизироватьСобытия" id="41">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСинхронизироватьСобытияExtendedTooltip" id="175"/>
+									<ChildItems>
+										<CheckBoxField name="СинхронизироватьСобытия" id="42">
+											<DataPath>Объект.СинхронизироватьСобытия</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Синхронизировать события</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьСобытияКонтекстноеМеню" id="43"/>
+											<ExtendedTooltip name="СинхронизироватьСобытияExtendedTooltip" id="176"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьСобытияПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<CheckBoxField name="СинхронизироватьКонтактыСобытий" id="44">
+											<DataPath>Объект.СинхронизироватьКонтактыСобытий</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Синхронизировать контакты событий</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьКонтактыСобытийКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="СинхронизироватьКонтактыСобытийExtendedTooltip" id="177"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьКонтактыСобытийПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="ИскатьКонтактыПоАдресамEMail" id="46">
+									<DataPath>Объект.ИскатьКонтактыПоАдресамEMail</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Искать контакты по адресам E-Mail</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИскатьКонтактыПоАдресамEMailКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="ИскатьКонтактыПоАдресамEMailExtendedTooltip" id="178"/>
+								</CheckBoxField>
+								<Table name="НастройкиСобытийНастройкиОтбор" id="48">
+									<Representation>Tree</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<Autofill>true</Autofill>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>НастройкиСобытий.Settings.Filter</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отбор событий</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отбор событий</v8:content>
+										</v8:item>
+									</ToolTip>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<ViewMode>All</ViewMode>
+									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+									<ContextMenu name="НастройкиСобытийНастройкиОтборКонтекстноеМеню" id="49"/>
+									<AutoCommandBar name="НастройкиСобытийНастройкиОтборКоманднаяПанель" id="50"/>
+									<ExtendedTooltip name="НастройкиСобытийНастройкиОтборExtendedTooltip" id="179"/>
+									<SearchStringAddition name="НастройкиСобытийНастройкиОтборСтрокаПоиска" id="269">
+										<AdditionSource>
+											<Item>НастройкиСобытийНастройкиОтбор</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиСобытийНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="270"/>
+										<ExtendedTooltip name="НастройкиСобытийНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="271"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="НастройкиСобытийНастройкиОтборСостояниеПросмотра" id="272">
+										<AdditionSource>
+											<Item>НастройкиСобытийНастройкиОтбор</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиСобытийНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="273"/>
+										<ExtendedTooltip name="НастройкиСобытийНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="274"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="НастройкиСобытийНастройкиОтборУправлениеПоиском" id="275">
+										<AdditionSource>
+											<Item>НастройкиСобытийНастройкиОтбор</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиСобытийНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="276"/>
+										<ExtendedTooltip name="НастройкиСобытийНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="277"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnEditEnd">НастройкиСобытийНастройкиОтборПриОкончанииРедактирования</Event>
+									</Events>
+								</Table>
+								<UsualGroup name="ГруппаСобытияМодифицированныеПосле" id="99">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСобытияМодифицированныеПослеExtendedTooltip" id="180"/>
+									<ChildItems>
+										<InputField name="СобытияМодифицированныеПосле" id="51">
+											<DataPath>Объект.СобытияМодифицированныеПосле</DataPath>
+											<Visible>false</Visible>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обмениваться только событиями, созданными или измененными позже этой даты</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ContextMenu name="СобытияМодифицированныеПослеКонтекстноеМеню" id="52"/>
+											<ExtendedTooltip name="СобытияМодифицированныеПослеExtendedTooltip" id="181"/>
+										</InputField>
+										<CheckBoxField name="СобытияОбмениватьсяТолькоНовымиОбъектами" id="95">
+											<DataPath>Объект.СобытияОбмениватьсяТолькоНовымиОбъектами</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обмениваться только новыми объектами</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СобытияОбмениватьсяТолькоНовымиОбъектамиКонтекстноеМеню" id="96"/>
+											<ExtendedTooltip name="СобытияОбмениватьсяТолькоНовымиОбъектамиExtendedTooltip" id="182"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="УдалятьПомеченныеНаУдаленияСобытия" id="55">
+									<DataPath>Объект.УдалятьПомеченныеНаУдаленияСобытия</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Удалять помеченные на удаление события</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УдалятьПомеченныеНаУдаленияСобытияКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="УдалятьПомеченныеНаУдаленияСобытияExtendedTooltip" id="183"/>
+								</CheckBoxField>
+								<InputField name="ПапкаКалендаря" id="68">
+									<DataPath>Объект.ПапкаКалендаря</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Папка календаря в MS Exchange. Не рекомендуется изменять следующий параметр если события календаря создаются в папке по умолчанию.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ПапкаКалендаряКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ПапкаКалендаряExtendedTooltip" id="184"/>
+									<Events>
+										<Event name="StartChoice">ПапкаКалендаряНачалоВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="EMailAddessУчетнойЗаписиОбщегоКалендаря" id="87">
+									<DataPath>Объект.EMailAddessУчетнойЗаписиОбщегоКалендаря</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполняется, если используется общий календарь MS Exchange - в случае, если E-Mail адрес выбранной в настройке учетной записи отличается от E-Mail адреса учетной записи общего календаря.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="EMailAddessУчетнойЗаписиОбщегоКалендаряКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="EMailAddessУчетнойЗаписиОбщегоКалендаряExtendedTooltip" id="185"/>
+								</InputField>
+								<LabelDecoration name="ДекорацияEMailAddessУчетнойЗаписиОбщегоКалендаря" id="89">
+									<Visible>false</Visible>
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполняется, если используется общий календарь MS Exchange - в случае, если E-Mail адрес выбранной в настройке учетной записи отличается от E-Mail адреса учетной записи общего календаря.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияEMailAddessУчетнойЗаписиОбщегоКалендаряКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="ДекорацияEMailAddessУчетнойЗаписиОбщегоКалендаряExtendedTooltip" id="186"/>
+								</LabelDecoration>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаНастройкаКонтактов" id="11">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка контактов</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаНастройкаКонтактовExtendedTooltip" id="187"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтборКонтактовЗаголовок" id="20">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контакты</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияОтборКонтактовЗаголовокКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ДекорацияОтборКонтактовЗаголовокExtendedTooltip" id="188"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаСинхронизироватьКлиентыКонтактныеЛица" id="15">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объекты синхронизации:</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаСинхронизироватьКлиентыКонтактныеЛицаExtendedTooltip" id="189"/>
+									<ChildItems>
+										<CheckBoxField name="СинхронизироватьКлиенты" id="16">
+											<DataPath>Объект.СинхронизироватьКлиенты</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Синхронизировать клиентов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьКлиентыКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="СинхронизироватьКлиентыExtendedTooltip" id="190"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьКлиентыПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<CheckBoxField name="СинхронизироватьКонтактныеЛица" id="18">
+											<DataPath>Объект.СинхронизироватьКонтактныеЛица</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Синхронизировать контактные лица клиентов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьКонтактныеЛицаКонтекстноеМеню" id="19"/>
+											<ExtendedTooltip name="СинхронизироватьКонтактныеЛицаExtendedTooltip" id="191"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьКонтактныеЛицаПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<Table name="НастройкиКонтактовНастройкиОтбор" id="12">
+									<Representation>Tree</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<Autofill>true</Autofill>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>НастройкиКонтактов.Settings.Filter</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отбор контактов</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отбор контактов</v8:content>
+										</v8:item>
+									</ToolTip>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<ViewMode>All</ViewMode>
+									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+									<ContextMenu name="НастройкиКонтактовНастройкиОтборКонтекстноеМеню" id="13"/>
+									<AutoCommandBar name="НастройкиКонтактовНастройкиОтборКоманднаяПанель" id="14"/>
+									<ExtendedTooltip name="НастройкиКонтактовНастройкиОтборExtendedTooltip" id="192"/>
+									<SearchStringAddition name="НастройкиКонтактовНастройкиОтборСтрокаПоиска" id="278">
+										<AdditionSource>
+											<Item>НастройкиКонтактовНастройкиОтбор</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиКонтактовНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="279"/>
+										<ExtendedTooltip name="НастройкиКонтактовНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="280"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="НастройкиКонтактовНастройкиОтборСостояниеПросмотра" id="281">
+										<AdditionSource>
+											<Item>НастройкиКонтактовНастройкиОтбор</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиКонтактовНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="282"/>
+										<ExtendedTooltip name="НастройкиКонтактовНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="283"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="НастройкиКонтактовНастройкиОтборУправлениеПоиском" id="284">
+										<AdditionSource>
+											<Item>НастройкиКонтактовНастройкиОтбор</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиКонтактовНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="285"/>
+										<ExtendedTooltip name="НастройкиКонтактовНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="286"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnEditEnd">НастройкиКонтактовНастройкиОтборПриОкончанииРедактирования</Event>
+									</Events>
+								</Table>
+								<LabelDecoration name="ДекорацияНастроитьСоответствияВидовКИ" id="57">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настроить соответствие видов контактной информации</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Открыть форму настройки соответствия видов контактной информации</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ДекорацияНастроитьСоответствияВидовКИКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ДекорацияНастроитьСоответствияВидовКИExtendedTooltip" id="193"/>
+									<Events>
+										<Event name="Click">ДекорацияНастроитьСоответствияВидовКИНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<InputField name="ГруппаДляКонтактов" id="34">
+									<DataPath>Объект.ГруппаДляКонтактов</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа, в которой будут создаваться загружаемые клиенты</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ГруппаДляКонтактовКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="ГруппаДляКонтактовExtendedTooltip" id="194"/>
+								</InputField>
+								<UsualGroup name="ГруппаКонтактыМодифицированныеПосле" id="100">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтактыМодифицированныеПослеExtendedTooltip" id="195"/>
+									<ChildItems>
+										<InputField name="КонтактыМодифицированныеПосле" id="22">
+											<DataPath>Объект.КонтактыМодифицированныеПосле</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обмениваться только контактами, созданными или измененными позже этой даты</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ContextMenu name="КонтактыМодифицированныеПослеКонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="КонтактыМодифицированныеПослеExtendedTooltip" id="196"/>
+										</InputField>
+										<CheckBoxField name="КонтактыОбмениватьсяТолькоНовымиОбъектами" id="97">
+											<DataPath>Объект.КонтактыОбмениватьсяТолькоНовымиОбъектами</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обмениваться только новыми объектами</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="КонтактыОбмениватьсяТолькоНовымиОбъектамиКонтекстноеМеню" id="98"/>
+											<ExtendedTooltip name="КонтактыОбмениватьсяТолькоНовымиОбъектамиExtendedTooltip" id="197"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="УдалятьПомеченныеНаУдаленияКонтакты" id="53">
+									<DataPath>Объект.УдалятьПомеченныеНаУдаленияКонтакты</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Удалять помеченные на удаление контакты</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УдалятьПомеченныеНаУдаленияКонтактыКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="УдалятьПомеченныеНаУдаленияКонтактыExtendedTooltip" id="198"/>
+								</CheckBoxField>
+								<InputField name="ПапкаКонтактов" id="74">
+									<DataPath>Объект.ПапкаКонтактов</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Папка контактов в MS Exchange. Не рекомендуется изменять следующий параметр если контакты создаются в папке по умолчанию.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ПапкаКонтактовКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ПапкаКонтактовExtendedTooltip" id="199"/>
+									<Events>
+										<Event name="StartChoice">ПапкаКонтактовНачалоВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="EMailAddessУчетнойЗаписиОбщихКонтактов" id="91">
+									<DataPath>Объект.EMailAddessУчетнойЗаписиОбщихКонтактов</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполняется, если используются общие контакты MS Exchange - в случае, если E-Mail адрес выбранной в настройке учетной записи отличается от E-Mail адреса учетной записи общих контактов.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="EMailAddessУчетнойЗаписиОбщихКонтактовКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="EMailAddessУчетнойЗаписиОбщихКонтактовExtendedTooltip" id="200"/>
+								</InputField>
+								<LabelDecoration name="ДекорацияEMailAddessУчетнойЗаписиОбщихКонтактов" id="93">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполняется, если используются общие контакты MS Exchange - в случае, если E-Mail адрес выбранной в настройке учетной записи отличается от E-Mail адреса учетной записи общих контактов.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияEMailAddessУчетнойЗаписиОбщихКонтактовКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="ДекорацияEMailAddessУчетнойЗаписиОбщихКонтактовExtendedTooltip" id="201"/>
+								</LabelDecoration>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаНастройкаЗадач" id="241">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка задач</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница настройка задач</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаНастройкаЗадачРасширеннаяПодсказка" id="242"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияЗадачиЗаголовок" id="243">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Задачи</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияЗадачиЗаголовокКонтекстноеМеню" id="244"/>
+									<ExtendedTooltip name="ДекорацияЗадачиЗаголовокРасширеннаяПодсказка" id="245"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаСинхронизироватьЗадачи" id="246">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объекты синхронизации:</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа синхронизировать задачи</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаСинхронизироватьЗадачиРасширеннаяПодсказка" id="247"/>
+									<ChildItems>
+										<CheckBoxField name="СинхронизироватьЗадачи" id="248">
+											<DataPath>Объект.СинхронизироватьЗадачи</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьЗадачиКонтекстноеМеню" id="249"/>
+											<ExtendedTooltip name="СинхронизироватьЗадачиРасширеннаяПодсказка" id="250"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьЗадачиПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<Table name="НастройкиЗадачНастройкиОтбор" id="251">
+									<Representation>Tree</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<Autofill>true</Autofill>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>НастройкиЗадач.Settings.Filter</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отбор задач</v8:content>
+										</v8:item>
+									</Title>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<ViewMode>All</ViewMode>
+									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+									<ContextMenu name="НастройкиЗадачНастройкиОтборКонтекстноеМеню" id="252"/>
+									<AutoCommandBar name="НастройкиЗадачНастройкиОтборКоманднаяПанель" id="253"/>
+									<ExtendedTooltip name="НастройкиЗадачНастройкиОтборРасширеннаяПодсказка" id="254"/>
+									<SearchStringAddition name="НастройкиЗадачНастройкиОтборСтрокаПоиска" id="287">
+										<AdditionSource>
+											<Item>НастройкиЗадачНастройкиОтбор</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиЗадачНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="288"/>
+										<ExtendedTooltip name="НастройкиЗадачНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="289"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="НастройкиЗадачНастройкиОтборСостояниеПросмотра" id="290">
+										<AdditionSource>
+											<Item>НастройкиЗадачНастройкиОтбор</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиЗадачНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="291"/>
+										<ExtendedTooltip name="НастройкиЗадачНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="292"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="НастройкиЗадачНастройкиОтборУправлениеПоиском" id="293">
+										<AdditionSource>
+											<Item>НастройкиЗадачНастройкиОтбор</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиЗадачНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="294"/>
+										<ExtendedTooltip name="НастройкиЗадачНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="295"/>
+									</SearchControlAddition>
+								</Table>
+								<UsualGroup name="ГруппаЗадачиМодифицированныеПосле" id="255">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЗадачиМодифицированныеПослеРасширеннаяПодсказка" id="256"/>
+									<ChildItems>
+										<InputField name="ЗадачиМодифицированныеПосле" id="257">
+											<DataPath>Объект.ЗадачиМодифицированныеПосле</DataPath>
+											<ContextMenu name="ЗадачиМодифицированныеПослеКонтекстноеМеню" id="258"/>
+											<ExtendedTooltip name="ЗадачиМодифицированныеПослеРасширеннаяПодсказка" id="259"/>
+										</InputField>
+										<CheckBoxField name="ЗадачиОбмениватьсяТолькоНовымиОбъектами" id="260">
+											<DataPath>Объект.ЗадачиОбмениватьсяТолькоНовымиОбъектами</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗадачиОбмениватьсяТолькоНовымиОбъектамиКонтекстноеМеню" id="261"/>
+											<ExtendedTooltip name="ЗадачиОбмениватьсяТолькоНовымиОбъектамиРасширеннаяПодсказка" id="262"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="УдалятьПомеченныеНаУдаленияЗадачи" id="263">
+									<DataPath>Объект.УдалятьПомеченныеНаУдаленияЗадачи</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УдалятьПомеченныеНаУдаленияЗадачиКонтекстноеМеню" id="264"/>
+									<ExtendedTooltip name="УдалятьПомеченныеНаУдаленияЗадачиРасширеннаяПодсказка" id="265"/>
+								</CheckBoxField>
+								<InputField name="ПапкаЗадач" id="266">
+									<DataPath>Объект.ПапкаЗадач</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ПапкаЗадачКонтекстноеМеню" id="267"/>
+									<ExtendedTooltip name="ПапкаЗадачРасширеннаяПодсказка" id="268"/>
+									<Events>
+										<Event name="StartChoice">ПапкаЗадачНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаНастройкаПочтовыхСообщений" id="101">
+							<Enabled>false</Enabled>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка почтовых сообщений</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница настройка почтовых сообщений</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаНастройкаПочтовыхСообщенийExtendedTooltip" id="202"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияПочтовыеСообщенияЗаголовок" id="102">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Электронные письма</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияПочтовыеСообщенияЗаголовокКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="ДекорацияПочтовыеСообщенияЗаголовокExtendedTooltip" id="203"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаСинхронизироватьПочтовыеСообщенийВходящие" id="114">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Входящие</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСинхронизироватьПочтовыеСообщенийВходящиеExtendedTooltip" id="204"/>
+									<ChildItems>
+										<CheckBoxField name="СинхронизироватьПочтовыеСообщенияВходящие" id="139">
+											<DataPath>Объект.СинхронизироватьПочтовыеСообщенияВходящие</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Синхронизировать входящие письма      </v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьПочтовыеСообщенияВходящиеКонтекстноеМеню" id="140"/>
+											<ExtendedTooltip name="СинхронизироватьПочтовыеСообщенияВходящиеExtendedTooltip" id="205"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьПочтовыеСообщенияВходящиеПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<CheckBoxField name="СинхронизироватьКонтактыПочтовыхСообщенийВходящие" id="143">
+											<DataPath>Объект.СинхронизироватьКонтактыПочтовыхСообщенийВходящие</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьКонтактыПочтовыхСообщенийВходящиеКонтекстноеМеню" id="144"/>
+											<ExtendedTooltip name="СинхронизироватьКонтактыПочтовыхСообщенийВходящиеExtendedTooltip" id="206"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьКонтактыПочтовыхСообщенийВходящиеПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаСинхронизироватьПочтовыеСообщенийОтправленные" id="138">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отправленные</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСинхронизироватьПочтовыеСообщенийОтправленныеExtendedTooltip" id="207"/>
+									<ChildItems>
+										<CheckBoxField name="СинхронизироватьПочтовыеСообщенияОтправленные" id="141">
+											<DataPath>Объект.СинхронизироватьПочтовыеСообщенияОтправленные</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьПочтовыеСообщенияОтправленныеКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="СинхронизироватьПочтовыеСообщенияОтправленныеExtendedTooltip" id="208"/>
+											<Events>
+												<Event name="OnChange">СинхронизироватьПочтовыеСообщенияОтправленныеПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<CheckBoxField name="СинхронизироватьКонтактыПочтовыхСообщенийОтправленные" id="145">
+											<DataPath>Объект.СинхронизироватьКонтактыПочтовыхСообщенийОтправленные</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СинхронизироватьКонтактыПочтовыхСообщенийОтправленныеКонтекстноеМеню" id="146"/>
+											<ExtendedTooltip name="СинхронизироватьКонтактыПочтовыхСообщенийОтправленныеExtendedTooltip" id="209"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="ИскатьКонтактыПочтовыхСообщенийПоАдресамEMail" id="117">
+									<DataPath>Объект.ИскатьКонтактыПочтовыхСообщенийПоАдресамEMail</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИскатьКонтактыПочтовыхСообщенийПоАдресамEMailКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="ИскатьКонтактыПочтовыхСообщенийПоАдресамEMailExtendedTooltip" id="210"/>
+								</CheckBoxField>
+								<Table name="НастройкиПочтовыхСообщенийНастройкиОтбор" id="111">
+									<Representation>Tree</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<Autofill>true</Autofill>
+									<HeightInTableRows>2</HeightInTableRows>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>НастройкиПочтовыхСообщений.Settings.Filter</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отбор электронных писем</v8:content>
+										</v8:item>
+									</Title>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<ViewMode>All</ViewMode>
+									<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+									<ContextMenu name="НастройкиПочтовыхСообщенийНастройкиОтборКонтекстноеМеню" id="112"/>
+									<AutoCommandBar name="НастройкиПочтовыхСообщенийНастройкиОтборКоманднаяПанель" id="113"/>
+									<ExtendedTooltip name="НастройкиПочтовыхСообщенийНастройкиОтборExtendedTooltip" id="211"/>
+									<SearchStringAddition name="НастройкиПочтовыхСообщенийНастройкиОтборСтрокаПоиска" id="296">
+										<AdditionSource>
+											<Item>НастройкиПочтовыхСообщенийНастройкиОтбор</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиПочтовыхСообщенийНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="297"/>
+										<ExtendedTooltip name="НастройкиПочтовыхСообщенийНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="298"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="НастройкиПочтовыхСообщенийНастройкиОтборСостояниеПросмотра" id="299">
+										<AdditionSource>
+											<Item>НастройкиПочтовыхСообщенийНастройкиОтбор</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиПочтовыхСообщенийНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="300"/>
+										<ExtendedTooltip name="НастройкиПочтовыхСообщенийНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="301"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="НастройкиПочтовыхСообщенийНастройкиОтборУправлениеПоиском" id="302">
+										<AdditionSource>
+											<Item>НастройкиПочтовыхСообщенийНастройкиОтбор</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="НастройкиПочтовыхСообщенийНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="303"/>
+										<ExtendedTooltip name="НастройкиПочтовыхСообщенийНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="304"/>
+									</SearchControlAddition>
+								</Table>
+								<InputField name="УчетнаяЗаписьЭлектроннойПочты" id="147">
+									<DataPath>Объект.УчетнаяЗаписьЭлектроннойПочты</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="УчетнаяЗаписьЭлектроннойПочтыКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="УчетнаяЗаписьЭлектроннойПочтыExtendedTooltip" id="212"/>
+									<Events>
+										<Event name="OnChange">УчетнаяЗаписьЭлектроннойПочтыПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="СоздаватьСобытияПоПочтовымСообщениям" id="149">
+									<DataPath>Объект.СоздаватьСобытияПоПочтовымСообщениям</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СоздаватьСобытияПоПочтовымСообщениямКонтекстноеМеню" id="150"/>
+									<ExtendedTooltip name="СоздаватьСобытияПоПочтовымСообщениямExtendedTooltip" id="213"/>
+								</CheckBoxField>
+								<UsualGroup name="ГруппаПапкиЭлектронныхПисем" id="151">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Папки MS Exchange (если папки не выбраны - будут использованы папки по умолчанию)</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<ExtendedTooltip name="ГруппаПапкиЭлектронныхПисемExtendedTooltip" id="214"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаПапкиЭлектронныхПисемТаблицыПапок" id="119">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаПапкиЭлектронныхПисемТаблицыПапокExtendedTooltip" id="215"/>
+											<ChildItems>
+												<Table name="ПапкиВходящихПисем" id="120">
+													<TitleLocation>Top</TitleLocation>
+													<HeightInTableRows>3</HeightInTableRows>
+													<AutoInsertNewRow>true</AutoInsertNewRow>
+													<VerticalStretch>false</VerticalStretch>
+													<EnableStartDrag>true</EnableStartDrag>
+													<EnableDrag>true</EnableDrag>
+													<FileDragMode>AsFile</FileDragMode>
+													<DataPath>Объект.ПапкиВходящихПисем</DataPath>
+													<SearchStringLocation>None</SearchStringLocation>
+													<ViewStatusLocation>None</ViewStatusLocation>
+													<SearchControlLocation>None</SearchControlLocation>
+													<RowFilter xsi:nil="true"/>
+													<ContextMenu name="ПапкиВходящихПисемКонтекстноеМеню" id="121"/>
+													<AutoCommandBar name="ПапкиВходящихПисемКоманднаяПанель" id="122"/>
+													<ExtendedTooltip name="ПапкиВходящихПисемExtendedTooltip" id="216"/>
+													<SearchStringAddition name="ПапкиВходящихПисемСтрокаПоиска" id="305">
+														<AdditionSource>
+															<Item>ПапкиВходящихПисем</Item>
+															<Type>SearchStringRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="ПапкиВходящихПисемСтрокаПоискаКонтекстноеМеню" id="306"/>
+														<ExtendedTooltip name="ПапкиВходящихПисемСтрокаПоискаРасширеннаяПодсказка" id="307"/>
+													</SearchStringAddition>
+													<ViewStatusAddition name="ПапкиВходящихПисемСостояниеПросмотра" id="308">
+														<AdditionSource>
+															<Item>ПапкиВходящихПисем</Item>
+															<Type>ViewStatusRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="ПапкиВходящихПисемСостояниеПросмотраКонтекстноеМеню" id="309"/>
+														<ExtendedTooltip name="ПапкиВходящихПисемСостояниеПросмотраРасширеннаяПодсказка" id="310"/>
+													</ViewStatusAddition>
+													<SearchControlAddition name="ПапкиВходящихПисемУправлениеПоиском" id="311">
+														<AdditionSource>
+															<Item>ПапкиВходящихПисем</Item>
+															<Type>SearchControl</Type>
+														</AdditionSource>
+														<ContextMenu name="ПапкиВходящихПисемУправлениеПоискомКонтекстноеМеню" id="312"/>
+														<ExtendedTooltip name="ПапкиВходящихПисемУправлениеПоискомРасширеннаяПодсказка" id="313"/>
+													</SearchControlAddition>
+													<ChildItems>
+														<InputField name="ПапкиВходящихПисемПапкаMSExchange" id="125">
+															<DataPath>Объект.ПапкиВходящихПисем.ПапкаMSExchange</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="ПапкиВходящихПисемПапкаMSExchangeКонтекстноеМеню" id="126"/>
+															<ExtendedTooltip name="ПапкиВходящихПисемПапкаMSExchangeExtendedTooltip" id="217"/>
+															<Events>
+																<Event name="StartChoice">ПапкиВходящихПисемПапкаMSExchangeНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<InputField name="ПапкиВходящихПисемПапка1С" id="127">
+															<DataPath>Объект.ПапкиВходящихПисем.Папка1С</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="ПапкиВходящихПисемПапка1СКонтекстноеМеню" id="128"/>
+															<ExtendedTooltip name="ПапкиВходящихПисемПапка1СExtendedTooltip" id="218"/>
+														</InputField>
+													</ChildItems>
+												</Table>
+												<Table name="ПапкиОтправленныхПисем" id="129">
+													<TitleLocation>Top</TitleLocation>
+													<HeightInTableRows>3</HeightInTableRows>
+													<AutoInsertNewRow>true</AutoInsertNewRow>
+													<VerticalStretch>false</VerticalStretch>
+													<EnableStartDrag>true</EnableStartDrag>
+													<EnableDrag>true</EnableDrag>
+													<FileDragMode>AsFile</FileDragMode>
+													<DataPath>Объект.ПапкиОтправленныхПисем</DataPath>
+													<SearchStringLocation>None</SearchStringLocation>
+													<ViewStatusLocation>None</ViewStatusLocation>
+													<SearchControlLocation>None</SearchControlLocation>
+													<RowFilter xsi:nil="true"/>
+													<ContextMenu name="ПапкиОтправленныхПисемКонтекстноеМеню" id="130"/>
+													<AutoCommandBar name="ПапкиОтправленныхПисемКоманднаяПанель" id="131"/>
+													<ExtendedTooltip name="ПапкиОтправленныхПисемExtendedTooltip" id="219"/>
+													<SearchStringAddition name="ПапкиОтправленныхПисемСтрокаПоиска" id="314">
+														<AdditionSource>
+															<Item>ПапкиОтправленныхПисем</Item>
+															<Type>SearchStringRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="ПапкиОтправленныхПисемСтрокаПоискаКонтекстноеМеню" id="315"/>
+														<ExtendedTooltip name="ПапкиОтправленныхПисемСтрокаПоискаРасширеннаяПодсказка" id="316"/>
+													</SearchStringAddition>
+													<ViewStatusAddition name="ПапкиОтправленныхПисемСостояниеПросмотра" id="317">
+														<AdditionSource>
+															<Item>ПапкиОтправленныхПисем</Item>
+															<Type>ViewStatusRepresentation</Type>
+														</AdditionSource>
+														<ContextMenu name="ПапкиОтправленныхПисемСостояниеПросмотраКонтекстноеМеню" id="318"/>
+														<ExtendedTooltip name="ПапкиОтправленныхПисемСостояниеПросмотраРасширеннаяПодсказка" id="319"/>
+													</ViewStatusAddition>
+													<SearchControlAddition name="ПапкиОтправленныхПисемУправлениеПоиском" id="320">
+														<AdditionSource>
+															<Item>ПапкиОтправленныхПисем</Item>
+															<Type>SearchControl</Type>
+														</AdditionSource>
+														<ContextMenu name="ПапкиОтправленныхПисемУправлениеПоискомКонтекстноеМеню" id="321"/>
+														<ExtendedTooltip name="ПапкиОтправленныхПисемУправлениеПоискомРасширеннаяПодсказка" id="322"/>
+													</SearchControlAddition>
+													<ChildItems>
+														<InputField name="ПапкиОтправленныхПисемПапкаMSExchange" id="134">
+															<DataPath>Объект.ПапкиОтправленныхПисем.ПапкаMSExchange</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="ПапкиОтправленныхПисемПапкаMSExchangeКонтекстноеМеню" id="135"/>
+															<ExtendedTooltip name="ПапкиОтправленныхПисемПапкаMSExchangeExtendedTooltip" id="220"/>
+															<Events>
+																<Event name="StartChoice">ПапкиОтправленныхПисемПапкаMSExchangeНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<InputField name="ПапкиОтправленныхПисемПапка1С" id="136">
+															<DataPath>Объект.ПапкиОтправленныхПисем.Папка1С</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="ПапкиОтправленныхПисемПапка1СКонтекстноеМеню" id="137"/>
+															<ExtendedTooltip name="ПапкиОтправленныхПисемПапка1СExtendedTooltip" id="221"/>
+														</InputField>
+													</ChildItems>
+												</Table>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПочтовыеСообщенияМодифицированныеПослеВходящие" id="106">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПочтовыеСообщенияМодифицированныеПослеВходящиеExtendedTooltip" id="222"/>
+									<ChildItems>
+										<InputField name="ПочтовыеСообщенияМодифицированныеПослеВходящие" id="107">
+											<DataPath>Объект.ПочтовыеСообщенияМодифицированныеПослеВходящие</DataPath>
+											<ContextMenu name="ПочтовыеСообщенияМодифицированныеПослеВходящиеКонтекстноеМеню" id="108"/>
+											<ExtendedTooltip name="ПочтовыеСообщенияМодифицированныеПослеВходящиеExtendedTooltip" id="223"/>
+										</InputField>
+										<CheckBoxField name="ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиВходящие" id="109">
+											<DataPath>Объект.ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиВходящие</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиВходящиеКонтекстноеМеню" id="110"/>
+											<ExtendedTooltip name="ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиВходящиеExtendedTooltip" id="224"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПочтовыеСообщенияМодифицированныеПослеОтправленные" id="152">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПочтовыеСообщенияМодифицированныеПослеОтправленныеExtendedTooltip" id="225"/>
+									<ChildItems>
+										<InputField name="ПочтовыеСообщенияМодифицированныеПослеОтправленные" id="153">
+											<DataPath>Объект.ПочтовыеСообщенияМодифицированныеПослеОтправленные</DataPath>
+											<ContextMenu name="ПочтовыеСообщенияМодифицированныеПослеОтправленныеКонтекстноеМеню" id="154"/>
+											<ExtendedTooltip name="ПочтовыеСообщенияМодифицированныеПослеОтправленныеExtendedTooltip" id="226"/>
+										</InputField>
+										<CheckBoxField name="ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиОтправленные" id="155">
+											<DataPath>Объект.ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиОтправленные</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиОтправленныеКонтекстноеМеню" id="156"/>
+											<ExtendedTooltip name="ПочтовыеСообщенияОбмениватьсяТолькоНовымиОбъектамиОтправленныеExtendedTooltip" id="227"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<CheckBoxField name="УдалятьПомеченныеНаУдаленияПочтовыеСообщения" id="157">
+									<DataPath>Объект.УдалятьПомеченныеНаУдаленияПочтовыеСообщения</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УдалятьПомеченныеНаУдаленияПочтовыеСообщенияКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="УдалятьПомеченныеНаУдаленияПочтовыеСообщенияExtendedTooltip" id="228"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаНастройкаДополнительныеДанные" id="63">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительные данные</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница настройка дополнительные данные</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаНастройкаДополнительныеДанныеExtendedTooltip" id="229"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияДополнительныеДанные" id="64">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обмен дополнительными данными</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<ContextMenu name="ДекорацияДополнительныеДанныеКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДекорацияДополнительныеДанныеExtendedTooltip" id="230"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаЗагружатьСпискиРассылок" id="78">
+									<Group>Vertical</Group>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЗагружатьСпискиРассылокExtendedTooltip" id="231"/>
+									<ChildItems>
+										<CheckBoxField name="ЗагружатьСпискиРассылок" id="66">
+											<DataPath>Объект.ЗагружатьСпискиРассылок</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать в 1С:CRM группы контактов (списки рассылок)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать в 1C:CRM группы контактов (списки рассылок)</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗагружатьСпискиРассылокКонтекстноеМеню" id="67"/>
+											<ExtendedTooltip name="ЗагружатьСпискиРассылокExtendedTooltip" id="232"/>
+										</CheckBoxField>
+										<LabelDecoration name="ДекорацияЗагружатьСпискиРассылок" id="80">
+											<Height>1</Height>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать из MS Exchange в справочник "Списки рассылок" группы контактов и их состав.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияЗагружатьСпискиРассылокКонтекстноеМеню" id="81"/>
+											<ExtendedTooltip name="ДекорацияЗагружатьСпискиРассылокExtendedTooltip" id="233"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаЗагружатьСтруктуруПапок" id="79">
+									<Group>Vertical</Group>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЗагружатьСтруктуруПапокExtendedTooltip" id="234"/>
+									<ChildItems>
+										<CheckBoxField name="ЗагружатьСтруктуруПапок" id="76">
+											<DataPath>Объект.ЗагружатьСтруктуруПапок</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать в 1С:CRM структуру папок MS Exchange</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать в 1C:CRM структуру папок MS Exchange</v8:content>
+												</v8:item>
+											</ToolTip>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗагружатьСтруктуруПапокКонтекстноеМеню" id="77"/>
+											<ExtendedTooltip name="ЗагружатьСтруктуруПапокExtendedTooltip" id="235"/>
+										</CheckBoxField>
+										<LabelDecoration name="ДекорацияЗагружатьСтруктуруПапок" id="82">
+											<Height>1</Height>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать из MS Exchange в справочник "Структуры папок MS Exchange" структуру папок.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияЗагружатьСтруктуруПапокКонтекстноеМеню" id="83"/>
+											<ExtendedTooltip name="ДекорацияЗагружатьСтруктуруПапокExtendedTooltip" id="236"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<CommandBar name="КоманднаяПанельНазадДалее" id="6">
+			<HorizontalLocation>Right</HorizontalLocation>
+			<ExtendedTooltip name="КоманднаяПанельНазадДалееExtendedTooltip" id="237"/>
+			<ChildItems>
+				<Button name="Назад" id="7">
+					<Type>CommandBarButton</Type>
+					<Enabled>false</Enabled>
+					<CommandName>Form.Command.Назад</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назад</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="НазадExtendedTooltip" id="238"/>
+				</Button>
+				<Button name="Далее" id="8">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.Далее</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.MoveRight</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Далее</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДалееExtendedTooltip" id="239"/>
+				</Button>
+				<Button name="Справка" id="33">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="СправкаExtendedTooltip" id="240"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CRM_НастройкиОбменаСMSExchange</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НастройкиКонтактов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки контактов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкиСобытий" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки событий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкиПочтовыхСообщений" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки почтовых сообщений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкиЗадач" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки задач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Далее" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveRight</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Далее</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Назад" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Назад</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьПодключение" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>   Проверить подключение   </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьПодключение</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

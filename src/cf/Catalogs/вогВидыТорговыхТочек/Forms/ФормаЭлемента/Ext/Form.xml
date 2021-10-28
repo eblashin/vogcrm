@@ -1,0 +1,878 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Width>90</Width>
+	<Height>45</Height>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<Page name="СтраницаОсновное" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница основное</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаОсновноеРасширеннаяПодсказка" id="10"/>
+					<ChildItems>
+						<InputField name="Наименование" id="1">
+							<DataPath>Объект.Description</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+						</InputField>
+						<CheckBoxField name="ИспользоватьНастройкиДляФормы3в1" id="4">
+							<DataPath>Объект.ИспользоватьНастройкиДляФормы3в1</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьНастройкиДляФормы3в1КонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ИспользоватьНастройкиДляФормы3в1РасширеннаяПодсказка" id="6"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьНастройкиДляФормы3в1ПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="ИспользоватьКлассификаторы" id="198">
+							<DataPath>Объект.ИспользоватьКлассификаторы</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьКлассификаторыКонтекстноеМеню" id="199"/>
+							<ExtendedTooltip name="ИспользоватьКлассификаторыРасширеннаяПодсказка" id="200"/>
+						</CheckBoxField>
+						<CheckBoxField name="ИспользоватьГеокодирование" id="123">
+							<DataPath>Объект.ИспользоватьГеокодирование</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Открытие карты Яндекс при открытии формы 3 в 1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьГеокодированиеКонтекстноеМеню" id="124"/>
+							<ExtendedTooltip name="ИспользоватьГеокодированиеРасширеннаяПодсказка" id="125"/>
+						</CheckBoxField>
+						<CheckBoxField name="ПроверитьТочкуУКлиента" id="189">
+							<DataPath>Объект.ПроверитьТочкуУКлиента</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверка точки у клиента. Может быть только одна</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПроверитьТочкуУКлиентаКонтекстноеМеню" id="190"/>
+							<ExtendedTooltip name="ПроверитьТочкуУКлиентаРасширеннаяПодсказка" id="191"/>
+						</CheckBoxField>
+						<CheckBoxField name="СоздаватьАнкетуВместоОбъектов" id="192">
+							<DataPath>Объект.СоздаватьАнкетуВместоОбъектов</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СоздаватьАнкетуВместоОбъектовКонтекстноеМеню" id="193"/>
+							<ExtendedTooltip name="СоздаватьАнкетуВместоОбъектовРасширеннаяПодсказка" id="194"/>
+							<Events>
+								<Event name="OnChange">СоздаватьАнкетуВместоОбъектовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="РежимВыбораКонтактныхЛиц" id="230">
+							<DataPath>Объект.РежимВыбораКонтактныхЛиц</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="РежимВыбораКонтактныхЛицКонтекстноеМеню" id="231"/>
+							<ExtendedTooltip name="РежимВыбораКонтактныхЛицРасширеннаяПодсказка" id="232"/>
+						</CheckBoxField>
+						<InputField name="ВариантОпроса" id="195">
+							<DataPath>Объект.ВариантОпроса</DataPath>
+							<ContextMenu name="ВариантОпросаКонтекстноеМеню" id="196"/>
+							<ExtendedTooltip name="ВариантОпросаРасширеннаяПодсказка" id="197"/>
+						</InputField>
+						<UsualGroup name="ГруппаНастройкОбъекта" id="11">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройк объекта</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройк объекта</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкОбъектаРасширеннаяПодсказка" id="12"/>
+							<ChildItems>
+								<Button name="НастройкаКлассификаторов" id="22">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.НастройкаКлассификаторов</CommandName>
+									<ExtendedTooltip name="НастройкаКлассификаторовРасширеннаяПодсказка" id="23"/>
+								</Button>
+								<Button name="ОбновитьПоляЗаполнения" id="201">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ОбновитьПоляЗаполнения</CommandName>
+									<ExtendedTooltip name="ОбновитьПоляЗаполненияРасширеннаяПодсказка" id="202"/>
+								</Button>
+								<CheckBoxField name="НастройкиТорговаяТочка" id="13">
+									<DataPath>Объект.НастройкиТорговаяТочка</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НастройкиТорговаяТочкаКонтекстноеМеню" id="14"/>
+									<ExtendedTooltip name="НастройкиТорговаяТочкаРасширеннаяПодсказка" id="15"/>
+									<Events>
+										<Event name="OnChange">НастройкиВидимостиСтраницы</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="НастройкиКонтактноеЛицо" id="126">
+									<DataPath>Объект.НастройкиКонтактноеЛицо</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НастройкиКонтактноеЛицоКонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="НастройкиКонтактноеЛицоРасширеннаяПодсказка" id="128"/>
+									<Events>
+										<Event name="OnChange">НастройкиВидимостиСтраницы</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="НастройкиКлиент" id="16">
+									<DataPath>Объект.НастройкиКлиент</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НастройкиКлиентКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="НастройкиКлиентРасширеннаяПодсказка" id="18"/>
+									<Events>
+										<Event name="OnChange">НастройкиВидимостиСтраницы</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="НастройкиЮрЛица" id="19">
+									<DataPath>Объект.НастройкиЮрЛица</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НастройкиЮрЛицаКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="НастройкиЮрЛицаРасширеннаяПодсказка" id="21"/>
+									<Events>
+										<Event name="OnChange">НастройкиВидимостиСтраницы</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройкиТорговаяТочка" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Торговая точка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки торговая точка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиТорговаяТочкаРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<Table name="РеквизитыДляКонтроляЗаполнененияТорговаяТочка" id="30">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаКонтекстноеМеню" id="31"/>
+							<AutoCommandBar name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаКоманднаяПанель" id="32"/>
+							<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаРасширеннаяПодсказка" id="33"/>
+							<SearchStringAddition name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаСтрокаПоиска" id="34">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияТорговаяТочка</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаСтрокаПоискаКонтекстноеМеню" id="35"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаСтрокаПоискаРасширеннаяПодсказка" id="36"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаСостояниеПросмотра" id="37">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияТорговаяТочка</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаСостояниеПросмотраКонтекстноеМеню" id="38"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаСостояниеПросмотраРасширеннаяПодсказка" id="39"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаУправлениеПоиском" id="40">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияТорговаяТочка</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаУправлениеПоискомКонтекстноеМеню" id="41"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаУправлениеПоискомРасширеннаяПодсказка" id="42"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПредставлениеРеквизита" id="52">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка.ПредставлениеРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПредставлениеРеквизитаКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПредставлениеРеквизитаРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОбязателенДляЗаполнения" id="55">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка.ОбязателенДляЗаполнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОбязателенДляЗаполненияКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОбязателенДляЗаполненияРасширеннаяПодсказка" id="57"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаДоступностьРеквизита" id="58">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка.ДоступностьРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаДоступностьРеквизитаКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаДоступностьРеквизитаРасширеннаяПодсказка" id="60"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПолеПоиска" id="162">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка.ПолеПоиска</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПолеПоискаКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаПолеПоискаРасширеннаяПодсказка" id="164"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОграничитьВыбор" id="227">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка.ОграничитьВыбор</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОграничитьВыборКонтекстноеМеню" id="228"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОграничитьВыборРасширеннаяПодсказка" id="229"/>
+									<Events>
+										<Event name="OnChange">РеквизитыДляКонтроляЗаполнененияТорговаяТочкаОграничитьВыборПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройкиКонтактноеЛицо" id="129">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кон-Лицо</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки контактное лицо</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиКонтактноеЛицоРасширеннаяПодсказка" id="130"/>
+					<ChildItems>
+						<Table name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо" id="131">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоКонтекстноеМеню" id="132"/>
+							<AutoCommandBar name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоКоманднаяПанель" id="133">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоРасширеннаяПодсказка" id="134"/>
+							<SearchStringAddition name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоСтрокаПоиска" id="135">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоСтрокаПоискаКонтекстноеМеню" id="136"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоСтрокаПоискаРасширеннаяПодсказка" id="137"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоСостояниеПросмотра" id="138">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоСостояниеПросмотраКонтекстноеМеню" id="139"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоСостояниеПросмотраРасширеннаяПодсказка" id="140"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоУправлениеПоиском" id="141">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоУправлениеПоискомКонтекстноеМеню" id="142"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоУправлениеПоискомРасширеннаяПодсказка" id="143"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПредставлениеРеквизита" id="153">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо.ПредставлениеРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПредставлениеРеквизитаКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПредставлениеРеквизитаРасширеннаяПодсказка" id="155"/>
+								</InputField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоОбязателенДляЗаполнения" id="156">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо.ОбязателенДляЗаполнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоОбязателенДляЗаполненияКонтекстноеМеню" id="157"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоОбязателенДляЗаполненияРасширеннаяПодсказка" id="158"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоДоступностьРеквизита" id="159">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо.ДоступностьРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоДоступностьРеквизитаКонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоДоступностьРеквизитаРасширеннаяПодсказка" id="161"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПолеПоиска" id="165">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКонтактноеЛицо.ПолеПоиска</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПолеПоискаКонтекстноеМеню" id="166"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКонтактноеЛицоПолеПоискаРасширеннаяПодсказка" id="167"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройкиКлиент" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки клиент</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиКлиентРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<Table name="РеквизитыДляКонтроляЗаполнененияКлиенты" id="61">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКлиенты</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыКонтекстноеМеню" id="62"/>
+							<AutoCommandBar name="РеквизитыДляКонтроляЗаполнененияКлиентыКоманднаяПанель" id="63"/>
+							<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыРасширеннаяПодсказка" id="64"/>
+							<SearchStringAddition name="РеквизитыДляКонтроляЗаполнененияКлиентыСтрокаПоиска" id="65">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияКлиенты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыСтрокаПоискаКонтекстноеМеню" id="66"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыСтрокаПоискаРасширеннаяПодсказка" id="67"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РеквизитыДляКонтроляЗаполнененияКлиентыСостояниеПросмотра" id="68">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияКлиенты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыСостояниеПросмотраКонтекстноеМеню" id="69"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыСостояниеПросмотраРасширеннаяПодсказка" id="70"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РеквизитыДляКонтроляЗаполнененияКлиентыУправлениеПоиском" id="71">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияКлиенты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыУправлениеПоискомКонтекстноеМеню" id="72"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыУправлениеПоискомРасширеннаяПодсказка" id="73"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">РеквизитыДляКонтроляЗаполнененияКлиентыПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="РеквизитыДляКонтроляЗаполнененияКлиентыПредставлениеРеквизита" id="83">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКлиенты.ПредставлениеРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыПредставлениеРеквизитаКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыПредставлениеРеквизитаРасширеннаяПодсказка" id="85"/>
+								</InputField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияКлиентыОбязателенДляЗаполнения" id="86">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКлиенты.ОбязателенДляЗаполнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыОбязателенДляЗаполненияКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыОбязателенДляЗаполненияРасширеннаяПодсказка" id="88"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияКлиентыДоступностьРеквизита" id="89">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКлиенты.ДоступностьРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыДоступностьРеквизитаКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыДоступностьРеквизитаРасширеннаяПодсказка" id="91"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияКлиентыПолеПоиска" id="168">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияКлиенты.ПолеПоиска</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияКлиентыПолеПоискаКонтекстноеМеню" id="169"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияКлиентыПолеПоискаРасширеннаяПодсказка" id="170"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройкиЮрЛица" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Юр-лицо</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки юр лица</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиЮрЛицаРасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<Table name="РеквизитыДляКонтроляЗаполнененияЮрЛица" id="92">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияЮрЛица</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаКонтекстноеМеню" id="93"/>
+							<AutoCommandBar name="РеквизитыДляКонтроляЗаполнененияЮрЛицаКоманднаяПанель" id="94"/>
+							<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаРасширеннаяПодсказка" id="95"/>
+							<SearchStringAddition name="РеквизитыДляКонтроляЗаполнененияЮрЛицаСтрокаПоиска" id="96">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияЮрЛица</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаСтрокаПоискаКонтекстноеМеню" id="97"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаСтрокаПоискаРасширеннаяПодсказка" id="98"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РеквизитыДляКонтроляЗаполнененияЮрЛицаСостояниеПросмотра" id="99">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияЮрЛица</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаСостояниеПросмотраКонтекстноеМеню" id="100"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаСостояниеПросмотраРасширеннаяПодсказка" id="101"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РеквизитыДляКонтроляЗаполнененияЮрЛицаУправлениеПоиском" id="102">
+								<AdditionSource>
+									<Item>РеквизитыДляКонтроляЗаполнененияЮрЛица</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаУправлениеПоискомКонтекстноеМеню" id="103"/>
+								<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаУправлениеПоискомРасширеннаяПодсказка" id="104"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">РеквизитыДляКонтроляЗаполнененияЮрЛицаПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="РеквизитыДляКонтроляЗаполнененияЮрЛицаПредставлениеРеквизита" id="114">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияЮрЛица.ПредставлениеРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаПредставлениеРеквизитаКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаПредставлениеРеквизитаРасширеннаяПодсказка" id="116"/>
+								</InputField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияЮрЛицаОбязателенДляЗаполнения" id="117">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияЮрЛица.ОбязателенДляЗаполнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаОбязателенДляЗаполненияКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаОбязателенДляЗаполненияРасширеннаяПодсказка" id="119"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияЮрЛицаДоступностьРеквизита" id="120">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияЮрЛица.ДоступностьРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаДоступностьРеквизитаКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаДоступностьРеквизитаРасширеннаяПодсказка" id="122"/>
+								</CheckBoxField>
+								<CheckBoxField name="РеквизитыДляКонтроляЗаполнененияЮрЛицаПолеПоиска" id="171">
+									<DataPath>Объект.РеквизитыДляКонтроляЗаполнененияЮрЛица.ПолеПоиска</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РеквизитыДляКонтроляЗаполнененияЮрЛицаПолеПоискаКонтекстноеМеню" id="172"/>
+									<ExtendedTooltip name="РеквизитыДляКонтроляЗаполнененияЮрЛицаПолеПоискаРасширеннаяПодсказка" id="173"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЗначенияПоУмолчанию" id="174">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значения по умолчанию</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница значения по умолчанию</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаЗначенияПоУмолчаниюРасширеннаяПодсказка" id="175"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройкиТорговойТочки" id="176">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки торговой точки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки торговой точки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаНастройкиТорговойТочкиРасширеннаяПодсказка" id="177"/>
+							<ChildItems>
+								<RadioButtonField name="РежимВыбораАдресаТорговойТочки" id="178">
+									<DataPath>Объект.РежимВыбораАдресаТорговойТочки</DataPath>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Адрес</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Месторасположение на рынке</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Месторасположение на рынке  + Адрес</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="РежимВыбораАдресаТорговойТочкиКонтекстноеМеню" id="179"/>
+									<ExtendedTooltip name="РежимВыбораАдресаТорговойТочкиРасширеннаяПодсказка" id="180"/>
+								</RadioButtonField>
+								<InputField name="ВидАдресаТорговойТочки" id="181">
+									<DataPath>Объект.ВидАдресаТорговойТочки</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ContextMenu name="ВидАдресаТорговойТочкиКонтекстноеМеню" id="182"/>
+									<ExtendedTooltip name="ВидАдресаТорговойТочкиРасширеннаяПодсказка" id="183"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНастройкиКлиент" id="184">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки клиент</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настройки клиент</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаНастройкиКлиентРасширеннаяПодсказка" id="185"/>
+							<ChildItems>
+								<InputField name="ТипОтношений" id="186">
+									<DataPath>Объект.ТипОтношений</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<QuickChoice>true</QuickChoice>
+									<ContextMenu name="ТипОтношенийКонтекстноеМеню" id="187"/>
+									<ExtendedTooltip name="ТипОтношенийРасширеннаяПодсказка" id="188"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройкиДляБПСертификация" id="203">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки для БП Сертификация</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки для БПСертификация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиДляБПСертификацияРасширеннаяПодсказка" id="204"/>
+					<ChildItems>
+						<Table name="НастройкиВариантовОпросовДляБПСертификация" id="205">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.НастройкиВариантовОпросовДляБПСертификация</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияКонтекстноеМеню" id="206"/>
+							<AutoCommandBar name="НастройкиВариантовОпросовДляБПСертификацияКоманднаяПанель" id="207"/>
+							<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияРасширеннаяПодсказка" id="208"/>
+							<SearchStringAddition name="НастройкиВариантовОпросовДляБПСертификацияСтрокаПоиска" id="209">
+								<AdditionSource>
+									<Item>НастройкиВариантовОпросовДляБПСертификация</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияСтрокаПоискаКонтекстноеМеню" id="210"/>
+								<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияСтрокаПоискаРасширеннаяПодсказка" id="211"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НастройкиВариантовОпросовДляБПСертификацияСостояниеПросмотра" id="212">
+								<AdditionSource>
+									<Item>НастройкиВариантовОпросовДляБПСертификация</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияСостояниеПросмотраКонтекстноеМеню" id="213"/>
+								<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияСостояниеПросмотраРасширеннаяПодсказка" id="214"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НастройкиВариантовОпросовДляБПСертификацияУправлениеПоиском" id="215">
+								<AdditionSource>
+									<Item>НастройкиВариантовОпросовДляБПСертификация</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияУправлениеПоискомКонтекстноеМеню" id="216"/>
+								<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияУправлениеПоискомРасширеннаяПодсказка" id="217"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="НастройкиВариантовОпросовДляБПСертификацияНомерСтроки" id="218">
+									<DataPath>Объект.НастройкиВариантовОпросовДляБПСертификация.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияНомерСтрокиКонтекстноеМеню" id="219"/>
+									<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияНомерСтрокиРасширеннаяПодсказка" id="220"/>
+								</LabelField>
+								<InputField name="НастройкиВариантовОпросовДляБПСертификацияНаправлениеДеятельности" id="221">
+									<DataPath>Объект.НастройкиВариантовОпросовДляБПСертификация.НаправлениеДеятельности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияНаправлениеДеятельностиКонтекстноеМеню" id="222"/>
+									<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияНаправлениеДеятельностиРасширеннаяПодсказка" id="223"/>
+								</InputField>
+								<InputField name="НастройкиВариантовОпросовДляБПСертификацияВариантОпроса" id="224">
+									<DataPath>Объект.НастройкиВариантовОпросовДляБПСертификация.ВариантОпроса</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НастройкиВариантовОпросовДляБПСертификацияВариантОпросаКонтекстноеМеню" id="225"/>
+									<ExtendedTooltip name="НастройкиВариантовОпросовДляБПСертификацияВариантОпросаРасширеннаяПодсказка" id="226"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогВидыТорговыхТочек</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.РеквизитыДляКонтроляЗаполнененияТорговаяТочка">
+					<Column name="ОграничитьВыбор" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ограничить выбор</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="АдресПараметровВыбора" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Адрес параметров выбора</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НастройкаКлассификаторов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка классификаторов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка классификаторов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкаКлассификаторов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьПоляЗаполнения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить поля заполнения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить поля заполнения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьПоляЗаполнения</Action>
+		</Command>
+	</Commands>
+</Form>

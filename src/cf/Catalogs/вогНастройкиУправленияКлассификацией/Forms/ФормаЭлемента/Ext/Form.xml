@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="6"/>
+		</InputField>
+		<InputField name="ИмяСписка" id="1">
+			<DataPath>Объект.ИмяСписка</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="ИмяСпискаКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ИмяСпискаРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ИмяСпискаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Описание" id="7">
+			<DataPath>Объект.Описание</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<MultiLine>true</MultiLine>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>false</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>false</OpenButton>
+			<ChoiceListButton>false</ChoiceListButton>
+			<ContextMenu name="ОписаниеКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ОписаниеExtendedTooltip" id="9"/>
+			<Events>
+				<Event name="StartChoice">ОписаниеНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<LabelField name="ДоступПредставление" id="13">
+			<DataPath>ДоступПредставление</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ДоступПредставлениеКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ДоступПредставлениеРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="Click">ДоступПредставлениеНажатие</Event>
+			</Events>
+		</LabelField>
+		<InputField name="Автор" id="10">
+			<DataPath>Объект.Автор</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="АвторКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="АвторExtendedTooltip" id="12"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогНастройкиУправленияКлассификацией</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ДоступПредставление" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

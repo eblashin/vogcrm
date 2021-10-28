@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ТипЗначения" id="4">
+			<DataPath>Объект.ValueType</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ТипЗначенияКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ТипЗначенияРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ТипЗначенияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<RadioButtonField name="ВариантПолучения" id="23">
+			<DataPath>Объект.ВариантПолучения</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант получения аналитики игнорируется при формировании значений классификатора со способом формирования "Периодически обновлять". Значение аналитики будет получено на основании схемы формирования.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Настройки пользователя</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.CRM_ВариантыПолученияАналитикиКлассификатора.EnumValue.НастройкиПользователя</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Произвольный алгоритм</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.CRM_ВариантыПолученияАналитикиКлассификатора.EnumValue.ПроизвольныйАлгоритм</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантПолученияКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="ВариантПолученияРасширеннаяПодсказка" id="25"/>
+			<Events>
+				<Event name="OnChange">ВариантПолученияПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаАлгоритмПолучения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа алгоритм получения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа алгоритм получения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаАлгоритмПолученияРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="9">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;color #ff0000&gt;Процедура&lt;/&gt; &lt;color #3a66ff&gt;ОбработчикПроизвольногоПолученияАналитики&lt;/&gt;&lt;color #ff3a00&gt;(&lt;/&gt;&lt;color #3a66ff&gt;Пользователь&lt;/&gt;&lt;color #ff0000&gt;, &lt;/&gt;&lt;color #3a66ff&gt;Классификатор&lt;/&gt;&lt;color #ff0000&gt;, &lt;/&gt;&lt;color #3a66ff&gt;РеквизитыИспользуемойАналитики&lt;/&gt;&lt;color #ff3a00&gt;)&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="11"/>
+				</LabelDecoration>
+				<TextDocumentField name="АлгоритмПолучения" id="20">
+					<DataPath>Объект.АлгоритмПолучения</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="АлгоритмПолученияКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="АлгоритмПолученияРасширеннаяПодсказка" id="22"/>
+				</TextDocumentField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ChartOfCharacteristicTypesObject.CRM_АналитикаКлассификаторов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Parameters>
+		<Parameter name="СпособФормирования">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

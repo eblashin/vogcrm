@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="34"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛевая" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛеваяРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<InputField name="Источник" id="1">
+							<DataPath>Запись.Источник</DataPath>
+							<ChoiceButton>false</ChoiceButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ИсточникКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ИсточникРасширеннаяПодсказка" id="3"/>
+							<Events>
+								<Event name="StartChoice">ИсточникНачалоВыбора</Event>
+								<Event name="StartListChoice">ИсточникНачалоВыбораИзСписка</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаНазвание" id="31">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа название</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа название</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНазваниеРасширеннаяПодсказка" id="32"/>
+							<ChildItems>
+								<PictureField name="ИмяКартинки" id="28">
+									<DataPath>Картинка</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>3</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>1</MaxWidth>
+									<Height>1</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<MaxHeight>1</MaxHeight>
+									<PictureSize>Proportionally</PictureSize>
+									<Hyperlink>true</Hyperlink>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ИмяКартинкиКонтекстноеМеню" id="29"/>
+									<ExtendedTooltip name="ИмяКартинкиРасширеннаяПодсказка" id="30"/>
+									<Events>
+										<Event name="Click">ИмяКартинкиНажатие</Event>
+									</Events>
+								</PictureField>
+								<InputField name="ИмяКоманды" id="4">
+									<DataPath>Запись.ИмяКоманды</DataPath>
+									<ContextMenu name="ИмяКомандыКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ИмяКомандыРасширеннаяПодсказка" id="6"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Порядок" id="7">
+							<DataPath>Запись.Порядок</DataPath>
+							<ContextMenu name="ПорядокКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<InputField name="Обработчик" id="25">
+							<DataPath>Запись.Обработчик</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ОбработчикКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ОбработчикРасширеннаяПодсказка" id="27"/>
+							<Events>
+								<Event name="StartChoice">ОбработчикНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПравая" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа правая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа правая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПраваяРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<InputField name="Параметр1" id="10">
+							<DataPath>Запись.Параметр1</DataPath>
+							<ContextMenu name="Параметр1КонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="Параметр1РасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="Параметр2" id="13">
+							<DataPath>Запись.Параметр2</DataPath>
+							<ContextMenu name="Параметр2КонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="Параметр2РасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="Параметр3" id="16">
+							<DataPath>Запись.Параметр3</DataPath>
+							<ContextMenu name="Параметр3КонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="Параметр3РасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="Параметр4" id="19">
+							<DataPath>Запись.Параметр4</DataPath>
+							<ContextMenu name="Параметр4КонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="Параметр4РасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="Параметр5" id="22">
+							<DataPath>Запись.Параметр5</DataPath>
+							<ContextMenu name="Параметр5КонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="Параметр5РасширеннаяПодсказка" id="24"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.вогДополнительныеКоманды</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Картинка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Картинка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

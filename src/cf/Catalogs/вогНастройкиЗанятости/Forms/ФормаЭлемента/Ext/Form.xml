@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<UsualGroup name="ГруппаСхемаКомпоновкиДанных" id="18">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схема компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схема компоновки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСхемаКомпоновкиДанныхExtendedTooltip" id="19"/>
+			<ChildItems>
+				<InputField name="СхемаКомпоновкиДанных" id="20">
+					<DataPath>Объект.СхемаКомпоновкиДанных</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<ChoiceButton>false</ChoiceButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="СхемаКомпоновкиДанныхКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СхемаКомпоновкиДанныхExtendedTooltip" id="22"/>
+					<Events>
+						<Event name="OnChange">СхемаКомпоновкиДанныхПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="РедактироватьСхемуКомпоновкиДанных" id="23">
+					<Type>UsualButton</Type>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.РедактироватьСхемуКомпоновкиДанных</CommandName>
+					<ExtendedTooltip name="РедактироватьСхемуКомпоновкиДанныхExtendedTooltip" id="24"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<Page name="СтраницаНаВесьДень" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На весь день</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница на весь день</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНаВесьДеньРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<Table name="ПараметрыНаВесьДень" id="31">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ПараметрыНаВесьДень</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПараметрыНаВесьДеньКонтекстноеМеню" id="32"/>
+							<AutoCommandBar name="ПараметрыНаВесьДеньКоманднаяПанель" id="33"/>
+							<ExtendedTooltip name="ПараметрыНаВесьДеньРасширеннаяПодсказка" id="34"/>
+							<SearchStringAddition name="ПараметрыНаВесьДеньСтрокаПоиска" id="35">
+								<AdditionSource>
+									<Item>ПараметрыНаВесьДень</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПараметрыНаВесьДеньСтрокаПоискаКонтекстноеМеню" id="36"/>
+								<ExtendedTooltip name="ПараметрыНаВесьДеньСтрокаПоискаРасширеннаяПодсказка" id="37"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПараметрыНаВесьДеньСостояниеПросмотра" id="38">
+								<AdditionSource>
+									<Item>ПараметрыНаВесьДень</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПараметрыНаВесьДеньСостояниеПросмотраКонтекстноеМеню" id="39"/>
+								<ExtendedTooltip name="ПараметрыНаВесьДеньСостояниеПросмотраРасширеннаяПодсказка" id="40"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПараметрыНаВесьДеньУправлениеПоиском" id="41">
+								<AdditionSource>
+									<Item>ПараметрыНаВесьДень</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПараметрыНаВесьДеньУправлениеПоискомКонтекстноеМеню" id="42"/>
+								<ExtendedTooltip name="ПараметрыНаВесьДеньУправлениеПоискомРасширеннаяПодсказка" id="43"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ПараметрыНаВесьДеньНомерСтроки" id="44">
+									<DataPath>Объект.ПараметрыНаВесьДень.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыНаВесьДеньНомерСтрокиКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ПараметрыНаВесьДеньНомерСтрокиРасширеннаяПодсказка" id="46"/>
+								</LabelField>
+								<InputField name="ПараметрыНаВесьДеньВидВзаимодействия" id="47">
+									<DataPath>Объект.ПараметрыНаВесьДень.ВидВзаимодействия</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыНаВесьДеньВидВзаимодействияКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ПараметрыНаВесьДеньВидВзаимодействияРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="ПараметрыНаВесьДеньЦвет" id="50">
+									<DataPath>Объект.ПараметрыНаВесьДень.Цвет</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыНаВесьДеньЦветКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="ПараметрыНаВесьДеньЦветРасширеннаяПодсказка" id="52"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаВПределахДня" id="29">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В пределах дня</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница в пределах дня</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаВПределахДняРасширеннаяПодсказка" id="30"/>
+					<ChildItems>
+						<Table name="ПараметрыВПределахДня" id="53">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ПараметрыВПределахДня</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПараметрыВПределахДняКонтекстноеМеню" id="54"/>
+							<AutoCommandBar name="ПараметрыВПределахДняКоманднаяПанель" id="55"/>
+							<ExtendedTooltip name="ПараметрыВПределахДняРасширеннаяПодсказка" id="56"/>
+							<SearchStringAddition name="ПараметрыВПределахДняСтрокаПоиска" id="57">
+								<AdditionSource>
+									<Item>ПараметрыВПределахДня</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПараметрыВПределахДняСтрокаПоискаКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="ПараметрыВПределахДняСтрокаПоискаРасширеннаяПодсказка" id="59"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПараметрыВПределахДняСостояниеПросмотра" id="60">
+								<AdditionSource>
+									<Item>ПараметрыВПределахДня</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПараметрыВПределахДняСостояниеПросмотраКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="ПараметрыВПределахДняСостояниеПросмотраРасширеннаяПодсказка" id="62"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПараметрыВПределахДняУправлениеПоиском" id="63">
+								<AdditionSource>
+									<Item>ПараметрыВПределахДня</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПараметрыВПределахДняУправлениеПоискомКонтекстноеМеню" id="64"/>
+								<ExtendedTooltip name="ПараметрыВПределахДняУправлениеПоискомРасширеннаяПодсказка" id="65"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">ПараметрыВПределахДняПриОкончанииРедактирования</Event>
+								<Event name="OnChange">ПараметрыВПределахДняПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПараметрыВПределахДняНомерСтроки" id="66">
+									<DataPath>Объект.ПараметрыВПределахДня.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыВПределахДняНомерСтрокиКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="ПараметрыВПределахДняНомерСтрокиРасширеннаяПодсказка" id="68"/>
+								</LabelField>
+								<InputField name="ПараметрыВПределахДняНижняяГраницаИнтервала" id="69">
+									<DataPath>Объект.ПараметрыВПределахДня.НижняяГраницаИнтервала</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Нижняя граница</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыВПределахДняНижняяГраницаИнтервалаКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="ПараметрыВПределахДняНижняяГраницаИнтервалаРасширеннаяПодсказка" id="71"/>
+								</InputField>
+								<InputField name="ПараметрыВПределахДняНаименованиеИнтервала" id="75">
+									<DataPath>Объект.ПараметрыВПределахДня.НаименованиеИнтервала</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Наименование</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыВПределахДняНаименованиеИнтервалаКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="ПараметрыВПределахДняНаименованиеИнтервалаРасширеннаяПодсказка" id="77"/>
+								</InputField>
+								<InputField name="ПараметрыВПределахДняЦвет" id="78">
+									<DataPath>Объект.ПараметрыВПределахДня.Цвет</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПараметрыВПределахДняЦветКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="ПараметрыВПределахДняЦветРасширеннаяПодсказка" id="80"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогНастройкиЗанятости</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АдресНастроекКомпоновкиДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес настроек компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСхемыКомпоновкиДанных" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес схемы компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РедактироватьСхемуКомпоновкиДанных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать схему компоновки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionSettingsWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьСхемуКомпоновкиДанных</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДирективу_НаКлиенте" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&amp;&amp;НаКлиенте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить директиву на клиенте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьДирективу</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДирективу_НаСервере" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&amp;&amp;НаСервере</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить директиву на клиенте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьДирективу</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

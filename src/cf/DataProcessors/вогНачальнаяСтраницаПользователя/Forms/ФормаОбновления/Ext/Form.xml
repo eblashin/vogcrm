@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Обновление программы</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<ScalingMode>Normal</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Уведомление" id="13">
+			<Width>40</Width>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Привет! &lt;/&gt;&lt;/&gt;&lt;b&gt;&lt;fontsize 14&gt;
+&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;Мы обновили рабочий стол.&lt;/&gt; </v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="УведомлениеКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="УведомлениеРасширеннаяПодсказка" id="15"/>
+		</LabelDecoration>
+		<Button name="ОткрытьИнструкцию" id="11">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.ОткрытьИнструкцию</CommandName>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Посмотреть обучающее видео</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ОткрытьИнструкциюРасширеннаяПодсказка" id="12"/>
+		</Button>
+		<UsualGroup name="ГруппаЗакрыть" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗакрытьРасширеннаяПодсказка" id="7"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="8">
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="10"/>
+				</LabelDecoration>
+				<CheckBoxField name="НеПоказыватьБольше" id="1">
+					<DataPath>НеПоказыватьБольше</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НеПоказыватьБольшеКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НеПоказыватьБольшеРасширеннаяПодсказка" id="3"/>
+				</CheckBoxField>
+				<Button name="ФормаЗакрыть" id="4">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.StandardCommand.Close</CommandName>
+					<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="5"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогНачальнаяСтраницаПользователя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="НеПоказыватьБольше" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Больше не напоминать</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстHTML" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст HTML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьИнструкцию" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть инструкцию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть инструкцию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьИнструкцию</Action>
+		</Command>
+	</Commands>
+</Form>

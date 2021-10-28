@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Настройка списка</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ОК" id="8">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ЗавершитьРедактирование</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОКExtendedTooltip" id="40"/>
+			</Button>
+			<Button name="Отмена" id="9">
+				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОтменаExtendedTooltip" id="41"/>
+			</Button>
+			<Button name="Справка" id="10">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="СправкаExtendedTooltip" id="42"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборExtendedTooltip" id="43"/>
+			<ChildItems>
+				<Table name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбора" id="2">
+					<Representation>Tree</Representation>
+					<Autofill>true</Autofill>
+					<SkipOnInput>false</SkipOnInput>
+					<Width>60</Width>
+					<HeightInTableRows>15</HeightInTableRows>
+					<ChoiceMode>true</ChoiceMode>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>КомпоновщикНастроек.Settings.Filter.FilterAvailableFields</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<ContextMenu name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораКонтекстноеМеню" id="3"/>
+					<AutoCommandBar name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораКоманднаяПанель" id="4">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораВыбрать" id="39">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбора.StandardCommand.Choose</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораВыбратьExtendedTooltip" id="44"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораExtendedTooltip" id="45"/>
+					<SearchStringAddition name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораСтрокаПоиска" id="75">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбора</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораСтрокаПоискаКонтекстноеМеню" id="76"/>
+						<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораСтрокаПоискаРасширеннаяПодсказка" id="77"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораСостояниеПросмотра" id="78">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбора</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораСостояниеПросмотраКонтекстноеМеню" id="79"/>
+						<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораСостояниеПросмотраРасширеннаяПодсказка" id="80"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораУправлениеПоиском" id="81">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбора</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораУправлениеПоискомКонтекстноеМеню" id="82"/>
+						<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДоступныеПоляОтбораУправлениеПоискомРасширеннаяПодсказка" id="83"/>
+					</SearchControlAddition>
+				</Table>
+				<Table name="КомпоновщикНастроекНастройкиОтбор" id="5">
+					<Representation>Tree</Representation>
+					<Autofill>true</Autofill>
+					<SkipOnInput>false</SkipOnInput>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>КомпоновщикНастроек.Settings.Filter</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<ViewMode>All</ViewMode>
+					<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+					<ContextMenu name="КомпоновщикНастроекНастройкиОтборКонтекстноеМеню" id="6">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="КомпоновщикНастроекНастройкиОтборДобавитьЭлементОтбора1" id="25">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.AddFilterItem</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДобавитьЭлементОтбора1ExtendedTooltip" id="46"/>
+							</Button>
+							<Button name="КомпоновщикНастроекНастройкиОтборДобавитьГруппуЭлементовОтбора1" id="26">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.AddFilterItemGroup</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДобавитьГруппуЭлементовОтбора1ExtendedTooltip" id="47"/>
+							</Button>
+							<ButtonGroup name="Группа3" id="27">
+								<ExtendedTooltip name="Группа3ExtendedTooltip" id="48"/>
+								<ChildItems>
+									<Button name="КомпоновщикНастроекНастройкиОтборСгруппироватьЭлементыОтбора1" id="28">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.GroupFilterItems</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборСгруппироватьЭлементыОтбора1ExtendedTooltip" id="49"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборРазгруппировать1" id="29">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Ungroup</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборРазгруппировать1ExtendedTooltip" id="50"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Button name="КомпоновщикНастроекНастройкиОтборСкопировать1" id="30">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Copy</CommandName>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборСкопировать1ExtendedTooltip" id="51"/>
+							</Button>
+							<Button name="КомпоновщикНастроекНастройкиОтборИзменить1" id="31">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Change</CommandName>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборИзменить1ExtendedTooltip" id="52"/>
+							</Button>
+							<Button name="КомпоновщикНастроекНастройкиОтборУдалить1" id="32">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Delete</CommandName>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборУдалить1ExtendedTooltip" id="53"/>
+							</Button>
+							<ButtonGroup name="Группа4" id="33">
+								<ExtendedTooltip name="Группа4ExtendedTooltip" id="54"/>
+								<ChildItems>
+									<Button name="КомпоновщикНастроекНастройкиОтборПереместитьВверх1" id="34">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.MoveUp</CommandName>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборПереместитьВверх1ExtendedTooltip" id="55"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборПереместитьВниз1" id="35">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.MoveDown</CommandName>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборПереместитьВниз1ExtendedTooltip" id="56"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборИспользоватьВКачествеЗначенияПоле1" id="36">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.UseFieldAsValue</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборИспользоватьВКачествеЗначенияПоле1ExtendedTooltip" id="57"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборПодробно1" id="37">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Detailed</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборПодробно1ExtendedTooltip" id="58"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборУстановитьПредставление1" id="38">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.SetPresentation</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборУстановитьПредставление1ExtendedTooltip" id="59"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="КомпоновщикНастроекНастройкиОтборКоманднаяПанель" id="7">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="КомпоновщикНастроекНастройкиОтборДобавитьЭлементОтбора" id="11">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.AddFilterItem</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Добавить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДобавитьЭлементОтбораExtendedTooltip" id="60"/>
+							</Button>
+							<Button name="КомпоновщикНастроекНастройкиОтборДобавитьГруппуЭлементовОтбора" id="19">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.AddFilterItemGroup</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборДобавитьГруппуЭлементовОтбораExtendedTooltip" id="61"/>
+							</Button>
+							<ButtonGroup name="Группа2" id="18">
+								<ExtendedTooltip name="Группа2ExtendedTooltip" id="62"/>
+								<ChildItems>
+									<Button name="КомпоновщикНастроекНастройкиОтборСгруппироватьЭлементыОтбора" id="20">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.GroupFilterItems</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборСгруппироватьЭлементыОтбораExtendedTooltip" id="63"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборРазгруппировать" id="21">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Ungroup</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборРазгруппироватьExtendedTooltip" id="64"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Button name="КомпоновщикНастроекНастройкиОтборСкопировать" id="12">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Copy</CommandName>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборСкопироватьExtendedTooltip" id="65"/>
+							</Button>
+							<Button name="КомпоновщикНастроекНастройкиОтборИзменить" id="13">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Change</CommandName>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборИзменитьExtendedTooltip" id="66"/>
+							</Button>
+							<Button name="КомпоновщикНастроекНастройкиОтборУдалить" id="14">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Delete</CommandName>
+								<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборУдалитьExtendedTooltip" id="67"/>
+							</Button>
+							<ButtonGroup name="Группа1" id="17">
+								<ExtendedTooltip name="Группа1ExtendedTooltip" id="68"/>
+								<ChildItems>
+									<Button name="КомпоновщикНастроекНастройкиОтборПереместитьВверх" id="15">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.MoveUp</CommandName>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборПереместитьВверхExtendedTooltip" id="69"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборПереместитьВниз" id="16">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.MoveDown</CommandName>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборПереместитьВнизExtendedTooltip" id="70"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборИспользоватьВКачествеЗначенияПоле" id="22">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.UseFieldAsValue</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборИспользоватьВКачествеЗначенияПолеExtendedTooltip" id="71"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборПодробно" id="23">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.Detailed</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборПодробноExtendedTooltip" id="72"/>
+									</Button>
+									<Button name="КомпоновщикНастроекНастройкиОтборУстановитьПредставление" id="24">
+										<Type>CommandBarButton</Type>
+										<SkipOnInput>false</SkipOnInput>
+										<CommandName>Form.Item.КомпоновщикНастроекНастройкиОтбор.StandardCommand.SetPresentation</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборУстановитьПредставлениеExtendedTooltip" id="73"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборExtendedTooltip" id="74"/>
+					<SearchStringAddition name="КомпоновщикНастроекНастройкиОтборСтрокаПоиска" id="84">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекНастройкиОтбор</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="85"/>
+						<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="86"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="КомпоновщикНастроекНастройкиОтборСостояниеПросмотра" id="87">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекНастройкиОтбор</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="88"/>
+						<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="89"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="КомпоновщикНастроекНастройкиОтборУправлениеПоиском" id="90">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекНастройкиОтбор</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="91"/>
+						<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="92"/>
+					</SearchControlAddition>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CRM_ОбменДаннымиС1СБухгалтерия</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АдресСКД" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес СКД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КомпоновщикНастроек" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗавершитьРедактирование" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить редактирование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить редактирование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗавершитьРедактирование</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

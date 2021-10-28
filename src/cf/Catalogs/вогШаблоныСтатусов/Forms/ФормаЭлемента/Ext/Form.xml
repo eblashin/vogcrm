@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<CheckBoxField name="Блокирующий" id="51">
+			<DataPath>Объект.Блокирующий</DataPath>
+			<CheckBoxType>Tumbler</CheckBoxType>
+			<EditFormat>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БЛ=Нет; БИ=Да</v8:content>
+				</v8:item>
+			</EditFormat>
+			<ContextMenu name="БлокирующийКонтекстноеМеню" id="52"/>
+			<ExtendedTooltip name="БлокирующийРасширеннаяПодсказка" id="53"/>
+		</CheckBoxField>
+		<InputField name="ИзображениеСтатуса" id="7">
+			<DataPath>Объект.ИзображениеСтатуса</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="ИзображениеСтатусаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ИзображениеСтатусаРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<UsualGroup name="ГруппаНастройки" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="17"/>
+			<ChildItems>
+				<CheckBoxField name="РазрешеноРедактирование" id="10">
+					<DataPath>Объект.РазрешеноРедактирование</DataPath>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Нет; БИ=Да</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="РазрешеноРедактированиеКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="РазрешеноРедактированиеРасширеннаяПодсказка" id="12"/>
+				</CheckBoxField>
+				<CheckBoxField name="НастроитьДоступностьРеквизитов" id="13">
+					<DataPath>Объект.НастроитьДоступностьРеквизитов</DataPath>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Нет; БИ=Да</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="НастроитьДоступностьРеквизитовКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="НастроитьДоступностьРеквизитовРасширеннаяПодсказка" id="15"/>
+					<Events>
+						<Event name="OnChange">НастроитьДоступностьРеквизитовПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройкаДоступности" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройка доступности</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройка доступности</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкаДоступностиРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<Table name="НастройкаДоступности" id="20">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.НастройкаДоступности</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="НастройкаДоступностиКонтекстноеМеню" id="21"/>
+					<AutoCommandBar name="НастройкаДоступностиКоманднаяПанель" id="22"/>
+					<ExtendedTooltip name="НастройкаДоступностиРасширеннаяПодсказка" id="23"/>
+					<SearchStringAddition name="НастройкаДоступностиСтрокаПоиска" id="24">
+						<AdditionSource>
+							<Item>НастройкаДоступности</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкаДоступностиСтрокаПоискаКонтекстноеМеню" id="25"/>
+						<ExtendedTooltip name="НастройкаДоступностиСтрокаПоискаРасширеннаяПодсказка" id="26"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НастройкаДоступностиСостояниеПросмотра" id="27">
+						<AdditionSource>
+							<Item>НастройкаДоступности</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкаДоступностиСостояниеПросмотраКонтекстноеМеню" id="28"/>
+						<ExtendedTooltip name="НастройкаДоступностиСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НастройкаДоступностиУправлениеПоиском" id="30">
+						<AdditionSource>
+							<Item>НастройкаДоступности</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкаДоступностиУправлениеПоискомКонтекстноеМеню" id="31"/>
+						<ExtendedTooltip name="НастройкаДоступностиУправлениеПоискомРасширеннаяПодсказка" id="32"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="НастройкаДоступностиНомерСтроки" id="33">
+							<DataPath>Объект.НастройкаДоступности.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкаДоступностиНомерСтрокиКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="НастройкаДоступностиНомерСтрокиРасширеннаяПодсказка" id="35"/>
+						</LabelField>
+						<InputField name="НастройкаДоступностиОбъектМетаданных" id="36">
+							<DataPath>Объект.НастройкаДоступности.ОбъектМетаданных</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="НастройкаДоступностиОбъектМетаданныхКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="НастройкаДоступностиОбъектМетаданныхРасширеннаяПодсказка" id="38"/>
+							<Events>
+								<Event name="StartChoice">НастройкаДоступностиОбъектМетаданныхНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="НастройкаДоступностиСвойство" id="39">
+							<DataPath>Объект.НастройкаДоступности.Свойство</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="НастройкаДоступностиСвойствоКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="НастройкаДоступностиСвойствоРасширеннаяПодсказка" id="41"/>
+							<Events>
+								<Event name="StartChoice">НастройкаДоступностиСвойствоНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="НастройкаДоступностиДоступность" id="42">
+							<DataPath>Объект.НастройкаДоступности.Доступность</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НастройкаДоступностиДоступностьКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="НастройкаДоступностиДоступностьРасширеннаяПодсказка" id="44"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогШаблоныСтатусов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

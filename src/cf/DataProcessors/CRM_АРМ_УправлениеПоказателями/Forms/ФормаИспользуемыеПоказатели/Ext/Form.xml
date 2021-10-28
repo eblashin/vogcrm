@@ -1,0 +1,1042 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Мои показатели</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтборПоказателей" id="107">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор показателей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор показателей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборПоказателейРасширеннаяПодсказка" id="108"/>
+			<ChildItems>
+				<RadioButtonField name="ЧьиПоказатели" id="28">
+					<DataPath>ЧьиПоказатели</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Мои</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">Мои</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Моего подразделения</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">Подразделения</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ЧьиПоказателиКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ЧьиПоказателиРасширеннаяПодсказка" id="30"/>
+					<Events>
+						<Event name="OnChange">ЧьиПоказателиПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<Button name="УстановкаПоказателей" id="102">
+					<Type>UsualButton</Type>
+					<Representation>Text</Representation>
+					<DefaultButton>true</DefaultButton>
+					<Height>1</Height>
+					<CommandName>Form.Command.УстановкаПоказателей</CommandName>
+					<ExtendedTooltip name="УстановкаПоказателейРасширеннаяПодсказка" id="103"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаБыстрыеОтборы" id="1">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ИтогиФонГруппы</BackColor>
+			<ExtendedTooltip name="ГруппаБыстрыеОтборыExtendedTooltip" id="2"/>
+		</UsualGroup>
+		<UsualGroup name="ГруппаУстановки" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа установки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа установки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаУстановкиРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПользователи" id="42">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа пользователи</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа пользователи</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПользователиРасширеннаяПодсказка" id="43"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтборПользователей" id="109">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор пользователей</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор пользователей</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ИтогиФонГруппы</BackColor>
+							<ExtendedTooltip name="ГруппаОтборПользователейРасширеннаяПодсказка" id="110"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияНадписьПодразделение" id="37">
+									<Visible>false</Visible>
+									<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подразделение:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияНадписьПодразделениеКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="ДекорацияНадписьПодразделениеРасширеннаяПодсказка" id="39"/>
+								</LabelDecoration>
+								<InputField name="ОтборПодразделениеСпособ" id="34">
+									<DataPath>ОтборПодразделениеСпособ</DataPath>
+									<TitleLocation>Left</TitleLocation>
+									<Width>11</Width>
+									<DropListButton>true</DropListButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Равно</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>В группе</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>В списке</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ChoiceListButton>true</ChoiceListButton>
+									<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+									<ContextMenu name="ОтборПодразделениеСпособКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="ОтборПодразделениеСпособРасширеннаяПодсказка" id="36"/>
+									<Events>
+										<Event name="OnChange">ОтборПодразделениеСпособПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборПодразделение" id="31">
+									<DataPath>ОтборПодразделение</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>20</Width>
+									<MaxWidth>36</MaxWidth>
+									<ClearButton>true</ClearButton>
+									<OpenButton>false</OpenButton>
+									<ChooseType>false</ChooseType>
+									<ChoiceParameters>
+										<app:item name="ТолькоДоступные">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+									<ContextMenu name="ОтборПодразделениеКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="ОтборПодразделениеРасширеннаяПодсказка" id="33"/>
+									<Events>
+										<Event name="OnChange">ОтборПодразделениеПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПользователиСписок" id="46">
+							<HeightInTableRows>5</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПользователиСписок</DataPath>
+							<RowPictureDataPath>ПользователиСписок.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="ПользователиСписокКонтекстноеМеню" id="47"/>
+							<AutoCommandBar name="ПользователиСписокКоманднаяПанель" id="48">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПользователиСписокРасширеннаяПодсказка" id="49"/>
+							<SearchStringAddition name="ПользователиСписокСтрокаПоиска" id="50">
+								<AdditionSource>
+									<Item>ПользователиСписок</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиСписокСтрокаПоискаКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="ПользователиСписокСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПользователиСписокСостояниеПросмотра" id="53">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>ПользователиСписок</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиСписокСостояниеПросмотраКонтекстноеМеню" id="54"/>
+								<ExtendedTooltip name="ПользователиСписокСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПользователиСписокУправлениеПоиском" id="56">
+								<AdditionSource>
+									<Item>ПользователиСписок</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиСписокУправлениеПоискомКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="ПользователиСписокУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ПользователиСписокПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПользователиСписокНаименование" id="59">
+									<DataPath>ПользователиСписок.Description</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сотрудник</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<ContextMenu name="ПользователиСписокНаименованиеКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ПользователиСписокНаименованиеРасширеннаяПодсказка" id="61"/>
+								</LabelField>
+								<LabelField name="ПользователиСписокПодразделение" id="104">
+									<DataPath>ПользователиСписок.Подразделение</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="ПользователиСписокПодразделениеКонтекстноеМеню" id="105"/>
+									<ExtendedTooltip name="ПользователиСписокПодразделениеРасширеннаяПодсказка" id="106"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПоказатели" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа показатели</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа показатели</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПоказателиРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтборПоказатели" id="111">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор показатели</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отбор показатели</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ИтогиФонГруппы</BackColor>
+							<ExtendedTooltip name="ГруппаОтборПоказателиРасширеннаяПодсказка" id="112"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПериод" id="3">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа период</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="4"/>
+									<ChildItems>
+										<Button name="ПерейтиНазад" id="5">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<Width>4</Width>
+											<CommandName>Form.Command.ПерейтиНазад</CommandName>
+											<Font ref="style:LargeTextFont" kind="StyleItem"/>
+											<Shape>Usual</Shape>
+											<ShapeRepresentation>WhenActive</ShapeRepresentation>
+											<ExtendedTooltip name="ПерейтиНазадРасширеннаяПодсказка" id="6"/>
+										</Button>
+										<LabelField name="ПредставлениеПериода" id="7">
+											<DataPath>ПредставлениеПериода</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период</v8:content>
+												</v8:item>
+											</Title>
+											<TitleFont ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+											<TitleLocation>None</TitleLocation>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+											<ContextMenu name="ПредставлениеПериодаКонтекстноеМеню" id="8"/>
+											<ExtendedTooltip name="ПредставлениеПериодаРасширеннаяПодсказка" id="9"/>
+											<Events>
+												<Event name="OnChange">НачалоПериодаПриИзменении</Event>
+											</Events>
+										</LabelField>
+										<Button name="ПерейтиВперед" id="10">
+											<Type>UsualButton</Type>
+											<Width>4</Width>
+											<CommandName>Form.Command.ПерейтиВперед</CommandName>
+											<Font ref="style:LargeTextFont" kind="StyleItem"/>
+											<ShapeRepresentation>WhenActive</ShapeRepresentation>
+											<ExtendedTooltip name="ПерейтиВпередРасширеннаяПодсказка" id="11"/>
+										</Button>
+										<Button name="ВыбратьПериод" id="12">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<Width>4</Width>
+											<CommandName>Form.Command.ВыбратьПериод</CommandName>
+											<Picture>
+												<xr:Ref>StdPicture.InputFieldSelect</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ShapeRepresentation>WhenActive</ShapeRepresentation>
+											<ExtendedTooltip name="ВыбратьПериодРасширеннаяПодсказка" id="13"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="ФормаСправка" id="26">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.StandardCommand.Help</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.CRM_Помощь</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ShapeRepresentation>WhenActive</ShapeRepresentation>
+									<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="27"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПланыПользователей" id="62">
+							<Representation>List</Representation>
+							<HeightInTableRows>5</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПланыПользователей</DataPath>
+							<RowPictureDataPath>ПланыПользователей.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="ПланыПользователейКонтекстноеМеню" id="63"/>
+							<AutoCommandBar name="ПланыПользователейКоманднаяПанель" id="64">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПланыПользователейРасширеннаяПодсказка" id="65"/>
+							<SearchStringAddition name="ПланыПользователейСтрокаПоиска" id="66">
+								<AdditionSource>
+									<Item>ПланыПользователей</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПланыПользователейСтрокаПоискаКонтекстноеМеню" id="67"/>
+								<ExtendedTooltip name="ПланыПользователейСтрокаПоискаРасширеннаяПодсказка" id="68"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПланыПользователейСостояниеПросмотра" id="69">
+								<Enabled>false</Enabled>
+								<AdditionSource>
+									<Item>ПланыПользователей</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПланыПользователейСостояниеПросмотраКонтекстноеМеню" id="70"/>
+								<ExtendedTooltip name="ПланыПользователейСостояниеПросмотраРасширеннаяПодсказка" id="71"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПланыПользователейУправлениеПоиском" id="72">
+								<AdditionSource>
+									<Item>ПланыПользователей</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПланыПользователейУправлениеПоискомКонтекстноеМеню" id="73"/>
+								<ExtendedTooltip name="ПланыПользователейУправлениеПоискомРасширеннаяПодсказка" id="74"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПланыПользователейВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПланыПользователейПоказатель" id="84">
+									<DataPath>ПланыПользователей.Показатель</DataPath>
+									<Width>12</Width>
+									<ContextMenu name="ПланыПользователейПоказательКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ПланыПользователейПоказательРасширеннаяПодсказка" id="86"/>
+								</LabelField>
+								<ColumnGroup name="ПланыПользователейГруппаЗначение" id="119">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Планы пользователей группа значение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="ПланыПользователейГруппаЗначениеРасширеннаяПодсказка" id="120"/>
+									<ChildItems>
+										<LabelField name="ПланыПользователейЗначение" id="90">
+											<DataPath>ПланыПользователей.Значение</DataPath>
+											<Width>9</Width>
+											<ContextMenu name="ПланыПользователейЗначениеКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="ПланыПользователейЗначениеРасширеннаяПодсказка" id="92"/>
+										</LabelField>
+										<LabelField name="ПланыПользователейЗначениеМаксимум" id="93">
+											<DataPath>ПланыПользователей.ЗначениеМаксимум</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Знач. макс.</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Left</HorizontalAlign>
+											<Width>10</Width>
+											<ContextMenu name="ПланыПользователейЗначениеМаксимумКонтекстноеМеню" id="94"/>
+											<ExtendedTooltip name="ПланыПользователейЗначениеМаксимумРасширеннаяПодсказка" id="95"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<LabelField name="ПланыПользователейЕдиницаИзмерения" id="99">
+									<DataPath>ПланыПользователей.ЕдиницаИзмерения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ед. изм.</v8:content>
+										</v8:item>
+									</Title>
+									<Width>8</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ПланыПользователейЕдиницаИзмеренияКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="ПланыПользователейЕдиницаИзмеренияРасширеннаяПодсказка" id="101"/>
+								</LabelField>
+								<LabelField name="ПланыПользователейПериод" id="121">
+									<DataPath>ПланыПользователей.Период</DataPath>
+									<Width>10</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ПланыПользователейПериодКонтекстноеМеню" id="122"/>
+									<ExtendedTooltip name="ПланыПользователейПериодРасширеннаяПодсказка" id="123"/>
+								</LabelField>
+								<LabelField name="ПланыПользователейПоказательЦелевойТренд" id="96">
+									<DataPath>ПланыПользователей.ПоказательЦелевойТренд</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Целевой тренд</v8:content>
+										</v8:item>
+									</Title>
+									<Width>15</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ПланыПользователейПоказательЦелевойТрендКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="ПланыПользователейПоказательЦелевойТрендРасширеннаяПодсказка" id="98"/>
+								</LabelField>
+								<LabelField name="ПланыПользователейПериодичность" id="116">
+									<DataPath>ПланыПользователей.Периодичность</DataPath>
+									<Width>12</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ПланыПользователейПериодичностьКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="ПланыПользователейПериодичностьРасширеннаяПодсказка" id="118"/>
+								</LabelField>
+								<CheckBoxField name="ПланыПользователейСогласовано" id="87">
+									<DataPath>ПланыПользователей.Согласовано</DataPath>
+									<Visible>false</Visible>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПланыПользователейСогласованоКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="ПланыПользователейСогласованоРасширеннаяПодсказка" id="89"/>
+								</CheckBoxField>
+								<LabelField name="ПланыПользователейРегистратор" id="113">
+									<DataPath>ПланыПользователей.Recorder</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="ПланыПользователейРегистраторКонтекстноеМеню" id="114"/>
+									<ExtendedTooltip name="ПланыПользователейРегистраторРасширеннаяПодсказка" id="115"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CRM_АРМ_УправлениеПоказателями</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПредставлениеПериода" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧьиПоказатели" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чьи показатели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПодразделение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+				<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПодразделениеСпособ" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодичностьКонтроля" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Периодичность контроля</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.Периодичность</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КонецПериода" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конец периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НачалоПериода" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начало периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПользователиСписок" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Пользователи.Ссылка,
+	Пользователи.ПометкаУдаления,
+	Пользователи.Предопределенный,
+	Пользователи.Наименование,
+	Пользователи.CRM_Фотография,
+	ВЫБОР
+		КОГДА Пользователи.CRM_Фотография = ЗНАЧЕНИЕ(Справочник.ПользователиПрисоединенныеФайлы.ПустаяСсылка)
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ КАК Фотография,
+	ВЫБОР
+		КОГДА Пользователи.ПометкаУдаления
+			ТОГДА 0
+		КОГДА Пользователи.ИдентификаторПользователяИБ = &amp;ПустойУникальныйИдентификатор
+			ТОГДА 4
+		ИНАЧЕ 1
+	КОНЕЦ КАК НомерКартинки,
+	Пользователи.Подразделение
+ИЗ
+	Справочник.Пользователи КАК Пользователи
+ГДЕ
+	Пользователи.Ссылка В(&amp;ДоступныеПользователи)</QueryText>
+				<MainTable>Catalog.Пользователи</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">ПометкаУдаления</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Наименование</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Ссылка.Недействителен</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:ТекстЗапрещеннойЯчейкиЦвет</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПланыПользователей" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Планы пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ПланыПользователей.Recorder</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	CRM_ИспользуемыеКлючевыеПоказатели.Менеджер,
+	CRM_ИспользуемыеКлючевыеПоказатели.Показатель,
+	CRM_ИспользуемыеКлючевыеПоказатели.Согласовано,
+	МАКСИМУМ(CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.ЗначениеПоказателя) КАК Значение,
+	МАКСИМУМ(CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.ЗначениеПоказателяМаксимум) КАК ЗначениеМаксимум,
+	CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЦелевойТренд,
+	ВЫБОР
+		КОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.КратностьЗначений = "НеИзменять"
+			ТОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЕдиницаИзмерения
+		КОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.КратностьЗначений = "Тысячи"
+			ТОГДА "тыс. " + CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЕдиницаИзмерения.Наименование
+		КОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.КратностьЗначений = "Миллионы"
+			ТОГДА "млн. " + CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЕдиницаИзмерения.Наименование
+	КОНЕЦ КАК ЕдиницаИзмерения,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор,
+	CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ПериодАнализа КАК Периодичность,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.НачалоПериодаПланирования КАК НачалоПериода,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.КонецПериодаПланирования КАК КонецПериода,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.ПредставлениеПериодаПланирования КАК Период
+ИЗ
+	РегистрСведений.CRM_ИспользуемыеКлючевыеПоказатели КАК CRM_ИспользуемыеКлючевыеПоказатели
+ГДЕ
+	CRM_ИспользуемыеКлючевыеПоказатели.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И CRM_ИспользуемыеКлючевыеПоказатели.Менеджер = &amp;Менеджер
+
+СГРУППИРОВАТЬ ПО
+	CRM_ИспользуемыеКлючевыеПоказатели.Менеджер,
+	CRM_ИспользуемыеКлючевыеПоказатели.Показатель,
+	CRM_ИспользуемыеКлючевыеПоказатели.Согласовано,
+	CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЦелевойТренд,
+	ВЫБОР
+		КОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.КратностьЗначений = "НеИзменять"
+			ТОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЕдиницаИзмерения
+		КОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.КратностьЗначений = "Тысячи"
+			ТОГДА "тыс. " + CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЕдиницаИзмерения.Наименование
+		КОГДА CRM_ИспользуемыеКлючевыеПоказатели.Показатель.КратностьЗначений = "Миллионы"
+			ТОГДА "млн. " + CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ЕдиницаИзмерения.Наименование
+	КОНЕЦ,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор,
+	CRM_ИспользуемыеКлючевыеПоказатели.Показатель.ПериодАнализа,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.НачалоПериодаПланирования,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.КонецПериодаПланирования,
+	CRM_ИспользуемыеКлючевыеПоказатели.Регистратор.ПредставлениеПериодаПланирования</QueryText>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Согласовано</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#CCFFCC</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>Тире</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗначениеМаксимум</dcsset:left>
+									<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="xs:string">-</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Видимость</dcscor:parameter>
+									<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ЗначениеМаксимум</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЗначениеМаксимум</dcsset:left>
+									<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>Текст</dcscor:parameter>
+									<dcscor:value xsi:type="xs:string">-</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Видимость</dcscor:parameter>
+									<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТекущийПользователь" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьПериод" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьПериод</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПерейтиВперед" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти вперед</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_Вправо</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПерейтиВперед</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПерейтиНазад" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти назад</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_Влево</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПерейтиНазад</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Настроить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_Настройки</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Настроить</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановкаПоказателей" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установка показателя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установка показателей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановкаПоказателей</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

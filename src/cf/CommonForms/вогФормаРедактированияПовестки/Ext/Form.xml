@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<ChildItems>
+			<Button name="ФормаПрименитьИЗакрыть" id="50">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПрименитьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаПрименитьИЗакрытьРасширеннаяПодсказка" id="51"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбластьПовестки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа область повестки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа область повестки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбластьПовесткиРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСоставПовестки" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состав повестки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа состав повестки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ГруппаСоставПовесткиРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<CommandBar name="СоставПовесткиПанель" id="78">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состав повестки панель</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состав повестки панель</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CommandSource>Item.СоставПовестки</CommandSource>
+							<ExtendedTooltip name="СоставПовесткиПанельРасширеннаяПодсказка" id="79"/>
+						</CommandBar>
+						<Table name="СоставПовестки" id="5">
+							<Representation>List</Representation>
+							<Width>50</Width>
+							<Header>false</Header>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СоставПовестки</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Copy</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СоставПовесткиКонтекстноеМеню" id="6"/>
+							<AutoCommandBar name="СоставПовесткиКоманднаяПанель" id="7">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СоставПовесткиРасширеннаяПодсказка" id="8"/>
+							<SearchStringAddition name="СоставПовесткиСтрокаПоиска" id="9">
+								<AdditionSource>
+									<Item>СоставПовестки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СоставПовесткиСтрокаПоискаКонтекстноеМеню" id="10"/>
+								<ExtendedTooltip name="СоставПовесткиСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СоставПовесткиСостояниеПросмотра" id="12">
+								<AdditionSource>
+									<Item>СоставПовестки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СоставПовесткиСостояниеПросмотраКонтекстноеМеню" id="13"/>
+								<ExtendedTooltip name="СоставПовесткиСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СоставПовесткиУправлениеПоиском" id="15">
+								<AdditionSource>
+									<Item>СоставПовестки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СоставПовесткиУправлениеПоискомКонтекстноеМеню" id="16"/>
+								<ExtendedTooltip name="СоставПовесткиУправлениеПоискомРасширеннаяПодсказка" id="17"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">СоставПовесткиПередНачаломДобавления</Event>
+								<Event name="BeforeDeleteRow">СоставПовесткиПередУдалением</Event>
+							</Events>
+							<ChildItems>
+								<ColumnGroup name="СоставПовесткиГруппаВопросОтвет" id="24">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состав повестки группа вопрос ответ</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состав повестки группа вопрос ответ</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СоставПовесткиГруппаВопросОтветРасширеннаяПодсказка" id="25"/>
+									<ChildItems>
+										<ColumnGroup name="СоставПовесткиГруппаВопрос" id="68">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Состав повестки группа вопрос</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Состав повестки группа вопрос</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ExtendedTooltip name="СоставПовесткиГруппаВопросРасширеннаяПодсказка" id="69"/>
+											<ChildItems>
+												<PictureField name="СоставПовесткиИндексКартинкиВопроса" id="70">
+													<DataPath>СоставПовестки.ИндексКартинкиВопроса</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ValuesPicture>
+														<xr:Ref>CommonPicture.CRM_ПиктограммаТрендаНеопределен</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="СоставПовесткиИндексКартинкиВопросаКонтекстноеМеню" id="71"/>
+													<ExtendedTooltip name="СоставПовесткиИндексКартинкиВопросаРасширеннаяПодсказка" id="72"/>
+												</PictureField>
+												<InputField name="СоставПовесткиВопрос" id="18">
+													<DataPath>СоставПовестки.Вопрос</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<Height>2</Height>
+													<MultiLine>true</MultiLine>
+													<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<InputHint>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Формулировка вопроса</v8:content>
+														</v8:item>
+													</InputHint>
+													<ContextMenu name="СоставПовесткиВопросКонтекстноеМеню" id="19"/>
+													<ExtendedTooltip name="СоставПовесткиВопросРасширеннаяПодсказка" id="20"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="СоставПовесткиГруппаОтвет" id="73">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Состав повестки группа ответ</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Состав повестки группа ответ</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ExtendedTooltip name="СоставПовесткиГруппаОтветРасширеннаяПодсказка" id="74"/>
+											<ChildItems>
+												<PictureField name="СоставПовесткиИндексКартинкиОтвета" id="75">
+													<DataPath>СоставПовестки.ИндексКартинкиОтвета</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ValuesPicture>
+														<xr:Ref>CommonPicture.CRM_ВиджетыДинамикаНет</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="СоставПовесткиИндексКартинкиОтветаКонтекстноеМеню" id="76"/>
+													<ExtendedTooltip name="СоставПовесткиИндексКартинкиОтветаРасширеннаяПодсказка" id="77"/>
+												</PictureField>
+												<InputField name="СоставПовесткиОтвет" id="21">
+													<DataPath>СоставПовестки.Ответ</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Ответ</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<Height>4</Height>
+													<MultiLine>true</MultiLine>
+													<ContextMenu name="СоставПовесткиОтветКонтекстноеМеню" id="22"/>
+													<ExtendedTooltip name="СоставПовесткиОтветРасширеннаяПодсказка" id="23"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПрисоединенныеФайлы" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файлы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа присоединенные файлы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаПрисоединенныеФайлыРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<Table name="СоставПовесткиПрисоединенныеФайлы" id="52">
+							<Representation>List</Representation>
+							<Width>30</Width>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<Header>false</Header>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Items.СоставПовестки.CurrentData.ПрисоединенныеФайлы</DataPath>
+							<RowPictureDataPath>Items.СоставПовестки.CurrentData.ПрисоединенныеФайлы.ИндексКартинки</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</RowsPicture>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СоставПовесткиПрисоединенныеФайлыКонтекстноеМеню" id="53"/>
+							<AutoCommandBar name="СоставПовесткиПрисоединенныеФайлыКоманднаяПанель" id="54"/>
+							<ExtendedTooltip name="СоставПовесткиПрисоединенныеФайлыРасширеннаяПодсказка" id="55"/>
+							<SearchStringAddition name="СоставПовесткиПрисоединенныеФайлыСтрокаПоиска" id="56">
+								<AdditionSource>
+									<Item>СоставПовесткиПрисоединенныеФайлы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СоставПовесткиПрисоединенныеФайлыСтрокаПоискаКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="СоставПовесткиПрисоединенныеФайлыСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СоставПовесткиПрисоединенныеФайлыСостояниеПросмотра" id="59">
+								<AdditionSource>
+									<Item>СоставПовесткиПрисоединенныеФайлы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СоставПовесткиПрисоединенныеФайлыСостояниеПросмотраКонтекстноеМеню" id="60"/>
+								<ExtendedTooltip name="СоставПовесткиПрисоединенныеФайлыСостояниеПросмотраРасширеннаяПодсказка" id="61"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СоставПовесткиПрисоединенныеФайлыУправлениеПоиском" id="62">
+								<AdditionSource>
+									<Item>СоставПовесткиПрисоединенныеФайлы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СоставПовесткиПрисоединенныеФайлыУправлениеПоискомКонтекстноеМеню" id="63"/>
+								<ExtendedTooltip name="СоставПовесткиПрисоединенныеФайлыУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СоставПовесткиПрисоединенныеФайлыВыбор</Event>
+								<Event name="BeforeAddRow">СоставПовесткиПрисоединенныеФайлыПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СоставПовесткиПрисоединенныеФайлыФайл" id="65">
+									<DataPath>Items.СоставПовестки.CurrentData.ПрисоединенныеФайлы.Файл</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СоставПовесткиПрисоединенныеФайлыФайлКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="СоставПовесткиПрисоединенныеФайлыФайлРасширеннаяПодсказка" id="67"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СоставПовестки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состав повестки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Вопрос" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вопрос</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ответ" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторСтроки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПрисоединенныеФайлы" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Присоединенные файлы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинкиВопроса" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки вопроса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинкиОтвета" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки ответа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<AdditionalColumns table="СоставПовестки.ПрисоединенныеФайлы">
+					<Column name="Файл" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Файл</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ПрисоединенныйФайл</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="ИндексКартинки" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Индекс картинки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="МероприятиеСсылка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мероприятие ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.CRM_Мероприятие</v8:Type>
+				<v8:Type>cfg:BusinessProcessRef.CRM_БизнесПроцесс</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимВвода" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим ввода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗакрытьБезусловно" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть безусловно</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьЭлементПовестки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить элемент повестки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьЭлементПовестки</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПрименитьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПрименитьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ДокументСсылка">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>

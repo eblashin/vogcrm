@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ПродолжитьВводНового" id="15">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПродолжитьВводНового</CommandName>
+				<ExtendedTooltip name="ПродолжитьВводНовогоExtendedTooltip" id="18"/>
+			</Button>
+			<Button name="ПерейтиКНайденному" id="16">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПерейтиКНайденному</CommandName>
+				<ExtendedTooltip name="ПерейтиКНайденномуExtendedTooltip" id="19"/>
+			</Button>
+			<Button name="КнопкаОтмена" id="17">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="КнопкаОтменаExtendedTooltip" id="20"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДекорация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа декорация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа декорация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДекорацияExtendedTooltip" id="21"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="2">
+					<Width>81</Width>
+					<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Найдены объекты с аналогичными данными, примите решение о дальнейших действиях</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="3"/>
+					<ExtendedTooltip name="Декорация1ExtendedTooltip" id="22"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаТаблицыНайдено" id="4">
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совпадения:</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа таблицы найдено</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТаблицыНайденоExtendedTooltip" id="23"/>
+			<ChildItems>
+				<Table name="ТаблицаНайдено" id="5">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ТаблицаНайдено</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТаблицаНайденоКонтекстноеМеню" id="6"/>
+					<AutoCommandBar name="ТаблицаНайденоКоманднаяПанель" id="7">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТаблицаНайденоExtendedTooltip" id="24"/>
+					<SearchStringAddition name="ТаблицаНайденоСтрокаПоиска" id="34">
+						<AdditionSource>
+							<Item>ТаблицаНайдено</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаНайденоСтрокаПоискаКонтекстноеМеню" id="35"/>
+						<ExtendedTooltip name="ТаблицаНайденоСтрокаПоискаРасширеннаяПодсказка" id="36"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТаблицаНайденоСостояниеПросмотра" id="37">
+						<AdditionSource>
+							<Item>ТаблицаНайдено</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаНайденоСостояниеПросмотраКонтекстноеМеню" id="38"/>
+						<ExtendedTooltip name="ТаблицаНайденоСостояниеПросмотраРасширеннаяПодсказка" id="39"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТаблицаНайденоУправлениеПоиском" id="40">
+						<AdditionSource>
+							<Item>ТаблицаНайдено</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаНайденоУправлениеПоискомКонтекстноеМеню" id="41"/>
+						<ExtendedTooltip name="ТаблицаНайденоУправлениеПоискомРасширеннаяПодсказка" id="42"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ТаблицаНайденоВыбор</Event>
+						<Event name="OnActivateRow">ТаблицаНайденоПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ТаблицаНайденоПредставление" id="28">
+							<DataPath>ТаблицаНайдено.Представление</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаНайденоПредставлениеКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ТаблицаНайденоПредставлениеРасширеннаяПодсказка" id="30"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<Table name="ТаблицаРасшифровкаНайдено" id="10">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ТаблицаРасшифровкаНайдено</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Совпадения:</v8:content>
+						</v8:item>
+					</Title>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТаблицаРасшифровкаНайденоКонтекстноеМеню" id="11">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<AutoCommandBar name="ТаблицаРасшифровкаНайденоКоманднаяПанель" id="12">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТаблицаРасшифровкаНайденоExtendedTooltip" id="26"/>
+					<SearchStringAddition name="ТаблицаРасшифровкаНайденоСтрокаПоиска" id="43">
+						<AdditionSource>
+							<Item>ТаблицаРасшифровкаНайдено</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаРасшифровкаНайденоСтрокаПоискаКонтекстноеМеню" id="44"/>
+						<ExtendedTooltip name="ТаблицаРасшифровкаНайденоСтрокаПоискаРасширеннаяПодсказка" id="45"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТаблицаРасшифровкаНайденоСостояниеПросмотра" id="46">
+						<AdditionSource>
+							<Item>ТаблицаРасшифровкаНайдено</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаРасшифровкаНайденоСостояниеПросмотраКонтекстноеМеню" id="47"/>
+						<ExtendedTooltip name="ТаблицаРасшифровкаНайденоСостояниеПросмотраРасширеннаяПодсказка" id="48"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТаблицаРасшифровкаНайденоУправлениеПоиском" id="49">
+						<AdditionSource>
+							<Item>ТаблицаРасшифровкаНайдено</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаРасшифровкаНайденоУправлениеПоискомКонтекстноеМеню" id="50"/>
+						<ExtendedTooltip name="ТаблицаРасшифровкаНайденоУправлениеПоискомРасширеннаяПодсказка" id="51"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ТаблицаРасшифровкаНайденоПредставлениеНайденоПо" id="13">
+							<DataPath>ТаблицаРасшифровкаНайдено.ПредставлениеНайденоПо</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Совпадения:</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаРасшифровкаНайденоПредставлениеНайденоПоКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ТаблицаРасшифровкаНайденоПредставлениеНайденоПоExtendedTooltip" id="27"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Декорация2" id="31">
+			<TextColor>style:ИзмененноеЗначениеРеквизитаЦвет</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К данному клиенту в доступе отказано. Для разрешения работы с клиентом обратитесь к администратору программы.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация2КонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="33"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаНайдено" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица найдено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Объект" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Найденные объекты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Доступен" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступен</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаРасшифровкаНайдено" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица расшифровка найдено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПредставлениеНайденоПо" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление найдено по</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>300</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Объект" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="_ТаблицаНайдено" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица найдено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Объект" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Найденные объекты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаНайдено</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаНайдено.Доступен</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:CRM_НедоступныеДанныеЦвет</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ПродолжитьВводНового" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить ввод нового</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить ввод нового</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПродолжитьВводНового</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПерейтиКНайденному" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к найденному</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к найденному</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКНайденному</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

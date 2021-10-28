@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Родитель" id="33">
+			<DataPath>Объект.Parent</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="РодительКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="35"/>
+		</InputField>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<UsualGroup name="ГруппаСхемаКомпоновкиДанных" id="18">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схема компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схема компоновки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСхемаКомпоновкиДанныхExtendedTooltip" id="19"/>
+			<ChildItems>
+				<InputField name="СхемаКомпоновкиДанных" id="20">
+					<DataPath>Объект.СхемаКомпоновкиДанных</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Left</TitleLocation>
+					<ChoiceButton>false</ChoiceButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="СхемаКомпоновкиДанныхКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СхемаКомпоновкиДанныхExtendedTooltip" id="22"/>
+					<Events>
+						<Event name="OnChange">СхемаКомпоновкиДанныхПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="РедактироватьСхемуКомпоновкиДанных" id="23">
+					<Type>UsualButton</Type>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.РедактироватьСхемуКомпоновкиДанных</CommandName>
+					<ExtendedTooltip name="РедактироватьСхемуКомпоновкиДанныхExtendedTooltip" id="24"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="РежимЗапуска" id="7">
+			<DataPath>Объект.РежимЗапуска</DataPath>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Стандартный</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.скРежимыЗапускаБизнесПроцесса.EnumValue.Стандартный</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Произвольный</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.скРежимыЗапускаБизнесПроцесса.EnumValue.Произвольный</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="РежимЗапускаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="РежимЗапускаРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">РежимЗапускаПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаАлгоритмЗапуска" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа алгоритм запуска</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа алгоритм запуска</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаАлгоритмЗапускаРасширеннаяПодсказка" id="17"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="13">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;color #ff0000&gt;Процедура&lt;/&gt; &lt;color #3a66ff&gt;ОбработчикПроизвольногоЗапускаБизнесПроцесса&lt;/&gt;&lt;color #ff3a00&gt;(&lt;/&gt;&lt;color #3a66ff&gt;Форма, СтруктураЗапуска, Предмет&lt;/&gt;&lt;color #ff3a00&gt;)&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="15"/>
+				</LabelDecoration>
+				<CommandBar name="ПанельАлгоритмЗапуска" id="25">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Панель алгоритм запуска</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Панель алгоритм запуска</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПанельАлгоритмЗапускаРасширеннаяПодсказка" id="26"/>
+					<ChildItems>
+						<Popup name="ГруппаДиректива" id="27">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Директива компиляции</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа директива</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаДирективаРасширеннаяПодсказка" id="28"/>
+							<ChildItems>
+								<Button name="ДобавитьДирективу_НаКлиенте" id="29">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьДирективу_НаКлиенте</CommandName>
+									<ExtendedTooltip name="ДобавитьДирективу_НаКлиентеРасширеннаяПодсказка" id="30"/>
+								</Button>
+								<Button name="ДобавитьДирективу_НаСервере" id="31">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьДирективу_НаСервере</CommandName>
+									<ExtendedTooltip name="ДобавитьДирективу_НаСервереРасширеннаяПодсказка" id="32"/>
+								</Button>
+							</ChildItems>
+						</Popup>
+					</ChildItems>
+				</CommandBar>
+				<TextDocumentField name="АлгоритмЗапуска" id="10">
+					<DataPath>Объект.АлгоритмЗапуска</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="АлгоритмЗапускаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="АлгоритмЗапускаРасширеннаяПодсказка" id="12"/>
+				</TextDocumentField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.скНастройкиЗапускаБизнесПроцессовОбъектов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АдресНастроекКомпоновкиДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес настроек компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСхемыКомпоновкиДанных" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес схемы компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РедактироватьСхемуКомпоновкиДанных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать схему компоновки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionSettingsWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьСхемуКомпоновкиДанных</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДирективу_НаКлиенте" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&amp;&amp;НаКлиенте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить директиву на клиенте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьДирективу</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДирективу_НаСервере" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&amp;&amp;НаСервере</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить директиву на клиенте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьДирективу</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

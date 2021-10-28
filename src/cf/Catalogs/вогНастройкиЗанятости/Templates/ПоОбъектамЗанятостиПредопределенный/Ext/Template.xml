@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>День</dataPath>
+			<field>День</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>День</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цвет</dataPath>
+			<field>Цвет</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА CRM_СобытияКалендаря.Завершено
+			ТОГДА НАЧАЛОПЕРИОДА(CRM_СобытияКалендаря.ПериодОкончание, ДЕНЬ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(CRM_СобытияКалендаря.ПериодНачало, ДЕНЬ)
+	КОНЕЦ КАК День,
+	ВЫБОР
+		КОГДА CRM_СобытияКалендаря.Объект ССЫЛКА Документ.CRM_ЭтапКалендарногоПлана
+			ТОГДА CRM_СобытияКалендаря.Объект.Проект.CRM_МодельКейса
+		ИНАЧЕ CRM_СобытияКалендаря.ВидВзаимодействия
+	КОНЕЦ КАК ВидВзаимодействия,
+	ВЫБОР
+		КОГДА CRM_СобытияКалендаря.Объект ССЫЛКА Документ.CRM_ЭтапКалендарногоПлана
+			ТОГДА ИСТИНА
+		ИНАЧЕ CRM_СобытияКалендаря.НаВесьДень
+	КОНЕЦ КАК НаВесьДень,
+	CRM_СобытияКалендаря.ПериодНачало,
+	CRM_СобытияКалендаря.ПериодОкончание
+ПОМЕСТИТЬ ВТ_СобытияКалендаря
+ИЗ
+	РегистрСведений.CRM_СобытияКалендаря КАК CRM_СобытияКалендаря
+ГДЕ
+	CRM_СобытияКалендаря.Пользователь = &amp;Пользователь
+	И ВЫБОР
+			КОГДА CRM_СобытияКалендаря.Завершено
+				ТОГДА CRM_СобытияКалендаря.ПериодОкончание МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			ИНАЧЕ CRM_СобытияКалендаря.ПериодНачало МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА CRM_СобытияКалендаря.Завершено
+			ТОГДА НАЧАЛОПЕРИОДА(CRM_СобытияКалендаря.ПериодОкончание, ДЕНЬ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(CRM_СобытияКалендаря.ПериодНачало, ДЕНЬ)
+	КОНЕЦ,
+	CRM_СобытияКалендаря.ПериодНачало,
+	CRM_СобытияКалендаря.ПериодОкончание,
+	ВЫБОР
+		КОГДА CRM_СобытияКалендаря.Объект ССЫЛКА Документ.CRM_ЭтапКалендарногоПлана
+			ТОГДА CRM_СобытияКалендаря.Объект.Проект.CRM_МодельКейса
+		ИНАЧЕ CRM_СобытияКалендаря.ВидВзаимодействия
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА CRM_СобытияКалендаря.Объект ССЫЛКА Документ.CRM_ЭтапКалендарногоПлана
+			ТОГДА ИСТИНА
+		ИНАЧЕ CRM_СобытияКалендаря.НаВесьДень
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_СобытияКалендаря.День,
+	ВТ_СобытияКалендаря.НаВесьДень,
+	100 КАК ПроцентЗанятости,
+	ВТ_СобытияКалендаря.ВидВзаимодействия КАК ВидВзаимодействия
+ПОМЕСТИТЬ ВТ_ОбъектыЗанятости
+ИЗ
+	ВТ_СобытияКалендаря КАК ВТ_СобытияКалендаря
+ГДЕ
+	ВТ_СобытияКалендаря.НаВесьДень = ИСТИНА
+
+СГРУППИРОВАТЬ ПО
+	ВТ_СобытияКалендаря.День,
+	ВТ_СобытияКалендаря.ВидВзаимодействия,
+	ВТ_СобытияКалендаря.НаВесьДень
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_СобытияКалендаря.День,
+	ВТ_СобытияКалендаря.НаВесьДень,
+	СУММА(РАЗНОСТЬДАТ(ВТ_СобытияКалендаря.ПериодНачало, ВЫБОР
+				КОГДА ВТ_СобытияКалендаря.ПериодОкончание &gt; ВТ_СобытияКалендаря.День
+					ТОГДА ДОБАВИТЬКДАТЕ(ДОБАВИТЬКДАТЕ(ВТ_СобытияКалендаря.День, СЕКУНДА, &amp;НачалоРабочегоДня), СЕКУНДА, &amp;РабочееВремя)
+				ИНАЧЕ ВТ_СобытияКалендаря.ПериодОкончание
+			КОНЕЦ, СЕКУНДА) / &amp;РабочееВремя * 100),
+	НЕОПРЕДЕЛЕНО
+ИЗ
+	ВТ_СобытияКалендаря КАК ВТ_СобытияКалендаря
+ГДЕ
+	ВТ_СобытияКалендаря.НаВесьДень = ЛОЖЬ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_СобытияКалендаря.День,
+	ВТ_СобытияКалендаря.НаВесьДень
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА ЗадачаИсполнителя.Выполнена
+			ТОГДА НАЧАЛОПЕРИОДА(ЗадачаИсполнителя.ДатаИсполнения, ДЕНЬ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(ЗадачаИсполнителя.СрокИсполнения, ДЕНЬ)
+	КОНЕЦ,
+	ЛОЖЬ,
+	СУММА(ЕСТЬNULL(ЗадачаИсполнителя.БизнесПроцесс.вогСложность.ПроцентЗанятости, 0)),
+	НЕОПРЕДЕЛЕНО
+ИЗ
+	Задача.ЗадачаИсполнителя КАК ЗадачаИсполнителя
+ГДЕ
+	ЗадачаИсполнителя.Исполнитель = &amp;Пользователь
+	И ВЫБОР
+			КОГДА ЗадачаИсполнителя.Выполнена
+				ТОГДА ЗадачаИсполнителя.ДатаИсполнения МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			ИНАЧЕ ЗадачаИсполнителя.СрокИсполнения МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ЗадачаИсполнителя.Выполнена
+			ТОГДА НАЧАЛОПЕРИОДА(ЗадачаИсполнителя.ДатаИсполнения, ДЕНЬ)
+		ИНАЧЕ НАЧАЛОПЕРИОДА(ЗадачаИсполнителя.СрокИсполнения, ДЕНЬ)
+	КОНЕЦ
+
+ИНДЕКСИРОВАТЬ ПО
+	ПроцентЗанятости,
+	ВидВзаимодействия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ОбъектыЗанятости.День,
+	ПараметрыНаВесьДень.Цвет КАК Цвет
+ИЗ
+	ВТ_ОбъектыЗанятости КАК ВТ_ОбъектыЗанятости
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.вогНастройкиЗанятости.ПараметрыНаВесьДень КАК ПараметрыНаВесьДень
+		ПО (ПараметрыНаВесьДень.Ссылка = &amp;Настройка)
+			И ВТ_ОбъектыЗанятости.ВидВзаимодействия = ПараметрыНаВесьДень.ВидВзаимодействия
+ГДЕ
+	ВТ_ОбъектыЗанятости.НаВесьДень = ИСТИНА
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ОбъектыЗанятости.День,
+	ПараметрыВПределахДня.Цвет
+ИЗ
+	ВТ_ОбъектыЗанятости КАК ВТ_ОбъектыЗанятости
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.вогНастройкиЗанятости.ПараметрыВПределахДня КАК ПараметрыВПределахДня
+		ПО (ПараметрыВПределахДня.Ссылка = &amp;Настройка)
+			И (ВТ_ОбъектыЗанятости.ПроцентЗанятости МЕЖДУ ПараметрыВПределахДня.НижняяГраницаИнтервала И ПараметрыВПределахДня.ВерхняяГраницаИнтервала)
+ГДЕ
+	ВТ_ОбъектыЗанятости.НаВесьДень = ЛОЖЬ</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Настройка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Настройка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.вогНастройкиЗанятости</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Пользователь</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Пользователь</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВнешниеПользователи</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>РабочееВремя</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Рабочее время</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоРабочегоДня</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало рабочего дня</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>День</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Цвет</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РабочееВремя</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

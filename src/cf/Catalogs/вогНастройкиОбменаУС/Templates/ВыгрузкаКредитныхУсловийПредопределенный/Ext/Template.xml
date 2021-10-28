@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Значение</dataPath>
+			<field>Значение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Аналитика</dataPath>
+			<field>Аналитика</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель</dataPath>
+			<field>Показатель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатель</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВключения</dataPath>
+			<field>ДатаВключения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автор</dataPath>
+			<field>Автор</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_ЗначенияКлассификаторов
+ИЗ
+	Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+ГДЕ
+	CRM_ЗначенияКлассификаторов.Ссылка В(&amp;МассивКлассификаторов)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CRM_Классификаторы.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_Классификаторы
+ИЗ
+	ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+ГДЕ
+	CRM_Классификаторы.Ссылка В(&amp;МассивКлассификаторов)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СпрПартнеры.Ссылка КАК Объект,
+	вогАнкета.Автор КАК Автор
+ПОМЕСТИТЬ ВТ_ПартнерыАвторы
+ИЗ
+	Справочник.Партнеры КАК СпрПартнеры
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.вогАнкета КАК вогАнкета
+		ПО СпрПартнеры.Ссылка = вогАнкета.Респондент
+			И (СпрПартнеры.Ссылка В (&amp;Объекты))
+			И (вогАнкета.ВариантОпроса = &amp;ВариантОпроса)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПартнерыАвторы.Объект КАК Объект,
+	ВТ_ПартнерыАвторы.Автор КАК Автор,
+	CRM_ОбъектыЗначенийКлассификаторов.Аналитика КАК Аналитика,
+	CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита,
+	CRM_ОбъектыЗначенийКлассификаторов.ДатаВключения КАК ДатаВключения
+ПОМЕСТИТЬ ВТ_ОбъектыЗначенийКлассификаторов
+ИЗ
+	ВТ_ПартнерыАвторы КАК ВТ_ПартнерыАвторы
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов
+		ПО ВТ_ПартнерыАвторы.Объект = CRM_ОбъектыЗначенийКлассификаторов.Объект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+	ВТ_ОбъектыЗначенийКлассификаторов.Аналитика КАК Аналитика,
+	ВЫРАЗИТЬ(ВТ_ЗначенияКлассификаторов.Ссылка КАК Справочник.CRM_ЗначенияКлассификаторов).Наименование КАК Показатель,
+	ВТ_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК Значение,
+	ВТ_ОбъектыЗначенийКлассификаторов.ДатаВключения КАК ДатаВключения,
+	ВТ_ОбъектыЗначенийКлассификаторов.Автор КАК Автор
+ИЗ
+	ВТ_ЗначенияКлассификаторов КАК ВТ_ЗначенияКлассификаторов
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОбъектыЗначенийКлассификаторов КАК ВТ_ОбъектыЗначенийКлассификаторов
+		ПО ВТ_ЗначенияКлассификаторов.Ссылка = ВТ_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ОбъектыЗначенийКлассификаторов.Объект,
+	ВТ_ОбъектыЗначенийКлассификаторов.Аналитика,
+	ВЫРАЗИТЬ(ВТ_Классификаторы.Ссылка КАК ПланВидовХарактеристик.CRM_Классификаторы).Наименование,
+	ВЫРАЗИТЬ(ВТ_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК Справочник.CRM_ЗначенияКлассификаторов).Наименование,
+	ВТ_ОбъектыЗначенийКлассификаторов.ДатаВключения,
+	NULL
+ИЗ
+	ВТ_Классификаторы КАК ВТ_Классификаторы
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОбъектыЗначенийКлассификаторов КАК ВТ_ОбъектыЗначенийКлассификаторов
+		ПО (ВТ_Классификаторы.Ссылка = ВЫРАЗИТЬ(ВТ_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК Справочник.CRM_ЗначенияКлассификаторов).Владелец)</query>
+	</dataSet>
+	<parameter>
+		<name>МассивКлассификаторов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Массив классификаторов</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.CRM_ЗначенияКлассификаторов</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Объекты</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Объекты</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВариантОпроса</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вариант опроса</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.вогВариантыОпросов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Объект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Показатель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Аналитика</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Значение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Автор</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

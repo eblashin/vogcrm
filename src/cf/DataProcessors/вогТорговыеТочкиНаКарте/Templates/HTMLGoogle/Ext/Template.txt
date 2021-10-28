@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Торговые точки ГК ВОГ</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+ 	      
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #legend {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #000;
+      }
+      #legend h3 {
+        margin-top: 0;
+      }
+      #legend img {
+        vertical-align: middle;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+    var map;
+    var	arrayMarker = [];
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var pos;
+   	
+    function initMap() {
+      var infoWindow = new google.maps.InfoWindow;
+      pos={lat:55.75315,lng:37.620523};
+      map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+	  center: pos
+        });
+      map.infowindow = new google.maps.InfoWindow();
+      
+    };//конец InitMap
+
+	function CreateLegend() {
+	 var legend = document.createElement('div')
+	 legend.id = "legend";
+	 legend.innerHTML = "<h3></h3>";
+      	var type = "Green";
+        var name = "Обои";
+        var icon = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+        var div = document.createElement('div');
+        div.innerHTML = '<img src=' + icon + '> ' + name;
+        legend.appendChild(div);
+        
+		var type = "Blue";
+        var name = "Плитка";
+        var icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+        var div = document.createElement('div');
+        div.innerHTML = '<img src=' + icon + '> ' + name;
+        legend.appendChild(div);
+        
+        var type = "Yellow";
+        var name = "Обои + Плитка";
+        var icon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+        var div = document.createElement('div');
+        div.innerHTML = '<img src=' + icon + '> ' + name;
+        legend.appendChild(div);
+        
+        var type = "Purple";
+        var name = "Не указано";
+        var icon = "http://maps.google.com/mapfiles/ms/icons/pink-dot.png";
+        var div = document.createElement('div');
+        div.innerHTML = '<img src=' + icon + '> ' + name;
+        legend.appendChild(div);
+        
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+	};
+	
+
+    function CreateMarker(params)
+    {
+    arrayMarker = [];
+    var MarkerData = JSON.parse(params);
+    var latlngbounds = new google.maps.LatLngBounds();
+    var infowindow = new google.maps.InfoWindow();
+    for(var i in MarkerData)
+        {
+        var Param = MarkerData[i];
+	var myLatLng = new google.maps.LatLng(Param.lat, Param.lng);
+	latlngbounds.extend(myLatLng);
+	var marker = new google.maps.Marker({
+          position: {lat: +Param.lat,lng: +Param.lng},
+          map: map,
+	  	  animation:google.maps.Animation.DROP,
+	  	  icon: Param.color,
+	  	  title: Param.title
+	  	  
+          });
+	   
+	google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(MarkerData[i].content);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+
+	arrayMarker.push(marker);
+	};
+	var markerCluster = new MarkerClusterer(map, arrayMarker,{gridSize: 10, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+	map.setCenter(latlngbounds.getCenter(), map.fitBounds(latlngbounds));
+};
+    </script>
+	<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>	
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6-WjxW-MOBe5vXyDoTIkamOtW6G2q-0Y">
+    </script>
+  </body>
+</html>

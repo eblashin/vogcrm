@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ТаблицаКлиентскаяБазаВыбрать" id="43">
+				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Item.ТаблицаКлиентскаяБаза.StandardCommand.Choose</CommandName>
+				<ExtendedTooltip name="ТаблицаКлиентскаяБазаВыбратьРасширеннаяПодсказка" id="44"/>
+			</Button>
+			<Button name="ТаблицаКлиентскаяБазаНайти1" id="53">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Item.ТаблицаКлиентскаяБаза.StandardCommand.Find</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Find</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ТаблицаКлиентскаяБазаНайти1РасширеннаяПодсказка" id="54"/>
+			</Button>
+			<Button name="ТаблицаКлиентскаяБазаОтменитьПоиск1" id="57">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Item.ТаблицаКлиентскаяБаза.StandardCommand.CancelSearch</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.CancelSearch</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ТаблицаКлиентскаяБазаОтменитьПоиск1РасширеннаяПодсказка" id="58"/>
+			</Button>
+			<Button name="ФормаНастроитьОтборПоКлассификаторам" id="14">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.НастроитьОтборПоКлассификаторам</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.FilterCriterion</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаНастроитьОтборПоКлассификаторамРасширеннаяПодсказка" id="15"/>
+			</Button>
+			<Button name="ФормаОтключитьОтбор" id="45">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.ОтключитьОтбор</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Close</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаОтключитьОтборРасширеннаяПодсказка" id="46"/>
+			</Button>
+			<Popup name="ГруппаКнопокСписка" id="37">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Варианты списка</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа кнопок списка</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ГруппаКнопокСпискаРасширеннаяПодсказка" id="38"/>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ТаблицаКлиентскаяБаза" id="1">
+			<Representation>List</Representation>
+			<ReadOnly>true</ReadOnly>
+			<ChoiceMode>true</ChoiceMode>
+			<MultipleChoice>true</MultipleChoice>
+			<SelectionMode>SingleRow</SelectionMode>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<SearchOnInput>Use</SearchOnInput>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТаблицаКлиентскаяБаза</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>CommandBar</SearchStringLocation>
+			<ViewStatusLocation>Top</ViewStatusLocation>
+			<SearchControlLocation>CommandBar</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаКлиентскаяБазаКонтекстноеМеню" id="2">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ТаблицаКлиентскаяБазаНайти" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ТаблицаКлиентскаяБаза.StandardCommand.Find</CommandName>
+						<ExtendedTooltip name="ТаблицаКлиентскаяБазаНайтиРасширеннаяПодсказка" id="48"/>
+					</Button>
+					<Button name="ТаблицаКлиентскаяБазаОтменитьПоиск" id="49">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ТаблицаКлиентскаяБаза.StandardCommand.CancelSearch</CommandName>
+						<ExtendedTooltip name="ТаблицаКлиентскаяБазаОтменитьПоискРасширеннаяПодсказка" id="50"/>
+					</Button>
+					<Button name="ТаблицаКлиентскаяБазаВыбрать1" id="51">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ТаблицаКлиентскаяБаза.StandardCommand.Choose</CommandName>
+						<ExtendedTooltip name="ТаблицаКлиентскаяБазаВыбрать1РасширеннаяПодсказка" id="52"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="ТаблицаКлиентскаяБазаКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаКлиентскаяБазаРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаКлиентскаяБазаСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаКлиентскаяБаза</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКлиентскаяБазаСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаКлиентскаяБазаСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаКлиентскаяБазаСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаКлиентскаяБаза</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКлиентскаяБазаСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаКлиентскаяБазаСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаКлиентскаяБазаУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаКлиентскаяБаза</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаКлиентскаяБазаУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаКлиентскаяБазаУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="ValueChoice">ТаблицаКлиентскаяБазаВыборЗначения</Event>
+				<Event name="Selection">ТаблицаКлиентскаяБазаВыбор</Event>
+			</Events>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаКлиентскаяБаза" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица клиентская база</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Компоновщик" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборСписокЗначенийКлассификаторов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор список значений классификаторов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборСписокЗначенийРеквизитовКлассификаторов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор список значений реквизитов классификаторов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛогическоеВыражениеОтбораКлассификаторов" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Логическое выражение отбора классификаторов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуетсяОтборПоКлассификатору" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется отбор по классификатору</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Классификатор" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Классификатор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийВариантСписка" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий вариант списка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяСписка" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя списка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнаяТаблица" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная таблица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборТаблицы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор таблицы</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="МножественныйВыбор" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Множественный выбор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НастроитьОтборПоКлассификаторам" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить отбор по классификаторам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить отбор по классификаторам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастроитьОтборПоКлассификаторам</Action>
+		</Command>
+		<Command name="ОтключитьОтбор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить отбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить отбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтключитьОтбор</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ВариантКлассификации">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="СтруктураЗначенийКлассификаторов">
+			<Type/>
+		</Parameter>
+		<Parameter name="Отбор">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>

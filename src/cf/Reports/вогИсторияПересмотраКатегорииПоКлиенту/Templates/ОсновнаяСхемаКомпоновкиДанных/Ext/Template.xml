@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Квартал</dataPath>
+			<field>Квартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Квартал</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ПредставлениеПериода(
+            НачалоПериода(Квартал,"Квартал"),
+            КонецПериода(Квартал,"Квартал"),
+            "ФП=Истина")</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Категория</dataPath>
+			<field>Категория</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<presentationExpression>Регистратор.Источник</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Стоимость</dataPath>
+			<field>Стоимость</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объем продаж, руб.</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НоменклатурнаяГруппа</dataPath>
+			<field>НоменклатурнаяГруппа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатурная группа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Бренд</dataPath>
+			<field>Бренд</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бренд</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТорговаяТочка</dataPath>
+			<field>ТорговаяТочка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Координатор</dataPath>
+			<field>Координатор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Координатор</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ДОБАВИТЬКДАТЕ(&amp;ДатаНачала, КВАРТАЛ, aa.a * 1000 + bb.b * 100 + cc.c * 10 + dd.d) КАК Квартал
+ПОМЕСТИТЬ Кварталы
+ИЗ
+	(ВЫБРАТЬ
+		0 КАК a
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		1
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		2
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		3
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		4
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		5
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		6
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		7
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		8
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		9) КАК aa
+		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			0 КАК b
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			1
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			2
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			3
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			4
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			5
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			6
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			7
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			8
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			9) КАК bb
+		ПО (ИСТИНА)
+		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			0 КАК c
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			1
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			2
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			3
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			4
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			5
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			6
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			7
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			8
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			9) КАК cc
+		ПО (ИСТИНА)
+		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			0 КАК d
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			1
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			2
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			3
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			4
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			5
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			6
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			7
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			8
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			9) КАК dd
+		ПО (ИСТИНА)
+ГДЕ
+	aa.a * 1000 + bb.b * 100 + cc.c * 10 + dd.d &lt;= РАЗНОСТЬДАТ(&amp;ДатаНАчала, &amp;ДатаОкончания, КВАРТАЛ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫРАЗИТЬ(вогМенеджерыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер КАК Клиент,
+	Кварталы.Квартал КАК Квартал
+ПОМЕСТИТЬ вт_Клиенты
+ИЗ
+	Кварталы КАК Кварталы
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогМенеджерыОбъектов КАК вогМенеджерыОбъектов
+		ПО (ИСТИНА)
+ГДЕ
+	вогМенеджерыОбъектов.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Плитка)
+	И НЕ ВЫРАЗИТЬ(вогМенеджерыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер ЕСТЬ NULL
+	И ВЫРАЗИТЬ(вогМенеджерыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Партнеры.)
+	И НЕ ВЫРАЗИТЬ(вогМенеджерыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер.ПометкаУдаления
+
+СГРУППИРОВАТЬ ПО
+	ВЫРАЗИТЬ(вогМенеджерыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер,
+	Кварталы.Квартал
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Кварталы.Квартал КАК Квартал,
+	ВЫРАЗИТЬ(CRM_ИсторияЗначенийКлассификаторовОбъектов.Объект КАК Справочник.Партнеры) КАК Клиент,
+	CRM_ИсторияЗначенийКлассификаторовОбъектов.ЗначениеКлассификатора КАК Категория
+ПОМЕСТИТЬ КатегорииКлиентовПоКварталам
+ИЗ
+	РегистрСведений.CRM_ИсторияЗначенийКлассификаторовОбъектов КАК CRM_ИсторияЗначенийКлассификаторовОбъектов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Кварталы КАК Кварталы
+		ПО (НАЧАЛОПЕРИОДА(CRM_ИсторияЗначенийКлассификаторовОбъектов.Период, КВАРТАЛ) = Кварталы.Квартал)
+			И (CRM_ИсторияЗначенийКлассификаторовОбъектов.ЗначениеКлассификатора.Владелец = &amp;КлассификаторКатегория)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_Клиенты.Клиент КАК Клиент,
+	вт_Клиенты.Квартал КАК Квартал,
+	ВЫБОР
+		КОГДА вт_Клиенты.Квартал = НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, КВАРТАЛ)
+			ТОГДА CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора
+		ИНАЧЕ КатегорииКлиентовПоКварталам.Категория
+	КОНЕЦ КАК Категория,
+	МАКСИМУМ(вогМенеджерыОбъектов.Менеджер) КАК Менеджер,
+	МАКСИМУМ(вогКоординаторыОбъектов.Менеджер) КАК Координатор
+ПОМЕСТИТЬ вт_КатегорииКлиентов
+ИЗ
+	вт_Клиенты КАК вт_Клиенты
+		ЛЕВОЕ СОЕДИНЕНИЕ КатегорииКлиентовПоКварталам КАК КатегорииКлиентовПоКварталам
+		ПО вт_Клиенты.Клиент = КатегорииКлиентовПоКварталам.Клиент
+			И вт_Клиенты.Квартал = КатегорииКлиентовПоКварталам.Квартал
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов
+		ПО (вт_Клиенты.Клиент = (ВЫРАЗИТЬ(CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Справочник.Партнеры)))
+			И (CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец = &amp;КлассификаторКатегория)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогМенеджерыОбъектов КАК вогМенеджерыОбъектов
+		ПО (вт_Клиенты.Клиент = ВЫРАЗИТЬ(вогМенеджерыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер)
+			И (вогМенеджерыОбъектов.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Плитка))
+			И (вогМенеджерыОбъектов.Роль = &amp;РольМенеджер)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогМенеджерыОбъектов КАК вогКоординаторыОбъектов
+		ПО (вт_Клиенты.Клиент = ВЫРАЗИТЬ(вогКоординаторыОбъектов.Владелец КАК Справочник.вогТорговыеТочки).Партнер)
+			И (вогКоординаторыОбъектов.Роль = &amp;РольКоординатор)
+			И (вогКоординаторыОбъектов.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Плитка))
+
+СГРУППИРОВАТЬ ПО
+	вт_Клиенты.Квартал,
+	вт_Клиенты.Клиент,
+	ВЫБОР
+		КОГДА вт_Клиенты.Квартал = НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, КВАРТАЛ)
+			ТОГДА CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора
+		ИНАЧЕ КатегорииКлиентовПоКварталам.Категория
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Кварталы.Квартал КАК Квартал,
+	вогПродажи.Регистратор КАК Регистратор,
+	вогПродажи.Партнер КАК Партнер,
+	вогПродажи.Стоимость КАК Стоимость,
+	вогПродажи.Номенклатура КАК Номенклатура,
+	ЕСТЬNULL(вогПродажи.Номенклатура.НоменклатурнаяПозиция.Дизайн.НоменклатурнаяГруппа, ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.)) КАК НоменклатурнаяГруппа,
+	ЕСТЬNULL(вогПродажи.Номенклатура.НоменклатурнаяПозиция.Дизайн.Бренд, ЗНАЧЕНИЕ(Справочник.вогБренды.)) КАК Бренд,
+	вогПродажи.Организация КАК Организация,
+	вогПродажи.Подразделение КАК Подразделение,
+	вогПродажи.ТорговаяТочка КАК ТорговаяТочка
+ПОМЕСТИТЬ ПродажиПоКварталам
+ИЗ
+	Кварталы КАК Кварталы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.вогПродажи КАК вогПродажи
+		ПО (Кварталы.Квартал = НАЧАЛОПЕРИОДА(вогПродажи.Период, КВАРТАЛ))
+			И (вогПродажи.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Плитка))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_КатегорииКлиентов.Квартал КАК Квартал,
+	ПродажиПоКварталам.Регистратор КАК Регистратор,
+	ЕСТЬNULL(ПродажиПоКварталам.Стоимость, 0) КАК Стоимость,
+	ПродажиПоКварталам.Номенклатура КАК Номенклатура,
+	ПродажиПоКварталам.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	ЕСТЬNULL(вт_КатегорииКлиентов.Категория, ЗНАЧЕНИЕ(Справочник.CRM_ЗначенияКлассификаторов.)) КАК Категория,
+	ПродажиПоКварталам.Бренд КАК Бренд,
+	ПродажиПоКварталам.Организация КАК Организация,
+	ПродажиПоКварталам.Подразделение КАК Подразделение,
+	ПродажиПоКварталам.ТорговаяТочка КАК ТорговаяТочка,
+	вт_КатегорииКлиентов.Клиент КАК Клиент,
+	вт_КатегорииКлиентов.Менеджер КАК Менеджер,
+	вт_КатегорииКлиентов.Координатор КАК Координатор
+ИЗ
+	вт_КатегорииКлиентов КАК вт_КатегорииКлиентов
+		ЛЕВОЕ СОЕДИНЕНИЕ ПродажиПоКварталам КАК ПродажиПоКварталам
+		ПО (ПродажиПоКварталам.Партнер = вт_КатегорииКлиентов.Клиент)
+			И (ПродажиПоКварталам.Квартал = вт_КатегорииКлиентов.Квартал)
+ГДЕ
+	НЕ вт_КатегорииКлиентов.Клиент.вогРозничный
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+			CRM_ДополнительныеРеквизитыКлассификаторов.ТипЗначения КАК ТипЗначения,
+			CRM_ЗначенияКлассификаторов.Наименование КАК Наименование,
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_Классификаторы.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.ОдиночноеЗначение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " (" + CRM_ЗначенияКлассификаторов.Наименование + ")" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.вогРаспределительныеЦентры, Справочник.вогЮридическиеЛица, Справочник.вогТорговыеТочки, Справочник.КонтактныеЛицаПартнеров, Справочник.Партнеры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " [" + CRM_ЗначенияКлассификаторов.Наименование + "]" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ЛЕВОЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение)
+			И CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка ЕСТЬ NULL)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			ИСТИНА КАК Значение,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора }</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Стоимость</dataPath>
+		<expression>Сумма(Стоимость)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Категория</dataPath>
+		<expression>Категория</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>КлассификаторКатегория</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Классификатор категория</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<parameter>
+		<name>РольМенеджер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Роль менеджер</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РолиКонтактныхЛицПартнеров</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>РольКоординатор</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Роль координатор</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.РолиКонтактныхЛицПартнеров</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ИсторияПересмотраКатегорииПоКлиенту</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>История пересмотра категории по клиенту (плитка)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Категория</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Стоимость</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Клиент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>af0de17a-7aa7-4f9d-9bb5-33b56d792487</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>89312d0c-8957-460f-a3cc-fa96c2c86b13</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Квартал</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>Quarter</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="dcscor:Field">ПараметрыДанных.ДатаНачала</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="dcscor:Field">ПараметрыДанных.ДатаОкончания</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Клиент</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

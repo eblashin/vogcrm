@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаЗагрузкаДокументов" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа загрузка документов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа загрузка документов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗагрузкаДокументовРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<InputField name="ПериодДокументов" id="63">
+					<DataPath>ПериодДокументов</DataPath>
+					<ContextMenu name="ПериодДокументовКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ПериодДокументовРасширеннаяПодсказка" id="65"/>
+				</InputField>
+				<Button name="ЗагрузитьДокументы" id="68">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ЗагрузитьДокументы</CommandName>
+					<ExtendedTooltip name="ЗагрузитьДокументыРасширеннаяПодсказка" id="69"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТаблицаДокументов" id="41">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТаблицаДокументов</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаДокументовКонтекстноеМеню" id="42"/>
+			<AutoCommandBar name="ТаблицаДокументовКоманднаяПанель" id="43"/>
+			<ExtendedTooltip name="ТаблицаДокументовРасширеннаяПодсказка" id="44"/>
+			<SearchStringAddition name="ТаблицаДокументовСтрокаПоиска" id="45">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовСтрокаПоискаКонтекстноеМеню" id="46"/>
+				<ExtendedTooltip name="ТаблицаДокументовСтрокаПоискаРасширеннаяПодсказка" id="47"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаДокументовСостояниеПросмотра" id="48">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовСостояниеПросмотраКонтекстноеМеню" id="49"/>
+				<ExtendedTooltip name="ТаблицаДокументовСостояниеПросмотраРасширеннаяПодсказка" id="50"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаДокументовУправлениеПоиском" id="51">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовУправлениеПоискомКонтекстноеМеню" id="52"/>
+				<ExtendedTooltip name="ТаблицаДокументовУправлениеПоискомРасширеннаяПодсказка" id="53"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ТаблицаДокументовВыбор" id="60">
+					<DataPath>ТаблицаДокументов.Выбор</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТаблицаДокументовВыборКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="ТаблицаДокументовВыборРасширеннаяПодсказка" id="62"/>
+					<Events>
+						<Event name="OnChange">ТаблицаДокументовВыборПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ТаблицаДокументовДокумент" id="54">
+					<DataPath>ТаблицаДокументов.Документ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаДокументовДокументКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ТаблицаДокументовДокументРасширеннаяПодсказка" id="56"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="ТаблицаСегментов" id="1">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТаблицаСегментов</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаСегментовКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаСегментовКоманднаяПанель" id="3">
+				<ChildItems>
+					<ButtonGroup name="ТаблицаСегментовГруппаКнопок" id="83">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Таблица сегментов группа кнопок</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Таблица сегментов группа кнопок</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ТаблицаСегментовГруппаКнопокРасширеннаяПодсказка" id="84"/>
+						<ChildItems>
+							<Button name="ТаблицаСегментовПометитьВсе" id="79">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПометитьВсе</CommandName>
+								<ExtendedTooltip name="ТаблицаСегментовПометитьВсеРасширеннаяПодсказка" id="80"/>
+							</Button>
+							<Button name="ТаблицаСегментовСнятьВсе" id="81">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьВсе</CommandName>
+								<ExtendedTooltip name="ТаблицаСегментовСнятьВсеРасширеннаяПодсказка" id="82"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаСегментовРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаСегментовСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаСегментов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСегментовСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаСегментовСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаСегментовСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаСегментов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСегментовСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаСегментовСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаСегментовУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаСегментов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаСегментовУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаСегментовУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ТаблицаСегментовВыбор" id="38">
+					<DataPath>ТаблицаСегментов.Выбор</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТаблицаСегментовВыборКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТаблицаСегментовВыборРасширеннаяПодсказка" id="40"/>
+				</CheckBoxField>
+				<InputField name="ТаблицаСегментовКлиент" id="14">
+					<DataPath>ТаблицаСегментов.Клиент</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаСегментовКлиентКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ТаблицаСегментовКлиентРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="ТаблицаСегментовСегментКлиента" id="17">
+					<DataPath>ТаблицаСегментов.СегментКлиента</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаСегментовСегментКлиентаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ТаблицаСегментовСегментКлиентаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<CommandBar name="ГруппаСозданиеАнкет" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа создание анкет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа создание анкет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalLocation>Right</HorizontalLocation>
+			<ExtendedTooltip name="ГруппаСозданиеАнкетРасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<Button name="СоздатьАнкеты" id="29">
+					<Type>CommandBarButton</Type>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.СоздатьАнкеты</CommandName>
+					<ExtendedTooltip name="СоздатьАнкетыРасширеннаяПодсказка" id="30"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<CheckBoxField name="УведомлятьПользователей" id="76">
+			<DataPath>УведомлятьПользователей</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<CheckBoxType>CheckBox</CheckBoxType>
+			<ContextMenu name="УведомлятьПользователейКонтекстноеМеню" id="77"/>
+			<ExtendedTooltip name="УведомлятьПользователейРасширеннаяПодсказка" id="78"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогПрисвоениеКредитногоЛимитаКлиенту</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаСегментов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица сегментов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Клиент" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СегментКлиента" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сегмент клиента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.CRM_ЗначенияКлассификаторов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Выбор" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторДокумента" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ФайлЗагрузки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл загрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагружатьИзExcel" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружать из Excel</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗадания" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилища" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаДокументов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторДокумента" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Выбор" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПериодДокументов" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаКлиентов" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица сегментов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Клиент" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СегментКлиента" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сегмент клиента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.CRM_ЗначенияКлассификаторов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторДокумента" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="УведомлятьПользователей" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомлять пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьАнкеты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать анкеты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать анкеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьАнкеты</Action>
+		</Command>
+		<Command name="ЗагрузитьДокументы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДокументы</Action>
+		</Command>
+		<Command name="ПометитьВсе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_УстановитьФлажки</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПометитьВсе</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СнятьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_СнятьФлажки</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьВсе</Action>
+		</Command>
+	</Commands>
+</Form>

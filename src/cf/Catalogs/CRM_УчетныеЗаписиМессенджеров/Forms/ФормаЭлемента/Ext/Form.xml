@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Учетная  запись</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="132">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="133"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаТипМессенджера" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа тип мессенджера</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа тип мессенджера</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТипМессенджераРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<InputField name="ТипМессенджера" id="35">
+							<DataPath>Объект.ТипМессенджера</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Мессенджер/соц-сеть</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ТипМессенджераКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ТипМессенджераРасширеннаяПодсказка" id="37"/>
+						</InputField>
+						<Button name="Вход" id="40">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.Вход</CommandName>
+							<ExtendedTooltip name="ВходРасширеннаяПодсказка" id="41"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПаблик" id="128">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа паблик</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа паблик</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПабликРасширеннаяПодсказка" id="129"/>
+					<ChildItems>
+						<InputField name="Группа" id="114">
+							<DataPath>Объект.IDГруппы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа/страница</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ГруппаКонтекстноеМеню" id="115"/>
+							<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="116"/>
+							<Events>
+								<Event name="OnChange">ГруппаПриИзменении</Event>
+								<Event name="StartListChoice">ГруппаНачалоВыбораИзСписка</Event>
+							</Events>
+						</InputField>
+						<Button name="ОбновитьТокенГруппы" id="130">
+							<Type>UsualButton</Type>
+							<Width>13</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.ОбновитьТокенГруппы</CommandName>
+							<ExtendedTooltip name="ОбновитьТокенГруппыРасширеннаяПодсказка" id="131"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Ответственный" id="45">
+			<DataPath>Объект.Ответственный</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник ответственный за обработку новых сообщений в АРМ Мои продажи</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="46"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="47"/>
+		</InputField>
+		<UsualGroup name="ГруппаЛиды" id="123">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа лиды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа лиды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЛидыРасширеннаяПодсказка" id="124"/>
+			<ChildItems>
+				<CheckBoxField name="CRM_ИсточникЛидов" id="120">
+					<DataPath>Объект.CRM_ИсточникЛидов</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="CRM_ИсточникЛидовКонтекстноеМеню" id="121"/>
+					<ExtendedTooltip name="CRM_ИсточникЛидовРасширеннаяПодсказка" id="122"/>
+					<Events>
+						<Event name="OnChange">CRM_ИсточникЛидовПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="CRM_УказыватьПричинуОтклонения" id="125">
+					<DataPath>Объект.CRM_УказыватьПричинуОтклонения</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="CRM_УказыватьПричинуОтклоненияКонтекстноеМеню" id="126"/>
+					<ExtendedTooltip name="CRM_УказыватьПричинуОтклоненияРасширеннаяПодсказка" id="127"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДатаНачальнойЗагрузки" id="117">
+			<DataPath>Объект.ДатаНачальнойЗагрузки</DataPath>
+			<ContextMenu name="ДатаНачальнойЗагрузкиКонтекстноеМеню" id="118"/>
+			<ExtendedTooltip name="ДатаНачальнойЗагрузкиРасширеннаяПодсказка" id="119"/>
+		</InputField>
+		<Pages name="ГруппаСтраницы" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="49"/>
+			<ChildItems>
+				<Page name="CRM_Пользователи" id="52">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Права доступа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>CRM пользователи</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="CRM_ПользователиРасширеннаяПодсказка" id="53"/>
+					<ChildItems>
+						<CheckBoxField name="CRM_РазрешитьПросмотрПисемВсемПользователям" id="54">
+							<DataPath>Объект.РазрешитьПросмотрСообщенийВсемПользователям</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>При установке данного флажка всем пользователям системы будет доступен просмотр сообщений данной учетной записи. 
+При этом будет доступен ТОЛЬКО просмотр, без возможности ответа.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="CRM_РазрешитьПросмотрПисемВсемПользователямКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="CRM_РазрешитьПросмотрПисемВсемПользователямРасширеннаяПодсказка" id="56"/>
+						</CheckBoxField>
+						<UsualGroup name="Группа1" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователи которым доступна учетная запись</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="58"/>
+							<ChildItems>
+								<Table name="CRM_СписокПользователей" id="59">
+									<Representation>List</Representation>
+									<Height>5</Height>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>CRM_СписокПользователей</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Список пользователей, которым разрешена работа с письмами данной учетной записи</v8:content>
+										</v8:item>
+									</ToolTip>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="CRM_СписокПользователейКонтекстноеМеню" id="60"/>
+									<AutoCommandBar name="CRM_СписокПользователейКоманднаяПанель" id="61">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<ButtonGroup name="СписокПользователейГруппаСписок" id="81">
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Группа список</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="СписокПользователейГруппаСписокExtendedTooltip" id="82"/>
+												<ChildItems>
+													<Button name="СписокПользователейКнопкаДобавить" id="83">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Item.CRM_СписокПользователей.StandardCommand.Add</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="СписокПользователейКнопкаДобавитьExtendedTooltip" id="84"/>
+													</Button>
+													<Button name="СписокПользователейКнопкаУдалить" id="85">
+														<Type>CommandBarButton</Type>
+														<Representation>Picture</Representation>
+														<CommandName>Form.Item.CRM_СписокПользователей.StandardCommand.Delete</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="СписокПользователейКнопкаУдалитьExtendedTooltip" id="86"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<ButtonGroup name="СписокПользователейГруппаСортировка" id="87">
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Группа сортировка</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="СписокПользователейГруппаСортировкаExtendedTooltip" id="88"/>
+												<ChildItems>
+													<Button name="СписокПользователейСортироватьСписокПоВозрастанию" id="89">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.CRM_СписокПользователей.StandardCommand.SortListAsc</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="СписокПользователейСортироватьСписокПоВозрастаниюExtendedTooltip" id="90"/>
+													</Button>
+													<Button name="СписокПользователейСортироватьСписокПоУбыванию" id="91">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.CRM_СписокПользователей.StandardCommand.SortListDesc</CommandName>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="СписокПользователейСортироватьСписокПоУбываниюExtendedTooltip" id="92"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Popup name="СписокПользователейГруппаЗаполнить" id="93">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Заполнить</v8:content>
+													</v8:item>
+												</Title>
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Заполнить список пользователей</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="СписокПользователейГруппаЗаполнитьExtendedTooltip" id="94"/>
+												<ChildItems>
+													<Button name="СписокПользователейЗаполнитьВсемиПользователями" id="95">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.CRM_ЗаполнитьВсемиПользователями</CommandName>
+														<ExtendedTooltip name="СписокПользователейЗаполнитьВсемиПользователямиExtendedTooltip" id="96"/>
+													</Button>
+													<Button name="СписокПользователейЗаполнитьПоГруппеПользователей" id="97">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.CRM_ЗаполнитьПоГруппеПользователей</CommandName>
+														<ExtendedTooltip name="СписокПользователейЗаполнитьПоГруппеПользователейExtendedTooltip" id="98"/>
+													</Button>
+													<ButtonGroup name="СписокПользователейГруппаОчистка" id="99">
+														<ToolTip>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Группа подбор</v8:content>
+															</v8:item>
+														</ToolTip>
+														<ExtendedTooltip name="СписокПользователейГруппаОчисткаExtendedTooltip" id="100"/>
+														<ChildItems>
+															<Button name="СписокПользователейОчиститьСписок" id="101">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.CRM_ОчиститьСписок</CommandName>
+																<ExtendedTooltip name="СписокПользователейОчиститьСписокExtendedTooltip" id="102"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+												</ChildItems>
+											</Popup>
+											<Button name="СписокПользователейПодбор" id="103">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.CRM_Подбор</CommandName>
+												<ExtendedTooltip name="СписокПользователейПодборExtendedTooltip" id="104"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="CRM_СписокПользователейРасширеннаяПодсказка" id="62"/>
+									<SearchStringAddition name="CRM_СписокПользователейСтрокаПоиска" id="63">
+										<AdditionSource>
+											<Item>CRM_СписокПользователей</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="CRM_СписокПользователейСтрокаПоискаКонтекстноеМеню" id="64"/>
+										<ExtendedTooltip name="CRM_СписокПользователейСтрокаПоискаРасширеннаяПодсказка" id="65"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="CRM_СписокПользователейСостояниеПросмотра" id="66">
+										<AdditionSource>
+											<Item>CRM_СписокПользователей</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="CRM_СписокПользователейСостояниеПросмотраКонтекстноеМеню" id="67"/>
+										<ExtendedTooltip name="CRM_СписокПользователейСостояниеПросмотраРасширеннаяПодсказка" id="68"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="CRM_СписокПользователейУправлениеПоиском" id="69">
+										<AdditionSource>
+											<Item>CRM_СписокПользователей</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="CRM_СписокПользователейУправлениеПоискомКонтекстноеМеню" id="70"/>
+										<ExtendedTooltip name="CRM_СписокПользователейУправлениеПоискомРасширеннаяПодсказка" id="71"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="BeforeAddRow">CRM_СписокПользователейПередНачаломДобавления</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="CRM_СписокПользователейПользователь" id="105">
+											<DataPath>CRM_СписокПользователей.Пользователь</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="CRM_СписокПользователейПользовательКонтекстноеМеню" id="106"/>
+											<ExtendedTooltip name="CRM_СписокПользователейПользовательРасширеннаяПодсказка" id="107"/>
+										</InputField>
+										<CheckBoxField name="CRM_СписокПользователейЗапись" id="108">
+											<DataPath>CRM_СписокПользователей.Запись</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отправка</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="CRM_СписокПользователейЗаписьКонтекстноеМеню" id="109"/>
+											<ExtendedTooltip name="CRM_СписокПользователейЗаписьРасширеннаяПодсказка" id="110"/>
+										</CheckBoxField>
+										<CheckBoxField name="CRM_СписокПользователейАдминистрирование" id="111">
+											<DataPath>CRM_СписокПользователей.Администрирование</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="CRM_СписокПользователейАдминистрированиеКонтекстноеМеню" id="112"/>
+											<ExtendedTooltip name="CRM_СписокПользователейАдминистрированиеРасширеннаяПодсказка" id="113"/>
+										</CheckBoxField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CRM_УчетныеЗаписиМессенджеров</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="CRM_СписокПользователей" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CRM список пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Пользователь" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Запись" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> Редактирование/Отправка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Администрирование" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Администрирование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="CRM_ТекущийПользователь" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CRM текущий пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Вход" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вход</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Вход</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CRM_ЗаполнитьВсемиПользователями" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всеми пользователями</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить всеми пользователями</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьВсемиПользователями</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CRM_ЗаполнитьПоГруппеПользователей" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По группе пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоГруппеПользователей</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CRM_ОчиститьСписок" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить список пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОчиститьСписок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="CRM_Подбор" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьТокенГруппы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить токен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить токен группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьТокенГруппы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

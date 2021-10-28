@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКодНаименование" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код наименование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код наименование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="39"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<CheckBoxField name="Использование" id="7">
+					<DataPath>Объект.Использование</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользованиеКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ИспользованиеРасширеннаяПодсказка" id="9"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСхемаКомпоновкиДанных" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схема компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схема компоновки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСхемаКомпоновкиДанныхРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<InputField name="СхемаКомпоновкиДанных" id="44">
+					<DataPath>Объект.СхемаКомпоновкиДанных</DataPath>
+					<DropListButton>true</DropListButton>
+					<ClearButton>true</ClearButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="СхемаКомпоновкиДанныхКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="СхемаКомпоновкиДанныхРасширеннаяПодсказка" id="46"/>
+					<Events>
+						<Event name="OnChange">СхемаКомпоновкиДанныхПриИзменении</Event>
+						<Event name="Clearing">СхемаКомпоновкиДанныхОчистка</Event>
+					</Events>
+				</InputField>
+				<Button name="РедактироватьСхемуКомпоновкиДанных" id="42">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.РедактироватьСхемуКомпоновкиДанных</CommandName>
+					<ShapeRepresentation>None</ShapeRepresentation>
+					<ExtendedTooltip name="РедактироватьСхемуКомпоновкиДанныхРасширеннаяПодсказка" id="43"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСпособыИнформирования" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способы информирования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способы информирования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСпособыИнформированияРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<CheckBoxField name="ИнофрмироватьПоЭлектроннойПочте" id="10">
+					<DataPath>Объект.ИнформироватьПоЭлектроннойПочте</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По эл. почте</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИнофрмироватьПоЭлектроннойПочтеКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ИнофрмироватьПоЭлектроннойПочтеРасширеннаяПодсказка" id="12"/>
+				</CheckBoxField>
+				<CheckBoxField name="ИнофрмироватьСПомощьюВзаимодействий" id="13">
+					<DataPath>Объект.ИнформироватьСПомощьюВзаимодействий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Взаимодействия</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИнофрмироватьСПомощьюВзаимодействийКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ИнофрмироватьСПомощьюВзаимодействийРасширеннаяПодсказка" id="15"/>
+				</CheckBoxField>
+				<CheckBoxField name="ИнформироватьСПомощьюПоручения" id="16">
+					<DataPath>Объект.ИнформироватьСПомощьюПоручения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поручения</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИнформироватьСПомощьюПорученияКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ИнформироватьСПомощьюПорученияРасширеннаяПодсказка" id="18"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Получатели" id="22">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Получатели</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПолучателиКонтекстноеМеню" id="23"/>
+			<AutoCommandBar name="ПолучателиКоманднаяПанель" id="24"/>
+			<ExtendedTooltip name="ПолучателиРасширеннаяПодсказка" id="25"/>
+			<SearchStringAddition name="ПолучателиСтрокаПоиска" id="26">
+				<AdditionSource>
+					<Item>Получатели</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПолучателиСтрокаПоискаКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ПолучателиСтрокаПоискаРасширеннаяПодсказка" id="28"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПолучателиСостояниеПросмотра" id="29">
+				<AdditionSource>
+					<Item>Получатели</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПолучателиСостояниеПросмотраКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="ПолучателиСостояниеПросмотраРасширеннаяПодсказка" id="31"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПолучателиУправлениеПоиском" id="32">
+				<AdditionSource>
+					<Item>Получатели</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПолучателиУправлениеПоискомКонтекстноеМеню" id="33"/>
+				<ExtendedTooltip name="ПолучателиУправлениеПоискомРасширеннаяПодсказка" id="34"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ПолучателиПолучатель" id="35">
+					<DataPath>Объект.Получатели.Получатель</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПолучателиПолучательКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ПолучателиПолучательРасширеннаяПодсказка" id="37"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Комментарий" id="19">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="21"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогНастройкиПроверкиЗаполненияРеквизитов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АдресНастроекКомпоновкиДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес настроек компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСхемыКомпоновкиДанных" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес схемы компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СоздатьНовыйМакет" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать новый макет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РедактироватьСхемуКомпоновкиДанных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать макет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать схему компоновки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionSettingsWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьСхемуКомпоновкиДанных</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

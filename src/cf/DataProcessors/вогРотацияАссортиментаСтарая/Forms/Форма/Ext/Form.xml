@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Записать" id="91">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="92"/>
+			</Button>
+			<Button name="ФормаСохранитьНастройку" id="124">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьНастройку</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьНастройкуРасширеннаяПодсказка" id="125"/>
+			</Button>
+			<Button name="ФормаЗаполнитьПоНастройке" id="126">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьПоНастройке</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьПоНастройкеРасширеннаяПодсказка" id="127"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="70">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="71"/>
+			<ChildItems>
+				<Table name="Стенды" id="5">
+					<Representation>List</Representation>
+					<TitleLocation>Top</TitleLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<Width>20</Width>
+					<MaxWidth>40</MaxWidth>
+					<HeightControlVariant>UseHeightInTableRows</HeightControlVariant>
+					<AutoMaxRowsCount>false</AutoMaxRowsCount>
+					<MaxRowsCount>4</MaxRowsCount>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<HorizontalStretch>false</HorizontalStretch>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Стенды</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СтендыКонтекстноеМеню" id="6"/>
+					<AutoCommandBar name="СтендыКоманднаяПанель" id="7">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СтендыРасширеннаяПодсказка" id="8"/>
+					<SearchStringAddition name="СтендыСтрокаПоиска" id="9">
+						<AdditionSource>
+							<Item>Стенды</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СтендыСтрокаПоискаКонтекстноеМеню" id="10"/>
+						<ExtendedTooltip name="СтендыСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СтендыСостояниеПросмотра" id="12">
+						<AdditionSource>
+							<Item>Стенды</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СтендыСостояниеПросмотраКонтекстноеМеню" id="13"/>
+						<ExtendedTooltip name="СтендыСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СтендыУправлениеПоиском" id="15">
+						<AdditionSource>
+							<Item>Стенды</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СтендыУправлениеПоискомКонтекстноеМеню" id="16"/>
+						<ExtendedTooltip name="СтендыУправлениеПоискомРасширеннаяПодсказка" id="17"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<CheckBoxField name="СтендыФлаг" id="67">
+							<DataPath>Стенды.Флаг</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СтендыФлагКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="СтендыФлагРасширеннаяПодсказка" id="69"/>
+							<Events>
+								<Event name="OnChange">СтендыФлагПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="СтендыНомерСтенда" id="95">
+							<DataPath>Стенды.НомерСтенда</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>1</Width>
+							<ContextMenu name="СтендыНомерСтендаКонтекстноеМеню" id="96"/>
+							<ExtendedTooltip name="СтендыНомерСтендаРасширеннаяПодсказка" id="97"/>
+						</InputField>
+						<InputField name="СтендыКоличествоМестНаСтенде" id="101">
+							<DataPath>Стенды.КоличествоМестНаСтенде</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>1</Width>
+							<ContextMenu name="СтендыКоличествоМестНаСтендеКонтекстноеМеню" id="102"/>
+							<ExtendedTooltip name="СтендыКоличествоМестНаСтендеРасширеннаяПодсказка" id="103"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<Table name="СтендыБуфер" id="72">
+					<Representation>List</Representation>
+					<TitleLocation>Top</TitleLocation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<Width>30</Width>
+					<HeightControlVariant>UseHeightInTableRows</HeightControlVariant>
+					<AutoMaxRowsCount>false</AutoMaxRowsCount>
+					<MaxRowsCount>4</MaxRowsCount>
+					<RowSelectionMode>Row</RowSelectionMode>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<HorizontalStretch>false</HorizontalStretch>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>СтендыБуфер</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СтендыБуферКонтекстноеМеню" id="73"/>
+					<AutoCommandBar name="СтендыБуферКоманднаяПанель" id="74">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СтендыБуферРасширеннаяПодсказка" id="75"/>
+					<SearchStringAddition name="СтендыБуферСтрокаПоиска" id="76">
+						<AdditionSource>
+							<Item>СтендыБуфер</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СтендыБуферСтрокаПоискаКонтекстноеМеню" id="77"/>
+						<ExtendedTooltip name="СтендыБуферСтрокаПоискаРасширеннаяПодсказка" id="78"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СтендыБуферСостояниеПросмотра" id="79">
+						<AdditionSource>
+							<Item>СтендыБуфер</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СтендыБуферСостояниеПросмотраКонтекстноеМеню" id="80"/>
+						<ExtendedTooltip name="СтендыБуферСостояниеПросмотраРасширеннаяПодсказка" id="81"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СтендыБуферУправлениеПоиском" id="82">
+						<AdditionSource>
+							<Item>СтендыБуфер</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СтендыБуферУправлениеПоискомКонтекстноеМеню" id="83"/>
+						<ExtendedTooltip name="СтендыБуферУправлениеПоискомРасширеннаяПодсказка" id="84"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Drag">СтендыБуферПеретаскивание</Event>
+						<Event name="DragEnd">СтендыБуферОкончаниеПеретаскивания</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="СтендыБуферАртикул" id="88">
+							<DataPath>СтендыБуфер.Артикул</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СтендыБуферАртикулКонтекстноеМеню" id="89"/>
+							<ExtendedTooltip name="СтендыБуферАртикулРасширеннаяПодсказка" id="90"/>
+						</InputField>
+						<InputField name="СтендыБуферСтенд" id="85">
+							<DataPath>СтендыБуфер.Стенд</DataPath>
+							<Visible>false</Visible>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СтендыБуферСтендКонтекстноеМеню" id="86"/>
+							<ExtendedTooltip name="СтендыБуферСтендРасширеннаяПодсказка" id="87"/>
+						</InputField>
+						<InputField name="СтендыБуферНомерСтенда" id="104">
+							<DataPath>СтендыБуфер.НомерСтенда</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СтендыБуферНомерСтендаКонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="СтендыБуферНомерСтендаРасширеннаяПодсказка" id="106"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<PictureField name="Корзина" id="121">
+					<DataPath>Корзина</DataPath>
+					<Height>6</Height>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Hyperlink>true</Hyperlink>
+					<EnableDrag>true</EnableDrag>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.вогКоллекцияКорзина</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<Border width="1">
+						<v8ui:style xsi:type="v8ui:ControlBorderType">WithoutBorder</v8ui:style>
+					</Border>
+					<ContextMenu name="КорзинаКонтекстноеМеню" id="122"/>
+					<ExtendedTooltip name="КорзинаРасширеннаяПодсказка" id="123"/>
+					<Events>
+						<Event name="DragCheck">КорзинаПроверкаПеретаскивания</Event>
+						<Event name="Drag">КорзинаПеретаскивание</Event>
+						<Event name="Click">КорзинаНажатие</Event>
+					</Events>
+				</PictureField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогРотацияАссортиментаСтарая</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.АртикулыНаСтендах"/>
+			</Columns>
+		</Attribute>
+		<Attribute name="Стенды" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стенды</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Стенд" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стенд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогСтенды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Флаг" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флаг</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерСтенда" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер стенда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипСтенда" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип стенда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогВидыСтендов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КоличествоМестНаСтенде" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Мест</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Порядок" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Порядок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтендыБуфер" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Буферная зона для перемещения артикула</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Стенд" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стенд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогСтенды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Артикул" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Артикул</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерСтенда" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер стенда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КоличествоТаблицСтендов" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество таблиц стендов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Корзина" id="6">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаАртикуловДляУдаления" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица артикулов для удаления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Стенд" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стенд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогСтенды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Артикул" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Артикул</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерСтенда" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер стенда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Записать</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СохранитьНастройку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить расстановку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьНастройку</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ЗаполнитьПоНастройке" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по настройке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по настройке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.RestoreValues</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаполнитьПоНастройке</Action>
+		</Command>
+	</Commands>
+</Form>

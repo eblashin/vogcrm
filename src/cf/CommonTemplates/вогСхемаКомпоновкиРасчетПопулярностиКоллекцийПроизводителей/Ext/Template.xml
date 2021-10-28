@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаправлениеДеятельности</dataPath>
+			<field>НаправлениеДеятельности</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НоменклатурнаяПозиция</dataPath>
+			<field>НоменклатурнаяПозиция</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮридическоеЛицо</dataPath>
+			<field>ЮридическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Бренд</dataPath>
+			<field>Бренд</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТорговаяТочка</dataPath>
+			<field>ТорговаяТочка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Производитель</dataPath>
+			<field>Производитель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоллекцияПроизводителя</dataPath>
+			<field>КоллекцияПроизводителя</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НоменклатурнаяГруппа</dataPath>
+			<field>НоменклатурнаяГруппа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОборот</dataPath>
+			<field>КоличествоОборот</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество оборот</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	СпрНоменклатура.Ссылка КАК Номенклатура,
+	НоменклатураКоллекции.КоллекцияПроизводителя КАК КоллекцияПроизводителя
+ПОМЕСТИТЬ ВТ_ОсновнойАссортимент
+ИЗ
+	Справочник.Номенклатура КАК СпрНоменклатура
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыНоменклатурныхПозицийОбоев.СрезПоследних(, СтадияЖизненногоЦикла = &amp;СтадияЖизненногоЦикла) КАК СтатусыНоменклатурныхПозицийОбоевСрезПоследних
+		ПО СпрНоменклатура.НоменклатурнаяПозиция = СтатусыНоменклатурныхПозицийОбоевСрезПоследних.НоменклатурнаяПозиция
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Номенклатура.Коллекции КАК НоменклатураКоллекции
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.КоллекцииНоменклатурыПроизводителей КАК КоллекцииНоменклатурыПроизводителей
+			ПО НоменклатураКоллекции.КоллекцияПроизводителя = КоллекцииНоменклатурыПроизводителей.Ссылка
+				И (КоллекцииНоменклатурыПроизводителей.ПометкаУдаления = ЛОЖЬ)
+		ПО СпрНоменклатура.Ссылка = НоменклатураКоллекции.Ссылка
+ГДЕ
+	СпрНоменклатура.ПометкаУдаления = ЛОЖЬ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	вогПродажиОбороты.Бренд КАК Бренд,
+	ВТ_ОсновнойАссортимент.КоллекцияПроизводителя КАК КоллекцияПроизводителя,
+	СУММА(вогПродажиОбороты.КоличествоОборот) КАК КоличествоОборот
+ПОМЕСТИТЬ ВТ_ПродажиОсновногоАссортимента
+ИЗ
+	ВТ_ОсновнойАссортимент КАК ВТ_ОсновнойАссортимент
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.вогПродажи.Обороты(&amp;НачалоПериода {(&amp;НачалоПериода)}, &amp;КонецПериода {(&amp;КонецПериода)}, Авто, ) КАК вогПродажиОбороты
+		ПО ВТ_ОсновнойАссортимент.Номенклатура = вогПродажиОбороты.Номенклатура
+
+СГРУППИРОВАТЬ ПО
+	вогПродажиОбороты.Бренд,
+	ВТ_ОсновнойАссортимент.КоллекцияПроизводителя
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(ВТ_ПродажиОсновногоАссортимента.Бренд, СвойстваКоллекцийПроизводителей.Бренд) КАК Бренд,
+	ЕСТЬNULL(ВТ_ПродажиОсновногоАссортимента.КоллекцияПроизводителя, СвойстваКоллекцийПроизводителей.КоллекцияПроизводителя) КАК КоллекцияПроизводителя,
+	ЕСТЬNULL(ВТ_ПродажиОсновногоАссортимента.КоличествоОборот, 0) КАК КоличествоОборот
+ИЗ
+	ВТ_ПродажиОсновногоАссортимента КАК ВТ_ПродажиОсновногоАссортимента
+		ПОЛНОЕ СОЕДИНЕНИЕ РегистрСведений.СвойстваКоллекцийПроизводителей.СрезПоследних(, Хит = ИСТИНА) КАК СвойстваКоллекцийПроизводителей
+		ПО ВТ_ПродажиОсновногоАссортимента.КоллекцияПроизводителя = СвойстваКоллекцийПроизводителей.КоллекцияПроизводителя</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Хит</dataPath>
+		<expression>ЛОЖЬ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Хит</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Хит</dataPath>
+		<expression>ВЫБОР
+	КОГДА ВычислитьВыражение("Сумма(КоличествоОборот)", "Бренд") &lt;&gt; 0
+		ТОГДА ((ВычислитьВыражение("Сумма(КоличествоОборот)", , , "Первая", "Текущая") - Сумма(КоличествоОборот)) / ВычислитьВыражение("Сумма(КоличествоОборот)", "Бренд") * 100) &lt;= 50
+	ИНАЧЕ ЛОЖЬ
+КОНЕЦ</expression>
+		<group>КоллекцияПроизводителя</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОборот</dataPath>
+		<expression>Сумма(КоличествоОборот)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СтадияЖизненногоЦикла</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стадия жизненного цикла</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.СтадииЖизненногоЦиклаОбои</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.СтадииЖизненногоЦиклаОбои.ОсновнойАссортимент</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Хит</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СтадияЖизненногоЦикла</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>КоличествоОборот</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Бренд</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>КоллекцияПроизводителя</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

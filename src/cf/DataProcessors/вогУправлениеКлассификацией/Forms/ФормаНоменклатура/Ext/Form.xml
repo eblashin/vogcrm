@@ -1,0 +1,1013 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Номенклатура</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CommandBar name="КомандыПанель" id="329">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="КомандыПанельРасширеннаяПодсказка" id="330"/>
+			<ChildItems>
+				<Button name="ФормаПлитка" id="182">
+					<Type>CommandBarButton</Type>
+					<Representation>Picture</Representation>
+					<Check>true</Check>
+					<CommandName>Form.Command.Плитка</CommandName>
+					<ExtendedTooltip name="ФормаПлиткаРасширеннаяПодсказка" id="183"/>
+				</Button>
+				<Button name="ФормаОбои" id="184">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.Обои</CommandName>
+					<ExtendedTooltip name="ФормаОбоиРасширеннаяПодсказка" id="185"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<Pages name="ГруппаСпискиНоменклатуры" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа списки номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа списки номенклатуры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСпискиНоменклатурыРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<Page name="Плитка" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плитка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плитка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПлиткаРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<Table name="СписокПлитка" id="186">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>СписокПлитка</DataPath>
+							<RowPictureDataPath>СписокПлитка.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="СписокПлиткаКонтекстноеМеню" id="187"/>
+							<AutoCommandBar name="СписокПлиткаКоманднаяПанель" id="188">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокПлиткаДокументвогМастерСозданияИРедактированияНоменклатурыСоздатьНоменклатуру" id="334">
+										<Type>CommandBarButton</Type>
+										<CommandName>Document.вогМастерСозданияИРедактированияНоменклатуры.Command.СоздатьНоменклатуру</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="СписокПлиткаДокументвогМастерСозданияИРедактированияНоменклатурыСоздатьНоменклатуруРасширеннаяПодсказка" id="335"/>
+									</Button>
+									<Button name="СписокПлиткаДокументвогМастерСозданияИРедактированияНоменклатурыОткрытьФормуСписка" id="336">
+										<Type>CommandBarButton</Type>
+										<CommandName>Document.вогМастерСозданияИРедактированияНоменклатуры.Command.ОткрытьФормуСписка</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.ListViewModeList</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="СписокПлиткаДокументвогМастерСозданияИРедактированияНоменклатурыОткрытьФормуСпискаРасширеннаяПодсказка" id="337"/>
+									</Button>
+									<Button name="СписокПлиткаНайти" id="280">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.Find</CommandName>
+										<RepresentationInContextMenu>AdditionalInContextMenu</RepresentationInContextMenu>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокПлиткаНайтиРасширеннаяПодсказка" id="281"/>
+									</Button>
+									<Button name="СписокПлиткаОтменитьПоиск" id="282">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.CancelSearch</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокПлиткаОтменитьПоискРасширеннаяПодсказка" id="283"/>
+									</Button>
+									<Button name="СписокПлиткаНастройкаСписка" id="284">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.ListSettings</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокПлиткаНастройкаСпискаРасширеннаяПодсказка" id="285"/>
+									</Button>
+									<Button name="СписокПлиткаПоказатьМножественноеВыделение" id="296">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.ShowMultipleSelection</CommandName>
+										<ExtendedTooltip name="СписокПлиткаПоказатьМножественноеВыделениеРасширеннаяПодсказка" id="297"/>
+									</Button>
+									<Button name="СписокПлиткаОбновить" id="294">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.Refresh</CommandName>
+										<ExtendedTooltip name="СписокПлиткаОбновитьРасширеннаяПодсказка" id="295"/>
+									</Button>
+									<Button name="СписокПлиткаВывестиСписок" id="292">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="СписокПлиткаВывестиСписокРасширеннаяПодсказка" id="293"/>
+									</Button>
+									<Button name="СписокПлиткаСтандартныеНастройкиДинамическогоСписка" id="290">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.DynamicListStandardSettings</CommandName>
+										<ExtendedTooltip name="СписокПлиткаСтандартныеНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="291"/>
+									</Button>
+									<Button name="СписокПлиткаИсторияИзменений" id="298">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокПлитка.StandardCommand.ChangeHistory</CommandName>
+										<ExtendedTooltip name="СписокПлиткаИсторияИзмененийРасширеннаяПодсказка" id="299"/>
+									</Button>
+									<Popup name="СписокПлиткаГруппаПодменю" id="346">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Список плитка группа подменю</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="СписокПлиткаГруппаПодменюРасширеннаяПодсказка" id="347"/>
+										<ChildItems>
+											<ButtonGroup name="СписокПлиткаГруппаВарианты" id="352">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Список плитка группа варианты</v8:content>
+													</v8:item>
+												</Title>
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Список плитка группа варианты</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="СписокПлиткаГруппаВариантыРасширеннаяПодсказка" id="353"/>
+											</ButtonGroup>
+											<Button name="СписокПлиткаКнопкаДобавить" id="348">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.СписокПлитка.StandardCommand.SaveDynamicListSettings</CommandName>
+												<Picture>
+													<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+												<ExtendedTooltip name="СписокПлиткаКнопкаДобавитьРасширеннаяПодсказка" id="349"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокПлиткаРасширеннаяПодсказка" id="189"/>
+							<SearchStringAddition name="СписокПлиткаСтрокаПоиска" id="190">
+								<AdditionSource>
+									<Item>СписокПлитка</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПлиткаСтрокаПоискаКонтекстноеМеню" id="191"/>
+								<ExtendedTooltip name="СписокПлиткаСтрокаПоискаРасширеннаяПодсказка" id="192"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокПлиткаСостояниеПросмотра" id="193">
+								<AdditionSource>
+									<Item>СписокПлитка</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПлиткаСостояниеПросмотраКонтекстноеМеню" id="194"/>
+								<ExtendedTooltip name="СписокПлиткаСостояниеПросмотраРасширеннаяПодсказка" id="195"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокПлиткаУправлениеПоиском" id="196">
+								<AdditionSource>
+									<Item>СписокПлитка</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПлиткаУправлениеПоискомКонтекстноеМеню" id="197"/>
+								<ExtendedTooltip name="СписокПлиткаУправлениеПоискомРасширеннаяПодсказка" id="198"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnLoadUserSettingsAtServer">СписокПлиткаПриЗагрузкеПользовательскихНастроекНаСервере</Event>
+								<Event name="OnSaveUserSettingsAtServer">СписокПлиткаПриСохраненииПользовательскихНастроекНаСервере</Event>
+								<Event name="OnUpdateUserSettingSetAtServer">СписокПлиткаПриОбновленииСоставаПользовательскихНастроекНаСервере</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СписокПлиткаНаименование" id="241">
+									<DataPath>СписокПлитка.Наименование</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Наименование</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокПлиткаНаименованиеКонтекстноеМеню" id="242"/>
+									<ExtendedTooltip name="СписокПлиткаНаименованиеРасширеннаяПодсказка" id="243"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаАртикул" id="202">
+									<DataPath>СписокПлитка.Артикул</DataPath>
+									<ContextMenu name="СписокПлиткаАртикулКонтекстноеМеню" id="203"/>
+									<ExtendedTooltip name="СписокПлиткаАртикулРасширеннаяПодсказка" id="204"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаЕдиницаИзмерения" id="354">
+									<DataPath>СписокПлитка.ЕдиницаИзмерения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Базовая ед.изм.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокПлиткаЕдиницаИзмеренияКонтекстноеМеню" id="355"/>
+									<ExtendedTooltip name="СписокПлиткаЕдиницаИзмеренияРасширеннаяПодсказка" id="356"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаНоменклатурнаяГруппа" id="326">
+									<DataPath>СписокПлитка.НоменклатурнаяГруппа</DataPath>
+									<ContextMenu name="СписокПлиткаНоменклатурнаяГруппаКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="СписокПлиткаНоменклатурнаяГруппаРасширеннаяПодсказка" id="328"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаБренд" id="357">
+									<DataPath>СписокПлитка.Бренд</DataPath>
+									<ContextMenu name="СписокПлиткаБрендКонтекстноеМеню" id="358"/>
+									<ExtendedTooltip name="СписокПлиткаБрендРасширеннаяПодсказка" id="359"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаДизайн" id="220">
+									<DataPath>СписокПлитка.Дизайн</DataPath>
+									<ContextMenu name="СписокПлиткаДизайнКонтекстноеМеню" id="221"/>
+									<ExtendedTooltip name="СписокПлиткаДизайнРасширеннаяПодсказка" id="222"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаКоллекция" id="360">
+									<DataPath>СписокПлитка.Коллекция</DataPath>
+									<ContextMenu name="СписокПлиткаКоллекцияКонтекстноеМеню" id="361"/>
+									<ExtendedTooltip name="СписокПлиткаКоллекцияРасширеннаяПодсказка" id="362"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаЕдиницаПродажи" id="363">
+									<DataPath>СписокПлитка.ЕдиницаПродажи</DataPath>
+									<ContextMenu name="СписокПлиткаЕдиницаПродажиКонтекстноеМеню" id="364"/>
+									<ExtendedTooltip name="СписокПлиткаЕдиницаПродажиРасширеннаяПодсказка" id="365"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаРейтинг" id="366">
+									<DataPath>СписокПлитка.Рейтинг</DataPath>
+									<ContextMenu name="СписокПлиткаРейтингКонтекстноеМеню" id="367"/>
+									<ExtendedTooltip name="СписокПлиткаРейтингРасширеннаяПодсказка" id="368"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаСтатус" id="369">
+									<DataPath>СписокПлитка.Статус</DataPath>
+									<ContextMenu name="СписокПлиткаСтатусКонтекстноеМеню" id="370"/>
+									<ExtendedTooltip name="СписокПлиткаСтатусРасширеннаяПодсказка" id="371"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаФормат" id="372">
+									<DataPath>СписокПлитка.Формат</DataPath>
+									<ContextMenu name="СписокПлиткаФорматКонтекстноеМеню" id="373"/>
+									<ExtendedTooltip name="СписокПлиткаФорматРасширеннаяПодсказка" id="374"/>
+								</LabelField>
+								<LabelField name="СписокПлиткавогПроизводитель" id="375">
+									<DataPath>СписокПлитка.вогПроизводитель</DataPath>
+									<ContextMenu name="СписокПлиткавогПроизводительКонтекстноеМеню" id="376"/>
+									<ExtendedTooltip name="СписокПлиткавогПроизводительРасширеннаяПодсказка" id="377"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаЗаводскойАртикул" id="226">
+									<DataPath>СписокПлитка.ЗаводскойАртикул</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заводской артикул</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокПлиткаЗаводскойАртикулКонтекстноеМеню" id="227"/>
+									<ExtendedTooltip name="СписокПлиткаЗаводскойАртикулРасширеннаяПодсказка" id="228"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаСорт" id="378">
+									<DataPath>СписокПлитка.Сорт</DataPath>
+									<ContextMenu name="СписокПлиткаСортКонтекстноеМеню" id="379"/>
+									<ExtendedTooltip name="СписокПлиткаСортРасширеннаяПодсказка" id="380"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаГодАнонса" id="381">
+									<DataPath>СписокПлитка.ГодАнонса</DataPath>
+									<ContextMenu name="СписокПлиткаГодАнонсаКонтекстноеМеню" id="382"/>
+									<ExtendedTooltip name="СписокПлиткаГодАнонсаРасширеннаяПодсказка" id="383"/>
+								</LabelField>
+								<LabelField name="СписокПлиткаСсылка" id="256">
+									<DataPath>СписокПлитка.Ссылка</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="СписокПлиткаСсылкаКонтекстноеМеню" id="257"/>
+									<ExtendedTooltip name="СписокПлиткаСсылкаРасширеннаяПодсказка" id="258"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Обои" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обои</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обои</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ОбоиРасширеннаяПодсказка" id="8"/>
+					<ChildItems>
+						<Table name="СписокОбои" id="91">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>СписокОбои</DataPath>
+							<RowPictureDataPath>СписокОбои.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="СписокОбоиКонтекстноеМеню" id="92"/>
+							<AutoCommandBar name="СписокОбоиКоманднаяПанель" id="93">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокОбоиДокументвогМастерСозданияИРедактированияНоменклатурыСоздатьНоменклатуру" id="340">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Document.вогМастерСозданияИРедактированияНоменклатуры.Command.СоздатьНоменклатуру</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="СписокОбоиДокументвогМастерСозданияИРедактированияНоменклатурыСоздатьНоменклатуруРасширеннаяПодсказка" id="341"/>
+									</Button>
+									<Button name="СписокОбоиДокументвогМастерСозданияИРедактированияНоменклатурыОткрытьФормуСписка" id="338">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Document.вогМастерСозданияИРедактированияНоменклатуры.Command.ОткрытьФормуСписка</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.ListViewModeList</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="СписокОбоиДокументвогМастерСозданияИРедактированияНоменклатурыОткрытьФормуСпискаРасширеннаяПодсказка" id="339"/>
+									</Button>
+									<Button name="СписокОбоиНайти" id="300">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.Find</CommandName>
+										<RepresentationInContextMenu>AdditionalInContextMenu</RepresentationInContextMenu>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиНайтиРасширеннаяПодсказка" id="301"/>
+									</Button>
+									<Button name="СписокОбоиОтменитьПоиск" id="302">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.CancelSearch</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиОтменитьПоискРасширеннаяПодсказка" id="303"/>
+									</Button>
+									<Button name="СписокОбоиНастройкаСписка" id="304">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.ListSettings</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиНастройкаСпискаРасширеннаяПодсказка" id="305"/>
+									</Button>
+									<Button name="СписокОбоиЗагрузитьНастройкиДинамическогоСписка" id="306">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.LoadDynamicListSettings</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиЗагрузитьНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="307"/>
+									</Button>
+									<Button name="СписокОбоиСохранитьНастройкиДинамическогоСписка" id="308">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.SaveDynamicListSettings</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиСохранитьНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="309"/>
+									</Button>
+									<Button name="СписокОбоиСтандартныеНастройкиДинамическогоСписка" id="310">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.DynamicListStandardSettings</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиСтандартныеНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="311"/>
+									</Button>
+									<Button name="СписокОбоиВывестиСписок" id="312">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="СписокОбоиВывестиСписокРасширеннаяПодсказка" id="313"/>
+									</Button>
+									<Button name="СписокОбоиОбновить" id="314">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.Refresh</CommandName>
+										<ExtendedTooltip name="СписокОбоиОбновитьРасширеннаяПодсказка" id="315"/>
+									</Button>
+									<Button name="СписокОбоиПоказатьМножественноеВыделение" id="316">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.ShowMultipleSelection</CommandName>
+										<ExtendedTooltip name="СписокОбоиПоказатьМножественноеВыделениеРасширеннаяПодсказка" id="317"/>
+									</Button>
+									<Button name="СписокОбоиИсторияИзменений" id="318">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокОбои.StandardCommand.ChangeHistory</CommandName>
+										<ExtendedTooltip name="СписокОбоиИсторияИзмененийРасширеннаяПодсказка" id="319"/>
+									</Button>
+									<Button name="СписокОбоиОбработкавогИзменениеСтадииЖизненногоЦиклаИзменитьСтадииЖизненногоЦикла" id="342">
+										<Type>CommandBarButton</Type>
+										<UserVisible>
+											<xr:Common>true</xr:Common>
+											<xr:Value name="Role.вогИзменениеЖизненногоЦиклаBSU">true</xr:Value>
+										</UserVisible>
+										<CommandName>DataProcessor.вогИзменениеСтадииЖизненногоЦикла.Command.ИзменитьСтадииЖизненногоЦикла</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиОбработкавогИзменениеСтадииЖизненногоЦиклаИзменитьСтадииЖизненногоЦиклаРасширеннаяПодсказка" id="343"/>
+									</Button>
+									<Button name="СписокОбоиИмпортНоменклатурыПалитра" id="384">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ИмпортНоменклатурыПалитра</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Импорт номенклатуры Палитры</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="СписокОбоиИмпортНоменклатурыПалитраРасширеннаяПодсказка" id="385"/>
+									</Button>
+									<Button name="СписокОбоиОбновлениеНоменклатурыПалитра" id="407">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновлениеНоменклатурыПалитра</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.ЛоготипПалитра</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Обновление номенклатуры Палитры</v8:content>
+											</v8:item>
+										</Title>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокОбоиОбновлениеНоменклатурыПалитраРасширеннаяПодсказка" id="408"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокОбоиРасширеннаяПодсказка" id="94"/>
+							<SearchStringAddition name="СписокОбоиСтрокаПоиска" id="95">
+								<AdditionSource>
+									<Item>СписокОбои</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокОбоиСтрокаПоискаКонтекстноеМеню" id="96"/>
+								<ExtendedTooltip name="СписокОбоиСтрокаПоискаРасширеннаяПодсказка" id="97"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокОбоиСостояниеПросмотра" id="98">
+								<AdditionSource>
+									<Item>СписокОбои</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокОбоиСостояниеПросмотраКонтекстноеМеню" id="99"/>
+								<ExtendedTooltip name="СписокОбоиСостояниеПросмотраРасширеннаяПодсказка" id="100"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокОбоиУправлениеПоиском" id="101">
+								<AdditionSource>
+									<Item>СписокОбои</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокОбоиУправлениеПоискомКонтекстноеМеню" id="102"/>
+								<ExtendedTooltip name="СписокОбоиУправлениеПоискомРасширеннаяПодсказка" id="103"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СписокОбоиАртикул" id="107">
+									<DataPath>СписокОбои.Артикул</DataPath>
+									<ContextMenu name="СписокОбоиАртикулКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="СписокОбоиАртикулРасширеннаяПодсказка" id="109"/>
+								</LabelField>
+								<LabelField name="СписокОбоиСсылка" id="158">
+									<DataPath>СписокОбои.Ссылка</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="СписокОбоиСсылкаКонтекстноеМеню" id="159"/>
+									<ExtendedTooltip name="СписокОбоиСсылкаРасширеннаяПодсказка" id="160"/>
+								</LabelField>
+								<CheckBoxField name="СписокОбоиПометкаУдаления" id="134">
+									<DataPath>СписокОбои.ПометкаУдаления</DataPath>
+									<Visible>false</Visible>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СписокОбоиПометкаУдаленияКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="СписокОбоиПометкаУдаленияРасширеннаяПодсказка" id="136"/>
+								</CheckBoxField>
+								<LabelField name="СписокОбоиБренд" id="386">
+									<DataPath>СписокОбои.Бренд</DataPath>
+									<ContextMenu name="СписокОбоиБрендКонтекстноеМеню" id="387"/>
+									<ExtendedTooltip name="СписокОбоиБрендРасширеннаяПодсказка" id="388"/>
+								</LabelField>
+								<LabelField name="СписокОбоиТипНоменклатуры" id="389">
+									<DataPath>СписокОбои.ТипНоменклатуры</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокОбоиТипНоменклатурыКонтекстноеМеню" id="390"/>
+									<ExtendedTooltip name="СписокОбоиТипНоменклатурыРасширеннаяПодсказка" id="391"/>
+								</LabelField>
+								<LabelField name="СписокОбоиКоллекции" id="395">
+									<DataPath>СписокОбои.Коллекции</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коллекция</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокОбоиКоллекцииКонтекстноеМеню" id="396"/>
+									<ExtendedTooltip name="СписокОбоиКоллекцииРасширеннаяПодсказка" id="397"/>
+								</LabelField>
+								<LabelField name="СписокОбоиСтильРисунка" id="392">
+									<DataPath>СписокОбои.СтильРисунка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стиль</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокОбоиСтильРисункаКонтекстноеМеню" id="393"/>
+									<ExtendedTooltip name="СписокОбоиСтильРисункаРасширеннаяПодсказка" id="394"/>
+								</LabelField>
+								<LabelField name="СписокОбоиСтадияЖизненногоЦикла" id="398">
+									<DataPath>СписокОбои.СтадияЖизненногоЦикла</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Жизненный цикл</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокОбоиСтадияЖизненногоЦиклаКонтекстноеМеню" id="399"/>
+									<ExtendedTooltip name="СписокОбоиСтадияЖизненногоЦиклаРасширеннаяПодсказка" id="400"/>
+								</LabelField>
+								<LabelField name="СписокОбоиСтатусПродажПоХолдингу" id="401">
+									<DataPath>СписокОбои.СтатусПродажПоХолдингу</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус по холдингу</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокОбоиСтатусПродажПоХолдингуКонтекстноеМеню" id="402"/>
+									<ExtendedTooltip name="СписокОбоиСтатусПродажПоХолдингуРасширеннаяПодсказка" id="403"/>
+								</LabelField>
+								<LabelField name="СписокОбоиСтатусПродажПоБренду" id="404">
+									<DataPath>СписокОбои.СтатусПродажПоБренду</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус по бренду</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокОбоиСтатусПродажПоБрендуКонтекстноеМеню" id="405"/>
+									<ExtendedTooltip name="СписокОбоиСтатусПродажПоБрендуРасширеннаяПодсказка" id="406"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогУправлениеКлассификацией</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокПлитка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список плитка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Edit>
+				<xr:Common>false</xr:Common>
+			</Edit>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Номенклатура.Ссылка КАК Ссылка,
+	Номенклатура.Родитель КАК Родитель,
+	Номенклатура.ЭтоГруппа КАК ЭтоГруппа,
+	Номенклатура.Код КАК Код,
+	Номенклатура.Артикул КАК Артикул,
+	Номенклатура.Наименование КАК Наименование,
+	Номенклатура.НаименованиеПолное КАК НаименованиеПолное,
+	Номенклатура.ЦветПроизводителя КАК ЦветПроизводителя,
+	Номенклатура.ЗаводскойАртикул КАК ЗаводскойАртикул,
+	Номенклатура.Комментарий КАК Комментарий,
+	ВЫБОР
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Базовая))
+			ТОГДА ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Базовая)
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Декорация))
+			ТОГДА ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Декорация)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ЕдиницаПродажи,
+	ВЫБОР
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Базовая))
+			ТОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВидыБазовойПлитки,
+	ВЫБОР
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Бордюр)
+				ИЛИ Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Мозаика)
+				ИЛИ Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Плинтус)
+				ИЛИ Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Спецэлемент)
+				ИЛИ Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.СтупеньДек)
+			ТОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Декор))
+			ТОГДА ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Декор)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВидыДекорации,
+	ВЫБОР
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Штучный)
+				ИЛИ Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Панно)
+			ТОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка.Родитель = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Комбинированный)
+			ТОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка.Родитель
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВидыДекора,
+	ВЫБОР
+		КОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка.Родитель = ЗНАЧЕНИЕ(Справочник.вогВидыПлитки.Комбинированный)
+			ТОГДА Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ВидыКомбинированногоДекора,
+	Номенклатура.НоменклатурнаяПозиция.РектификацияПлитка КАК Ректификация,
+	Номенклатура.НоменклатурнаяПозиция.ВидыПоверхностиПлитка КАК ВидыПоверхности,
+	Номенклатура.НоменклатурнаяПозиция.МатериалПлитка КАК Материал,
+	Номенклатура.НоменклатурнаяПозиция.Цвет КАК Цвет,
+	Номенклатура.НоменклатурнаяПозиция.ТипИспользования КАК ТипИспользования,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.ТипНоменклатуры КАК Назначение,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.ФорматПлитки КАК Формат,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.ЦеновойСегмент КАК ЦеновойСегмент,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.Сорт КАК Сорт,
+	Номенклатура.НоменклатурнаяПозиция КАК BSU,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн КАК Дизайн,
+	Номенклатура.вогПроизводитель КАК вогПроизводитель,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	Номенклатура.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.Бренд КАК Бренд,
+	Номенклатура.НоменклатурнаяПозиция.Дизайн.КоллекцияПлитки КАК Коллекция,
+	Номенклатура.Рейтинг КАК Рейтинг,
+	Номенклатура.Статус КАК Статус,
+	Номенклатура.НоменклатурнаяПозиция.ГодАнонса КАК ГодАнонса,
+	Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка КАК ЕдиницаПродажиПлитка,
+	Номенклатура.НоменклатурнаяПозиция.ЕдиницаПродажиПлитка.Родитель КАК ЕдиницаПродажиПлиткаРодитель
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+ГДЕ
+	Номенклатура.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Плитка)</QueryText>
+				<MainTable>Catalog.Номенклатура</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Назначение</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Дизайн</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>ТипИспользования</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:StructureItemGroup">
+									<dcsset:groupItems>
+										<dcsset:item xsi:type="dcsset:GroupItemField">
+											<dcsset:field>ЕдиницаПродажиПлиткаРодитель</dcsset:field>
+											<dcsset:groupType>Items</dcsset:groupType>
+											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+										</dcsset:item>
+									</dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:StructureItemGroup">
+										<dcsset:groupItems>
+											<dcsset:item xsi:type="dcsset:GroupItemField">
+												<dcsset:field>Материал</dcsset:field>
+												<dcsset:groupType>Items</dcsset:groupType>
+												<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+												<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+												<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+											</dcsset:item>
+										</dcsset:groupItems>
+										<dcsset:item xsi:type="dcsset:StructureItemGroup">
+											<dcsset:groupItems>
+												<dcsset:item xsi:type="dcsset:GroupItemField">
+													<dcsset:field>ЕдиницаПродажиПлитка</dcsset:field>
+													<dcsset:groupType>Items</dcsset:groupType>
+													<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+													<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+													<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+												</dcsset:item>
+											</dcsset:groupItems>
+											<dcsset:item xsi:type="dcsset:StructureItemGroup">
+												<dcsset:groupItems>
+													<dcsset:item xsi:type="dcsset:GroupItemField">
+														<dcsset:field>BSU</dcsset:field>
+														<dcsset:groupType>Items</dcsset:groupType>
+														<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+														<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+														<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+													</dcsset:item>
+												</dcsset:groupItems>
+											</dcsset:item>
+										</dcsset:item>
+									</dcsset:item>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СписокОбои" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список обои</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>СписокОбои.Дизайн</Field>
+				<Field>СписокОбои.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	НоменклатураСсылка.Ссылка КАК Ссылка,
+	НоменклатураСсылка.Родитель КАК Родитель,
+	НоменклатураСсылка.ПометкаУдаления КАК ПометкаУдаления,
+	НоменклатураСсылка.ЭтоГруппа КАК ЭтоГруппа,
+	НоменклатураСсылка.Код КАК Код,
+	НоменклатураСсылка.Наименование КАК Наименование,
+	НоменклатураСсылка.НоменклатурнаяПозиция КАК BSU,
+	НоменклатураСсылка.Артикул КАК Артикул,
+	НоменклатураСсылка.НаименованиеПолное КАК НаименованиеПолное,
+	НоменклатураСсылка.ДатаЗапуска КАК ДатаЗапуска,
+	НоменклатураСсылка.ДатаСнятия КАК ДатаСнятия,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Цвет КАК Цвет,
+	НоменклатураСсылка.вогПроизводитель КАК Производитель,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.ТипРисункаОбои КАК ТипРисунка,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.СтильРисункаОбои КАК СтильРисунка,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.ЭлементРисунка КАК ЭлементРисунка,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.РазмерРисункаОбои КАК РазмерРисунка,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.РазмерПолосыОбои КАК РазмерПолосы,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.СтруктураОбои КАК Структура,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.РасположениеСтруктурыОбои КАК РасположениеСтруктуры,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.ПоверхностьОбои КАК Поверхность,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.ДекорОбои КАК Декор,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.РаппортОбои КАК Раппорт,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.СдвигОбои КАК Сдвиг,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн КАК Дизайн,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.РазмерСтруктурыОбои КАК РазмерСтруктуры,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.НоменклатурнаяГруппа КАК НоменклатурнаяГруппа,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.Бренд КАК Бренд,
+	НоменклатураСсылка.НоменклатурнаяПозиция.Дизайн.ТипНоменклатуры.Код КАК ТипНоменклатуры,
+	КоллекцииНоменклатурыСписок.Коллекции КАК Коллекции,
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтадияЖизненногоЦикла КАК СтадияЖизненногоЦикла,
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтатусПродажПоХолдингу КАК СтатусПродажПоХолдингу,
+	СтатусыНоменклатурныхПозицийОбоевСрезПоследних.СтатусПродажПоБренду КАК СтатусПродажПоБренду
+ИЗ
+	Справочник.Номенклатура КАК НоменклатураСсылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КоллекцииНоменклатуры КАК КоллекцииНоменклатурыСписок
+		ПО НоменклатураСсылка.Ссылка = КоллекцииНоменклатурыСписок.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыНоменклатурныхПозицийОбоев.СрезПоследних КАК СтатусыНоменклатурныхПозицийОбоевСрезПоследних
+		ПО НоменклатураСсылка.НоменклатурнаяПозиция = СтатусыНоменклатурныхПозицийОбоевСрезПоследних.НоменклатурнаяПозиция
+ГДЕ
+	НоменклатураСсылка.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.Обои)
+	И НоменклатураСсылка.ПометкаУдаления = ЛОЖЬ
+	// +++ Кулаков П.Л. CRM-969
+	И (НоменклатураСсылка.ДатаСнятия &gt; ДАТАВРЕМЯ(2016, 1, 1, 0, 0, 0)
+			ИЛИ НоменклатураСсылка.ДатаСнятия = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))
+	// --- Кулаков П.Л.</QueryText>
+				<MainTable>Catalog.Номенклатура</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИдентификаторыКомандНастроек" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификаторы команд настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Команда" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команда</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Идентификатор" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Плитка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плитка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плитка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Плитка</Action>
+		</Command>
+		<Command name="Обои" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обои</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обои</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Обои</Action>
+		</Command>
+		<Command name="ИмпортНоменклатурыПалитра" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импорт номенклатуры палитра</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Импорт номенклатуры палитра</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЛоготипПалитра</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИмпортНоменклатурыПалитра</Action>
+		</Command>
+		<Command name="ОбновлениеНоменклатурыПалитра" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновление номенклатуры палитра</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновление номенклатуры палитра</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновлениеНоменклатурыПалитра</Action>
+		</Command>
+	</Commands>
+</Form>

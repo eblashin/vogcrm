@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<ShowTitle>false</ShowTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнитьТаблицу" id="17">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьТаблицу</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьТаблицуРасширеннаяПодсказка" id="18"/>
+			</Button>
+			<Button name="ФормаЗаписатьДанные" id="19">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаписатьДанные</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьДанныеРасширеннаяПодсказка" id="20"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтборы" id="21" DisplayImportance="Usual">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Collapsible</Behavior>
+			<CollapsedRepresentationTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть настройки</v8:content>
+				</v8:item>
+			</CollapsedRepresentationTitle>
+			<Collapsed>true</Collapsed>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="22"/>
+			<ChildItems>
+				<Table name="КомпоновщикНастройкиОтбор" id="4">
+					<Representation>Tree</Representation>
+					<Autofill>true</Autofill>
+					<Width>60</Width>
+					<HeightInTableRows>2</HeightInTableRows>
+					<AutoMaxRowsCount>false</AutoMaxRowsCount>
+					<MaxRowsCount>2</MaxRowsCount>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Компоновщик.Settings.Filter</DataPath>
+					<ViewMode>All</ViewMode>
+					<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+					<ContextMenu name="КомпоновщикНастройкиОтборКонтекстноеМеню" id="5"/>
+					<AutoCommandBar name="КомпоновщикНастройкиОтборКоманднаяПанель" id="6"/>
+					<ExtendedTooltip name="КомпоновщикНастройкиОтборРасширеннаяПодсказка" id="7"/>
+					<SearchStringAddition name="КомпоновщикНастройкиОтборСтрокаПоиска" id="8">
+						<AdditionSource>
+							<Item>КомпоновщикНастройкиОтбор</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="9"/>
+						<ExtendedTooltip name="КомпоновщикНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="КомпоновщикНастройкиОтборСостояниеПросмотра" id="11">
+						<AdditionSource>
+							<Item>КомпоновщикНастройкиОтбор</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="12"/>
+						<ExtendedTooltip name="КомпоновщикНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="КомпоновщикНастройкиОтборУправлениеПоиском" id="14">
+						<AdditionSource>
+							<Item>КомпоновщикНастройкиОтбор</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="15"/>
+						<ExtendedTooltip name="КомпоновщикНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+					</SearchControlAddition>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<SpreadSheetDocumentField name="ТабДок" id="1">
+			<DataPath>ТабДок</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<CommandSet>
+				<ExcludedCommand>BlackAndWhiteView</ExcludedCommand>
+				<ExcludedCommand>ClearAll</ExcludedCommand>
+				<ExcludedCommand>ClearContent</ExcludedCommand>
+				<ExcludedCommand>ColumnWidth</ExcludedCommand>
+				<ExcludedCommand>CombineToGroup</ExcludedCommand>
+				<ExcludedCommand>DeleteColumns</ExcludedCommand>
+				<ExcludedCommand>DeleteComment</ExcludedCommand>
+				<ExcludedCommand>DeleteRows</ExcludedCommand>
+				<ExcludedCommand>HeaderFooter</ExcludedCommand>
+				<ExcludedCommand>Hide</ExcludedCommand>
+				<ExcludedCommand>InsertColumnsLeft</ExcludedCommand>
+				<ExcludedCommand>InsertColumnsRight</ExcludedCommand>
+				<ExcludedCommand>InsertComment</ExcludedCommand>
+				<ExcludedCommand>InsertPageBreak</ExcludedCommand>
+				<ExcludedCommand>InsertRowsBottom</ExcludedCommand>
+				<ExcludedCommand>InsertRowsTop</ExcludedCommand>
+				<ExcludedCommand>Merge</ExcludedCommand>
+				<ExcludedCommand>Names</ExcludedCommand>
+				<ExcludedCommand>NextComment</ExcludedCommand>
+				<ExcludedCommand>PageViewMode</ExcludedCommand>
+				<ExcludedCommand>PreviousComment</ExcludedCommand>
+				<ExcludedCommand>Redo</ExcludedCommand>
+				<ExcludedCommand>RemoveFromGroup</ExcludedCommand>
+				<ExcludedCommand>RemoveName</ExcludedCommand>
+				<ExcludedCommand>RemovePageBreak</ExcludedCommand>
+				<ExcludedCommand>RemovePrintArea</ExcludedCommand>
+				<ExcludedCommand>RemoveRepeatOnEachPage</ExcludedCommand>
+				<ExcludedCommand>RepeatOnEachPage</ExcludedCommand>
+				<ExcludedCommand>RowHeight</ExcludedCommand>
+				<ExcludedCommand>SetName</ExcludedCommand>
+				<ExcludedCommand>SetPrintArea</ExcludedCommand>
+				<ExcludedCommand>Show</ExcludedCommand>
+				<ExcludedCommand>ShowCellNames</ExcludedCommand>
+				<ExcludedCommand>ShowComments</ExcludedCommand>
+				<ExcludedCommand>ShowGrid</ExcludedCommand>
+				<ExcludedCommand>ShowHeaders</ExcludedCommand>
+				<ExcludedCommand>ShowRowAndColumnNames</ExcludedCommand>
+				<ExcludedCommand>SplitCell</ExcludedCommand>
+				<ExcludedCommand>Undo</ExcludedCommand>
+			</CommandSet>
+			<ShowHeaders>true</ShowHeaders>
+			<Edit>true</Edit>
+			<EnableStartDrag>false</EnableStartDrag>
+			<EnableDrag>false</EnableDrag>
+			<ContextMenu name="ТабДокКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ТабДокРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ТабДокПриИзменении</Event>
+				<Event name="OnActivate">ТабДокПриАктивизации</Event>
+				<Event name="Selection">ТабДокВыбор</Event>
+				<Event name="DetailProcessing">ТабДокОбработкаРасшифровки</Event>
+				<Event name="OnChangeAreaContent">ТабДокПриИзмененииСодержимогоОбласти</Event>
+			</Events>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АРМ_ПланированиеПродаж</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТабДок" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб док</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Компоновщик" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСхемы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес схемы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресДанныхРасшифровки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес данных расшифровки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Данные" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="КомплектПанелей" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комплект панелей</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КомплектыПанелейДляПланирования</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КоличествоВОПотенциал" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество ВОПотенциал</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоВОПлан" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество ВОПлан</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПотенциал" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество потенциал</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПлан" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество план</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаВыставленияВОПотенциал" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата выставления ВОПотенциал</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаВыставленияВОПлан" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата выставления ВОПлан</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТорговаяТочка" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Торговая точка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогТорговыеТочки</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Бренд" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бренд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.вогБренды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АвторВРегистре" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор в регистре</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаИзмененияВРегистре" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата изменения в регистре</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>1000</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПотенциалПоправочное" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество потенциал поправочное</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПланПоправочное" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество план</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПоправочныйКоэффициентПотенциал" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поправочный коэффициент потенциал</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПоправочныйКоэффициентПлан" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поправочный коэффициент план</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЕстьИзменения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть изменения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ГодПланирования" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Год планирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоэффициентыПересчёта" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициенты пересчёта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Комплект" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комплект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КомплектыПанелейДляПланирования</v8:Type>
+					</Type>
+				</Column>
+				<Column name="К" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресСохраненныхРасшифровокЯчеек" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес сохраненных расшифровок ячеек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьТаблицу" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить таблицу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьТаблицу</Action>
+		</Command>
+		<Command name="ЗаписатьДанные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаписатьДанные</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

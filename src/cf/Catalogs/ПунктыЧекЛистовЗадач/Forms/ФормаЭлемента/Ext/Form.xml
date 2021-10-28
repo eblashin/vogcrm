@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="ГруппаТрудоемкостьНаправление" id="106">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа трудоемкость направление</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа трудоемкость направление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТрудоемкостьНаправлениеРасширеннаяПодсказка" id="107"/>
+			<ChildItems>
+				<InputField name="ПлановоеВремя" id="73">
+					<DataPath>Объект.ПлановоеВремя</DataPath>
+					<SpinButton>true</SpinButton>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ПлановоеВремяКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ПлановоеВремяРасширеннаяПодсказка" id="75"/>
+				</InputField>
+				<InputField name="НаправлениеДеятельности" id="79">
+					<DataPath>Объект.НаправлениеДеятельности</DataPath>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="НаправлениеДеятельностиКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="НаправлениеДеятельностиРасширеннаяПодсказка" id="81"/>
+					<Events>
+						<Event name="OnChange">НаправлениеДеятельностиПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПринадлежностьОбъекту" id="108">
+			<DataPath>Объект.ПринадлежностьОбъекту</DataPath>
+			<ChoiceButton>false</ChoiceButton>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="ПринадлежностьОбъектуКонтекстноеМеню" id="109"/>
+			<ExtendedTooltip name="ПринадлежностьОбъектуРасширеннаяПодсказка" id="110"/>
+			<Events>
+				<Event name="OnChange">ПринадлежностьОбъектуПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ОписаниеЗадачи" id="7">
+			<DataPath>Объект.ОписаниеЗадачи</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<VerticalStretch>true</VerticalStretch>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ОписаниеЗадачиКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ОписаниеЗадачиРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Pages name="ГруппаСтраницы" id="98">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="99"/>
+			<ChildItems>
+				<Page name="СтраницаПриложения" id="100">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приложения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница приложения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПриложенияРасширеннаяПодсказка" id="101"/>
+					<ChildItems>
+						<Table name="Приложения" id="10">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Приложения</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПриложенияКонтекстноеМеню" id="11"/>
+							<AutoCommandBar name="ПриложенияКоманднаяПанель" id="12"/>
+							<ExtendedTooltip name="ПриложенияРасширеннаяПодсказка" id="13"/>
+							<SearchStringAddition name="ПриложенияСтрокаПоиска" id="14">
+								<AdditionSource>
+									<Item>Приложения</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПриложенияСтрокаПоискаКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="ПриложенияСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПриложенияСостояниеПросмотра" id="17">
+								<AdditionSource>
+									<Item>Приложения</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПриложенияСостояниеПросмотраКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="ПриложенияСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПриложенияУправлениеПоиском" id="20">
+								<AdditionSource>
+									<Item>Приложения</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПриложенияУправлениеПоискомКонтекстноеМеню" id="21"/>
+								<ExtendedTooltip name="ПриложенияУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПриложенияВыбор</Event>
+								<Event name="BeforeAddRow">ПриложенияПередНачаломДобавления</Event>
+								<Event name="BeforeRowChange">ПриложенияПередНачаломИзменения</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПриложенияНомерСтроки" id="23">
+									<DataPath>Объект.Приложения.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПриложенияНомерСтрокиКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ПриложенияНомерСтрокиРасширеннаяПодсказка" id="25"/>
+								</LabelField>
+								<InputField name="ПриложенияТипПриложения" id="29">
+									<DataPath>Объект.Приложения.ТипПриложения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПриложенияТипПриложенияКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ПриложенияТипПриложенияРасширеннаяПодсказка" id="31"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНаборы" id="102">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница наборы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНаборыРасширеннаяПодсказка" id="103"/>
+					<ChildItems>
+						<Table name="СвязиНаборовТиповыхЗадач" id="82">
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>СписокСвязиНаборовТиповыхЗадач</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+							</CommandSet>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="СвязиНаборовТиповыхЗадачКонтекстноеМеню" id="83"/>
+							<AutoCommandBar name="СвязиНаборовТиповыхЗадачКоманднаяПанель" id="84">
+								<ChildItems>
+									<Button name="СвязиНаборовТиповыхЗадачДобавить" id="104">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Добавить</CommandName>
+										<ExtendedTooltip name="СвязиНаборовТиповыхЗадачДобавитьРасширеннаяПодсказка" id="105"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СвязиНаборовТиповыхЗадачРасширеннаяПодсказка" id="85"/>
+							<SearchStringAddition name="СвязиНаборовТиповыхЗадачСтрокаПоиска" id="86">
+								<AdditionSource>
+									<Item>СвязиНаборовТиповыхЗадач</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СвязиНаборовТиповыхЗадачСтрокаПоискаКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="СвязиНаборовТиповыхЗадачСтрокаПоискаРасширеннаяПодсказка" id="88"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СвязиНаборовТиповыхЗадачСостояниеПросмотра" id="89">
+								<AdditionSource>
+									<Item>СвязиНаборовТиповыхЗадач</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СвязиНаборовТиповыхЗадачСостояниеПросмотраКонтекстноеМеню" id="90"/>
+								<ExtendedTooltip name="СвязиНаборовТиповыхЗадачСостояниеПросмотраРасширеннаяПодсказка" id="91"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СвязиНаборовТиповыхЗадачУправлениеПоиском" id="92">
+								<AdditionSource>
+									<Item>СвязиНаборовТиповыхЗадач</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СвязиНаборовТиповыхЗадачУправлениеПоискомКонтекстноеМеню" id="93"/>
+								<ExtendedTooltip name="СвязиНаборовТиповыхЗадачУправлениеПоискомРасширеннаяПодсказка" id="94"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">СвязиНаборовТиповыхЗадачПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СвязиНаборовТиповыхЗадачНаборЗадач" id="95">
+									<DataPath>СписокСвязиНаборовТиповыхЗадач.НаборЗадач</DataPath>
+									<ContextMenu name="СвязиНаборовТиповыхЗадачНаборЗадачКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="СвязиНаборовТиповыхЗадачНаборЗадачРасширеннаяПодсказка" id="97"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПунктыЧекЛистовЗадач</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СписокСвязиНаборовТиповыхЗадач" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связи наборов и типовых задач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вогСвязиНаборовТиповыхЗадач.НаборЗадач КАК НаборЗадач,
+	вогСвязиНаборовТиповыхЗадач.ТиповаяЗадача КАК ТиповаяЗадача
+ИЗ
+	РегистрСведений.вогСвязиНаборовТиповыхЗадач КАК вогСвязиНаборовТиповыхЗадач
+ГДЕ
+	вогСвязиНаборовТиповыхЗадач.ТиповаяЗадача = &amp;ТиповаяЗадача</QueryText>
+				<MainTable>InformationRegister.вогСвязиНаборовТиповыхЗадач</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Добавить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьНаборЗадач</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.вогСвязиНаборовТиповыхЗадач.StandardCommand.OpenByValue.ТиповаяЗадача</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

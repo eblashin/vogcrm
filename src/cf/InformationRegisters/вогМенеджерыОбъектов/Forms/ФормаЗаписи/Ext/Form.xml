@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="16">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="18">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="19"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Период" id="1">
+			<Visible>false</Visible>
+			<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Владелец" id="4">
+			<DataPath>Запись.Владелец</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Менеджер" id="13">
+			<DataPath>Запись.Менеджер</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="МенеджерКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="OnChange">МенеджерПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Организация" id="10">
+			<DataPath>Запись.Подразделение</DataPath>
+			<Visible>false</Visible>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<UsualGroup name="ГруппаДполнительнаяИфнормация" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дполнительная ифнормация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дполнительная ифнормация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаДполнительнаяИфнормацияРасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<InputField name="Роль" id="7">
+					<DataPath>Запись.Роль</DataPath>
+					<ContextMenu name="РольКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="РольРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="МенеджерCRM_НаправлениеДеятельности" id="20">
+					<DataPath>Запись.НаправлениеДеятельности</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Направление</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="МенеджерCRM_НаправлениеДеятельностиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="МенеджерCRM_НаправлениеДеятельностиРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПериод" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период действия</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<InputField name="ДатаНачала" id="23">
+					<DataPath>Запись.ДатаНачала</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начало</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ДатаОкончания" id="26">
+					<DataPath>Запись.ДатаОкончания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Окончание</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="28"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="БрендМенеджер" id="33">
+			<DataPath>Запись.БрендМенеджер</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="БрендМенеджерКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="БрендМенеджерРасширеннаяПодсказка" id="35"/>
+		</CheckBoxField>
+		<CheckBoxField name="ЕстьБрендМенеджерВТТ" id="36">
+			<DataPath>Запись.ЕстьБрендМенеджерВТТ</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ЕстьБрендМенеджерВТТКонтекстноеМеню" id="37"/>
+			<ExtendedTooltip name="ЕстьБрендМенеджерВТТРасширеннаяПодсказка" id="38"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.вогМенеджерыОбъектов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОтключитьПроверку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить проверку</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

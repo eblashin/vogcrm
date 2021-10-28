@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Источник" id="7">
+			<DataPath>Объект.Источник</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ИсточникКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ИсточникРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="ИсточникСсылка" id="10">
+			<DataPath>Объект.ИсточникСсылка</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ИсточникСсылкаКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ИсточникСсылкаРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Комментарий" id="16">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<Pages name="Страницы" id="155">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="156"/>
+			<ChildItems>
+				<Page name="Страница_Продажи" id="157">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продажи</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница продажи</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="Страница_ПродажиРасширеннаяПодсказка" id="158"/>
+					<ChildItems>
+						<Table name="ДвижениявогПродажи" id="159">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.RegisterRecords.вогПродажи</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДвижениявогПродажиКонтекстноеМеню" id="160"/>
+							<AutoCommandBar name="ДвижениявогПродажиКоманднаяПанель" id="161"/>
+							<ExtendedTooltip name="ДвижениявогПродажиРасширеннаяПодсказка" id="162"/>
+							<SearchStringAddition name="ДвижениявогПродажиСтрокаПоиска" id="163">
+								<AdditionSource>
+									<Item>ДвижениявогПродажи</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвижениявогПродажиСтрокаПоискаКонтекстноеМеню" id="164"/>
+								<ExtendedTooltip name="ДвижениявогПродажиСтрокаПоискаРасширеннаяПодсказка" id="165"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДвижениявогПродажиСостояниеПросмотра" id="166">
+								<AdditionSource>
+									<Item>ДвижениявогПродажи</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвижениявогПродажиСостояниеПросмотраКонтекстноеМеню" id="167"/>
+								<ExtendedTooltip name="ДвижениявогПродажиСостояниеПросмотраРасширеннаяПодсказка" id="168"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДвижениявогПродажиУправлениеПоиском" id="169">
+								<AdditionSource>
+									<Item>ДвижениявогПродажи</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвижениявогПродажиУправлениеПоискомКонтекстноеМеню" id="170"/>
+								<ExtendedTooltip name="ДвижениявогПродажиУправлениеПоискомРасширеннаяПодсказка" id="171"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДвиженияCRM_ПродажиНомерСтроки" id="172">
+									<DataPath>Объект.RegisterRecords.вогПродажи.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиНомерСтрокиКонтекстноеМеню" id="173"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиНомерСтрокиРасширеннаяПодсказка" id="174"/>
+								</LabelField>
+								<InputField name="ДвиженияCRM_ПродажиПериод" id="175">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Period</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиПериодКонтекстноеМеню" id="176"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиПериодРасширеннаяПодсказка" id="177"/>
+								</InputField>
+								<InputField name="ДвижениявогПродажиСклад" id="211">
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогПродажиСкладКонтекстноеМеню" id="212"/>
+									<ExtendedTooltip name="ДвижениявогПродажиСкладРасширеннаяПодсказка" id="213"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиПодразделение" id="184">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Подразделение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиПодразделениеКонтекстноеМеню" id="185"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиПодразделениеРасширеннаяПодсказка" id="186"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиПартнер" id="187">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Партнер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиПартнерКонтекстноеМеню" id="188"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиПартнерРасширеннаяПодсказка" id="189"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиТорговаяТочка" id="190">
+									<DataPath>Объект.RegisterRecords.вогПродажи.ТорговаяТочка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиТорговаяТочкаКонтекстноеМеню" id="191"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиТорговаяТочкаРасширеннаяПодсказка" id="192"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиЮридическоеЛицо" id="193">
+									<DataPath>Объект.RegisterRecords.вогПродажи.ЮридическоеЛицо</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиЮридическоеЛицоКонтекстноеМеню" id="194"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиЮридическоеЛицоРасширеннаяПодсказка" id="195"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиНоменклатура" id="178">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиНоменклатураКонтекстноеМеню" id="179"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиНоменклатураРасширеннаяПодсказка" id="180"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиНаправлениеДеятельности" id="181">
+									<DataPath>Объект.RegisterRecords.вогПродажи.НаправлениеДеятельности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиНаправлениеДеятельностиКонтекстноеМеню" id="182"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиНаправлениеДеятельностиРасширеннаяПодсказка" id="183"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиКоличество" id="196">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиКоличествоКонтекстноеМеню" id="197"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиКоличествоРасширеннаяПодсказка" id="198"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиСтоимость" id="199">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Стоимость</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиСтоимостьКонтекстноеМеню" id="200"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиСтоимостьРасширеннаяПодсказка" id="201"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиСтоимостьБезСкидок" id="202">
+									<DataPath>Объект.RegisterRecords.вогПродажи.СтоимостьБезСкидок</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиСтоимостьБезСкидокКонтекстноеМеню" id="203"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиСтоимостьБезСкидокРасширеннаяПодсказка" id="204"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиНДС" id="205">
+									<DataPath>Объект.RegisterRecords.вогПродажи.НДС</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиНДСКонтекстноеМеню" id="206"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиНДСРасширеннаяПодсказка" id="207"/>
+								</InputField>
+								<InputField name="ДвиженияCRM_ПродажиРегистратор" id="208">
+									<DataPath>Объект.RegisterRecords.вогПродажи.Recorder</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияCRM_ПродажиРегистраторКонтекстноеМеню" id="209"/>
+									<ExtendedTooltip name="ДвиженияCRM_ПродажиРегистраторРасширеннаяПодсказка" id="210"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПродажиПоЭкспозиции" id="214">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продажи по экспозиции</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница продажи по экспозиции</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПродажиПоЭкспозицииРасширеннаяПодсказка" id="215"/>
+					<ChildItems>
+						<Table name="ДвиженияПродажиПоЭкспозиции" id="216">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДвиженияПродажиПоЭкспозицииКонтекстноеМеню" id="217"/>
+							<AutoCommandBar name="ДвиженияПродажиПоЭкспозицииКоманднаяПанель" id="218"/>
+							<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииРасширеннаяПодсказка" id="219"/>
+							<SearchStringAddition name="ДвиженияПродажиПоЭкспозицииСтрокаПоиска" id="220">
+								<AdditionSource>
+									<Item>ДвиженияПродажиПоЭкспозиции</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвиженияПродажиПоЭкспозицииСтрокаПоискаКонтекстноеМеню" id="221"/>
+								<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииСтрокаПоискаРасширеннаяПодсказка" id="222"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДвиженияПродажиПоЭкспозицииСостояниеПросмотра" id="223">
+								<AdditionSource>
+									<Item>ДвиженияПродажиПоЭкспозиции</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвиженияПродажиПоЭкспозицииСостояниеПросмотраКонтекстноеМеню" id="224"/>
+								<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииСостояниеПросмотраРасширеннаяПодсказка" id="225"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДвиженияПродажиПоЭкспозицииУправлениеПоиском" id="226">
+								<AdditionSource>
+									<Item>ДвиженияПродажиПоЭкспозиции</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвиженияПродажиПоЭкспозицииУправлениеПоискомКонтекстноеМеню" id="227"/>
+								<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииУправлениеПоискомРасширеннаяПодсказка" id="228"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДвиженияПродажиПоЭкспозицииНомерСтроки" id="229">
+									<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияПродажиПоЭкспозицииНомерСтрокиКонтекстноеМеню" id="230"/>
+									<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииНомерСтрокиРасширеннаяПодсказка" id="231"/>
+								</LabelField>
+								<InputField name="ДвиженияПродажиПоЭкспозицииПериод" id="232">
+									<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции.Period</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияПродажиПоЭкспозицииПериодКонтекстноеМеню" id="233"/>
+									<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииПериодРасширеннаяПодсказка" id="234"/>
+								</InputField>
+								<InputField name="ДвиженияПродажиПоЭкспозицииПодразделение" id="235">
+									<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции.Подразделение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияПродажиПоЭкспозицииПодразделениеКонтекстноеМеню" id="236"/>
+									<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииПодразделениеРасширеннаяПодсказка" id="237"/>
+								</InputField>
+								<InputField name="ДвиженияПродажиПоЭкспозицииТорговаяТочка" id="238">
+									<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции.ТорговаяТочка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияПродажиПоЭкспозицииТорговаяТочкаКонтекстноеМеню" id="239"/>
+									<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииТорговаяТочкаРасширеннаяПодсказка" id="240"/>
+								</InputField>
+								<InputField name="ДвиженияПродажиПоЭкспозицииПанель" id="241">
+									<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции.Панель</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияПродажиПоЭкспозицииПанельКонтекстноеМеню" id="242"/>
+									<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииПанельРасширеннаяПодсказка" id="243"/>
+								</InputField>
+								<InputField name="ДвиженияПродажиПоЭкспозицииКоличество" id="244">
+									<DataPath>Объект.RegisterRecords.ПродажиПоЭкспозиции.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвиженияПродажиПоЭкспозицииКоличествоКонтекстноеМеню" id="245"/>
+									<ExtendedTooltip name="ДвиженияПродажиПоЭкспозицииКоличествоРасширеннаяПодсказка" id="246"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Страница_ЗатратыНаРаспродажу" id="247">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Затраты на распродажу</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница затраты на распродажу</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="Страница_ЗатратыНаРаспродажуРасширеннаяПодсказка" id="248"/>
+					<ChildItems>
+						<Table name="ДвижениявогЗатратыНаРаспродажу" id="249">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДвижениявогЗатратыНаРаспродажуКонтекстноеМеню" id="250"/>
+							<AutoCommandBar name="ДвижениявогЗатратыНаРаспродажуКоманднаяПанель" id="251"/>
+							<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуРасширеннаяПодсказка" id="252"/>
+							<SearchStringAddition name="ДвижениявогЗатратыНаРаспродажуСтрокаПоиска" id="253">
+								<AdditionSource>
+									<Item>ДвижениявогЗатратыНаРаспродажу</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвижениявогЗатратыНаРаспродажуСтрокаПоискаКонтекстноеМеню" id="254"/>
+								<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуСтрокаПоискаРасширеннаяПодсказка" id="255"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДвижениявогЗатратыНаРаспродажуСостояниеПросмотра" id="256">
+								<AdditionSource>
+									<Item>ДвижениявогЗатратыНаРаспродажу</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвижениявогЗатратыНаРаспродажуСостояниеПросмотраКонтекстноеМеню" id="257"/>
+								<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуСостояниеПросмотраРасширеннаяПодсказка" id="258"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДвижениявогЗатратыНаРаспродажуУправлениеПоиском" id="259">
+								<AdditionSource>
+									<Item>ДвижениявогЗатратыНаРаспродажу</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДвижениявогЗатратыНаРаспродажуУправлениеПоискомКонтекстноеМеню" id="260"/>
+								<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуУправлениеПоискомРасширеннаяПодсказка" id="261"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДвижениявогЗатратыНаРаспродажуНомерСтроки" id="262">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуНомерСтрокиКонтекстноеМеню" id="263"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуНомерСтрокиРасширеннаяПодсказка" id="264"/>
+								</LabelField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуПериод" id="265">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Period</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуПериодКонтекстноеМеню" id="266"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуПериодРасширеннаяПодсказка" id="267"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуНоменклатура" id="268">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуНоменклатураКонтекстноеМеню" id="269"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуНоменклатураРасширеннаяПодсказка" id="270"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуНаправлениеДеятельности" id="271">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.НаправлениеДеятельности</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуНаправлениеДеятельностиКонтекстноеМеню" id="272"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуНаправлениеДеятельностиРасширеннаяПодсказка" id="273"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуПодразделение" id="274">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Подразделение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуПодразделениеКонтекстноеМеню" id="275"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуПодразделениеРасширеннаяПодсказка" id="276"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуПартнер" id="277">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Партнер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуПартнерКонтекстноеМеню" id="278"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуПартнерРасширеннаяПодсказка" id="279"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуТорговаяТочка" id="280">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.ТорговаяТочка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуТорговаяТочкаКонтекстноеМеню" id="281"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуТорговаяТочкаРасширеннаяПодсказка" id="282"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуОрганизация" id="283">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Организация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуОрганизацияКонтекстноеМеню" id="284"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуОрганизацияРасширеннаяПодсказка" id="285"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуКоличество" id="286">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуКоличествоКонтекстноеМеню" id="287"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуКоличествоРасширеннаяПодсказка" id="288"/>
+								</InputField>
+								<InputField name="ДвижениявогЗатратыНаРаспродажуСтоимость" id="289">
+									<DataPath>Объект.RegisterRecords.вогЗатратыНаРаспродажу.Стоимость</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДвижениявогЗатратыНаРаспродажуСтоимостьКонтекстноеМеню" id="290"/>
+									<ExtendedTooltip name="ДвижениявогЗатратыНаРаспродажуСтоимостьРасширеннаяПодсказка" id="291"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.вогДвиженияУС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>

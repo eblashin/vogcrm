@@ -1,0 +1,1217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Мастер установки показателей</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОтмена" id="186">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СохранитьИЗакрыть</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="187"/>
+			</Button>
+			<Button name="ФормаПересчитатьПотенциалы" id="192">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПересчитатьПотенциалы</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить и пересчитать потенциалы</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПересчитатьПотенциалыРасширеннаяПодсказка" id="193"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаФорма" id="3">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаФормаРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛеваяЧасть" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формула расчета потенциала</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаЛеваяЧастьРасширеннаяПодсказка" id="2"/>
+					<ChildItems>
+						<InputField name="Формула" id="7">
+							<DataPath>Формула</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ФормулаКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ФормулаРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<UsualGroup name="ГруппаЧислаИОператорыПоказатели" id="10">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЧислаИОператорыПоказателиРасширеннаяПодсказка" id="11"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЧислаИОператоры" id="12">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Числа и операторы</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаЧислаИОператорыРасширеннаяПодсказка" id="13"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаКалькуляторРяд1" id="18">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКалькуляторРяд1РасширеннаяПодсказка" id="19"/>
+											<ChildItems>
+												<Button name="КомандаКалькулятор_очистить" id="28">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаСтеретьНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="7" kind="StyleItem" scale="100"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>C</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_очиститьРасширеннаяПодсказка" id="29"/>
+												</Button>
+												<Button name="КомандаКалькулятор_скобкаОткрывается" id="30">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаОткрСкобкаНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>(</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_скобкаОткрываетсяРасширеннаяПодсказка" id="31"/>
+												</Button>
+												<Button name="КомандаКалькулятор_скобкаЗакрывается" id="32">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЗакрСкобкаНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>)</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_скобкаЗакрываетсяРасширеннаяПодсказка" id="33"/>
+												</Button>
+												<Button name="КомандаКалькулятор_плюс" id="34">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЗнакНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>+</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_плюсРасширеннаяПодсказка" id="35"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКалькуляторРяд2" id="20">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКалькуляторРяд2РасширеннаяПодсказка" id="21"/>
+											<ChildItems>
+												<Button name="КомандаКалькулятор_7" id="36">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>7</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_7РасширеннаяПодсказка" id="37"/>
+												</Button>
+												<Button name="КомандаКалькулятор_8" id="38">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>8</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_8РасширеннаяПодсказка" id="39"/>
+												</Button>
+												<Button name="КомандаКалькулятор_9" id="40">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>9</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_9РасширеннаяПодсказка" id="41"/>
+												</Button>
+												<Button name="КомандаКалькулятор_минус" id="42">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЗнакНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>-</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_минусРасширеннаяПодсказка" id="43"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКалькуляторРяд3" id="22">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКалькуляторРяд3РасширеннаяПодсказка" id="23"/>
+											<ChildItems>
+												<Button name="КомандаКалькулятор_4" id="44">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>4</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_4РасширеннаяПодсказка" id="45"/>
+												</Button>
+												<Button name="КомандаКалькулятор_5" id="46">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>5</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_5РасширеннаяПодсказка" id="47"/>
+												</Button>
+												<Button name="КомандаКалькулятор_6" id="48">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>6</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_6РасширеннаяПодсказка" id="49"/>
+												</Button>
+												<Button name="КомандаКалькулятор_умножить" id="50">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЗнакНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>*</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_умножитьРасширеннаяПодсказка" id="51"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКалькуляторРяд4" id="24">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКалькуляторРяд4РасширеннаяПодсказка" id="25"/>
+											<ChildItems>
+												<Button name="КомандаКалькулятор_1" id="52">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>1</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_1РасширеннаяПодсказка" id="53"/>
+												</Button>
+												<Button name="КомандаКалькулятор_2" id="54">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>2</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_2РасширеннаяПодсказка" id="55"/>
+												</Button>
+												<Button name="КомандаКалькулятор_3" id="56">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>3</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_3РасширеннаяПодсказка" id="57"/>
+												</Button>
+												<Button name="КомандаКалькулято_разделить" id="58">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЗнакНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>/</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулято_разделитьРасширеннаяПодсказка" id="59"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКалькуляторРяд5" id="26">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКалькуляторРяд5РасширеннаяПодсказка" id="27"/>
+											<ChildItems>
+												<Button name="КомандаКалькулятор_0" id="60">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЦифраНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>0</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_0РасширеннаяПодсказка" id="61"/>
+												</Button>
+												<Button name="КомандаКалькулятор_точка" id="62">
+													<Type>UsualButton</Type>
+													<Width>3</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаТочкаНажатие</CommandName>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>.</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_точкаРасширеннаяПодсказка" id="63"/>
+												</Button>
+												<Button name="КомандаКалькулятор_забой" id="64">
+													<Type>UsualButton</Type>
+													<Width>7</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.КнопкаЗабойНажатие</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;--</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="КомандаКалькулятор_забойРасширеннаяПодсказка" id="65"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПоказатели" id="14">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Показатели</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalStretch>false</VerticalStretch>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаПоказателиРасширеннаяПодсказка" id="15"/>
+									<ChildItems>
+										<Table name="ТаблицаПоказатели" id="66">
+											<Representation>List</Representation>
+											<CommandBarLocation>None</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<HeightInTableRows>5</HeightInTableRows>
+											<Header>false</Header>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ТаблицаПоказатели</DataPath>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ТаблицаПоказателиКонтекстноеМеню" id="67"/>
+											<AutoCommandBar name="ТаблицаПоказателиКоманднаяПанель" id="68"/>
+											<ExtendedTooltip name="ТаблицаПоказателиРасширеннаяПодсказка" id="69"/>
+											<SearchStringAddition name="ТаблицаПоказателиСтрокаПоиска" id="70">
+												<AdditionSource>
+													<Item>ТаблицаПоказатели</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТаблицаПоказателиСтрокаПоискаКонтекстноеМеню" id="73"/>
+												<ExtendedTooltip name="ТаблицаПоказателиСтрокаПоискаРасширеннаяПодсказка" id="74"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ТаблицаПоказателиСостояниеПросмотра" id="75">
+												<AdditionSource>
+													<Item>ТаблицаПоказатели</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТаблицаПоказателиСостояниеПросмотраКонтекстноеМеню" id="78"/>
+												<ExtendedTooltip name="ТаблицаПоказателиСостояниеПросмотраРасширеннаяПодсказка" id="79"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ТаблицаПоказателиУправлениеПоиском" id="80">
+												<AdditionSource>
+													<Item>ТаблицаПоказатели</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ТаблицаПоказателиУправлениеПоискомКонтекстноеМеню" id="83"/>
+												<ExtendedTooltip name="ТаблицаПоказателиУправлениеПоискомРасширеннаяПодсказка" id="84"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ТаблицаПоказателиВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ТаблицаПоказателиПоказательПредставление" id="85">
+													<DataPath>ТаблицаПоказатели.ПоказательПредставление</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТаблицаПоказателиПоказательПредставлениеКонтекстноеМеню" id="86"/>
+													<ExtendedTooltip name="ТаблицаПоказателиПоказательПредставлениеРасширеннаяПодсказка" id="87"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКлиенты" id="16">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список клиентов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаКлиентыРасширеннаяПодсказка" id="17"/>
+							<ChildItems>
+								<Table name="ТаблицаКлиенты" id="88">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ТаблицаКлиенты</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТаблицаКлиентыКонтекстноеМеню" id="89"/>
+									<AutoCommandBar name="ТаблицаКлиентыКоманднаяПанель" id="90">
+										<ChildItems>
+											<Button name="ТаблицаКлиентыРассчитатьПотенциалНовый" id="190">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.РассчитатьПотенциалНовый</CommandName>
+												<ExtendedTooltip name="ТаблицаКлиентыРассчитатьПотенциалНовыйРасширеннаяПодсказка" id="191"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ТаблицаКлиентыРасширеннаяПодсказка" id="91"/>
+									<SearchStringAddition name="ТаблицаКлиентыСтрокаПоиска" id="92">
+										<AdditionSource>
+											<Item>ТаблицаКлиенты</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаКлиентыСтрокаПоискаКонтекстноеМеню" id="95"/>
+										<ExtendedTooltip name="ТаблицаКлиентыСтрокаПоискаРасширеннаяПодсказка" id="96"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТаблицаКлиентыСостояниеПросмотра" id="97">
+										<AdditionSource>
+											<Item>ТаблицаКлиенты</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаКлиентыСостояниеПросмотраКонтекстноеМеню" id="100"/>
+										<ExtendedTooltip name="ТаблицаКлиентыСостояниеПросмотраРасширеннаяПодсказка" id="101"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТаблицаКлиентыУправлениеПоиском" id="102">
+										<AdditionSource>
+											<Item>ТаблицаКлиенты</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицаКлиентыУправлениеПоискомКонтекстноеМеню" id="105"/>
+										<ExtendedTooltip name="ТаблицаКлиентыУправлениеПоискомРасширеннаяПодсказка" id="106"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="BeforeAddRow">ТаблицаКлиентыПередНачаломДобавления</Event>
+										<Event name="ChoiceProcessing">ТаблицаКлиентыОбработкаВыбора</Event>
+									</Events>
+									<ChildItems>
+										<PictureField name="ТаблицаКлиентыЕстьДоступ" id="194">
+											<DataPath>ТаблицаКлиенты.ЕстьДоступ</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Д.</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доступ к клиенту</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ValuesPicture>
+												<xr:Ref>CommonPicture.CRM_ДоступККлиентам</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</ValuesPicture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="ТаблицаКлиентыЕстьДоступКонтекстноеМеню" id="195"/>
+											<ExtendedTooltip name="ТаблицаКлиентыЕстьДоступРасширеннаяПодсказка" id="196"/>
+										</PictureField>
+										<InputField name="ТаблицаКлиентыКлиент" id="107">
+											<DataPath>ТаблицаКлиенты.Клиент</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаКлиентыКлиентКонтекстноеМеню" id="108"/>
+											<ExtendedTooltip name="ТаблицаКлиентыКлиентРасширеннаяПодсказка" id="109"/>
+										</InputField>
+										<InputField name="ТаблицаКлиентыПотенциалТекущий" id="110">
+											<DataPath>ТаблицаКлиенты.ПотенциалТекущий</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаКлиентыПотенциалТекущийКонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="ТаблицаКлиентыПотенциалТекущийРасширеннаяПодсказка" id="112"/>
+										</InputField>
+										<InputField name="ТаблицаКлиентыПотенциалНовый" id="113">
+											<DataPath>ТаблицаКлиенты.ПотенциалНовый</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицаКлиентыПотенциалНовыйКонтекстноеМеню" id="114"/>
+											<ExtendedTooltip name="ТаблицаКлиентыПотенциалНовыйРасширеннаяПодсказка" id="115"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПраваяЧасть" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатели</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаПраваяЧастьРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<CommandBar name="ГруппаКоманднаяПанельДерева" id="188">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа командная панель дерева</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа командная панель дерева</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаКоманднаяПанельДереваРасширеннаяПодсказка" id="189"/>
+							<ChildItems>
+								<Button name="КомандаСвернуть" id="118">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаСвернуть</CommandName>
+									<ExtendedTooltip name="КомандаСвернутьРасширеннаяПодсказка" id="119"/>
+								</Button>
+								<Button name="КомандаФильтрПоФормуле" id="120">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаФильтрПоФормуле</CommandName>
+									<ExtendedTooltip name="КомандаФильтрПоФормулеРасширеннаяПодсказка" id="121"/>
+								</Button>
+								<Button name="КомандаСравнитьС" id="122">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаСравнитьС</CommandName>
+									<ExtendedTooltip name="КомандаСравнитьСРасширеннаяПодсказка" id="123"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<Table name="ДеревоПоказатели" id="124">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ДеревоПоказатели</DataPath>
+							<ContextMenu name="ДеревоПоказателиКонтекстноеМеню" id="125"/>
+							<AutoCommandBar name="ДеревоПоказателиКоманднаяПанель" id="126"/>
+							<ExtendedTooltip name="ДеревоПоказателиРасширеннаяПодсказка" id="127"/>
+							<SearchStringAddition name="ДеревоПоказателиСтрокаПоиска" id="128">
+								<AdditionSource>
+									<Item>ДеревоПоказатели</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоПоказателиСтрокаПоискаКонтекстноеМеню" id="131"/>
+								<ExtendedTooltip name="ДеревоПоказателиСтрокаПоискаРасширеннаяПодсказка" id="132"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоПоказателиСостояниеПросмотра" id="133">
+								<AdditionSource>
+									<Item>ДеревоПоказатели</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоПоказателиСостояниеПросмотраКонтекстноеМеню" id="136"/>
+								<ExtendedTooltip name="ДеревоПоказателиСостояниеПросмотраРасширеннаяПодсказка" id="137"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоПоказателиУправлениеПоиском" id="138">
+								<AdditionSource>
+									<Item>ДеревоПоказатели</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоПоказателиУправлениеПоискомКонтекстноеМеню" id="141"/>
+								<ExtendedTooltip name="ДеревоПоказателиУправлениеПоискомРасширеннаяПодсказка" id="142"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ДеревоПоказателиПоказатель" id="143">
+									<DataPath>ДеревоПоказатели.Показатель</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоПоказателиПоказательКонтекстноеМеню" id="144"/>
+									<ExtendedTooltip name="ДеревоПоказателиПоказательРасширеннаяПодсказка" id="145"/>
+								</InputField>
+								<InputField name="ДеревоПоказателиВес" id="146">
+									<DataPath>ДеревоПоказатели.Вес</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоПоказателиВесКонтекстноеМеню" id="147"/>
+									<ExtendedTooltip name="ДеревоПоказателиВесРасширеннаяПодсказка" id="148"/>
+									<Events>
+										<Event name="OnChange">ДеревоПоказателиВесПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ДеревоПоказателиВесСравнение" id="149">
+									<DataPath>ДеревоПоказатели.ВесСравнение</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоПоказателиВесСравнениеКонтекстноеМеню" id="150"/>
+									<ExtendedTooltip name="ДеревоПоказателиВесСравнениеРасширеннаяПодсказка" id="151"/>
+								</InputField>
+								<CheckBoxField name="ДеревоПоказателиУстановлено" id="152">
+									<DataPath>ДеревоПоказатели.Установлено</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоПоказателиУстановленоКонтекстноеМеню" id="153"/>
+									<ExtendedTooltip name="ДеревоПоказателиУстановленоРасширеннаяПодсказка" id="154"/>
+								</CheckBoxField>
+								<CheckBoxField name="ДеревоПоказателиУстановленоСравнение" id="155">
+									<DataPath>ДеревоПоказатели.УстановленоСравнение</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоПоказателиУстановленоСравнениеКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ДеревоПоказателиУстановленоСравнениеРасширеннаяПодсказка" id="157"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Формула" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формула расчета потенциала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаПоказатели" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПоказательПредставление" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Показатель" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаКлиенты" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиенты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Клиент" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПотенциалТекущий" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Потенциал (текущий)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПотенциалНовый" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Потенциал (новый)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьДоступ" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть доступ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеревоПоказатели" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показатели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Показатель" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.CRM_СегментыРынка</v8:Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>cfg:CatalogRef.CRM_СтатусыРаботыСКлиентом</v8:Type>
+						<v8:Type>cfg:CatalogRef.CRM_ВажностьКлиентов</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:CatalogRef.БизнесРегионы</v8:Type>
+						<v8:Type>cfg:CatalogRef.CRM_ЧисленностьСотрудниковКлиента</v8:Type>
+						<v8:Type>cfg:CatalogRef.CRM_Отрасли</v8:Type>
+						<v8:Type>cfg:CatalogRef.CRM_ЧисленностьРабочихМестКлиента</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вес" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВесСравнение" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес сравнение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Установлено" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Установлено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="УстановленоСравнение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Установлено сравнение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Подразделение" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуемыеПоказатели" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используемые показатели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимВыбора" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим выбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодразделениеСравнение" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение сравнение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормулаНачальная" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формула начальная</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоПоказателиВес</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоПоказатели.Установлено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоПоказателиВесСравнение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоПоказатели.УстановленоСравнение</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Blue</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаСвернуть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСвернуть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаФильтрПоФормуле" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр по формуле</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр по формуле</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаФильтрПоФормуле</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСравнитьС" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнить с...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнить с...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСравнитьС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаЦифраНажатие" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>0</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаЦифраНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаЗнакНажатие" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>+</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаЗнакНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаТочкаНажатие" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>.</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаТочкаНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаЗабойНажатие" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;--</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаЗабойНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаСтеретьНажатие" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>C</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаСтеретьНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаОткрСкобкаНажатие" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>(</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаОткрСкобкаНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнопкаЗакрСкобкаНажатие" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КнопкаЗакрСкобкаНажатие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Сохранить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Применить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СохранитьИЗакрыть" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РассчитатьПотенциалНовый" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать потенциал (новый)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать потенциал новый</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РассчитатьПотенциалНовый</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПересчитатьПотенциалы" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать потенциалы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать потенциалы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПересчитатьПотенциалы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Подразделение">
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

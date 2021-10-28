@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ГруппаГлобальныеКоманды" id="29">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа глобальные команды</v8:content>
+					</v8:item>
+				</ToolTip>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГруппаГлобальныеКомандыРасширеннаяПодсказка" id="30"/>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаExtendedTooltip" id="16"/>
+			<ChildItems>
+				<InputField name="Наименование" id="5">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Wrap>false</Wrap>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="20"/>
+				</InputField>
+				<InputField name="Код" id="26">
+					<DataPath>Объект.Code</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<TitleLocation>None</TitleLocation>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код: &lt;Авто&gt;</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="КодКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="28"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ДатаПериодичность" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата периодичность</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата периодичность</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ДатаПериодичностьExtendedTooltip" id="21"/>
+			<ChildItems>
+				<UsualGroup name="Период" id="15">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПериодExtendedTooltip" id="22"/>
+					<ChildItems>
+						<InputField name="ДатаНачала" id="7">
+							<DataPath>Объект.ДатаНачала</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Wrap>false</Wrap>
+							<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ДатаНачалаExtendedTooltip" id="23"/>
+							<Events>
+								<Event name="OnChange">ДатаНачалаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ДатаОкончания" id="10">
+							<DataPath>Объект.ДатаОкончания</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Wrap>false</Wrap>
+							<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ДатаОкончанияExtendedTooltip" id="24"/>
+							<Events>
+								<Event name="OnChange">ДатаОкончанияПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Периодичность" id="12">
+					<DataPath>Объект.Периодичность</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>35</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Wrap>false</Wrap>
+					<ContextMenu name="ПериодичностьКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ПериодичностьExtendedTooltip" id="25"/>
+					<Events>
+						<Event name="OnChange">ПериодичностьПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CRM_ПериодыПланирования</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СтруктураПериодичность" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура периодичность</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+</Form>

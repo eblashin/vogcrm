@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ГруппаЗапускБизнесПроцесса" id="80">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа запуск бизнес процесса</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа запуск бизнес процесса</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ГруппаЗапускБизнесПроцессаРасширеннаяПодсказка" id="81"/>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаExtendedTooltip" id="20"/>
+			<ChildItems>
+				<InputField name="Номер" id="21">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>10</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="НомерExtendedTooltip" id="23"/>
+				</InputField>
+				<InputField name="Дата" id="24">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ДатаExtendedTooltip" id="26"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ВариантОпроса" id="13">
+			<DataPath>Объект.ВариантОпроса</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВариантОпросаКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ВариантОпросаРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="OnChange">ВариантОпросаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Респондент" id="10">
+			<DataPath>Объект.Респондент</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Торговая точка</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="РеспондентКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="РеспондентРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">РеспондентПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Pages name="ГруппаСтраницы" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="38"/>
+			<ChildItems>
+				<Page name="ГруппаПроцессФормирования" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процесс формирования</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа процесс формирования</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<VerticalAlign>Center</VerticalAlign>
+					<ExtendedTooltip name="ГруппаПроцессФормированияРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПусто" id="57">
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДекорацияПустоКонтекстноеМеню" id="58"/>
+							<ExtendedTooltip name="ДекорацияПустоРасширеннаяПодсказка" id="59"/>
+						</LabelDecoration>
+						<PictureDecoration name="ДекорацияДлительнаяОперация" id="51">
+							<Width>7</Width>
+							<Height>3</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Длительная операция</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияДлительнаяОперацияКонтекстноеМеню" id="52"/>
+							<ExtendedTooltip name="ДекорацияДлительнаяОперацияExtendedTooltip" id="53"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПоясняющийТекстОперации" id="48">
+							<Height>3</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пожалуйста, подождите...
+Выполняется формирование данных опроса...</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Center</VerticalAlign>
+							<ContextMenu name="ДекорацияПоясняющийТекстОперацииКонтекстноеМеню" id="49"/>
+							<ExtendedTooltip name="ДекорацияПоясняющийТекстОперацииРасширеннаяПодсказка" id="50"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаНетДанных" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет данных</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа нет данных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<VerticalAlign>Center</VerticalAlign>
+					<ExtendedTooltip name="ГруппаНетДанныхРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияНетДанных" id="43">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
+							<TextColor>style:CRM_НедоступныеДанныеЦвет</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет данных по выбранному 
+варианту опроса</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<VerticalAlign>Center</VerticalAlign>
+							<ContextMenu name="ДекорацияНетДанныхКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="ДекорацияНетДанныхРасширеннаяПодсказка" id="45"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДанные" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа данные</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаДанныеРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
+						<Pages name="ГруппаНаборыОпроса" id="27">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наборы опроса</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа наборы опроса</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
+							<ExtendedTooltip name="ГруппаНаборыОпросаРасширеннаяПодсказка" id="28"/>
+							<ChildItems>
+								<Page name="НаборВопросы" id="33">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вопросы</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Набор вопросы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НаборВопросыРасширеннаяПодсказка" id="34"/>
+									<ChildItems>
+										<UsualGroup name="ОбластьВопросов" id="60">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Область вопросов</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Область вопросов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ОбластьВопросовРасширеннаяПодсказка" id="61"/>
+											<ChildItems>
+												<Pages name="ГруппаСтраницыВопросов" id="68">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страницы вопросов</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа страницы вопросов</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ExtendedTooltip name="ГруппаСтраницыВопросовРасширеннаяПодсказка" id="69"/>
+												</Pages>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКоманднаяПанель" id="70">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа командная панель</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа командная панель</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="71"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияИнформацияВопросов" id="72">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>true</HorizontalStretch>
+													<TextColor>style:CRM_ИнфНадпись</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вопрос %1 из %2</v8:content>
+														</v8:item>
+													</Title>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<ContextMenu name="ДекорацияИнформацияВопросовКонтекстноеМеню" id="73"/>
+													<ExtendedTooltip name="ДекорацияИнформацияВопросовРасширеннаяПодсказка" id="74"/>
+												</LabelDecoration>
+												<CommandBar name="КоманднаяПанельВопросов" id="62">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Командная панель вопросов</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Командная панель вопросов</v8:content>
+														</v8:item>
+													</ToolTip>
+													<HorizontalStretch>false</HorizontalStretch>
+													<HorizontalLocation>Right</HorizontalLocation>
+													<ExtendedTooltip name="КоманднаяПанельВопросовРасширеннаяПодсказка" id="63"/>
+													<ChildItems>
+														<Button name="ПредыдущийВопрос" id="64">
+															<Type>CommandBarButton</Type>
+															<CommandName>Form.Command.ПредыдущийВопрос</CommandName>
+															<ExtendedTooltip name="ПредыдущийВопросРасширеннаяПодсказка" id="65"/>
+														</Button>
+														<Button name="СледующийВопрос" id="66">
+															<Type>CommandBarButton</Type>
+															<CommandName>Form.Command.СледующийВопрос</CommandName>
+															<ExtendedTooltip name="СледующийВопросРасширеннаяПодсказка" id="67"/>
+														</Button>
+													</ChildItems>
+												</CommandBar>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+								<Page name="НаборКлассификаторы" id="29">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Классификаторы</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Набор классификаторы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НаборКлассификаторыРасширеннаяПодсказка" id="30"/>
+									<ChildItems>
+										<UsualGroup name="CRM_Классификаторы" id="35">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Классификация</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Классификаторы</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="CRM_КлассификаторыРасширеннаяПодсказка" id="36"/>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+								<Page name="НаборДополнительныеРеквизиты" id="31">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доп.реквизиты</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Набор дополнительные реквизиты</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="НаборДополнительныеРеквизитыРасширеннаяПодсказка" id="32"/>
+								</Page>
+								<Page name="ГруппаКомментарий" id="75">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комментарий</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа комментарий</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГруппаКомментарийРасширеннаяПодсказка" id="76"/>
+									<ChildItems>
+										<InputField name="Комментарий" id="77">
+											<DataPath>Объект.Комментарий</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<ContextMenu name="КомментарийКонтекстноеМеню" id="78"/>
+											<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="79"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="Автор" id="16">
+			<DataPath>Объект.Автор</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>36</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<DropListButton>false</DropListButton>
+			<ChoiceButton>false</ChoiceButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<ClearButton>false</ClearButton>
+			<SpinButton>false</SpinButton>
+			<OpenButton>true</OpenButton>
+			<CreateButton>false</CreateButton>
+			<ChooseType>false</ChooseType>
+			<ContextMenu name="АвторКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="18"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.вогАнкета</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="РеквизитыВариантаОпроса" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты варианта опроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="АдресХранилища" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗадания" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаОписания" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица описания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяЭлемента" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя элемента</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПутьКДанным" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к данным</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяКоманды" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя команды</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ссылка" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="Ключ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СхемаДанныхВопросов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Схема данных вопросов</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПредыдущийВопрос" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предыдущий вопрос</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПредыдущийВопрос</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СледующийВопрос" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вперед&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующий вопрос</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СледующийВопрос</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

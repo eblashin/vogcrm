@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Респондент</dataPath>
+			<field>Респондент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Анкета</dataPath>
+			<field>Анкета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Выбран</dataPath>
+			<field>Выбран</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=X; БИ=V</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеКлассификатора</dataPath>
+			<field>ЗначениеКлассификатора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение классификатора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаправлениеДеятельности</dataPath>
+			<field>НаправлениеДеятельности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Направление деятельности</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА CRM_ЗначенияКлассификаторов.Владелец.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+			ТОГДА CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит
+		ИНАЧЕ CRM_ЗначенияКлассификаторов.Ссылка
+	КОНЕЦ КАК Ссылка,
+	CRM_ЗначенияКлассификаторов.Владелец.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_классификаторы
+ИЗ
+	Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+ГДЕ
+	CRM_ЗначенияКлассификаторов.ПометкаУдаления = ЛОЖЬ
+	И CRM_ЗначенияКлассификаторов.Владелец = &amp;Владелец
+	И (CRM_ЗначенияКлассификаторов.НаправлениеДеятельности = &amp;НаправлениеДеятельности
+			ИЛИ CRM_ЗначенияКлассификаторов.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.ПустаяСсылка))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_Классификаторы.Ссылка КАК Ссылка,
+	CRM_Классификаторы.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_Владельцы
+ИЗ
+	ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+ГДЕ
+	CRM_Классификаторы.Ссылка = &amp;Владелец
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА CRM_ЗначенияКлассификаторов.Владелец.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+			ТОГДА CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит
+		ИНАЧЕ CRM_ЗначенияКлассификаторов.Ссылка
+	КОНЕЦ КАК Ссылка,
+	ВТ_Владельцы.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_ЗначенияКлассификаторов
+ИЗ
+	Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Владельцы КАК ВТ_Владельцы
+		ПО CRM_ЗначенияКлассификаторов.Владелец = ВТ_Владельцы.Ссылка
+			И (CRM_ЗначенияКлассификаторов.НаправлениеДеятельности = &amp;НаправлениеДеятельности
+				ИЛИ CRM_ЗначенияКлассификаторов.НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.ПустаяСсылка))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА ВТ_ЗначенияКлассификаторов.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+			ТОГДА вогРезультатыОпросов.ЗначениеКлассификатора.ДополнительныйРеквизит
+		ИНАЧЕ вогРезультатыОпросов.ЗначениеКлассификатора
+	КОНЕЦ КАК ЗначениеКлассификатора,
+	вогРезультатыОпросов.Объект КАК Респондент,
+	вогРезультатыОпросов.Период КАК Дата,
+	вогРезультатыОпросов.ОбъектРегистратор КАК Анкета,
+	вогРезультатыОпросов.Аналитика КАК НаправлениеДеятельности,
+	вогРезультатыОпросов.ЗначениеРеквизита КАК ЗначениеРеквизита,
+	ВТ_ЗначенияКлассификаторов.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_РезультатыОпросов
+ИЗ
+	РегистрСведений.CRM_ИсторияЗначенийКлассификаторовОбъектов КАК вогРезультатыОпросов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ЗначенияКлассификаторов КАК ВТ_ЗначенияКлассификаторов
+		ПО (ВЫБОР
+				КОГДА ВТ_ЗначенияКлассификаторов.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+					ТОГДА ВТ_ЗначенияКлассификаторов.Ссылка = вогРезультатыОпросов.ЗначениеКлассификатора.ДополнительныйРеквизит
+				ИНАЧЕ ВТ_ЗначенияКлассификаторов.Ссылка = вогРезультатыОпросов.ЗначениеКлассификатора
+			КОНЕЦ)
+			И (вогРезультатыОпросов.Аналитика = &amp;НаправлениеДеятельности
+				ИЛИ &amp;НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.))
+ГДЕ
+	вогРезультатыОпросов.Объект = &amp;Респондент
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА ВТ_ЗначенияКлассификаторов.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+			ТОГДА вогРезультатыОпросов.ЗначениеКлассификатора.ДополнительныйРеквизит
+		ИНАЧЕ вогРезультатыОпросов.ЗначениеКлассификатора
+	КОНЕЦ,
+	вогРезультатыОпросов.Объект,
+	вогРезультатыОпросов.ДатаВключения,
+	вогРезультатыОпросов.ОбъектРегистратор,
+	вогРезультатыОпросов.Аналитика,
+	вогРезультатыОпросов.ЗначениеРеквизита,
+	ВТ_ЗначенияКлассификаторов.ВидОтображения
+ИЗ
+	РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК вогРезультатыОпросов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ЗначенияКлассификаторов КАК ВТ_ЗначенияКлассификаторов
+		ПО (ВЫБОР
+				КОГДА ВТ_ЗначенияКлассификаторов.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+					ТОГДА ВТ_ЗначенияКлассификаторов.Ссылка = вогРезультатыОпросов.ЗначениеКлассификатора.ДополнительныйРеквизит
+				ИНАЧЕ ВТ_ЗначенияКлассификаторов.Ссылка = вогРезультатыОпросов.ЗначениеКлассификатора
+			КОНЕЦ)
+			И (вогРезультатыОпросов.Аналитика = &amp;НаправлениеДеятельности
+				ИЛИ &amp;НаправлениеДеятельности = ЗНАЧЕНИЕ(Справочник.НаправленияДеятельности.))
+ГДЕ
+	вогРезультатыОпросов.Объект = &amp;Респондент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_РезультатыОпросов.Дата КАК Дата
+ПОМЕСТИТЬ ВТ_Периоды
+ИЗ
+	ВТ_РезультатыОпросов КАК ВТ_РезультатыОпросов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_классификаторы.Ссылка КАК Ссылка,
+	ВТ_Периоды.Дата КАК Дата,
+	ВТ_классификаторы.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_ОтсутствующиеКлассификаторы
+ИЗ
+	ВТ_классификаторы КАК ВТ_классификаторы,
+	ВТ_Периоды КАК ВТ_Периоды
+ГДЕ
+	НЕ (ВТ_классификаторы.Ссылка, ВТ_Периоды.Дата) В
+				(ВЫБРАТЬ
+					ВТ_РезультатыОпросов.ЗначениеКлассификатора,
+					ВТ_РезультатыОпросов.Дата
+				ИЗ
+					ВТ_РезультатыОпросов КАК ВТ_РезультатыОпросов)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ОтсутствующиеКлассификаторы.Ссылка КАК ЗначениеКлассификатора,
+	ВТ_Периоды.Дата КАК Дата,
+	ВТ_ОтсутствующиеКлассификаторы.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_Подготоленная
+ИЗ
+	ВТ_ОтсутствующиеКлассификаторы КАК ВТ_ОтсутствующиеКлассификаторы,
+	ВТ_Периоды КАК ВТ_Периоды
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_РезультатыОпросов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	ВТ_РезультатыОпросов.Дата КАК Дата,
+	ИСТИНА КАК ВЫБРАН,
+	ВТ_РезультатыОпросов.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_ВсеКлассификаторы
+ИЗ
+	ВТ_РезультатыОпросов КАК ВТ_РезультатыОпросов
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Подготоленная.ЗначениеКлассификатора,
+	ВТ_Подготоленная.Дата,
+	ЛОЖЬ,
+	ВТ_Подготоленная.ВидОтображения
+ИЗ
+	ВТ_Подготоленная КАК ВТ_Подготоленная
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_ВсеКлассификаторы.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	ВТ_ВсеКлассификаторы.Дата КАК Дата,
+	МАКСИМУМ(ВТ_ВсеКлассификаторы.ВЫБРАН) КАК ВЫБРАН,
+	ВТ_ВсеКлассификаторы.ВидОтображения КАК ВидОтображения
+ПОМЕСТИТЬ ВТ_Сгруппированная
+ИЗ
+	ВТ_ВсеКлассификаторы КАК ВТ_ВсеКлассификаторы
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ВсеКлассификаторы.Дата,
+	ВТ_ВсеКлассификаторы.ЗначениеКлассификатора,
+	ВТ_ВсеКлассификаторы.ВидОтображения
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Сгруппированная.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	ВЫБОР
+		КОГДА ВТ_Сгруппированная.ВидОтображения = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыОтображенияКлассификаторов.ДополнительныйРеквизит)
+			ТОГДА ВТ_РезультатыОпросов.ЗначениеРеквизита
+		ИНАЧЕ ВЫБОР
+				КОГДА ВТ_Сгруппированная.ВЫБРАН
+					ТОГДА "%КартинкаУстановить%"
+				ИНАЧЕ "%КартинкаСнять%"
+			КОНЕЦ
+	КОНЕЦ КАК Выбран,
+	ВТ_Сгруппированная.Дата КАК Дата,
+	ЕСТЬNULL(ВТ_РезультатыОпросов.Респондент, &amp;Респондент) КАК Респондент,
+	ВТ_РезультатыОпросов.Анкета КАК Анкета,
+	ВТ_РезультатыОпросов.НаправлениеДеятельности КАК НаправлениеДеятельности
+ИЗ
+	ВТ_Сгруппированная КАК ВТ_Сгруппированная
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_РезультатыОпросов КАК ВТ_РезультатыОпросов
+		ПО ВТ_Сгруппированная.ЗначениеКлассификатора = ВТ_РезультатыОпросов.ЗначениеКлассификатора
+			И ВТ_Сгруппированная.Дата = ВТ_РезультатыОпросов.Дата</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Выбран</dataPath>
+		<expression>Выбран</expression>
+	</totalField>
+	<parameter>
+		<name>Респондент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Респондент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:TypeSet xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:Characteristic.вогВариантыОпросов</v8:TypeSet>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Владелец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Владелец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НаправлениеДеятельности</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Направление деятельности</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НаправленияДеятельности</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>История значений классификаторов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Выбран</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗначениеКлассификатора</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Выбран</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" height="10" kind="StyleItem"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" height="10" kind="StyleItem"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" height="10" kind="StyleItem"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗначениеКлассификатора</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Выбран</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" height="10" kind="StyleItem"/>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЗначениеКлассификатора</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

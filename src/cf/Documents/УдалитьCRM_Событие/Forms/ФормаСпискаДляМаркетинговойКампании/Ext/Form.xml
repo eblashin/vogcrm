@@ -1,0 +1,807 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<Customizable>false</Customizable>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>ListSettings</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияТолькоЧтение" id="210">
+			<TextColor>style:SpecialTextColor</TextColor>
+			<Font ref="style:NormalTextFont" height="14" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ "Событие" используется для истории. Все взаимодействия с клиентами ведутся в документах "Интерес".</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<ContextMenu name="ДекорацияТолькоЧтениеКонтекстноеМеню" id="211"/>
+			<ExtendedTooltip name="ДекорацияТолькоЧтениеРасширеннаяПодсказка" id="212"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаОтборыИОформление" id="76">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы и оформление</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы и оформление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыИОформлениеExtendedTooltip" id="163"/>
+		</UsualGroup>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>Top</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2">
+				<Autofill>false</Autofill>
+			</ContextMenu>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<ButtonGroup name="КомандыФормы" id="113">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Команды формы</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Команды формы</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="КомандыФормыExtendedTooltip" id="164"/>
+						<ChildItems>
+							<Button name="СписокКнопкаНайти" id="121">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.StandardCommand.Find</CommandName>
+								<ExtendedTooltip name="СписокКнопкаНайтиExtendedTooltip" id="165"/>
+							</Button>
+							<Button name="СписокКнопкаОтменитьПоиск" id="122">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.StandardCommand.CancelSearch</CommandName>
+								<ExtendedTooltip name="СписокКнопкаОтменитьПоискExtendedTooltip" id="166"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Popup name="ПодменюВидСписка" id="108">
+						<Visible>false</Visible>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подменю вид списка</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подменю вид списка</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ПодменюВидСпискаExtendedTooltip" id="167"/>
+					</Popup>
+					<Button name="СписокИзменитьФорму" id="77">
+						<Type>CommandBarButton</Type>
+						<CommandName>0:198ea630-fda2-4cda-8a23-f999f4c67ee6</CommandName>
+						<ExtendedTooltip name="СписокИзменитьФормуExtendedTooltip" id="168"/>
+					</Button>
+					<Button name="СписокСправка" id="114">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Help</CommandName>
+						<ExtendedTooltip name="СписокСправкаExtendedTooltip" id="169"/>
+					</Button>
+					<Button name="СписокКомандаРассылкаЭлектронныхПисем" id="124">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаРассылкаЭлектронныхПисем</CommandName>
+						<ExtendedTooltip name="СписокКомандаРассылкаЭлектронныхПисемExtendedTooltip" id="170"/>
+					</Button>
+					<Button name="СписокКомандаРассылкаCMC" id="125">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаРассылкаSMS</CommandName>
+						<ExtendedTooltip name="СписокКомандаРассылкаCMCExtendedTooltip" id="171"/>
+					</Button>
+					<Button name="Телемаркетинг" id="123">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаТелемаркетинг</CommandName>
+						<ExtendedTooltip name="ТелемаркетингExtendedTooltip" id="172"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокExtendedTooltip" id="173"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="201">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="202"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="203"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="204">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="205"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="206"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="207">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="208"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="209"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<PictureField name="Важность" id="14">
+					<DataPath>Список.Важность</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Важность</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.CRM_Важно</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>2</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.КоллекцияВариантыВажности</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ВажностьКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ВажностьExtendedTooltip" id="174"/>
+				</PictureField>
+				<PictureField name="ВидСобытияКартинка" id="161">
+					<DataPath>Список.ВидСобытияКартинка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид события</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.CRM_КоллекцияВидыСобытий</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ВидСобытияКартинкаКонтекстноеМеню" id="162"/>
+					<ExtendedTooltip name="ВидСобытияКартинкаExtendedTooltip" id="175"/>
+				</PictureField>
+				<PictureField name="ОсновнаяКатегорияКартинка" id="34">
+					<DataPath>Список.ОсновнаяКатегорияИндекс</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цветовая категория</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>1</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.CRM_ЦветаКатегорий</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ОсновнаяКатегорияКартинкаКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ОсновнаяКатегорияКартинкаExtendedTooltip" id="176"/>
+				</PictureField>
+				<PictureField name="ПринятаКИсполнению" id="119">
+					<DataPath>Список.ПринятаКИсполнению</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Принято к исполнению</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.CRM_КИсполнению</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.CRM_КИсполнению</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ПринятаКИсполнениюКонтекстноеМеню" id="120"/>
+					<ExtendedTooltip name="ПринятаКИсполнениюExtendedTooltip" id="177"/>
+				</PictureField>
+				<PictureField name="СостояниеСобытия" id="8">
+					<DataPath>Список.СостояниеСобытияКартинка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние события</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>1</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.CRM_СостоянияЗавершенности</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="СостояниеСобытияКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="СостояниеСобытияExtendedTooltip" id="181"/>
+				</PictureField>
+				<LabelField name="Дата" id="4">
+					<DataPath>Список.Date</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаExtendedTooltip" id="178"/>
+				</LabelField>
+				<LabelField name="ОкончаниеСобытия" id="38">
+					<DataPath>Список.ОкончаниеСобытия</DataPath>
+					<ContextMenu name="ОкончаниеСобытияКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ОкончаниеСобытияExtendedTooltip" id="180"/>
+				</LabelField>
+				<LabelField name="Тема" id="26">
+					<DataPath>Список.Тема</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ТемаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТемаExtendedTooltip" id="185"/>
+				</LabelField>
+				<LabelField name="Партнер" id="24">
+					<DataPath>Список.Партнер</DataPath>
+					<ContextMenu name="ПартнерКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ПартнерExtendedTooltip" id="187"/>
+				</LabelField>
+				<LabelField name="КонтактноеЛицо" id="22">
+					<DataPath>Список.КонтактноеЛицо</DataPath>
+					<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="КонтактноеЛицоExtendedTooltip" id="188"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="18">
+					<DataPath>Список.Ответственный</DataPath>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="189"/>
+				</LabelField>
+				<LabelField name="Номер" id="6">
+					<DataPath>Список.Number</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Width>7</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="НомерExtendedTooltip" id="179"/>
+				</LabelField>
+				<LabelField name="ПричинаОтказа" id="115">
+					<DataPath>Список.ПричинаОтказа</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ПричинаОтказаКонтекстноеМеню" id="116"/>
+					<ExtendedTooltip name="ПричинаОтказаExtendedTooltip" id="182"/>
+				</LabelField>
+				<LabelField name="ВидСобытия" id="10">
+					<DataPath>Список.ВидСобытия</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ВидСобытияКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВидСобытияExtendedTooltip" id="183"/>
+				</LabelField>
+				<LabelField name="ВходящееИсходящее" id="12">
+					<DataPath>Список.ВходящееИсходящее</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ВходящееИсходящееКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ВходящееИсходящееExtendedTooltip" id="184"/>
+				</LabelField>
+				<LabelField name="Описание" id="16">
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ОписаниеКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ОписаниеExtendedTooltip" id="186"/>
+				</LabelField>
+				<LabelField name="ДокументОснование" id="20">
+					<DataPath>Список.ДокументОснование</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ДокументОснованиеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДокументОснованиеExtendedTooltip" id="190"/>
+				</LabelField>
+				<LabelField name="Автор" id="28">
+					<DataPath>Список.Автор</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="АвторКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="АвторExtendedTooltip" id="191"/>
+				</LabelField>
+				<LabelField name="Подразделение" id="30">
+					<DataPath>Список.Подразделение</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ПодразделениеКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ПодразделениеExtendedTooltip" id="192"/>
+				</LabelField>
+				<LabelField name="Проект" id="32">
+					<DataPath>Список.Проект</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ПроектКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПроектExtendedTooltip" id="193"/>
+				</LabelField>
+				<LabelField name="Помещение" id="40">
+					<DataPath>Список.Помещение</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ПомещениеКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ПомещениеExtendedTooltip" id="194"/>
+				</LabelField>
+				<CheckBoxField name="НаВесьДень" id="42">
+					<DataPath>Список.НаВесьДень</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НаВесьДеньКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="НаВесьДеньExtendedTooltip" id="195"/>
+				</CheckBoxField>
+				<CheckBoxField name="Периодическое" id="44">
+					<DataPath>Список.Периодическое</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПериодическоеКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ПериодическоеExtendedTooltip" id="196"/>
+				</CheckBoxField>
+				<LabelField name="Результат" id="46">
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="РезультатКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="РезультатExtendedTooltip" id="197"/>
+				</LabelField>
+				<LabelField name="ДатаРегистрации" id="106">
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ДатаРегистрацииКонтекстноеМеню" id="107"/>
+					<ExtendedTooltip name="ДатаРегистрацииExtendedTooltip" id="198"/>
+				</LabelField>
+				<LabelField name="ОсновнаяКатегория" id="117">
+					<DataPath>Список.ОсновнаяКатегория</DataPath>
+					<Visible>false</Visible>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="ОсновнаяКатегорияКонтекстноеМеню" id="118"/>
+					<ExtendedTooltip name="ОсновнаяКатегорияExtendedTooltip" id="199"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="126">
+					<DataPath>Список.Ref</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="127"/>
+					<ExtendedTooltip name="СсылкаExtendedTooltip" id="200"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ДокументCRM_Событие.Ссылка,
+	ДокументCRM_Событие.ВерсияДанных,
+	ДокументCRM_Событие.ПометкаУдаления,
+	ДокументCRM_Событие.Номер,
+	ДокументCRM_Событие.Дата,
+	ДокументCRM_Событие.Проведен,
+	ДокументCRM_Событие.Автор,
+	ВЫБОР
+		КОГДА ДокументCRM_Событие.Важность = ЗНАЧЕНИЕ(Перечисление.ВариантыВажностиВзаимодействия.Низкая)
+			ТОГДА 0
+		КОГДА ДокументCRM_Событие.Важность = ЗНАЧЕНИЕ(Перечисление.ВариантыВажностиВзаимодействия.Высокая)
+			ТОГДА 2
+		ИНАЧЕ 1
+	КОНЕЦ КАК Важность,
+	ДокументCRM_Событие.ВидСобытия,
+	ДокументCRM_Событие.ВходящееИсходящее,
+	ДокументCRM_Событие.ДокументОснование,
+	ДокументCRM_Событие.ИзмененоВРяде,
+	ДокументCRM_Событие.КонтактноеЛицо,
+	ДокументCRM_Событие.Место,
+	ДокументCRM_Событие.НаВесьДень,
+	ДокументCRM_Событие.ОкончаниеСобытия,
+	ЕСТЬNULL(ДокументCRM_Событие.ОсновнаяКатегория.ЦветИндекс, 26) КАК ОсновнаяКатегорияИндекс,
+	ДокументCRM_Событие.ОсновнаяКатегория КАК ОсновнаяКатегория,
+	ДокументCRM_Событие.Ответственный,
+	ДокументCRM_Событие.Партнер,
+	ДокументCRM_Событие.Периодическое,
+	ДокументCRM_Событие.Подразделение,
+	ДокументCRM_Событие.Помещение,
+	ДокументCRM_Событие.Проект,
+	ДокументCRM_Событие.РядСобытий,
+	ДокументCRM_Событие.СостояниеСобытия,
+	ДокументCRM_Событие.Тема,
+	ДокументCRM_Событие.Трудозатраты,
+	ДокументCRM_Событие.МаркетинговаяКампания,
+	ДокументCRM_Событие.МоментВремени,
+	ДокументCRM_Событие.ПричинаОтказа,
+	ВЫБОР
+		КОГДА ЛичныеЗадачи.Предмет ЕСТЬ NULL 
+			ТОГДА 1
+		ИНАЧЕ ВЫБОР
+				КОГДА ЛичныеЗадачи.Количество &gt; 0
+					ТОГДА 0
+				ИНАЧЕ 1
+			КОНЕЦ
+	КОНЕЦ КАК ПринятаКИсполнению,
+	ВЫБОР
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.ТелефонныйЗвонок)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Входящее)
+			ТОГДА 1
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.ТелефонныйЗвонок)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Исходящее)
+			ТОГДА 2
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.ЛичнаяВстреча)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Входящее)
+			ТОГДА 3
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.ЛичнаяВстреча)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Исходящее)
+			ТОГДА 4
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.ПочтовоеПисьмо)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Входящее)
+			ТОГДА 7
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.ПочтовоеПисьмо)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Исходящее)
+			ТОГДА 8
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.Прочее)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Входящее)
+			ТОГДА 9
+		КОГДА ДокументCRM_Событие.ВидСобытия = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСобытий.Прочее)
+				И ДокументCRM_Событие.ВходящееИсходящее = ЗНАЧЕНИЕ(Перечисление.CRM_ВходящееИсходящееСобытие.Исходящее)
+			ТОГДА 10
+		ИНАЧЕ 0
+	КОНЕЦ КАК ВидСобытияКартинка,
+	ВЫБОР
+		КОГДА ДокументCRM_Событие.СостояниеСобытия.ТипСостояния = ЗНАЧЕНИЕ(Перечисление.CRM_ТипыСостоянийСобытий.ВРаботе)
+			ТОГДА 4
+		КОГДА ДокументCRM_Событие.СостояниеСобытия.ТипСостояния = ЗНАЧЕНИЕ(Перечисление.CRM_ТипыСостоянийСобытий.Запланировано)
+			ТОГДА 3
+		КОГДА ДокументCRM_Событие.СостояниеСобытия.ТипСостояния = ЗНАЧЕНИЕ(Перечисление.CRM_ТипыСостоянийСобытий.Завершено)
+			ТОГДА 1
+		КОГДА ДокументCRM_Событие.СостояниеСобытия.ТипСостояния = ЗНАЧЕНИЕ(Перечисление.CRM_ТипыСостоянийСобытий.Отменено)
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК СостояниеСобытияКартинка
+ИЗ
+	Документ.УдалитьCRM_Событие КАК ДокументCRM_Событие
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИсточникиПервичногоИнтереса.СрезПоследних КАК ИсточникиПервичногоИнтересаСрезПоследних
+		ПО ДокументCRM_Событие.Ссылка = ИсточникиПервичногоИнтересаСрезПоследних.Сделка
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ЗадачаИсполнителя.Предмет КАК Предмет,
+			СУММА(1) КАК Количество
+		ИЗ
+			Задача.ЗадачаИсполнителя КАК ЗадачаИсполнителя
+		ГДЕ
+			НЕ ЗадачаИсполнителя.ПометкаУдаления
+			И НЕ ЗадачаИсполнителя.Выполнена
+			И ЗадачаИсполнителя.CRM_Личная
+		
+		СГРУППИРОВАТЬ ПО
+			ЗадачаИсполнителя.Предмет) КАК ЛичныеЗадачи
+		ПО (ДокументCRM_Событие.Ссылка = ЛичныеЗадачи.Предмет)
+ГДЕ
+	ИсточникиПервичногоИнтересаСрезПоследних.ИсточникПервичногоИнтереса = &amp;ИсточникПервичногоИнтереса</QueryText>
+				<MainTable>Document.УдалитьCRM_Событие</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПолеБыстрогоОтбора_Ответственный" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПолеБыстрогоОтбора_Ответственный</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВидСпискаИдентификаторТекущейНастройки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид списка идентификатор текущей настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИсточникПервичногоИнтереса" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник первичного интереса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаТелемаркетинг" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телемаркетинг</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда телемаркетинг</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаТелемаркетинг</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРассылкаЭлектронныхПисем" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассылка электронных писем</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда рассылка электронных писем</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаРассылкаЭлектронныхПисем</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаРассылкаSMS" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассылка SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда рассылка SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаРассылкаSMS</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>CommonCommand.CRM_УстановитьНовогоОтветственного</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.УдалитьCRM_Событие.Command.ПечатьСобытие</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.Печать</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.CRM_СоздатьЛичнуюЗадачу</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Catalog.CRM_ШаблоныОбъектов.Command.ЗагрузитьИзШаблона</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.CRM_ШаблоныОбъектов</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Catalog.CRM_ШаблоныОбъектов.Command.ВыгрузитьВШаблон</Command>
+				<Type>Auto</Type>
+				<CommandGroup>CommandGroup.CRM_ШаблоныОбъектов</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.КоммерческоеПредложениеКлиенту.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.CRM_РассылкаЭлектронныхПисем.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>2:8b89024a-bcff-4544-abda-4df848db385e</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.CRM_СчетНаОплатуПокупателю.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.CRM_НапомнитьЧерез15Минут</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.CRM_НапомнитьЧерез1Час</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.CRM_НапомнитьЧерез4Часа</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.CRM_НапомнитьЧерез1День</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.Напомнить</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

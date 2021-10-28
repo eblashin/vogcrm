@@ -1,0 +1,1761 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКодНаименование" id="86">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа код наименование</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа код наименование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="87"/>
+					<ChildItems>
+						<InputField name="Наименование" id="83">
+							<DataPath>Объект.Description</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="85"/>
+						</InputField>
+						<InputField name="Код" id="88">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="КодКонтекстноеМеню" id="89"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="90"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Направление" id="1">
+					<DataPath>Объект.Направление</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="НаправлениеКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НаправлениеРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Подразделение" id="4">
+					<DataPath>Объект.Подразделение</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ПодразделениеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="РежимОтображения" id="18">
+			<DataPath>РежимРедактированияМодели</DataPath>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<EqualColumnsWidth>true</EqualColumnsWidth>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xs:string">Дерево</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xs:string">Графически</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="РежимОтображенияКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="РежимОтображенияРасширеннаяПодсказка" id="20"/>
+			<Events>
+				<Event name="OnChange">РежимОтображенияПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаОсновнаяКоманднаяПанель" id="258">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная командная панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="259"/>
+			<ChildItems>
+				<CommandBar name="ОсновнаяКоманднаяПанель" id="244">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основная командная панель</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основная командная панель</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="245"/>
+					<ChildItems>
+						<Popup name="ГруппаДобавить" id="109">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Добавить</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа добавить</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="ГруппаДобавитьРасширеннаяПодсказка" id="110"/>
+							<ChildItems>
+								<Button name="ДеревоМоделиДобавитьЭтап" id="111">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьЭтап</CommandName>
+									<ExtendedTooltip name="ДеревоМоделиДобавитьЭтапРасширеннаяПодсказка" id="112"/>
+								</Button>
+								<Button name="ДеревоМоделиДобавитьКонтрольнуюТочку" id="116">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьКонтрольнуюТочку</CommandName>
+									<ExtendedTooltip name="ДеревоМоделиДобавитьКонтрольнуюТочкуРасширеннаяПодсказка" id="117"/>
+								</Button>
+							</ChildItems>
+						</Popup>
+						<Button name="УдалитьЭтапКонтрольнуюТочку" id="220">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.УдалитьЭтапКонтрольнуюТочку</CommandName>
+							<ExtendedTooltip name="УдалитьЭтапКонтрольнуюТочкуРасширеннаяПодсказка" id="221"/>
+						</Button>
+						<ButtonGroup name="ГруппаДействияИерархии" id="95">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа действия иерархии</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа действия иерархии</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>Compact</Representation>
+							<ExtendedTooltip name="ГруппаДействияИерархииРасширеннаяПодсказка" id="96"/>
+							<ChildItems>
+								<Button name="ДеревоМоделиСвернуть" id="93">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Свернуть</CommandName>
+									<ExtendedTooltip name="ДеревоМоделиСвернутьРасширеннаяПодсказка" id="94"/>
+								</Button>
+								<Button name="ДеревоМоделиРазвернуть" id="91">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Развернуть</CommandName>
+									<ExtendedTooltip name="ДеревоМоделиРазвернутьРасширеннаяПодсказка" id="92"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
+						<Button name="РедактироватьСвязьЭтапов" id="145">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.РедактироватьСвязиЭтапа</CommandName>
+							<ExtendedTooltip name="РедактироватьСвязьЭтаповРасширеннаяПодсказка" id="146"/>
+						</Button>
+						<ButtonGroup name="ГруппаСвязи" id="139">
+							<Enabled>false</Enabled>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа связи</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа связи</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>Compact</Representation>
+							<ExtendedTooltip name="ГруппаСвязиРасширеннаяПодсказка" id="140"/>
+							<ChildItems>
+								<Button name="ДеревоМоделиСвязатьЭтапы" id="141">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.СвязатьЭтап</CommandName>
+									<ExtendedTooltip name="ДеревоМоделиСвязатьЭтапыРасширеннаяПодсказка" id="142"/>
+								</Button>
+								<Button name="ДеревоМоделиРазорватьСвязьЭтапа" id="147">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.РазорватьСвязьЭтапа</CommandName>
+									<ExtendedTooltip name="ДеревоМоделиРазорватьСвязьЭтапаРасширеннаяПодсказка" id="148"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
+						<ButtonGroup name="ГруппаИнформация" id="252">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа информация</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа информация</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>Compact</Representation>
+							<ExtendedTooltip name="ГруппаИнформацияРасширеннаяПодсказка" id="253"/>
+							<ChildItems>
+								<Button name="ИнформацияОбИсполнителях" id="250">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ИнформацияОбИсполнителях</CommandName>
+									<ExtendedTooltip name="ИнформацияОбИсполнителяхРасширеннаяПодсказка" id="251"/>
+								</Button>
+								<Button name="ИнформацияОСвязяхЗависимостях" id="159">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ИнформацияОСвязяхЗависимостях</CommandName>
+									<ExtendedTooltip name="ИнформацияОСвязяхЗависимостяхРасширеннаяПодсказка" id="160"/>
+								</Button>
+								<Button name="ОтображатьДиаграммуГанта" id="256">
+									<Type>CommandBarButton</Type>
+									<Check>true</Check>
+									<CommandName>Form.Command.ОтображатьДиаграммуГанта</CommandName>
+									<ExtendedTooltip name="ОтображатьДиаграммуГантаРасширеннаяПодсказка" id="257"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
+					</ChildItems>
+				</CommandBar>
+				<TrackBarField name="ПолосаРегулированияШириныДиаграммыГанта" id="260">
+					<DataPath>ПолосаРегулированияШириныДиаграммыГанта</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>30</Width>
+					<Height>1</Height>
+					<MinValue>40</MinValue>
+					<MaxValue>200</MaxValue>
+					<Step>10</Step>
+					<LargeStep>30</LargeStep>
+					<MarkingAppearance>DontShow</MarkingAppearance>
+					<ContextMenu name="ПолосаРегулированияШириныДиаграммыГантаКонтекстноеМеню" id="261"/>
+					<ExtendedTooltip name="ПолосаРегулированияШириныДиаграммыГантаРасширеннаяПодсказка" id="262"/>
+					<Events>
+						<Event name="OnChange">ПолосаРегулированияШириныДиаграммыГантаПриИзменении</Event>
+					</Events>
+				</TrackBarField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДанные" id="137">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДанныеРасширеннаяПодсказка" id="138"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДанныеЛеваяКолонка" id="246">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа данные левая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа данные левая колонка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДанныеЛеваяКолонкаРасширеннаяПодсказка" id="247"/>
+					<ChildItems>
+						<Pages name="СтраницыОтображения" id="12">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страницы отображения</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страницы отображения</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницыОтображенияРасширеннаяПодсказка" id="13"/>
+							<ChildItems>
+								<Page name="Дерево" id="16">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дерево</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дерево</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="ДеревоРасширеннаяПодсказка" id="17"/>
+									<ChildItems>
+										<Table name="ДеревоМодели" id="24">
+											<Representation>Tree</Representation>
+											<HeightInTableRows>5</HeightInTableRows>
+											<SelectionMode>SingleRow</SelectionMode>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<InitialTreeView>ExpandAllLevels</InitialTreeView>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ДеревоМодели</DataPath>
+											<RowPictureDataPath>ДеревоМодели.ИндексКартинки</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.CRM_ТипыЭтапов</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</RowsPicture>
+											<CommandSet>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+											</CommandSet>
+											<ContextMenu name="ДеревоМоделиКонтекстноеМеню" id="25">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<AutoCommandBar name="ДеревоМоделиКоманднаяПанель" id="26">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ДеревоМоделиРасширеннаяПодсказка" id="27"/>
+											<SearchStringAddition name="ДеревоМоделиСтрокаПоиска" id="28">
+												<AdditionSource>
+													<Item>ДеревоМодели</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ДеревоМоделиСтрокаПоискаКонтекстноеМеню" id="29"/>
+												<ExtendedTooltip name="ДеревоМоделиСтрокаПоискаРасширеннаяПодсказка" id="30"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ДеревоМоделиСостояниеПросмотра" id="31">
+												<AdditionSource>
+													<Item>ДеревоМодели</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ДеревоМоделиСостояниеПросмотраКонтекстноеМеню" id="32"/>
+												<ExtendedTooltip name="ДеревоМоделиСостояниеПросмотраРасширеннаяПодсказка" id="33"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ДеревоМоделиУправлениеПоиском" id="34">
+												<AdditionSource>
+													<Item>ДеревоМодели</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ДеревоМоделиУправлениеПоискомКонтекстноеМеню" id="35"/>
+												<ExtendedTooltip name="ДеревоМоделиУправлениеПоискомРасширеннаяПодсказка" id="36"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="BeforeAddRow">ДеревоМоделиПередНачаломДобавления</Event>
+												<Event name="BeforeDeleteRow">ДеревоМоделиПередУдалением</Event>
+												<Event name="BeforeEditEnd">ДеревоМоделиПередОкончаниемРедактирования</Event>
+												<Event name="OnActivateRow">ДеревоМоделиПриАктивизацииСтроки</Event>
+												<Event name="Drag">ДеревоМоделиПеретаскивание</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ДеревоМоделиЭтап" id="37">
+													<DataPath>ДеревоМодели.Этап</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<CreateButton>false</CreateButton>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.ТипЭтапа</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Items.ДеревоМодели.CurrentData.ТипЭтапа</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+													<ContextMenu name="ДеревоМоделиЭтапКонтекстноеМеню" id="38"/>
+													<ExtendedTooltip name="ДеревоМоделиЭтапРасширеннаяПодсказка" id="39"/>
+												</InputField>
+												<InputField name="ДеревоМоделиПродолжительностьДней" id="43">
+													<DataPath>ДеревоМодели.ПродолжительностьДней</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>19</Width>
+													<ContextMenu name="ДеревоМоделиПродолжительностьДнейКонтекстноеМеню" id="44"/>
+													<ExtendedTooltip name="ДеревоМоделиПродолжительностьДнейРасширеннаяПодсказка" id="45"/>
+												</InputField>
+												<ColumnGroup name="ДеревоМоделиГруппаДанныеЭтапа" id="155">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дерево модели группа данные этапа</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дерево модели группа данные этапа</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="ДеревоМоделиГруппаДанныеЭтапаРасширеннаяПодсказка" id="156"/>
+													<ChildItems>
+														<InputField name="ДеревоМоделиПодразделение" id="49">
+															<DataPath>ДеревоМодели.Подразделение</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="ДеревоМоделиПодразделениеКонтекстноеМеню" id="50"/>
+															<ExtendedTooltip name="ДеревоМоделиПодразделениеРасширеннаяПодсказка" id="51"/>
+														</InputField>
+														<InputField name="ДеревоМоделиОтстрочкаСтартаДней" id="263">
+															<DataPath>ДеревоМодели.ОтсрочкаСтартаДней</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>17</Width>
+															<ContextMenu name="ДеревоМоделиОтстрочкаСтартаДнейКонтекстноеМеню" id="264"/>
+															<ExtendedTooltip name="ДеревоМоделиОтстрочкаСтартаДнейРасширеннаяПодсказка" id="265"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+												<ColumnGroup name="ДеревоМоделиГруппаДанныеСвязей" id="157">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дерево модели группа данные связей</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дерево модели группа данные связей</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="ДеревоМоделиГруппаДанныеСвязейРасширеннаяПодсказка" id="158"/>
+													<ChildItems>
+														<InputField name="ДеревоМоделиТипСвязи" id="152">
+															<DataPath>ДеревоМодели.ТипСвязи</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>17</Width>
+															<ContextMenu name="ДеревоМоделиТипСвязиКонтекстноеМеню" id="153"/>
+															<ExtendedTooltip name="ДеревоМоделиТипСвязиРасширеннаяПодсказка" id="154"/>
+															<Events>
+																<Event name="OnChange">ДеревоМоделиТипСвязиПриИзменении</Event>
+															</Events>
+														</InputField>
+														<InputField name="ДеревоМоделиОтсрочкаДней" id="149">
+															<DataPath>ДеревоМодели.ОтсрочкаДней</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>17</Width>
+															<ContextMenu name="ДеревоМоделиОтсрочкаДнейКонтекстноеМеню" id="150"/>
+															<ExtendedTooltip name="ДеревоМоделиОтсрочкаДнейРасширеннаяПодсказка" id="151"/>
+															<Events>
+																<Event name="OnChange">ДеревоМоделиОтсрочкаДнейПриИзменении</Event>
+															</Events>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="Графически" id="14">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Графически</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Графически</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ГрафическиРасширеннаяПодсказка" id="15"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="ТабличныйДокументМодели" id="21">
+											<DataPath>ТабличныйДокументМодели</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<VerticalScrollBar>true</VerticalScrollBar>
+											<HorizontalScrollBar>true</HorizontalScrollBar>
+											<PointerType>Regular</PointerType>
+											<Edit>true</Edit>
+											<ContextMenu name="ТабличныйДокументМоделиКонтекстноеМеню" id="22">
+												<Autofill>false</Autofill>
+											</ContextMenu>
+											<ExtendedTooltip name="ТабличныйДокументМоделиРасширеннаяПодсказка" id="23"/>
+											<Events>
+												<Event name="OnChange">ТабличныйДокументМоделиПриИзменении</Event>
+												<Event name="OnActivate">ТабличныйДокументМоделиПриАктивизацииОбласти</Event>
+												<Event name="Selection">ТабличныйДокументМоделиВыбор</Event>
+												<Event name="Drag">ТабличныйДокументМоделиПеретаскивание</Event>
+											</Events>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+						<UsualGroup name="ГруппаСвязиЗависимости" id="161">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Связи и зависимости</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Связи и зависимости</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСвязиЗависимостиРасширеннаяПодсказка" id="162"/>
+							<ChildItems>
+								<Table name="ДеревоМоделиСвязи" id="163">
+									<Representation>List</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<ReadOnly>true</ReadOnly>
+									<HeightInTableRows>3</HeightInTableRows>
+									<Header>false</Header>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Items.ДеревоМодели.CurrentData.Связи</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Содержит связи</v8:content>
+										</v8:item>
+									</Title>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ДеревоМоделиСвязиКонтекстноеМеню" id="164"/>
+									<AutoCommandBar name="ДеревоМоделиСвязиКоманднаяПанель" id="165">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ДеревоМоделиСвязиРасширеннаяПодсказка" id="166"/>
+									<SearchStringAddition name="ДеревоМоделиСвязиСтрокаПоиска" id="167">
+										<AdditionSource>
+											<Item>ДеревоМоделиСвязи</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиСвязиСтрокаПоискаКонтекстноеМеню" id="168"/>
+										<ExtendedTooltip name="ДеревоМоделиСвязиСтрокаПоискаРасширеннаяПодсказка" id="169"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДеревоМоделиСвязиСостояниеПросмотра" id="170">
+										<AdditionSource>
+											<Item>ДеревоМоделиСвязи</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиСвязиСостояниеПросмотраКонтекстноеМеню" id="171"/>
+										<ExtendedTooltip name="ДеревоМоделиСвязиСостояниеПросмотраРасширеннаяПодсказка" id="172"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДеревоМоделиСвязиУправлениеПоиском" id="173">
+										<AdditionSource>
+											<Item>ДеревоМоделиСвязи</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиСвязиУправлениеПоискомКонтекстноеМеню" id="174"/>
+										<ExtendedTooltip name="ДеревоМоделиСвязиУправлениеПоискомРасширеннаяПодсказка" id="175"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ДеревоМоделиСвязиЭтап" id="179">
+											<DataPath>Items.ДеревоМодели.CurrentData.Связи.Этап</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>25</Width>
+											<ContextMenu name="ДеревоМоделиСвязиЭтапКонтекстноеМеню" id="180"/>
+											<ExtendedTooltip name="ДеревоМоделиСвязиЭтапРасширеннаяПодсказка" id="181"/>
+										</InputField>
+										<InputField name="ДеревоМоделиСвязиТипСвязи" id="266">
+											<DataPath>Items.ДеревоМодели.CurrentData.Связи.ТипСвязи</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоМоделиСвязиТипСвязиКонтекстноеМеню" id="267"/>
+											<ExtendedTooltip name="ДеревоМоделиСвязиТипСвязиРасширеннаяПодсказка" id="268"/>
+										</InputField>
+										<InputField name="ДеревоМоделиСвязиОтсрочкаДней" id="269">
+											<DataPath>Items.ДеревоМодели.CurrentData.Связи.ОтсрочкаДней</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>17</Width>
+											<ContextMenu name="ДеревоМоделиСвязиОтсрочкаДнейКонтекстноеМеню" id="270"/>
+											<ExtendedTooltip name="ДеревоМоделиСвязиОтсрочкаДнейРасширеннаяПодсказка" id="271"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<Table name="ДеревоМоделиЗависимости" id="191">
+									<Representation>List</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<ReadOnly>true</ReadOnly>
+									<HeightInTableRows>3</HeightInTableRows>
+									<Header>false</Header>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Items.ДеревоМодели.CurrentData.Зависимости</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Зависит от</v8:content>
+										</v8:item>
+									</Title>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ДеревоМоделиЗависимостиКонтекстноеМеню" id="192"/>
+									<AutoCommandBar name="ДеревоМоделиЗависимостиКоманднаяПанель" id="193">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ДеревоМоделиЗависимостиРасширеннаяПодсказка" id="194"/>
+									<SearchStringAddition name="ДеревоМоделиЗависимостиСтрокаПоиска" id="195">
+										<AdditionSource>
+											<Item>ДеревоМоделиЗависимости</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиЗависимостиСтрокаПоискаКонтекстноеМеню" id="196"/>
+										<ExtendedTooltip name="ДеревоМоделиЗависимостиСтрокаПоискаРасширеннаяПодсказка" id="197"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДеревоМоделиЗависимостиСостояниеПросмотра" id="198">
+										<AdditionSource>
+											<Item>ДеревоМоделиЗависимости</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиЗависимостиСостояниеПросмотраКонтекстноеМеню" id="199"/>
+										<ExtendedTooltip name="ДеревоМоделиЗависимостиСостояниеПросмотраРасширеннаяПодсказка" id="200"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДеревоМоделиЗависимостиУправлениеПоиском" id="201">
+										<AdditionSource>
+											<Item>ДеревоМоделиЗависимости</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиЗависимостиУправлениеПоискомКонтекстноеМеню" id="202"/>
+										<ExtendedTooltip name="ДеревоМоделиЗависимостиУправлениеПоискомРасширеннаяПодсказка" id="203"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ДеревоМоделиЗависимостиЭтап" id="207">
+											<DataPath>Items.ДеревоМодели.CurrentData.Зависимости.Этап</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>25</Width>
+											<ContextMenu name="ДеревоМоделиЗависимостиЭтапКонтекстноеМеню" id="208"/>
+											<ExtendedTooltip name="ДеревоМоделиЗависимостиЭтапРасширеннаяПодсказка" id="209"/>
+										</InputField>
+										<InputField name="ДеревоМоделиЗависимостиТипСвязи" id="272">
+											<DataPath>Items.ДеревоМодели.CurrentData.Зависимости.ТипСвязи</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоМоделиЗависимостиТипСвязиКонтекстноеМеню" id="273"/>
+											<ExtendedTooltip name="ДеревоМоделиЗависимостиТипСвязиРасширеннаяПодсказка" id="274"/>
+										</InputField>
+										<InputField name="ДеревоМоделиЗависимостиОтсрочкаДней" id="275">
+											<DataPath>Items.ДеревоМодели.CurrentData.Зависимости.ОтсрочкаДней</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>17</Width>
+											<ContextMenu name="ДеревоМоделиЗависимостиОтсрочкаДнейКонтекстноеМеню" id="276"/>
+											<ExtendedTooltip name="ДеревоМоделиЗависимостиОтсрочкаДнейРасширеннаяПодсказка" id="277"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДанныеПраваяКолонка" id="248">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа данные правая колонка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа данные правая колонка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДанныеПраваяКолонкаРасширеннаяПодсказка" id="249"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаИсполнителиЭтапов" id="254">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Исполнители этапов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа исполнители этапов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИсполнителиЭтаповРасширеннаяПодсказка" id="255"/>
+							<ChildItems>
+								<Table name="ДеревоМоделиИсполнители" id="228">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Items.ДеревоМодели.CurrentData.Исполнители</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ДеревоМоделиИсполнителиКонтекстноеМеню" id="229"/>
+									<AutoCommandBar name="ДеревоМоделиИсполнителиКоманднаяПанель" id="230"/>
+									<ExtendedTooltip name="ДеревоМоделиИсполнителиРасширеннаяПодсказка" id="231"/>
+									<SearchStringAddition name="ДеревоМоделиИсполнителиСтрокаПоиска" id="232">
+										<AdditionSource>
+											<Item>ДеревоМоделиИсполнители</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиИсполнителиСтрокаПоискаКонтекстноеМеню" id="233"/>
+										<ExtendedTooltip name="ДеревоМоделиИсполнителиСтрокаПоискаРасширеннаяПодсказка" id="234"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДеревоМоделиИсполнителиСостояниеПросмотра" id="235">
+										<AdditionSource>
+											<Item>ДеревоМоделиИсполнители</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиИсполнителиСостояниеПросмотраКонтекстноеМеню" id="236"/>
+										<ExtendedTooltip name="ДеревоМоделиИсполнителиСостояниеПросмотраРасширеннаяПодсказка" id="237"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДеревоМоделиИсполнителиУправлениеПоиском" id="238">
+										<AdditionSource>
+											<Item>ДеревоМоделиИсполнители</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДеревоМоделиИсполнителиУправлениеПоискомКонтекстноеМеню" id="239"/>
+										<ExtendedTooltip name="ДеревоМоделиИсполнителиУправлениеПоискомРасширеннаяПодсказка" id="240"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="BeforeAddRow">ДеревоМоделиИсполнителиПередНачаломДобавления</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ДеревоМоделиИсполнителиИсполнитель" id="241">
+											<DataPath>Items.ДеревоМодели.CurrentData.Исполнители.Исполнитель</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоМоделиИсполнителиИсполнительКонтекстноеМеню" id="242"/>
+											<ExtendedTooltip name="ДеревоМоделиИсполнителиИсполнительРасширеннаяПодсказка" id="243"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.CRM_МоделиПроцессов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="РежимРедактированияМодели" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим редактирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабличныйДокументМодели" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Табличный документ модели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ДеревоМодели" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево модели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Этап" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Этап</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.CRM_МоделиЭтапов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПродолжительностьДней" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продолжительность (дней)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Подразделение" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТипЭтапа" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип этапа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.CRM_ТипыЭтапов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторСтроки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинки" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтсрочкаДней" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отсрочка (дней)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипСвязи" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип связи</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.CRM_ТипыСвязейЭтапов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторыСтрокВедущиеСтрокой" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификаторы строк ведущие строкой</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Связи" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Связи</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Зависимости" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зависимости</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Исполнители" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнители</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АдресСтрокиОбласти" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес строки области</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтсрочкаСтартаДней" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отсрочка (дней)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<AdditionalColumns table="ДеревоМодели.Зависимости">
+					<Column name="ИдентификаторСтроки" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Идентификатор строки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>36</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Этап" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этап</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.CRM_МоделиЭтапов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ОтсрочкаДней" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отсрочка (дней)</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="ТипСвязи" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тип связи</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.CRM_ТипыСвязейЭтапов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ИдентификаторСтрокиРодителя" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Идентификатор строки родителя</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>36</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="ДеревоМодели.Связи">
+					<Column name="ИдентификаторСтроки" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Идентификатор строки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>36</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Этап" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этап</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.CRM_МоделиЭтапов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ОтсрочкаДней" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отсрочка (дней)</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="ТипСвязи" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тип связи</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.CRM_ТипыСвязейЭтапов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ИдентификаторСтрокиРодителя" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Идентификатор строки родителя</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>36</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="ДеревоМодели.Исполнители">
+					<Column name="Исполнитель" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Исполнитель</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.РолиИсполнителей</v8:Type>
+							<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИдентификаторСтрокиВедущий" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор строки ведущий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимРедактированияСвязей" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим редактирования связей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтапВедущий" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап ведущий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.CRM_МоделиЭтапов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СоответствиеКоллекцииКартинокТипаЭтапа" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соответствие коллекции картинок типа этапа</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ЦветИнтервалаКонтрольнойТочки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет интервала контрольной точки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветИнтервалаЭтапа" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет интервала этапа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолосаРегулированияШириныДиаграммыГанта" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полоса регулирования ширины диаграммы ганта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="БуферРасчетаИнтервала" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Буфер расчета интервала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИдентификаторСтроки" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Значение" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
+				<AdditionalColumns table="БуферРасчетаИнтервала.Значение">
+					<Column name="ДатаНачала" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата начала</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="ДатаОкончания" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата окончания</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="ДатаСортировки" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата сортировки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="ТипСвязи" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тип связи</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.CRM_ТипыСвязейЭтапов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ОтсрочкаДней" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отсрочка дней</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="ИдентификаторСтрокиДерева" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Идентификатор строки дерева</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоМоделиЭтап</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоМодели.Этап</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этапы работ</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоМодели</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоМодели.Этап</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этапы работ</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоМоделиЭтап</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоМодели.Этап</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоМодели.ИдентификаторСтроки</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ИдентификаторСтрокиВедущий</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоМодели</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоМодели.ИдентификаторыСтрокВедущиеСтрокой</dcsset:left>
+						<dcsset:comparisonType>Contains</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ИдентификаторСтрокиВедущий</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РежимРедактированияСвязей</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ИдентификаторСтрокиВедущий</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:PowderBlue</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоМодели</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоМодели.ИдентификаторСтроки</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ИдентификаторСтрокиВедущий</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этапы работ</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Свернуть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Свернуть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Развернуть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Развернуть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьЭтап" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить этап</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьЭтап</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьКонтрольнуюТочку" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрольная точка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить этап</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьКонтрольнуюТочку</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СвязатьЭтап" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связать этап</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_Связать</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СвязатьЭтап</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РедактироватьСвязиЭтапа" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать связь</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать связи этапа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_ПеречитатьСвязь</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьСвязиЭтапа</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РазорватьСвязьЭтапа" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разорвать связь </v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разорвать связь этапа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_РазорватьСвязь</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РазорватьСвязьЭтапа</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИнформацияОСвязяхЗависимостях" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация о связях и зависимостях</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация о связях зависимостях</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_СтруктураПодчиненности</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИнформацияОСвязяхЗависимостях</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдалитьЭтапКонтрольнуюТочку" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить этап контрольную точку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьЭтапКонтрольнуюТочку</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИнформацияОбИсполнителях" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация об исполнителях</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация об исполнителях</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ВариантыОтчетовДоступныеВсемПользователям</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИнформацияОбИсполнителях</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтображатьДиаграммуГанта" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать диаграмму ганта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать диаграмму ганта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.CRM_ДиаграммаГанта</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтображатьДиаграммуГанта</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

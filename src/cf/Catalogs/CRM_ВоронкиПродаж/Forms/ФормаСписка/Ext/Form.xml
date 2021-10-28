@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<ButtonGroup name="ГруппаКнопокСоздать" id="13">
+				<ExtendedTooltip name="ГруппаКнопокСоздатьРасширеннаяПодсказка" id="18"/>
+				<ChildItems>
+					<Button name="ФормаКомандаСоздатьВоронку" id="14">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСоздатьВоронку</CommandName>
+						<ExtendedTooltip name="ФормаКомандаСоздатьВоронкуРасширеннаяПодсказка" id="19"/>
+					</Button>
+					<Button name="ФормаКомандаСоздатьЭтап" id="15">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСоздатьЭтап</CommandName>
+						<ExtendedTooltip name="ФормаКомандаСоздатьЭтапРасширеннаяПодсказка" id="20"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="ФормаИзменить" id="9">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="22"/>
+			</Button>
+			<Button name="ФормаУстановитьПометкуУдаления" id="10">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
+				<ExtendedTooltip name="ФормаУстановитьПометкуУдаленияРасширеннаяПодсказка" id="23"/>
+			</Button>
+			<Button name="ФормаНайти" id="11">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.Список.StandardCommand.Find</CommandName>
+				<ExtendedTooltip name="ФормаНайтиРасширеннаяПодсказка" id="24"/>
+			</Button>
+			<Button name="ФормаОтменитьПоиск" id="12">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.Список.StandardCommand.CancelSearch</CommandName>
+				<ExtendedTooltip name="ФормаОтменитьПоискРасширеннаяПодсказка" id="25"/>
+			</Button>
+			<Button name="ФормаИзменитьФорму" id="16">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаПроверкаЭтаповВоронок" id="17">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверкаЭтаповВоронок</CommandName>
+				<ExtendedTooltip name="ФормаПроверкаЭтаповВоронокРасширеннаяПодсказка" id="29"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.ИндексКартинки</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.CRM_КоллекцияВоронкаЭтап</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</RowsPicture>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Create</ExcludedCommand>
+				<ExcludedCommand>LevelDown</ExcludedCommand>
+				<ExcludedCommand>LevelUp</ExcludedCommand>
+				<ExcludedCommand>MoveItem</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="30"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="31">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="32"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="33"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="34">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="35"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="36"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="37">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="38"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="39"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Наименование" id="4">
+					<DataPath>Список.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="40"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Parent</Field>
+				<Field>Список.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникCRM_ВоронкиПродаж.Ссылка,
+	СправочникCRM_ВоронкиПродаж.ВерсияДанных,
+	СправочникCRM_ВоронкиПродаж.ПометкаУдаления,
+	СправочникCRM_ВоронкиПродаж.Предопределенный,
+	СправочникCRM_ВоронкиПродаж.Родитель,
+	СправочникCRM_ВоронкиПродаж.Наименование,
+	СправочникCRM_ВоронкиПродаж.РеквизитДопУпорядочивания,
+	ВЫБОР
+		КОГДА СправочникCRM_ВоронкиПродаж.Родитель = ЗНАЧЕНИЕ(Справочник.CRM_ВоронкиПродаж.ПустаяСсылка) И НЕ СправочникCRM_ВоронкиПродаж.ПометкаУдаления ТОГДА 0
+		КОГДА СправочникCRM_ВоронкиПродаж.Родитель = ЗНАЧЕНИЕ(Справочник.CRM_ВоронкиПродаж.ПустаяСсылка) И СправочникCRM_ВоронкиПродаж.ПометкаУдаления ТОГДА 1
+		КОГДА СправочникCRM_ВоронкиПродаж.Родитель &lt;&gt; ЗНАЧЕНИЕ(Справочник.CRM_ВоронкиПродаж.ПустаяСсылка) И НЕ СправочникCRM_ВоронкиПродаж.ПометкаУдаления ТОГДА 2
+		КОГДА СправочникCRM_ВоронкиПродаж.Родитель &lt;&gt; ЗНАЧЕНИЕ(Справочник.CRM_ВоронкиПродаж.ПустаяСсылка) И СправочникCRM_ВоронкиПродаж.ПометкаУдаления ТОГДА 3
+	КОНЕЦ КАК ИндексКартинки
+ИЗ
+	Справочник.CRM_ВоронкиПродаж КАК СправочникCRM_ВоронкиПродаж</QueryText>
+				<MainTable>Catalog.CRM_ВоронкиПродаж</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>РеквизитДопУпорядочивания</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаСоздатьВоронку" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать воронку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать воронку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСоздатьВоронку</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСоздатьЭтап" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать этап</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать этап</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСоздатьЭтап</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверкаЭтаповВоронок" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка этапов воронок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка этапов воронок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверкаЭтаповВоронок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>0:6d6b07df-5ff7-4c6e-83e5-4539175d9ddd</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

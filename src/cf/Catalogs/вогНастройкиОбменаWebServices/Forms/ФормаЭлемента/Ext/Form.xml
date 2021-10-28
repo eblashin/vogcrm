@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтандартныеРеквизиты" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стандартные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стандартные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтандартныеРеквизитыРасширеннаяПодсказка" id="74"/>
+			<ChildItems>
+				<CheckBoxField name="Использовать" id="75">
+					<DataPath>Объект.Использовать</DataPath>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=НЕТ; БИ=ДА</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ИспользоватьКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="ИспользоватьРасширеннаяПодсказка" id="77"/>
+				</CheckBoxField>
+				<InputField name="Наименование" id="1">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Принадлежность" id="78">
+					<DataPath>Объект.Принадлежность</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ПринадлежностьКонтекстноеМеню" id="79"/>
+					<ExtendedTooltip name="ПринадлежностьРасширеннаяПодсказка" id="80"/>
+					<Events>
+						<Event name="OnChange">ПринадлежностьПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Классификатор" id="32">
+					<DataPath>Объект.Классификатор</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="КлассификаторКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="КлассификаторРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">КлассификаторПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаШапка" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="WebService" id="35">
+					<DataPath>WebService</DataPath>
+					<ContextMenu name="WebServiceКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="WebServiceРасширеннаяПодсказка" id="37"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройкиКлассификаторов" id="43">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки классификаторов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки классификаторов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиКлассификаторовРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<Table name="НастройкиКлассификаторов" id="45">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.НастройкиКлассификаторов</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="НастройкиКлассификаторовКонтекстноеМеню" id="46"/>
+					<AutoCommandBar name="НастройкиКлассификаторовКоманднаяПанель" id="47"/>
+					<ExtendedTooltip name="НастройкиКлассификаторовРасширеннаяПодсказка" id="48"/>
+					<SearchStringAddition name="НастройкиКлассификаторовСтрокаПоиска" id="49">
+						<AdditionSource>
+							<Item>НастройкиКлассификаторов</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиКлассификаторовСтрокаПоискаКонтекстноеМеню" id="50"/>
+						<ExtendedTooltip name="НастройкиКлассификаторовСтрокаПоискаРасширеннаяПодсказка" id="51"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НастройкиКлассификаторовСостояниеПросмотра" id="52">
+						<AdditionSource>
+							<Item>НастройкиКлассификаторов</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиКлассификаторовСостояниеПросмотраКонтекстноеМеню" id="53"/>
+						<ExtendedTooltip name="НастройкиКлассификаторовСостояниеПросмотраРасширеннаяПодсказка" id="54"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НастройкиКлассификаторовУправлениеПоиском" id="55">
+						<AdditionSource>
+							<Item>НастройкиКлассификаторов</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиКлассификаторовУправлениеПоискомКонтекстноеМеню" id="56"/>
+						<ExtendedTooltip name="НастройкиКлассификаторовУправлениеПоискомРасширеннаяПодсказка" id="57"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="НастройкиКлассификаторовНомерСтроки" id="58">
+							<DataPath>Объект.НастройкиКлассификаторов.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиКлассификаторовНомерСтрокиКонтекстноеМеню" id="59"/>
+							<ExtendedTooltip name="НастройкиКлассификаторовНомерСтрокиРасширеннаяПодсказка" id="60"/>
+						</LabelField>
+						<InputField name="НастройкиКлассификаторовЗначениеКлассификатора" id="67">
+							<DataPath>Объект.НастройкиКлассификаторов.ЗначениеКлассификатора</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиКлассификаторовЗначениеКлассификатораКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="НастройкиКлассификаторовЗначениеКлассификатораРасширеннаяПодсказка" id="69"/>
+						</InputField>
+						<InputField name="НастройкиКлассификаторовWebService" id="64">
+							<DataPath>Объект.НастройкиКлассификаторов.WebService</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиКлассификаторовWebServiceКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="НастройкиКлассификаторовWebServiceРасширеннаяПодсказка" id="66"/>
+						</InputField>
+						<CheckBoxField name="НастройкиКлассификаторовИспользовать" id="70">
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НастройкиКлассификаторовИспользоватьКонтекстноеМеню" id="71"/>
+							<ExtendedTooltip name="НастройкиКлассификаторовИспользоватьРасширеннаяПодсказка" id="72"/>
+						</CheckBoxField>
+						<CheckBoxField name="НастройкиКлассификаторовОбновлятьВРеальномВремени" id="81">
+							<DataPath>Объект.НастройкиКлассификаторов.ОбновлятьВРеальномВремени</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновлять в реальном времени</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновлять в реальном времени при открытии карточки клиента</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderPicture>
+								<xr:Ref>CommonPicture.ОбновлениеВнешнихКомпонентССайта</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</HeaderPicture>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НастройкиКлассификаторовОбновлятьВРеальномВремениКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="НастройкиКлассификаторовОбновлятьВРеальномВремениРасширеннаяПодсказка" id="83"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вогНастройкиОбменаWebServices</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.НастройкиКлассификаторов"/>
+			</Columns>
+		</Attribute>
+		<Attribute name="WebService" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Web-service</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.вогWebServices</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

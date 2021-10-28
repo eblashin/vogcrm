@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДатаНомер" id="105">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДатаНомерРасширеннаяПодсказка" id="106"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПериод" id="107">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период действия</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<BackColor>style:ToolTipBackColor</BackColor>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="108"/>
+			<ChildItems>
+				<InputField name="ДействуетС" id="7">
+					<DataPath>Объект.ДействуетС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДействуетСКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ДействуетСРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="ДействуетПо" id="10">
+					<DataPath>Объект.ДействуетПо</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДействуетПоКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДействуетПоРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<Button name="ВыбратьПериод" id="115">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ВыбратьПериод</CommandName>
+					<ExtendedTooltip name="ВыбратьПериодРасширеннаяПодсказка" id="116"/>
+				</Button>
+				<LabelDecoration name="ДекорацияЗаглушкаПериод" id="112">
+					<Width>12</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ДекорацияЗаглушкаПериодКонтекстноеМеню" id="113"/>
+					<ExtendedTooltip name="ДекорацияЗаглушкаПериодРасширеннаяПодсказка" id="114"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаШапка" id="99">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="100"/>
+			<ChildItems>
+				<InputField name="Пользователь" id="19">
+					<DataPath>Объект.ВладелецРоли</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПользовательКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="Ответственный" id="22">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>true</DropListButton>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="24"/>
+				</InputField>
+				<InputField name="РольИсполнителя" id="109">
+					<DataPath>1/0:cc2afe3c-d692-4399-b8db-b93c248b9399</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="РольИсполнителяКонтекстноеМеню" id="110"/>
+					<ExtendedTooltip name="РольИсполнителяРасширеннаяПодсказка" id="111"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДоступныеРолиИсполнителя" id="120">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа доступные роли исполнителя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа доступные роли исполнителя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДоступныеРолиИсполнителяРасширеннаяПодсказка" id="121"/>
+			<ChildItems>
+				<Table name="ДоступныеРолиИсполнителя" id="122">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.ДоступныеРолиИсполнителя</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ДоступныеРолиИсполнителяКонтекстноеМеню" id="123"/>
+					<AutoCommandBar name="ДоступныеРолиИсполнителяКоманднаяПанель" id="124">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ДоступныеРолиИсполнителяЗаполнитьДоступныеРоли" id="141">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ЗаполнитьДоступныеРоли</CommandName>
+								<ExtendedTooltip name="ДоступныеРолиИсполнителяЗаполнитьДоступныеРолиРасширеннаяПодсказка" id="142"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ДоступныеРолиИсполнителяРасширеннаяПодсказка" id="125"/>
+					<SearchStringAddition name="ДоступныеРолиИсполнителяСтрокаПоиска" id="126">
+						<AdditionSource>
+							<Item>ДоступныеРолиИсполнителя</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДоступныеРолиИсполнителяСтрокаПоискаКонтекстноеМеню" id="127"/>
+						<ExtendedTooltip name="ДоступныеРолиИсполнителяСтрокаПоискаРасширеннаяПодсказка" id="128"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ДоступныеРолиИсполнителяСостояниеПросмотра" id="129">
+						<AdditionSource>
+							<Item>ДоступныеРолиИсполнителя</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДоступныеРолиИсполнителяСостояниеПросмотраКонтекстноеМеню" id="130"/>
+						<ExtendedTooltip name="ДоступныеРолиИсполнителяСостояниеПросмотраРасширеннаяПодсказка" id="131"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ДоступныеРолиИсполнителяУправлениеПоиском" id="132">
+						<AdditionSource>
+							<Item>ДоступныеРолиИсполнителя</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ДоступныеРолиИсполнителяУправлениеПоискомКонтекстноеМеню" id="133"/>
+						<ExtendedTooltip name="ДоступныеРолиИсполнителяУправлениеПоискомРасширеннаяПодсказка" id="134"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ДоступныеРолиИсполнителяНомерСтроки" id="135">
+							<DataPath>Объект.ДоступныеРолиИсполнителя.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДоступныеРолиИсполнителяНомерСтрокиКонтекстноеМеню" id="136"/>
+							<ExtendedTooltip name="ДоступныеРолиИсполнителяНомерСтрокиРасширеннаяПодсказка" id="137"/>
+						</LabelField>
+						<InputField name="ДоступныеРолиИсполнителяРольИсполнителя" id="138">
+							<DataPath>Объект.ДоступныеРолиИсполнителя.РольИсполнителя</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДоступныеРолиИсполнителяРольИсполнителяКонтекстноеМеню" id="139"/>
+							<ExtendedTooltip name="ДоступныеРолиИсполнителяРольИсполнителяРасширеннаяПодсказка" id="140"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="25">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="27"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.вогДелегированиеПравДоступа</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьПериод" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SetDateInterval</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьПериод</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ЗаполнитьДоступныеРоли" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить доступные роли владельца</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить доступные роли</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОпубликоватьФайл</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаполнитьДоступныеРоли</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+</Form>

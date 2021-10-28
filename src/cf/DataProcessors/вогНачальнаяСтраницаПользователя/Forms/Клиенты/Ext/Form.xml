@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Клиенты</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновная" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаБыстрыОтборы" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа быстры отборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа быстры отборы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаБыстрыОтборыРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<InputField name="ОтборПодразделение" id="50">
+							<DataPath>ОтборПодразделение</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>20</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<QuickChoice>true</QuickChoice>
+							<ChoiceParameters>
+								<app:item name="Отбор.ОбособленноеПодразделение">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подразделение</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборПодразделениеКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ОтборПодразделениеРасширеннаяПодсказка" id="52"/>
+							<Events>
+								<Event name="OnChange">ОтборПодразделениеПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ОтборМенеджер" id="53">
+							<DataPath>ОтборМенеджер</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>20</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<ChoiceParameters>
+								<app:item name="ТолькоДоступные">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Менеджер</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОтборМенеджерКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ОтборМенеджерРасширеннаяПодсказка" id="55"/>
+							<Events>
+								<Event name="OnChange">ОтборМенеджерПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="СписокПартнеры" id="1">
+					<HeightInTableRows>7</HeightInTableRows>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>СписокПартнеры</DataPath>
+					<RowPictureDataPath>СписокПартнеры.DefaultPicture</RowPictureDataPath>
+					<CommandSet>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Create</ExcludedCommand>
+						<ExcludedCommand>CreateFolder</ExcludedCommand>
+					</CommandSet>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<ContextMenu name="СписокПартнерыКонтекстноеМеню" id="2">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<ButtonGroup name="СписокПартнерыГруппаСтандартныеКоманды" id="25">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список партнеры группа стандартные команды</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список партнеры группа стандартные команды</v8:content>
+									</v8:item>
+								</ToolTip>
+								<CommandSource>Item.СписокПартнеры</CommandSource>
+								<ExtendedTooltip name="СписокПартнерыГруппаСтандартныеКомандыРасширеннаяПодсказка" id="26"/>
+							</ButtonGroup>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="СписокПартнерыКоманднаяПанель" id="3">
+						<ChildItems>
+							<ButtonGroup name="СписокПартнерыГруппаДействияСКонтактом" id="31">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список партнеры группа действия с контактом</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список группа действия с контактом</v8:content>
+									</v8:item>
+								</ToolTip>
+								<Representation>Compact</Representation>
+								<ExtendedTooltip name="СписокПартнерыГруппаДействияСКонтактомРасширеннаяПодсказка" id="32"/>
+								<ChildItems>
+									<Button name="СписокПартнерыПозвонить" id="33">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>CommonCommand.сфпПозвонить</CommandName>
+										<DataPath>Items.СписокПартнеры.CurrentData.Ссылка</DataPath>
+										<ExtendedTooltip name="СписокПартнерыПозвонитьРасширеннаяПодсказка" id="34"/>
+									</Button>
+									<Button name="СписокПартнерыОтправитьEMail" id="35">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>CommonCommand.вогОтправитьEMail</CommandName>
+										<DataPath>Items.СписокПартнеры.CurrentData.Ссылка</DataPath>
+										<ExtendedTooltip name="СписокПартнерыОтправитьEMailРасширеннаяПодсказка" id="36"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Button name="СписокПартнерыИзменитьФорму" id="43">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+								<ExtendedTooltip name="СписокПартнерыИзменитьФормуРасширеннаяПодсказка" id="44"/>
+							</Button>
+							<Button name="РегистрСведенийАвтозаменаНаселенныхПунктовСписокАвтозаменыГородов" id="58">
+								<Type>CommandBarButton</Type>
+								<CommandName>InformationRegister.АвтозаменаНаселенныхПунктов.Command.СписокАвтозаменыГородов</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="РегистрСведенийАвтозаменаНаселенныхПунктовСписокАвтозаменыГородовРасширеннаяПодсказка" id="59"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокПартнерыРасширеннаяПодсказка" id="4"/>
+					<SearchStringAddition name="СписокПартнерыСтрокаПоиска" id="5">
+						<AdditionSource>
+							<Item>СписокПартнеры</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокПартнерыСтрокаПоискаКонтекстноеМеню" id="6"/>
+						<ExtendedTooltip name="СписокПартнерыСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокПартнерыСостояниеПросмотра" id="8">
+						<AdditionSource>
+							<Item>СписокПартнеры</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокПартнерыСостояниеПросмотраКонтекстноеМеню" id="9"/>
+						<ExtendedTooltip name="СписокПартнерыСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокПартнерыУправлениеПоиском" id="11">
+						<AdditionSource>
+							<Item>СписокПартнеры</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокПартнерыУправлениеПоискомКонтекстноеМеню" id="12"/>
+						<ExtendedTooltip name="СписокПартнерыУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">СписокВыбор</Event>
+						<Event name="OnActivateRow">СписокПартнерыПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<PictureField name="СписокПартнерыЗаполненностьИнформации" id="37">
+							<DataPath>СписокПартнеры.ЗаполненностьИнформации</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.вог_ПроцентЗаполнения</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="СписокПартнерыЗаполненностьИнформацииКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="СписокПартнерыЗаполненностьИнформацииРасширеннаяПодсказка" id="39"/>
+						</PictureField>
+						<LabelField name="СписокПартнерыСсылка" id="40">
+							<DataPath>СписокПартнеры.Ссылка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Клиент</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокПартнерыСсылкаКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="СписокПартнерыСсылкаРасширеннаяПодсказка" id="42"/>
+						</LabelField>
+						<LabelField name="СписокПартнерыСегментКлиента" id="63">
+							<DataPath>СписокПартнеры.СегментКлиента</DataPath>
+							<ContextMenu name="СписокПартнерыСегментКлиентаКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="СписокПартнерыСегментКлиентаРасширеннаяПодсказка" id="65"/>
+						</LabelField>
+						<LabelField name="СписокПартнерыКатегорияКлиента" id="60">
+							<DataPath>СписокПартнеры.КатегорияКлиента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Категория клиента (Плитка)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокПартнерыКатегорияКлиентаКонтекстноеМеню" id="61"/>
+							<ExtendedTooltip name="СписокПартнерыКатегорияКлиентаРасширеннаяПодсказка" id="62"/>
+						</LabelField>
+						<LabelField name="СписокПартнерыСтатусКлиента" id="66">
+							<DataPath>СписокПартнеры.СтатусКлиента</DataPath>
+							<ContextMenu name="СписокПартнерыСтатусКлиентаКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="СписокПартнерыСтатусКлиентаРасширеннаяПодсказка" id="68"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.вогНачальнаяСтраницаПользователя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокПартнеры" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список партнеры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>СписокПартнеры.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникПартнеры.Ссылка КАК Ссылка,
+	СправочникПартнеры.Родитель КАК Родитель,
+	СправочникПартнеры.ЭтоГруппа КАК ЭтоГруппа,
+	СправочникПартнеры.Код КАК Код,
+	СправочникПартнеры.Наименование КАК Наименование,
+	СправочникПартнеры.БизнесРегион КАК БизнесРегион,
+	ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий КАК ПроцентЗаполненностиОбщий,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 10
+			ТОГДА 0
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 20
+			ТОГДА 1
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 35
+			ТОГДА 2
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 50
+			ТОГДА 3
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 60
+			ТОГДА 4
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 75
+			ТОГДА 5
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 85
+			ТОГДА 6
+		КОГДА ЕСТЬNULL(ЗаполненностьРеквизитовОбъектов.ПроцентЗаполненностиОбщий, 0) &lt; 98
+			ТОГДА 7
+		ИНАЧЕ 8
+	КОНЕЦ КАК ЗаполненностьИнформации,
+	КатегорияКлиента.ЗначениеКлассификатора КАК КатегорияКлиента,
+	СегментКлиента.ЗначениеКлассификатора КАК СегментКлиента,
+	СтатусКлиента.ЗначениеКлассификатора КАК СтатусКлиента
+ИЗ
+	Справочник.Партнеры КАК СправочникПартнеры
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.вогЗаполненностьРеквизитовОбъектов КАК ЗаполненностьРеквизитовОбъектов
+		ПО (СправочникПартнеры.Ссылка = (ВЫРАЗИТЬ(ЗаполненностьРеквизитовОбъектов.Объект КАК Справочник.Партнеры)))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК КатегорияКлиента
+		ПО СправочникПартнеры.Ссылка = КатегорияКлиента.Объект
+			И (КатегорияКлиента.ЗначениеКлассификатора.Владелец = &amp;КатегорияКлиента)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК СегментКлиента
+		ПО СправочникПартнеры.Ссылка = СегментКлиента.Объект
+			И (СегментКлиента.ЗначениеКлассификатора.Владелец = &amp;СегментКлиента)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК СтатусКлиента
+		ПО СправочникПартнеры.Ссылка = СтатусКлиента.Объект
+			И (СтатусКлиента.ЗначениеКлассификатора.Владелец = &amp;СтатусКлиента)
+ГДЕ
+	НЕ СправочникПартнеры.ПометкаУдаления
+	И НЕ СправочникПартнеры.Поставщик
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+			CRM_ДополнительныеРеквизитыКлассификаторов.ТипЗначения КАК ТипЗначения,
+			CRM_ЗначенияКлассификаторов.Наименование КАК Наименование,
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_Классификаторы.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.ОдиночноеЗначение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатораВладелец
+	ПОЛЕЗНАЧЕНИЯ ЗначениеКлассификатора }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " (" + CRM_ЗначенияКлассификаторов.Наименование + ")" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение))
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ПОЛЕТИПАЗНАЧЕНИЯ ТипЗначения
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец КАК ЗначениеКлассификатораВладелец,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеРеквизита КАК ЗначениеРеквизита
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора
+	ПОЛЕЗНАЧЕНИЯ ЗначениеРеквизита }
+{ХАРАКТЕРИСТИКИ
+	ТИП(Справочник.Партнеры, Справочник.КонтактныеЛицаПартнеров, Справочник.вогТорговыеТочки, Справочник.вогЮридическиеЛица, Справочник.вогРаспределительныеЦентры)
+	ВИДЫХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ЗначенияКлассификаторов.Ссылка КАК Ссылка,
+			CRM_Классификаторы.Наименование + " [" + CRM_ЗначенияКлассификаторов.Наименование + "]" КАК Наименование,
+			CRM_Классификаторы.ТипЗначения КАК ТипЗначения
+		ИЗ
+			Справочник.CRM_ЗначенияКлассификаторов КАК CRM_ЗначенияКлассификаторов
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_Классификаторы КАК CRM_Классификаторы
+				ПО CRM_ЗначенияКлассификаторов.Владелец = CRM_Классификаторы.Ссылка
+				ЛЕВОЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.CRM_ДополнительныеРеквизитыКлассификаторов КАК CRM_ДополнительныеРеквизитыКлассификаторов
+				ПО CRM_ЗначенияКлассификаторов.ДополнительныйРеквизит = CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка
+		ГДЕ
+			CRM_Классификаторы.ВидОтображения = ЗНАЧЕНИЕ(ПЕРЕЧИСЛЕНИЕ.CRM_ВидыОтображенияКлассификаторов.Вхождение)
+			И CRM_ДополнительныеРеквизитыКлассификаторов.Ссылка ЕСТЬ NULL)
+	ПОЛЕКЛЮЧА Ссылка
+	ПОЛЕИМЕНИ Наименование
+	ЗНАЧЕНИЯХАРАКТЕРИСТИК (ВЫБРАТЬ
+			CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Объект,
+			ИСТИНА КАК Значение,
+			CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора
+		ИЗ
+			РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов)
+	ПОЛЕОБЪЕКТА Объект
+	ПОЛЕВИДА ЗначениеКлассификатора }</QueryText>
+				<MainTable>Catalog.Партнеры</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОтборПодразделение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборМенеджер" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

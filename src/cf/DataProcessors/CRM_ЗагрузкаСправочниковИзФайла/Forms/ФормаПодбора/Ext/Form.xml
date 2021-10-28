@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подбор нескольких полей</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ОК" id="16">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="Закрыть" id="10">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="18"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ПоляФайла" id="1">
+			<SkipOnInput>false</SkipOnInput>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ПоляФайла</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПоляФайлаКонтекстноеМеню" id="2">
+				<Autofill>false</Autofill>
+			</ContextMenu>
+			<AutoCommandBar name="ПоляФайлаКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ПоляФайлаДобавить" id="12">
+						<Type>CommandBarButton</Type>
+						<SkipOnInput>false</SkipOnInput>
+						<CommandName>Form.Item.ПоляФайла.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="ПоляФайлаДобавитьРасширеннаяПодсказка" id="19"/>
+					</Button>
+					<Button name="ПоляФайлаУдалить" id="13">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<SkipOnInput>false</SkipOnInput>
+						<CommandName>Form.Item.ПоляФайла.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="ПоляФайлаУдалитьРасширеннаяПодсказка" id="20"/>
+					</Button>
+					<Button name="ПоляФайлаПереместитьВверх" id="14">
+						<Type>CommandBarButton</Type>
+						<SkipOnInput>false</SkipOnInput>
+						<CommandName>Form.Item.ПоляФайла.StandardCommand.MoveUp</CommandName>
+						<ExtendedTooltip name="ПоляФайлаПереместитьВверхРасширеннаяПодсказка" id="21"/>
+					</Button>
+					<Button name="ПоляФайлаПереместитьВниз" id="15">
+						<Type>CommandBarButton</Type>
+						<SkipOnInput>false</SkipOnInput>
+						<CommandName>Form.Item.ПоляФайла.StandardCommand.MoveDown</CommandName>
+						<ExtendedTooltip name="ПоляФайлаПереместитьВнизРасширеннаяПодсказка" id="22"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПоляФайлаРасширеннаяПодсказка" id="23"/>
+			<SearchStringAddition name="ПоляФайлаСтрокаПоиска" id="24">
+				<AdditionSource>
+					<Item>ПоляФайла</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПоляФайлаСтрокаПоискаКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="ПоляФайлаСтрокаПоискаРасширеннаяПодсказка" id="26"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПоляФайлаСостояниеПросмотра" id="27">
+				<AdditionSource>
+					<Item>ПоляФайла</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПоляФайлаСостояниеПросмотраКонтекстноеМеню" id="28"/>
+				<ExtendedTooltip name="ПоляФайлаСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПоляФайлаУправлениеПоиском" id="30">
+				<AdditionSource>
+					<Item>ПоляФайла</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПоляФайлаУправлениеПоискомКонтекстноеМеню" id="31"/>
+				<ExtendedTooltip name="ПоляФайлаУправлениеПоискомРасширеннаяПодсказка" id="32"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnStartEdit">ПоляФайлаПриНачалеРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ПоляФайлаНомерСтроки" id="4">
+					<DataPath>Объект.ПоляФайла.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПоляФайлаНомерСтрокиКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПоляФайлаНомерСтрокиРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<InputField name="ПоляФайлаНаименованиеРеквизита" id="6">
+					<DataPath>Объект.ПоляФайла.НаименованиеРеквизита</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПоляФайлаНаименованиеРеквизитаКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ПоляФайлаНаименованиеРеквизитаРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ПоляФайлаНаименованиеПоля" id="8">
+					<DataPath>Объект.ПоляФайла.НаименованиеПоля</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поле файла</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Wrap>false</Wrap>
+					<ChoiceButton>true</ChoiceButton>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ПоляФайлаНаименованиеПоляКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ПоляФайлаНаименованиеПоляРасширеннаяПодсказка" id="35"/>
+					<Events>
+						<Event name="StartChoice">ПоляФайлаНаименованиеПоляНачалоВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.CRM_ЗагрузкаСправочниковИзФайла</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СтрокаОтбора" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокПолейФайла" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список полей файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

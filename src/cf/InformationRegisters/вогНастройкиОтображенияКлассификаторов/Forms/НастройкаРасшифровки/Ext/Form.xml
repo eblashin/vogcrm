@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОК" id="23">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="24"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="25">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="26"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="ОтображатьЗаголовок" id="27">
+			<DataPath>ОтображатьЗаголовокРеквизит</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать заголовок (Реквизиты / Таблица)</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтображатьЗаголовокКонтекстноеМеню" id="28"/>
+			<ExtendedTooltip name="ОтображатьЗаголовокРасширеннаяПодсказка" id="29"/>
+		</CheckBoxField>
+		<InputField name="Шаблон" id="4">
+			<DataPath>Шаблон</DataPath>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.Идентификатор</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Идентификатор</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+				<xr:Link>
+					<xr:Name>Отбор.ТипОтображения</xr:Name>
+					<xr:DataPath xsi:type="xs:string">ТипОтображения</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ШаблонКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ШаблонРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ШаблонПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаПроизвольныйКод" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа произвольный код</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа произвольный код</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>40</Width>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПроизвольныйКодРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПроизвольныйКодГоризонтально" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа произвольный код горизонтально</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа произвольный код горизонтально</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПроизвольныйКодГоризонтальноРасширеннаяПодсказка" id="10"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПроцедура_ПриИзменении" id="11">
+							<Width>10</Width>
+							<Height>2</Height>
+							<TextColor>#FF0000</TextColor>
+							<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Процедура</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПроцедура_ПриИзмененииКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="ДекорацияПроцедура_ПриИзмененииРасширеннаяПодсказка" id="13"/>
+						</LabelDecoration>
+						<LabelDecoration name="ДекорацияИмяПроцедурыКлиент" id="14">
+							<Height>2</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<TextColor>#0000FF</TextColor>
+							<Font ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;colorstyle 0:e07ac651-07b9-4664-95e8-f3f5a51ea6c8&gt;&amp;НаКлиенте&lt;/&gt;
+Расшифровка(Элемент)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияИмяПроцедурыКлиентКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="ДекорацияИмяПроцедурыКлиентРасширеннаяПодсказка" id="16"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ТекстОбработкчика" id="17">
+					<DataPath>ТекстОбработчика</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>11</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>6</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="ТекстОбработкчикаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ТекстОбработкчикаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияКонецПроцедуры" id="20">
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<TextColor>#FF0000</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="11" kind="WindowsFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КонецПроцедуры</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияКонецПроцедурыКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДекорацияКонецПроцедурыРасширеннаяПодсказка" id="22"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТекстОбработчика" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст обработчика</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Идентификатор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Шаблон" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.вог_ПроизвольныйКодНастройкаОтображения</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипОтображения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип отображения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.вогНастройкаОтображенияКлассификатор</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Имя" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьЗаголовокРеквизит" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать заголовок реквизит</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ОтображатьЗаголовок">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

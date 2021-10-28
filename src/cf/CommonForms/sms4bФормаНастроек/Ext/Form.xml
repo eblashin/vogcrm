@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<Width>46</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ОбщиеНастройки" id="91">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОбщиеНастройкиРасширеннаяПодсказка" id="92"/>
+			<ChildItems>
+				<UsualGroup name="ПровайдерИОписание" id="93">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Провайдер и описание</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Провайдер и описание</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПровайдерИОписаниеРасширеннаяПодсказка" id="94"/>
+					<ChildItems>
+						<InputField name="ПровайдерSMS" id="88">
+							<DataPath>НаборКонстант.ПровайдерSMS</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Провайдер</v8:content>
+								</v8:item>
+							</Title>
+							<ClearButton>true</ClearButton>
+							<BackColor>style:ФонУправляющегоПоля</BackColor>
+							<ContextMenu name="ПровайдерSMSКонтекстноеМеню" id="89"/>
+							<ExtendedTooltip name="ПровайдерSMSРасширеннаяПодсказка" id="90"/>
+							<Events>
+								<Event name="OnChange">ПровайдерSMSПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ОписаниеУслуги" id="95">
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>?</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ОписаниеУслугиКонтекстноеМеню" id="96"/>
+							<ExtendedTooltip name="ОписаниеУслугиРасширеннаяПодсказка" id="97"/>
+							<Events>
+								<Event name="Click">ОписаниеУслугиНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ЛогинДляОтправкиSMS" id="82">
+					<DataPath>ЛогинДляОтправкиSMS</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Логин</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ЛогинДляОтправкиSMSКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="ЛогинДляОтправкиSMSExtendedTooltip" id="84"/>
+					<Events>
+						<Event name="OnChange">ЛогинДляОтправкиSMSПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПарольДляОтправкиSMS" id="85">
+					<DataPath>ПарольДляОтправкиSMS</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пароль</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<PasswordMode>true</PasswordMode>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ПарольДляОтправкиSMSКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="ПарольДляОтправкиSMSExtendedTooltip" id="87"/>
+					<Events>
+						<Event name="OnChange">ПарольДляОтправкиSMSПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ИмяОтправителя" id="3">
+					<DataPath>ИмяОтправителя</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя отправителя, которое по умолчанию будет подставляться в документ Сообщение SMS</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<ChoiceListButton>true</ChoiceListButton>
+					<ContextMenu name="ИмяОтправителяКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ИмяОтправителяРасширеннаяПодсказка" id="58"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="НастройкаSMS4B" id="30">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки работы с сервисом SMS4B</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка, используемые при работе с сервисом SMS4B</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>46</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="НастройкаSMS4BРасширеннаяПодсказка" id="49"/>
+			<ChildItems>
+				<Button name="Подключиться" id="29">
+					<Type>UsualButton</Type>
+					<HorizontalStretch>true</HorizontalStretch>
+					<CommandName>Form.Command.Подключится</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подключиться к сервису SMS4B</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ПодключитьсяРасширеннаяПодсказка" id="52"/>
+				</Button>
+				<CheckBoxField name="ПолучатьТолькоПолныеСообщения" id="15">
+					<DataPath>НаборКонстант.sms4bПолучатьТолькоПолныеСообщения</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>При уставленном флажке будут приниматься только сообщения, у которых присутствуют все части</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПолучатьТолькоПолныеСообщенияКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ПолучатьТолькоПолныеСообщенияРасширеннаяПодсказка" id="53"/>
+				</CheckBoxField>
+				<InputField name="ДатаВходящегоСообщения" id="36">
+					<DataPath>НаборКонстант.sms4bДатаПолученияСМС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата последнего входящего сообщения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата последнего полученного входящего сообщения. Определяет дату, начиная с которой будут получаться сообщения.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=DT</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ДатаВходящегоСообщенияКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ДатаВходящегоСообщенияРасширеннаяПодсказка" id="54"/>
+					<Events>
+						<Event name="ChoiceProcessing">ДатаВходящегоСообщенияОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаРегламентноеЗадание" id="77">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа регламентного задания</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки регламентного задания</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>46</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>DontUse</ThroughAlign>
+					<ExtendedTooltip name="ГруппаРегламентноеЗаданиеРасширеннаяПодсказка" id="78"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьЗадание" id="79">
+							<DataPath>ИспользоватьЗадание</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать регламентное задание</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать регламентное задание для отправки и получения сообщений. Сообщения также можно отправлять и принимать вручную из формы списка сообщений.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьЗаданиеКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="ИспользоватьЗаданиеРасширеннаяПодсказка" id="81"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьЗаданиеПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="РоботРегламентныхЗаданий" id="27">
+							<DataPath>НаборКонстант.sms4bРоботРегламентныхЗаданий</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователь задания</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя пользователя, под которым будет выполняться регламентное задание</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="РоботРегламентныхЗаданийКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="РоботРегламентныхЗаданийРасширеннаяПодсказка" id="55"/>
+							<Events>
+								<Event name="OnChange">РоботРегламентныхЗаданийПриИзменении</Event>
+								<Event name="StartChoice">РоботРегламентныхЗаданийНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="НастройкаРасписания" id="42">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настроить расписание регламентного задания</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Открыть форму настройки расписания регламентного задания</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="НастройкаРасписанияКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="НастройкаРасписанияРасширеннаяПодсказка" id="56"/>
+							<Events>
+								<Event name="Click">НастройкаРасписанияНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="НастройкаДокумента" id="31">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки документа "Сообщение SMS"</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка, используемые для постановки в документ "Сообщение SMS"</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>46</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<ThroughAlign>DontUse</ThroughAlign>
+					<ExtendedTooltip name="НастройкаДокументаРасширеннаяПодсказка" id="57"/>
+					<ChildItems>
+						<InputField name="СрокЖизниSMS" id="25">
+							<DataPath>НаборКонстант.sms4bСрокЖизниSMS</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок жизни SMS (в часах)</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период времени в часах, в течение которого будет отправляться собщение. Если установлен 0, то период времени не используется.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>6</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<ContextMenu name="СрокЖизниSMSКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="СрокЖизниSMSРасширеннаяПодсказка" id="59"/>
+						</InputField>
+						<UsualGroup name="ГруппаПериодЗапрета" id="32">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период запрета</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка периода запрета отправки сообщений</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПериодЗапретаРасширеннаяПодсказка" id="60"/>
+							<ChildItems>
+								<CheckBoxField name="НеОтправлятьSMS" id="11">
+									<DataPath>НаборКонстант.sms4bНеОтправлятьSMS</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не отправлять в период с:</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<TitleHeight>1</TitleHeight>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Использование периода запрета</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НеОтправлятьSMSКонтекстноеМеню" id="12"/>
+									<ExtendedTooltip name="НеОтправлятьSMSРасширеннаяПодсказка" id="61"/>
+									<Events>
+										<Event name="OnChange">НеОтправлятьSMSПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="НачалоПериодаЗапрета" id="9">
+									<DataPath>НаборКонстант.sms4bНачалоПериодаЗапрета</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Начало периода запрета</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>false</ChoiceButton>
+									<SpinButton>true</SpinButton>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="НачалоПериодаЗапретаКонтекстноеМеню" id="10"/>
+									<ExtendedTooltip name="НачалоПериодаЗапретаРасширеннаяПодсказка" id="62"/>
+									<Events>
+										<Event name="OnChange">НачалоПериодаЗапретаПриИзменении</Event>
+										<Event name="Tuning">НачалоПериодаЗапретаРегулирование</Event>
+									</Events>
+								</InputField>
+								<InputField name="КонецПериодаЗапрета" id="7">
+									<DataPath>НаборКонстант.sms4bКонецПериодаЗапрета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>по</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Окончание периода запрета</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>false</ChoiceButton>
+									<SpinButton>true</SpinButton>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=HH:mm; ДП=00:00</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="КонецПериодаЗапретаКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="КонецПериодаЗапретаРасширеннаяПодсказка" id="63"/>
+									<Events>
+										<Event name="OnChange">КонецПериодаЗапретаПриИзменении</Event>
+										<Event name="Tuning">КонецПериодаЗапретаРегулирование</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="НастройкиПрокси" id="41">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки прокси-сервера </v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка прокси-сервера</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>46</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<ThroughAlign>DontUse</ThroughAlign>
+					<ExtendedTooltip name="НастройкиПроксиРасширеннаяПодсказка" id="64"/>
+					<ChildItems>
+						<CheckBoxField name="ВклВыклПрокси" id="44">
+							<DataPath>ВклВыклПрокси</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать прокси-сервер</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать прокси-сервер для доступа к интернет</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВклВыклПроксиКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ВклВыклПроксиРасширеннаяПодсказка" id="65"/>
+							<Events>
+								<Event name="OnChange">ВклВыклПроксиПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаПрокси" id="33">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа прокси</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки прокси-сервера</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПроксиРасширеннаяПодсказка" id="66"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПроксиЛевая" id="34">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прокси левая</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прокси левая</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПроксиЛеваяРасширеннаяПодсказка" id="67"/>
+									<ChildItems>
+										<InputField name="ПроксиСервер" id="23">
+											<DataPath>НаборКонстант.sms4bПроксиСервер</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>IP-адрес или имя прокси-сервера</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПроксиСерверКонтекстноеМеню" id="24"/>
+											<ExtendedTooltip name="ПроксиСерверРасширеннаяПодсказка" id="68"/>
+										</InputField>
+										<InputField name="ПроксиПользователь" id="19">
+											<DataPath>НаборКонстант.sms4bПроксиПользователь</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пользователь</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя пользователя, для подключения к прокси-серверу</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПроксиПользовательКонтекстноеМеню" id="20"/>
+											<ExtendedTooltip name="ПроксиПользовательРасширеннаяПодсказка" id="69"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПроксиПравая" id="35">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прокси правая</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа прокси правая</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПроксиПраваяРасширеннаяПодсказка" id="70"/>
+									<ChildItems>
+										<InputField name="ПроксиПорт" id="21">
+											<DataPath>НаборКонстант.sms4bПроксиПорт</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Порт</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Порт прокси-сервера</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПроксиПортКонтекстноеМеню" id="22"/>
+											<ExtendedTooltip name="ПроксиПортРасширеннаяПодсказка" id="71"/>
+										</InputField>
+										<InputField name="ПроксиПароль" id="17">
+											<DataPath>НаборКонстант.sms4bПроксиПароль</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пароль</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пароль пользователя, для подключения к прокси-серверу</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПроксиПарольКонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="ПроксиПарольРасширеннаяПодсказка" id="72"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="СоздатьФайлНастроек" id="38">
+							<Type>UsualButton</Type>
+							<HorizontalStretch>true</HorizontalStretch>
+							<CommandName>Form.Command.СоздатьФайлНастроек</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создать файл настроек прокси на сервере 1С:Предприятия</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СоздатьФайлНастроекРасширеннаяПодсказка" id="73"/>
+						</Button>
+						<LabelDecoration name="ДекорацияПрокси" id="39">
+							<Width>46</Width>
+							<Height>4</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если в организации работа с интернет организована через прокси - сервер, то для  работы с веб-сервисом необходимо создать файл настроек и поместить его в калатог программы в подкаталог "Conf". Для более подробной информации смотрите справку (F1)</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если в организации работа с интернет организована через прокси - сервер, то для  работы с веб-сервисом необходимо создать файл настроек и поместить его в калатог программы в подкаталог "Conf". Для более подробной информации смотрите справку (F1)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ContextMenu name="ДекорацияПроксиКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="ДекорацияПроксиРасширеннаяПодсказка" id="74"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВклВыклПрокси" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вкл выкл прокси</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>ВклВыклПрокси</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИспользоватьЗадание" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать регламентное задание</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаданиеИзменено" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задание изменено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛогинДляОтправкиSMS" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Логин для отправки SMS</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольДляОтправкиSMS" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль для отправки SMS</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяОтправителя" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя отправителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Подключится" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключится</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключиться к сервису SMS4B и заполнить список номеров отправителя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подключится</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьФайлНастроек" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать файл настроек</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать файл настроек прокси-сервера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьФайлНастроек</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
